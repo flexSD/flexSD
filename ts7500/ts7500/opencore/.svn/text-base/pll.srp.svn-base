@@ -1,0 +1,27 @@
+SCUBA, Version Diamond_1.1_Production (517)
+Thu Dec 23 15:34:31 2010
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2010 Lattice Semiconductor Corporation,  All rights reserved.
+
+    Issued command   : C:\lscc\diamond\1.1\ispfpga\bin\nt\scuba.exe -w -n pll -lang verilog -synth synplify -arch mg5a00 -type pll -fin 25 -phase_cntl DYNAMIC -trimp 0 -fclkop 75 -fclkop_tol 0.0 -fb_mode INTERNAL -duty50 -fdel 1 -noclkok -norst -noclkok2 -e 
+    Circuit name     : pll
+    Module type      : pll
+    Module Version   : 5.2
+    Ports            : 
+	Inputs       : CLK, WRDEL, DPHASE0, DPHASE1, DPHASE2, DPHASE3
+	Outputs      : CLKOP, CLKOS, LOCK
+    I/O buffer       : not inserted
+    EDIF output      : suppressed
+    Verilog output   : pll.v
+    Verilog template : pll_tmpl.v
+    Verilog purpose  : for synthesis and simulation
+    Bus notation     : not used
+    Report output    : pll.srp
+    Element Usage    :
+            INV : 1
+       EHXPLLE1 : 1
+    Estimated Resource Usage:
