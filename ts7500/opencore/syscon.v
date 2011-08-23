@@ -137,7 +137,11 @@ module syscon(
   mode3_i,
   pllphase_o,
   can_enable_o,
-  can_wbaccess_i
+  can_wbaccess_i,
+  
+  dac_addr,
+  dac_cmd,
+  dac_value
 );
 
 input wb_clk_i, wb_rst_i, wb_cyc_i, wb_stb_i, wb_we_i;
@@ -163,6 +167,10 @@ output [4:0] pllphase_o;
 output can_enable_o;
 input can_wbaccess_i;
 
+output [15:0] dac_value;
+output [3:0] dac_cmd;
+output [3:0] dac_addr;
+
 parameter wdog_default = 2;
 parameter can_opt = 0;
 
@@ -172,6 +180,7 @@ localparam revision = 4'h5;
 localparam dio_mask = 41'h1fffff87be0;
 
 wire random_clk;
+
 OSCE #(.NOM_FREQ("3.1")) rndosc (random_clk);
 assign internal_osc_o = random_clk;
 reg [15:0] rndcnt;
@@ -216,6 +225,7 @@ always @(*) begin
 end
 
 wire [15:0] random;
+assign random = 16'd0;		//Not assigned by the random number generator (module removed) so give it some standard value
 /*
 crc randnumgen(
   .dat_i(clk_100mhz_i),
@@ -289,6 +299,12 @@ reg [4:0] pllphase;
 assign pllphase_o = pllphase;
 reg can_enable;
 assign can_enable_o = can_enable;
+
+reg [15:0] dac_val;
+reg [3:0] dac_command;
+reg [3:0] dac_address;
+
+//Writing to registers, first 'if' statement is for reset condition, second is for SBUS writes to memory
 always @(posedge wb_clk_i or posedge wb_rst_i) begin
   if (wb_rst_i) begin
     dio_oe <= 41'd0;
@@ -306,13 +322,19 @@ always @(posedge wb_clk_i or posedge wb_rst_i) begin
     resetsw_en <= 1'b0;
     pllphase <= 5'h13;
     can_enable <= 1'b0;
+	
+	dac_val <= 16'hffff;		//Full scale output at reset
+	dac_address <= 4'b1111;		//Address all dacs
+	dac_command <= 4'b0010;		//Update and power on all dacs being addressed
+	
+	
   end else begin
     if (wb_cyc_i && wb_stb_i && wb_we_i) case (wb_adr_i[4:0])
       5'h2: begin
         {rtc_scl_oe, rtc_sda_oe, rtc_scl, rtc_sda} <= wb_dat_i[11:8];
         {led_grn, led_red} <= wb_dat_i[15:14];
       end
-      5'h6: begin
+	  5'h6: begin
         {dio[40:37], dio_oe[40:37]} <= wb_dat_i[11:4] & {2{dio_mask[40:37]}};
         {spi_clk, spi_si, spi_csn} <= wb_dat_i[3:1];
       end
@@ -326,6 +348,13 @@ always @(posedge wb_clk_i or posedge wb_rst_i) begin
         scratch <= wb_dat_i[3:2];
         resetsw_en <= wb_dat_i[4];
       end
+	  //Address 0x18 (0x78 with base address added) is the DAC value register
+	  5'h18: dac_val[15:0] <= wb_dat_i[15:0];
+	  //Address 0x20 is the DAC command and address bit registers
+	  5'h1a: begin
+		dac_command <= wb_dat_i[7:4];
+		dac_address <= wb_dat_i[3:0];
+	  end
     endcase
     if (can_opt && can_wbaccess_i) can_enable <= 1'b1;
   end
@@ -333,6 +362,8 @@ end
 
 reg wb_ack;
 assign wb_ack_o = wb_ack;
+
+//Reading from registers, addresses in case statement are just the syscon-specific address
 always @(*) begin
   wb_ack = wb_cyc_i && wb_stb_i;
   wb_dat = 16'hxxxx;
@@ -357,8 +388,16 @@ always @(*) begin
   end
   5'h16: wb_dat = {{4{1'bx}}, can_enable, pllphase, mode3_i, resetsw_en,
     scratch, mode2_i, mode1_i};
+	
+  //Output DAC values:
+  5'h18: wb_dat = dac_val[15:0];
+  5'h1a: wb_dat = {{8{1'bx}}, dac_command, dac_address};
   endcase
 end
+
+assign dac_value = dac_val;
+assign dac_cmd = dac_command;
+assign dac_addr = dac_address;
 
 endmodule
 

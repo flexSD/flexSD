@@ -108,7 +108,7 @@ module ts7500_top(
   ser_flash_cs_padn,
   flash_clk_pad,
   flash_mosi_pad,
-  flash_miso_pad
+  flash_miso_pad,
 
 );
 
@@ -208,6 +208,7 @@ parameter xuart5_opt = 1'b0;
 parameter xuart6_opt = 1'b0;
 parameter xuart7_opt = 1'b0;
 
+
 /****************************************************************************
  * Boilerplate FPGA configuration (clocks, PLL, DLL, reset) 
  ****************************************************************************/
@@ -230,6 +231,7 @@ pll2 clkgen2 (
   .CLKOP(pll_100mhz),
   .LOCK(lock2)
 );
+
 wire internal_osc;
 reg [15:0] rst_counter = 16'd0;
 reg rstn = 1'b0;
@@ -323,11 +325,12 @@ wire [31:0] ramwbs2_adr_i;
 wire [3:0] ramwbs2_sel_i, ramwbs1_sel_i;
 assign sbus_enabled = 1'b1;
 assign dcs_clk = pll_75mhz;
+/*
 blockram_8kbyte sramcore(
   .wb_clk_i(dcs_clk && xuart_opt),
   .wb_rst_i(rst),
 
-  /* To XUART */
+  //To XUART
   .wb1_cyc_i(ramwbs1_cyc_i),
   .wb1_stb_i(ramwbs1_stb_i),
   .wb1_we_i(ramwbs1_we_i),
@@ -337,7 +340,7 @@ blockram_8kbyte sramcore(
   .wb1_ack_o(ramwbs1_ack_o),
   .wb1_sel_i(ramwbs1_sel_i),
 
-  /* To wb_memwindow */
+  // To wb_memwindow
   .wb2_cyc_i(ramwbs2_cyc_i),
   .wb2_stb_i(ramwbs2_stb_i),
   .wb2_we_i(ramwbs2_we_i),
@@ -348,6 +351,7 @@ blockram_8kbyte sramcore(
   .wb2_sel_i(ramwbs2_sel_i)
 );
 
+*/
 
 /****************************************************************************
  * SBUS protocol core (SPI -> WISHBONE bridge)
@@ -560,15 +564,83 @@ wire scwbs_ack_o;
 wire rtc_sda, rtc_scl, rtc_sda_oe, rtc_scl_oe;
 assign rtc_sda_pad = rtc_sda_oe ? rtc_sda : 1'bz;
 assign rtc_scl_pad = rtc_scl_oe ? rtc_scl : 1'bz;
+
+/*
+DIO tristate configuration!!!!
+============================================
+
+dio_oe[] is the ouptut enable register
+dio[] is the output data register
+
+Tristate buffer is implemented as follows:
+
+dio_reg[pin number] = (output enable) ? (data) : 1'b1
+
+When output enable for the selected pin is '1', data is passed through to the pin
+
+Otherwise, the pin stays in high impedance mode when output enable is '0'
+
+Truth table:
+
+Enable | Data | Output 
+=======|======|========
+   0   |   0  |  Hi-Z  
+   0   |   1  |  Hi-Z  
+   1   |   0  |    0   
+   1   |   1  |    1   
+
+*/
+
 wire [40:0] dio, dio_oe;
 integer i;
 wire can_tx, can_wbaccess;
 reg [40:0] dio_reg;
-assign dio_pad = dio_reg;
+
+//Create wires for SPI port communication
+wire dac_cs, dac_sdi;
+
+//Add SPI clock and data signals directly into dio_pad assignment, bypassing SBUS control
+assign dio_pad = {dio_reg[40:25],dac_sdi,fpga_25mhz_pad,dac_cs,dio_reg[21:0]};	
+
+//DAC communication module specific wires
+wire 			dac_tx_data;	//When high, module transmits values from below wires to the DAC
+wire [15:0] 	dac_value;		//Value to be written to DAC
+wire [3:0] 		dac_cmd;		//Command bits
+wire [3:0] 		dac_addr;		//DAC address bits
+
+//Instantiate SPI module for DAC communication
+dac_spi_module dac(
+.clk25(fpga_25mhz_pad),
+.reset(rst),
+.tx_data(dac_tx_data),
+.value(dac_value),
+.cmd(dac_cmd),
+.addr(dac_addr),
+.dac_cs(dac_cs),
+.dac_data(dac_sdi)
+);
+
+//DAC testing
+
+//Sets all DACs to full scale
+assign dac_tx_data = 1;
+//assign dac_value = 16'b1111111111111111;
+//assign dac_cmd = 4'b0010;
+//assign dac_addr = 4'b1111;
+
+//end testing
+
+
 always @(*) begin
   for (i = 0; i <= 40; i = i + 1) begin
-    dio_reg[i] = dio_oe[i] ? dio[i] : 1'bz;
+	if( i != 22 | i != 23 | i != 24 ) begin		//Remove SBUS control of DIOs 22-24
+		dio_reg[i] = dio_oe[i] ? dio[i] : 1'bz;
+	end	
   end
+  
+ //==========================================
+ 
+
 
   /* DIO#7 is one of our latched bootstrap pins */
   if (!unreset) dio_reg[7] = 1'bz;
@@ -680,7 +752,11 @@ syscon #(
   .pllphase_o(pllphase),
   .internal_osc_o(internal_osc),
   .can_wbaccess_i(can_wbaccess),
-  .can_enable_o(can_enable)
+  .can_enable_o(can_enable),
+  
+  .dac_addr(dac_addr),
+  .dac_cmd(dac_cmd),
+  .dac_value(dac_value)
 );
 
 
@@ -717,9 +793,7 @@ wb_memwindow16to32 mwincore(
 /****************************************************************************
  * SJA1000C compatible CAN controller
  ****************************************************************************/
-
-/*
-
+ /*
 wire canwbs_cyc_i, canwbs_stb_i, canwbs_we_i, canwbs_ack;
 wire [7:0] canwbs_dat_i, canwbs_dat_o;
 wire [15:0] canwbs_adr_i;
@@ -741,7 +815,6 @@ can_top cancore(
   .tx_o(can_tx),
   .irq_on(can_irqn)
 );
-
 */
 
 /****************************************************************************
