@@ -18,9 +18,6 @@
  * CRIMINAL AND CIVIL LIABILITY.
  */
 
-//`define ALTERA
-`define LATTICE
-//`define TESTBENCH
 
 module blockram_8kbyte(
   wb_clk_i,
@@ -139,45 +136,12 @@ wb_arbiter arbitercore(
   .wbowner_sel_o(wbn_sel_i)
 );
 
+
 reg [31:0] blockram_data_i;
 reg [10:0] blockram_rdadr_i, blockram_wradr_i;
 wire [31:0] blockram_data_o;
 reg [3:0] blockram_wren;
-`ifdef ALTERA
-altera_ram blockram0(
-  .clock(wb_clk_i),
-  .data(blockram_data_i[7:0]),
-  .rdaddress(blockram_rdadr_i),
-  .wraddress(blockram_wradr_i),
-  .wren(blockram_wren[0]),
-  .q(blockram_data_o[7:0])
-);
-altera_ram blockram1(
-  .clock(wb_clk_i),
-  .data(blockram_data_i[15:8]),
-  .rdaddress(blockram_rdadr_i),
-  .wraddress(blockram_wradr_i),
-  .wren(blockram_wren[1]),
-  .q(blockram_data_o[15:8])
-);
-altera_ram blockram2(
-  .clock(wb_clk_i),
-  .data(blockram_data_i[23:16]),
-  .rdaddress(blockram_rdadr_i),
-  .wraddress(blockram_wradr_i),
-  .wren(blockram_wren[2]),
-  .q(blockram_data_o[23:16])
-);
-altera_ram blockram3(
-  .clock(wb_clk_i),
-  .data(blockram_data_i[31:24]),
-  .rdaddress(blockram_rdadr_i),
-  .wraddress(blockram_wradr_i),
-  .wren(blockram_wren[3]),
-  .q(blockram_data_o[31:24])
-);
-`endif
-`ifdef LATTICE
+
 lattice_ram blockram0 (
   .WrAddress(blockram_wradr_i),
   .RdAddress(blockram_rdadr_i),
@@ -226,75 +190,89 @@ lattice_ram blockram3 (
   .WE(1'b1),
   .Q(blockram_data_o[31:24])
 );
-`endif
-`ifdef TESTBENCH
-reg [31:0] q;
-always @(posedge wb_clk_i) begin
-  q[31:24] <= {blockram_rdadr_i[5:0], 2'd3};
-  q[23:16] <= {blockram_rdadr_i[5:0], 2'd2};
-  q[15:8] <= {blockram_rdadr_i[5:0], 2'd1};
-  q[7:0] <= {blockram_rdadr_i[5:0], 2'd0};
-end
-assign blockram_data_o[31:0] = q;
-`endif
 
 reg rdowner = 1'b0;
 reg wrowner = 1'b0;
 reg wb1_rdreq, wbn_rdreq, wb1_wrreq, wbn_wrreq;
+
 always @(rdowner or wrowner or wb1_adr_i or wbn_adr_i or wb1_dat_i
   or wbn_dat_i or wb1_sel_i or wbn_sel_i or rdowner or wrowner
   or wbn_wrreq or wb1_wrreq or endian_swap) begin
-  if (rdowner) blockram_rdadr_i = wbn_adr_i >> 2;
-  else blockram_rdadr_i = wb1_adr_i >> 2;
+
+  //Read address handler
+  if (rdowner) begin
+	  blockram_rdadr_i = wbn_adr_i >> 2;
+  end else begin
+	  blockram_rdadr_i = wb1_adr_i >> 2;
+  end
 
   blockram_wren = 4'b0000;
+  
+  //Write address handler
   if (wrowner) begin
+	  
     blockram_wradr_i = wbn_adr_i >> 2;
-    if (endian_swap) begin
-      blockram_data_i = {wbn_dat_i[7:0], wbn_dat_i[15:8],
-        wbn_dat_i[23:16], wbn_dat_i[31:24]};
-      if (wbn_wrreq) blockram_wren = {wbn_sel_i[0], 
-        wbn_sel_i[1], wbn_sel_i[2], wbn_sel_i[3]};
-    end else begin
-      blockram_data_i = wbn_dat_i;
-      if (wbn_wrreq) blockram_wren = wbn_sel_i;
-    end
+    blockram_data_i = wbn_dat_i;
+      
+	if (wbn_wrreq) begin
+		blockram_wren = wbn_sel_i;
+	end
+	
   end else begin
-    blockram_wradr_i = wb1_adr_i >> 2;
+    
+	blockram_wradr_i = wb1_adr_i >> 2;
     blockram_data_i = wb1_dat_i;
-    if (wb1_wrreq) blockram_wren = wb1_sel_i;
+    
+	if (wb1_wrreq) begin
+		blockram_wren = wb1_sel_i;
+	end
+		
   end
+  
 end
 
 assign wb1_dat_o = blockram_data_o;
-assign wbn_dat = endian_swap ? {blockram_data_o[7:0], 
-  blockram_data_o[15:8], blockram_data_o[23:16],
-  blockram_data_o[31:24]} : blockram_data_o;
+assign wbn_dat = blockram_data_o;//endian_swap ? {blockram_data_o[7:0], 
+  //blockram_data_o[15:8], blockram_data_o[23:16],
+  //blockram_data_o[31:24]} : blockram_data_o;
+
+// Read/Write operation and request handler
 
 always @(wb1_cyc_i or wb1_stb_i or wb1_we_i or wb_rst_i or
   wbn_cyc_i or wbn_stb_i or wbn_we_i or rdowner or wrowner or
   wb1_ack or wbn_ack) begin
+	  
   wb1_rdreq = wb1_cyc_i && !wb1_we_i;
-  wbn_rdreq = wbn_cyc_i && wbn_stb_i && !wbn_we_i &&
-    !wbn_ack;
+  wbn_rdreq = wbn_cyc_i && wbn_stb_i && !wbn_we_i && !wbn_ack;
   wb1_wrreq = wb1_cyc_i && wb1_we_i;
-  wbn_wrreq = wbn_cyc_i && wbn_stb_i && wbn_we_i &&
-    !wbn_ack;
+  wbn_wrreq = wbn_cyc_i && wbn_stb_i && wbn_we_i && !wbn_ack;
 
   if (rdowner) begin
-    if (wb1_rdreq && !wbn_rdreq) rdowner = 1'b0;
-    else rdowner = 1'b1;
+    if (wb1_rdreq && !wbn_rdreq) begin
+		rdowner = 1'b0;
+	end else begin
+		rdowner = 1'b1;
+	end
   end else begin
-    if (!wb1_rdreq && wbn_rdreq) rdowner = 1'b1;
-    else rdowner = 1'b0;
+    if (!wb1_rdreq && wbn_rdreq) begin
+		rdowner = 1'b1;
+    end else begin
+		rdowner = 1'b0;
+	end
   end
 
   if (wrowner) begin
-    if (wb1_wrreq && !wbn_wrreq) wrowner = 1'b0;
-    else wrowner = 1'b1;
+    if (wb1_wrreq && !wbn_wrreq) begin
+		wrowner = 1'b0;
+	end else begin
+		wrowner = 1'b1;
+	end
   end else begin
-    if (!wb1_wrreq && wbn_wrreq) wrowner = 1'b1;
-    else wrowner = 1'b0;
+    if (!wb1_wrreq && wbn_wrreq) begin
+		wrowner = 1'b1;
+	end else begin
+		wrowner = 1'b0;
+	end
   end
 
   if (wb_rst_i) begin
@@ -303,7 +281,10 @@ always @(wb1_cyc_i or wb1_stb_i or wb1_we_i or wb_rst_i or
   end
 end
 
+//Ack handler
+
 assign wb1_ack_o = wb1_ack;
+
 always @(posedge wb_clk_i) begin
   wb1_ack <= 1'b0;
   wbn_ack <= 1'b0;

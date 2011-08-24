@@ -512,6 +512,7 @@ always @(posedge wb_clk) begin
   xuart_rx_q <= xuart_rx;
   xuart_cts_q <= xuart_cts;
 end
+
 assign ramwbs1_dat_i[31:0] = {uartwbm_dat_o[15:0], uartwbm_dat_o[15:0]}; 
 assign ramwbs1_adr_i = {uartwbm_adr_o[15:2], 2'b00};
 assign uartwbm_dat_i[15:0] = 
@@ -548,8 +549,8 @@ ts_xuart tsxuartcore(
   .uart_disable_i(xuart_disable)
 );
 
-*/
 
+*/
 
 /****************************************************************************
  * Syscon (misc control registers)
@@ -564,10 +565,36 @@ wire [40:0] dio, dio_oe;
 integer i;
 wire can_tx, can_wbaccess;
 reg [40:0] dio_reg;
-assign dio_pad = dio_reg;
+
+wire adc_clk, adc_a, adc_b, adc_c, adc_d;
+
+//Inject ADC wires into DIO port
+assign dio_pad = {dio_reg[40:22], adc_clk, adc_d, adc_c, adc_b, adc_a, dio_reg[16:0]};
+
+reg [15:0] buf16a;
+reg [3:0] load_ctr;
+
+wire buffer_full;
+assign buffer_full = (load_ctr == 4'b1111);	//Signals that the buffer is full of new data
+
+always@(posedge adc_clk) begin
+	
+	buf16a <= {adc_a, buf16a[15:1]};	//Shift in new data to the right
+	load_ctr <= load_ctr + 1;			//Increment load counter by 1
+	
+	if (buffer_full) begin				//If buffer is full of new data (counter is full), load blockram with new data
+		load_ctr <= 0;					//Reset counter
+		//load blockram with data
+	end
+
+end
+
+//Modified tristate assignment
 always @(*) begin
   for (i = 0; i <= 40; i = i + 1) begin
-    dio_reg[i] = dio_oe[i] ? dio[i] : 1'bz;
+	  if ( ( i < 17 ) | ( i > 21 ) ) begin		//Remove ADC pins from SBUS control
+		dio_reg[i] = dio_oe[i] ? dio[i] : 1'bz;
+	  end
   end
 
   /* DIO#7 is one of our latched bootstrap pins */
