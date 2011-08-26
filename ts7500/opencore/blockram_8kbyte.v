@@ -80,7 +80,7 @@ output [31:0] wb1_dat_o, wb2_dat_o, wb3_dat_o, wb4_dat_o, wb5_dat_o;
 output wb1_ack_o, wb2_ack_o, wb3_ack_o, wb4_ack_o, wb5_ack_o;
 
 // Set if wb1 and wb2 are opposite endianness
-parameter endian_swap = 1'b0;
+//parameter endian_swap = 1'b0;
 
 reg wb1_ack, wbn_ack;
 wire [31:0] wbn_dat, wbn_dat_i, wbn_adr_i;
@@ -191,13 +191,12 @@ lattice_ram blockram3 (
   .Q(blockram_data_o[31:24])
 );
 
-reg rdowner = 1'b0;
-reg wrowner = 1'b0;
+reg rdowner = 1'b0;	//SBUS is reading when 1, otherwise internal read
+reg wrowner = 1'b0;	//SBUS is writing when 1, otherwise internal write
 reg wb1_rdreq, wbn_rdreq, wb1_wrreq, wbn_wrreq;
 
 always @(rdowner or wrowner or wb1_adr_i or wbn_adr_i or wb1_dat_i
-  or wbn_dat_i or wb1_sel_i or wbn_sel_i or rdowner or wrowner
-  or wbn_wrreq or wb1_wrreq or endian_swap) begin
+  or wbn_dat_i or wb1_sel_i or wbn_sel_i or wbn_wrreq or wb1_wrreq) begin
 
   //Read address handler
   if (rdowner) begin
@@ -232,9 +231,7 @@ always @(rdowner or wrowner or wb1_adr_i or wbn_adr_i or wb1_dat_i
 end
 
 assign wb1_dat_o = blockram_data_o;
-assign wbn_dat = blockram_data_o;//endian_swap ? {blockram_data_o[7:0], 
-  //blockram_data_o[15:8], blockram_data_o[23:16],
-  //blockram_data_o[31:24]} : blockram_data_o;
+assign wbn_dat = blockram_data_o;
 
 // Read/Write operation and request handler
 
@@ -286,8 +283,10 @@ end
 assign wb1_ack_o = wb1_ack;
 
 always @(posedge wb_clk_i) begin
+	
   wb1_ack <= 1'b0;
   wbn_ack <= 1'b0;
+  
   if (wb1_rdreq && !rdowner && !wb1_ack && wb1_stb_i) begin
     wb1_ack <= 1'b1;
   end else if (wbn_rdreq && rdowner && !wbn_ack) begin
@@ -299,6 +298,7 @@ always @(posedge wb_clk_i) begin
   end else if (wbn_wrreq && wrowner && !wbn_ack) begin
     wbn_ack <= 1'b1;
   end
+  
 end
 
 endmodule

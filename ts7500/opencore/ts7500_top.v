@@ -308,7 +308,6 @@ wire [7:0] xuart_disable = {!xuart7_opt[0], !xuart6_opt[0], !xuart5_opt[0],
   !xuart0_opt[0]};
 wire xuart_opt = (xuart_disable[7:0] != 8'hff);
 
-
 /****************************************************************************
  * XUART blockram 
  ****************************************************************************/
@@ -566,35 +565,41 @@ integer i;
 wire can_tx, can_wbaccess;
 reg [40:0] dio_reg;
 
-wire adc_clk, adc_a, adc_b, adc_c, adc_d;
+assign dio_pad = {dio_reg[40:0]};
 
-//Inject ADC wires into DIO port
-assign dio_pad = {dio_reg[40:22], adc_clk, adc_d, adc_c, adc_b, adc_a, dio_reg[16:0]};
+//ADC inputs from header
+wire adc_clk = dio_pad[21];
 
-reg [15:0] buf16a;
+wire buffer_full = (load_ctr == 4'b1111);	//Signals that the buffer is full of new data
+
+reg [15:0] buf16a, buf16b, buf16c, buf16d;
 reg [3:0] load_ctr;
 
-wire buffer_full;
-assign buffer_full = (load_ctr == 4'b1111);	//Signals that the buffer is full of new data
-
+//16 bit SIPO shift registers to buffer incoming ADC bitstreams
 always@(posedge adc_clk) begin
 	
-	buf16a <= {adc_a, buf16a[15:1]};	//Shift in new data to the right
-	load_ctr <= load_ctr + 1;			//Increment load counter by 1
+	buf16a <= {dio_pad[17], buf16a[15:1]};	//Output A
+	buf16b <= {dio_pad[18], buf16b[15:1]};	//Output B
+	buf16c <= {dio_pad[19], buf16c[15:1]};	//Output C
+	buf16d <= {dio_pad[20], buf16d[15:1]};	//Output D
 	
-	if (buffer_full) begin				//If buffer is full of new data (counter is full), load blockram with new data
+	load_ctr <= load_ctr + 1'd1;		//Increment load counter by 1
+	
+	if (buffer_full) begin			//If buffer is full of new data (counter is full), load blockram with new data
 		load_ctr <= 0;					//Reset counter
-		//load blockram with data
+		
+		//ADD: load blockram with data
+		
 	end
 
 end
 
-//Modified tristate assignment
+assign dio_oe[21:17] = 5'b0;	//Pins 17-21 set to inputs for ADC
+
 always @(*) begin
+	
   for (i = 0; i <= 40; i = i + 1) begin
-	  if ( ( i < 17 ) | ( i > 21 ) ) begin		//Remove ADC pins from SBUS control
 		dio_reg[i] = dio_oe[i] ? dio[i] : 1'bz;
-	  end
   end
 
   /* DIO#7 is one of our latched bootstrap pins */
@@ -707,20 +712,29 @@ syscon #(
   .pllphase_o(pllphase),
   .internal_osc_o(internal_osc),
   .can_wbaccess_i(can_wbaccess),
-  .can_enable_o(can_enable)
+  .can_enable_o(can_enable),
+  
+  .adc_data_a(buf16a),
+  .adc_data_b(buf16b),
+  .adc_data_c(buf16c),
+  .adc_data_d(buf16d)
 );
 
 
 /****************************************************************************
- * SPI SBUS blockram window (for XUART 8kbyte memory access)
+ * SPI SBUS blockram window - Repurposed to be general blockram (8kB)
  ****************************************************************************/
+ 
 reg mwinwbs_en;
 wire [15:0] mwinwbs_dat_o;
 wire mwinwbs_ack_o;
+
 wb_memwindow16to32 mwincore(
-  .wb_clk_i(wb_clk && xuart_opt),
+
+  .wb_clk_i(wb_clk),
   .wb_rst_i(wb_rst),
 
+   // From SBUS
   .wb_cyc_i(spiwbm_cyc_o && mwinwbs_en),
   .wb_stb_i(spiwbm_stb_o && mwinwbs_en),
   .wb_we_i(spiwbm_we_o),
@@ -728,7 +742,8 @@ wb_memwindow16to32 mwincore(
   .wb_dat_i(spiwbm_dat_o),
   .wb_dat_o(mwinwbs_dat_o),
   .wb_ack_o(mwinwbs_ack_o),
-  
+   
+   // To blockram
   .wbm_cyc_o(ramwbs2_cyc_i),
   .wbm_stb_o(ramwbs2_stb_i),
   .wbm_we_o(ramwbs2_we_i),
@@ -737,9 +752,8 @@ wb_memwindow16to32 mwincore(
   .wbm_dat_i(ramwbs2_dat_o),
   .wbm_ack_i(ramwbs2_ack_o),
   .wbm_sel_o(ramwbs2_sel_i)
+  
 );
-
-
 
 /****************************************************************************
  * SJA1000C compatible CAN controller
@@ -774,7 +788,7 @@ can_top cancore(
 /****************************************************************************
  * SPI SBUS CAN window (for 256 by 8-bit SJA1000C CAN address space)
  ****************************************************************************/
- 
+ /*
  
  
 reg mwinwbs2_en;
@@ -801,7 +815,7 @@ wb_memwindow16to8 mwincore2(
   .wbm_ack_i(canwbs_ack_o)
 );
 
-
+*/
 
 /****************************************************************************
  * SPI SBUS address decode
@@ -809,14 +823,17 @@ wb_memwindow16to8 mwincore2(
 assign gpio_a23_pad = 1'bz;
 assign gpio_a22_pad = 1'bz;
 always @(*) begin
+	
   sdwbs1_en = 1'b0;
+  
   //xuwbs_en = 1'b0;
+  
   mwinwbs_en = 1'b0;
   spiwbs_en = 1'b0;
   scwbs_en = 1'b0;
   spiwbm2_en = 1'b0;
   
-  mwinwbs2_en = 1'b0;
+  //mwinwbs2_en = 1'b0;
 
   spiwbm_dat_i = 16'hxxxx;
   spiwbm_ack_i = 1'b1;
@@ -859,9 +876,9 @@ always @(*) begin
   end
   2'd2: begin
     if (spiwbm_adr_o[4:0] >= 5'h10) begin
-      mwinwbs2_en = 1'b1;
-      spiwbm_dat_i = mwinwbs2_dat_o;
-      spiwbm_ack_i = can_opt ? mwinwbs2_ack_o : 1'b1;
+      //mwinwbs2_en = 1'b1;
+      //spiwbm_dat_i = mwinwbs2_dat_o;
+      //spiwbm_ack_i = can_opt ? mwinwbs2_ack_o : 1'b1;
     end else begin
       spiwbs_en = 1'b1;
       spiwbm_dat_i = spiwbs_dat_o;

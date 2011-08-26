@@ -137,8 +137,18 @@ module syscon(
   mode3_i,
   pllphase_o,
   can_enable_o,
-  can_wbaccess_i
+  can_wbaccess_i,
+  
+  adc_data_a,
+  adc_data_b,
+  adc_data_c,
+  adc_data_d
 );
+
+input [15:0] adc_data_a;
+input [15:0] adc_data_b;
+input [15:0] adc_data_c;
+input [15:0] adc_data_d;
 
 input wb_clk_i, wb_rst_i, wb_cyc_i, wb_stb_i, wb_we_i;
 input [31:0] wb_adr_i;
@@ -357,6 +367,10 @@ always @(*) begin
   end
   5'h16: wb_dat = {{4{1'bx}}, can_enable, pllphase, mode3_i, resetsw_en,
     scratch, mode2_i, mode1_i};
+  5'h18: wb_dat = adc_data_a[15:0];
+  5'h1a: wb_dat = adc_data_b[15:0];
+  5'h1c: wb_dat = adc_data_c[15:0];
+  5'h1e: wb_dat = adc_data_d[15:0];
   endcase
 end
 

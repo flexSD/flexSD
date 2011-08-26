@@ -69,13 +69,23 @@ input wbm_ack_i;
 reg [15:0] adr;
 reg [15:0] wb_dat;
 reg wbm_cyc, wbm_stb, wb_ack;
+
 always @(posedge wb_clk_i or posedge wb_rst_i) begin
+	
   if (wb_rst_i) begin
+	  
     adr <= 16'd0;
+	
   end else begin
-    if (wb_cyc_i && wb_stb_i && wb_we_i && !wb_adr_i[1]) adr <= wb_dat_i;
-    if (wbm_cyc && wbm_stb && wbm_ack_i) adr <= adr + 2'd2;
+    
+	//Write incoming address to adr register
+	if (wb_cyc_i && wb_stb_i && wb_we_i && !wb_adr_i[1]) adr <= wb_dat_i;
+	
+	//End of write cycle (wbm_ack_i asserted), increment address:
+    if (wbm_cyc && wbm_stb && wbm_ack_i) adr <= adr + 2'd2;	
+
   end
+  
 end
 
 assign wbm_cyc_o = wbm_cyc;
@@ -85,22 +95,39 @@ assign wbm_dat_o[31:0] = {wb_dat_i[15:0], wb_dat_i[15:0]};
 assign wb_dat_o = wb_dat;
 assign wbm_adr_o = {16'd0, adr[15:2], 2'b00};
 assign wbm_we_o = wb_we_i;
+
+//Determine which set of blockram to address:
 assign wbm_sel_o = adr[1] ? 4'b1100 : 4'b0011;
+
 always @(*) begin
+  
+  //Address is 0x3E, read data from blockram and return it to calling bus
   if (wb_adr_i[1]) begin
+	
+	//Cycle, strobe, and ack lanes routed to blockram
     wbm_cyc = wb_cyc_i;
     wbm_stb = wb_stb_i;
     wb_ack = wbm_ack_i;
+	
+	//Determines which set of blockram to read from:
     wb_dat = adr[1] ? wbm_dat_i[31:16] : wbm_dat_i[15:0];
+	
+  //Address is 0x3C, return memory window address to calling bus
   end else begin
+	
+	//Blockram not addressed
     wbm_cyc = 1'b0;
     wbm_stb = 1'bx;
     wb_ack = wb_cyc_i && wb_stb_i;
     wb_dat = adr;
+	
   end
+  
 end
+
 endmodule
 
+//NOT USED IN THIS IMPLEMENTATION:
 
 /* This core is a simple core to allow access to an up to 64Kbyte WISHBONE
  * address space via a 4 16-bit register window.  
