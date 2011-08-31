@@ -33,11 +33,16 @@ module bram_logging(
   wb_adr_o,
   wb_dat_o,
   wb_dat_i,
-  wb_ack_i
+  wb_ack_i,
+  
+  buf_a,
+  buf_b,
+  buf_c,
+  buf_d
 );
 
 /****************************************************************************
-* Inputs and Outputs
+* Inputs, Outputs, Registers
 * 
 * Notes:
 * 1) ADC inputs come directly from the dio_pad register in the top module
@@ -46,6 +51,10 @@ module bram_logging(
 * 3) Wishbone clock is provided to the blockram module from the top module
 * 
 ****************************************************************************/
+
+//Reset signal
+
+input			reset;
 
 //Physical ADC inputs
 input 			adc_a;
@@ -67,12 +76,27 @@ output 	[3:0] 	wb_sel_o;
 output 	[31:0] 	wb_adr_o;
 output 	[31:0] 	wb_dat_o;
 
+//debugging
+
+output 	[31:0]	buf_a, buf_b, buf_c, buf_d;
+
+//Internal registers
+
+reg  			r_wb_cyc_o;
+reg  			r_wb_stb_o;
+reg  			r_wb_we_o;
+reg		[3:0]	r_wb_sel_o;
+reg  	[31:0]	r_wb_adr_o;
+reg  	[31:0]	r_wb_dat_o;
+reg  	[31:0]	r_wb_dat_i;
+reg  			r_wb_ack_i;
+
 
 /**********************
 * ADC data processing *
 **********************/
 
-reg [31:0] buf16a, buf16b, buf16c, buf16d;
+reg [31:0] buf32a, buf32b, buf32c, buf32d;
 reg [4:0] ctr_32;
 
 wire buff_full = (ctr == 5'b11111);			//Signals that the buffer is full of 32 bits of new data
@@ -80,27 +104,32 @@ wire buff_full = (ctr == 5'b11111);			//Signals that the buffer is full of 32 bi
 //32 bit SIPO shift registers to buffer incoming ADC bitstreams
 always@(posedge adc_clk) begin
 	
-	buf16a <= {dio_pad[17], buf16a[31:1]};	//Output A
-	buf16b <= {dio_pad[18], buf16b[31:1]};	//Output B
-	buf16c <= {dio_pad[19], buf16c[31:1]};	//Output C
-	buf16d <= {dio_pad[20], buf16d[31:1]};	//Output D
+	buf32a <= {adc_a, buf32a[31:1]};	//Output A
+	buf32b <= {adc_b, buf32b[31:1]};	//Output B
+	buf32c <= {adc_c, buf32c[31:1]};	//Output C
+	buf32d <= {adc_d, buf32d[31:1]};	//Output D
 	
-	ctr_32 <= ctr_32 + 1'd1;				//Increment load counter by 1
+	ctr_32 <= ctr_32 + 1'd1;			//Increment load counter by 1
 	
-	if (buff_full) begin					//If buffer is full of new data (counter is full), load blockram with new data
-		ctr_32 <= 0;							//Reset counter
+	if (buff_full) begin				//If buffer is full of new data (counter is full), load blockram with new data
+		ctr_32 <= 0;					//Reset counter
 	end
 
 end
+
+assign buf_a = buf32a;
+assign buf_b = buf32b;
+assign buf_c = buf32c;
+assign buf_d = buf32d;
 
 /***********************************
 * Blockram interface state machine *, doesn't matter its state as long as cycle is unasserted
 ***********************************/
 
-`define STATE_WAIT_FOR_DATA  		  2'b00;	//Waiting for buffer to fill
-`define STATE_WRITE_BRAM			  2'b01;	//Write buffer data to blockram
-`define STATE_WAIT_FOR_WB_ACK		  2'b10;	//Waits for wishbone ack signal from blockram module
-`define STATE_WAIT_FOR_UNASSERT		  2'b11;	//Wait for buff_full signal to unassert (synchronizes clock domains)
+parameter STATE_WAIT_FOR_DATA  		= 2'b00;	//Waiting for buffer to fill
+parameter STATE_WRITE_BRAM			= 2'b01;	//Write buffer data to blockram
+parameter STATE_WAIT_FOR_WB_ACK		= 2'b10;	//Waits for wishbone ack signal from blockram module
+parameter STATE_WAIT_FOR_UNASSERT	= 2'b11;	//Wait for buff_full signal to unassert (synchronizes clock domains)
 
 parameter test_value 				= 32'hABCDEF01;	//Test value (hex): ABCD and EF01 (16 bits returned at a time in linux)
 
@@ -114,41 +143,41 @@ assign all_written = (&adr_ctr);
 always @(posedge wb_clk_i) begin
 	
 	//Reset condition
-	if (reset) begin
-		state <= `STATE_WAIT_FOR_DATA;
-	end
+	//if (reset) begin
+	//	state <= STATE_WAIT_FOR_DATA;
+//	end
 	
 	//Main state machine
 	case(state)
 		
-		`STATE_WAIT_FOR_DATA: begin
+		STATE_WAIT_FOR_DATA: begin
 			
 			if (buff_full) begin		//Checks for full buffer
 				//Checks if all the ram has been written to (for testing), does nothing if it has all been written to
-				if !(all_written) state <= `STATE_WRITE_BRAM;	
+				if (!all_written) state <= STATE_WRITE_BRAM;	
 			end
 			
 			//Wishbone bus in inactive mode
-			wb_cyc_o <= 1'b0;	//Cycle signal unasserted - bus is inactive
-			wb_stb_o <= 1'bx;	//Strobe is dont care as long as cycle is unasserted
+			r_wb_cyc_o <= 1'b0;	//Cycle signal unasserted - bus is inactive
+			r_wb_stb_o <= 1'bx;	//Strobe is dont care as long as cycle is unasserted
 			
 		end
 		
-		`STATE_WRITE_BRAM: begin
+		STATE_WRITE_BRAM: begin
 			
 			//Signal valid bus transmission, cycle and strobe asserted
 			
-			wb_cyc_o <= 1'b1;
-			wb_stb_o <= 1'b1;
+			r_wb_cyc_o <= 1'b1;
+			r_wb_stb_o <= 1'b1;
 			
 			//Signal blockram write by asserting the wishbone write_enable signal
 			
-			wb_we_o <= 1'b1;
+			r_wb_we_o <= 1'b1;
 			
 			//Set data, select, and address lanes to appropriate values
 			
-			wb_dat_o <= test_value;			//Testing
-			wb_sel_o <= 4'b1111;			//32 bit write (writes all 4 brams at once)
+			r_wb_dat_o <= test_value;			//Testing
+			r_wb_sel_o <= 4'b1111;			//32 bit write (writes all 4 brams at once)
 			
 			/*
 			Addressing scheme:
@@ -164,15 +193,15 @@ always @(posedge wb_clk_i) begin
 			*/
 			
 			//wb_adr_o <= {16'dx, 3'dx, adr_ctr, 2'dx};
-			wb_adr_o <= {16'd0, 3'd0, adr_ctr, 2'd0};		//Testing with zeros instead of don't cares for debugging purposes
+			r_wb_adr_o <= {16'd0, 3'd0, adr_ctr, 2'd0};		//Testing with zeros instead of don't cares for debugging purposes
 			
 			//Data sent, now wait for receiving module's ack
 			
-			state <= `STATE_WAIT_FOR_WB_ACK;
+			state <= STATE_WAIT_FOR_WB_ACK;
 			
 		end
 		
-		`STATE_WAIT_FOR_WB_ACK: begin
+		STATE_WAIT_FOR_WB_ACK: begin
 			
 			//Check for ack assertion by bram module
 			
@@ -180,33 +209,44 @@ always @(posedge wb_clk_i) begin
 			
 				//Unassert cycle and strobe signals, ends wishbone transmission
 				
-				wb_cyc_o <= 1'b0;
-				wb_stb_o <= 1'bx;
+				r_wb_cyc_o <= 1'b0;
+				r_wb_stb_o <= 1'bx;
 				
 				//Data was successfully received, so increment address counter
 				
 				adr_ctr <= adr_ctr + 1;
 				
 				//Now wait for buff_full signal to be unasserted
-				
-				state <= `STATE_WAIT_FOR_UNASSERT;
+			
+				state <= STATE_WAIT_FOR_UNASSERT;
 
 			end
 			
 		end
 		
-		`STATE_WAIT_FOR_UNASSERT: begin
+		STATE_WAIT_FOR_UNASSERT: begin
 			
 			//Syncronize clock domains with modulator clock
 			
 			if (!buff_full) begin
-				state <= `STATE_WAIT_FOR_DATA;
+				state <= STATE_WAIT_FOR_DATA;
 			end
 			
 		end
 	
-	end case
+	endcase
 	
 end
+
+//Assign statements
+
+assign  wb_cyc_o = r_wb_cyc_o;
+assign  wb_stb_o = r_wb_stb_o;
+assign  wb_we_o  = r_wb_we_o;
+assign  wb_sel_o = r_wb_sel_o;
+assign  wb_adr_o = r_wb_adr_o;
+assign  wb_dat_o = r_wb_dat_o;
+assign  wb_dat_i = r_wb_dat_i;
+assign  wb_ack_i = r_wb_ack_i;
 
 endmodule

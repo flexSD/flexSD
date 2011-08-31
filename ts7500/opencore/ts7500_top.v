@@ -567,8 +567,10 @@ reg [40:0] dio_reg;
 
 assign dio_pad = {dio_reg[40:0]};
 
+wire [31:0] buf32a, buf32b, buf32c, buf32d;
+
 //Blockram data logging module instatiation:
-adc_bram bram_logging(
+bram_logging adc_logging(
 
 	.reset(rst),
 
@@ -587,7 +589,12 @@ adc_bram bram_logging(
 	.wb_adr_o(ramwbs1_ard_i),
 	.wb_dat_o(ramwbs1_dat_i),
 	.wb_dat_i(ramwbs1_dat_o),
-	.wb_ack_i(ramwbs1_ack_o)
+	.wb_ack_i(ramwbs1_ack_o),
+	
+	.buf_a(buf32a),
+	.buf_b(buf32b),
+	.buf_c(buf32c),
+	.buf_d(buf32d)
 	
 );
 
@@ -711,10 +718,10 @@ syscon #(
   .can_wbaccess_i(can_wbaccess),
   .can_enable_o(can_enable),
   
-  .adc_data_a(buf16a),
-  .adc_data_b(buf16b),
-  .adc_data_c(buf16c),
-  .adc_data_d(buf16d)
+  .adc_data_a(buf32a[15:0]),
+  .adc_data_b(buf32b[15:0]),
+  .adc_data_c(buf32c[15:0]),
+  .adc_data_d(buf32d[15:0])
 );
 
 
