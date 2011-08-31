@@ -323,10 +323,10 @@ wire [3:0] ramwbs2_sel_i, ramwbs1_sel_i;
 assign sbus_enabled = 1'b1;
 assign dcs_clk = pll_75mhz;
 blockram_8kbyte sramcore(
-  .wb_clk_i(dcs_clk && xuart_opt),
+  .wb_clk_i(dcs_clk),		//Removed xuart_opt check from clock
   .wb_rst_i(rst),
 
-  /* To XUART */
+  /* To bram write controller module */
   .wb1_cyc_i(ramwbs1_cyc_i),
   .wb1_stb_i(ramwbs1_stb_i),
   .wb1_we_i(ramwbs1_we_i),
@@ -567,32 +567,29 @@ reg [40:0] dio_reg;
 
 assign dio_pad = {dio_reg[40:0]};
 
-//ADC inputs from header
-wire adc_clk = dio_pad[21];
+//Blockram data logging module instatiation:
+adc_bram bram_logging(
 
-wire buffer_full = (load_ctr == 4'b1111);	//Signals that the buffer is full of new data
+	.reset(rst),
 
-reg [15:0] buf16a, buf16b, buf16c, buf16d;
-reg [3:0] load_ctr;
-
-//16 bit SIPO shift registers to buffer incoming ADC bitstreams
-always@(posedge adc_clk) begin
+	.adc_a(dio_pad[17]),
+	.adc_b(dio_pad[18]),
+	.adc_c(dio_pad[19]),
+	.adc_d(dio_pad[20]),
+	.adc_clk(dio_pad[21]),
 	
-	buf16a <= {dio_pad[17], buf16a[15:1]};	//Output A
-	buf16b <= {dio_pad[18], buf16b[15:1]};	//Output B
-	buf16c <= {dio_pad[19], buf16c[15:1]};	//Output C
-	buf16d <= {dio_pad[20], buf16d[15:1]};	//Output D
+	.wb_clk_i(dcs_clk),
 	
-	load_ctr <= load_ctr + 1'd1;		//Increment load counter by 1
+	.wb_cyc_o(ramwbs1_cyc_i),
+	.wb_stb_o(ramwbs1_stb_i),
+	.wb_we_o(ramwbs1_we_i),
+	.wb_sel_o(ramwbs1_sel_i),
+	.wb_adr_o(ramwbs1_ard_i),
+	.wb_dat_o(ramwbs1_dat_i),
+	.wb_dat_i(ramwbs1_dat_o),
+	.wb_ack_i(ramwbs1_ack_o)
 	
-	if (buffer_full) begin			//If buffer is full of new data (counter is full), load blockram with new data
-		load_ctr <= 0;					//Reset counter
-		
-		//ADD: load blockram with data
-		
-	end
-
-end
+);
 
 assign dio_oe[21:17] = 5'b0;	//Pins 17-21 set to inputs for ADC
 

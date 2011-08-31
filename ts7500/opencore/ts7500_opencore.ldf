@@ -45,6 +45,9 @@
         <Source name="pll.ipx" type="IPX_Module">
             <Options/>
         </Source>
+        <Source name="adc_bram.v" type="Verilog">
+            <Options/>
+        </Source>
         <Source name="ts7500_opencore.lpf" type="Logic Preference">
             <Options/>
         </Source>
