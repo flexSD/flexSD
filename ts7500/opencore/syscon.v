@@ -142,8 +142,12 @@ module syscon(
   adc_data_a,
   adc_data_b,
   adc_data_c,
-  adc_data_d
+  adc_data_d,
+  
+  state_i
 );
+
+input [1:0] state_i;
 
 input [15:0] adc_data_a;
 input [15:0] adc_data_b;
@@ -370,7 +374,7 @@ always @(*) begin
   5'h18: wb_dat = adc_data_a[15:0];
   5'h1a: wb_dat = adc_data_b[15:0];
   5'h1c: wb_dat = adc_data_c[15:0];
-  5'h1e: wb_dat = adc_data_d[15:0];
+  5'h1e: wb_dat = {14'b0, state_i[1:0]};
   endcase
 end
 

@@ -48,6 +48,9 @@
         <Source name="adc_bram.v" type="Verilog">
             <Options/>
         </Source>
+        <Source name="adc_input/adc_input.spf" type="Simulation Project File">
+            <Options/>
+        </Source>
         <Source name="ts7500_opencore.lpf" type="Logic Preference">
             <Options/>
         </Source>

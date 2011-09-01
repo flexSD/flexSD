@@ -1,3 +1,4 @@
+`timescale 1ns / 100ps
 /****************************************************************************
 * Creator: Dan Kouba
 * Version: 1.0
@@ -35,10 +36,14 @@ module bram_logging(
   wb_dat_i,
   wb_ack_i,
   
+  state_o,
+  
   buf_a,
   buf_b,
   buf_c,
   buf_d
+  
+  //,buff_full_o
 );
 
 /****************************************************************************
@@ -75,10 +80,12 @@ output 			wb_we_o;
 output 	[3:0] 	wb_sel_o;
 output 	[31:0] 	wb_adr_o;
 output 	[31:0] 	wb_dat_o;
+//output          buff_full_o;
 
 //debugging
 
 output 	[31:0]	buf_a, buf_b, buf_c, buf_d;
+output [1:0] state_o;
 
 //Internal registers
 
@@ -96,10 +103,12 @@ reg  			r_wb_ack_i;
 * ADC data processing *
 **********************/
 
-reg [31:0] buf32a, buf32b, buf32c, buf32d;
-reg [4:0] ctr_32;
+reg [31:0] buf32a = 32'b0;reg [31:0] buf32b = 32'b0;
+reg [31:0] buf32c = 32'b0;
+reg [31:0] buf32d = 32'b0;
+reg [4:0] ctr_32 = 5'b0;
 
-wire buff_full = (ctr == 5'b11111);			//Signals that the buffer is full of 32 bits of new data
+wire buff_full = (ctr_32 == 5'b11111);			//Signals that the buffer is full of 32 bits of new data
 
 //32 bit SIPO shift registers to buffer incoming ADC bitstreams
 always@(posedge adc_clk) begin
@@ -109,7 +118,7 @@ always@(posedge adc_clk) begin
 	buf32c <= {adc_c, buf32c[31:1]};	//Output C
 	buf32d <= {adc_d, buf32d[31:1]};	//Output D
 	
-	ctr_32 <= ctr_32 + 1'd1;			//Increment load counter by 1
+	ctr_32 <= ctr_32 + 1'b1;			//Increment load counter by 1
 	
 	if (buff_full) begin				//If buffer is full of new data (counter is full), load blockram with new data
 		ctr_32 <= 0;					//Reset counter
@@ -121,9 +130,11 @@ assign buf_a = buf32a;
 assign buf_b = buf32b;
 assign buf_c = buf32c;
 assign buf_d = buf32d;
+//assign buff_full_o = buff_full;
 
-/***********************************
-* Blockram interface state machine *, doesn't matter its state as long as cycle is unasserted
+/*******************			
+****************
+* Blockram interface state machine *
 ***********************************/
 
 parameter STATE_WAIT_FOR_DATA  		= 2'b00;	//Waiting for buffer to fill
@@ -143,19 +154,40 @@ assign all_written = (&adr_ctr);
 always @(posedge wb_clk_i) begin
 	
 	//Reset condition
-	//if (reset) begin
-	//	state <= STATE_WAIT_FOR_DATA;
-//	end
+	if (reset) begin
+	    
+		//State machine initializtion
+		state <= STATE_WAIT_FOR_DATA;
+		adr_ctr <= 11'b0;
+		
+		/*Shift register initialization
+		buf32a <= 32'b0;
+		buf32b <= 32'b0;
+		buf32c <= 32'b0;
+		buf32d <= 32'b0;
+		ctr_32 <= 5'b0;
+		*/
+		
+		//Wishbone interface initializtion
+		r_wb_cyc_o <= 1'b0;
+  		r_wb_stb_o <= 1'bx;
+		r_wb_we_o <= 1'b0;
+		r_wb_sel_o <= 4'b0;
+		r_wb_adr_o <= 32'b0;
+		r_wb_dat_o <= 32'b0;
+		r_wb_dat_i <= 32'b0;
+		
+	end
 	
 	//Main state machine
 	case(state)
 		
 		STATE_WAIT_FOR_DATA: begin
 			
-			if (buff_full) begin		//Checks for full buffer
+			//if (buff_full) begin		//Checks for full buffer
 				//Checks if all the ram has been written to (for testing), does nothing if it has all been written to
-				if (!all_written) state <= STATE_WRITE_BRAM;	
-			end
+				state <= STATE_WRITE_BRAM;	
+			//end
 			
 			//Wishbone bus in inactive mode
 			r_wb_cyc_o <= 1'b0;	//Cycle signal unasserted - bus is inactive
@@ -214,7 +246,7 @@ always @(posedge wb_clk_i) begin
 				
 				//Data was successfully received, so increment address counter
 				
-				adr_ctr <= adr_ctr + 1;
+				adr_ctr <= adr_ctr + 1'b1;
 				
 				//Now wait for buff_full signal to be unasserted
 			
@@ -228,9 +260,9 @@ always @(posedge wb_clk_i) begin
 			
 			//Syncronize clock domains with modulator clock
 			
-			if (!buff_full) begin
+			//if (!buff_full) begin
 				state <= STATE_WAIT_FOR_DATA;
-			end
+			//end
 			
 		end
 	
@@ -246,7 +278,8 @@ assign  wb_we_o  = r_wb_we_o;
 assign  wb_sel_o = r_wb_sel_o;
 assign  wb_adr_o = r_wb_adr_o;
 assign  wb_dat_o = r_wb_dat_o;
-assign  wb_dat_i = r_wb_dat_i;
-assign  wb_ack_i = r_wb_ack_i;
+
+//Debugging
+assign state_o = state;
 
 endmodule
