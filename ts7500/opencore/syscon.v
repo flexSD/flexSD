@@ -104,6 +104,7 @@ module syscon(
   wb_clk_i,
   wb_rst_i,
 
+
   wb_cyc_i,
   wb_stb_i,
   wb_we_i,

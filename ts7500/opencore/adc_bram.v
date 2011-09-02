@@ -96,7 +96,6 @@ reg		[3:0]	r_wb_sel_o;
 reg  	[31:0]	r_wb_adr_o;
 reg  	[31:0]	r_wb_dat_o;
 reg  	[31:0]	r_wb_dat_i;
-reg  			r_wb_ack_i;
 
 
 /**********************
