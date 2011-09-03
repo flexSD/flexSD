@@ -36,14 +36,11 @@ module bram_logging(
   wb_dat_i,
   wb_ack_i,
   
-  state_o,
-  
   buf_a,
   buf_b,
   buf_c,
   buf_d
   
-  //,buff_full_o
 );
 
 /****************************************************************************
@@ -62,6 +59,7 @@ module bram_logging(
 input			reset;
 
 //Physical ADC inputs
+
 input 			adc_a;
 input 			adc_b;
 input 			adc_c;
@@ -69,6 +67,7 @@ input 			adc_d;
 input 			adc_clk;
 
 //Wishbone bus to blockram_8kbyte.v module
+
 input 			wb_clk_i;	//Main 75Mhz wb clock
 
 input 			wb_ack_i;
@@ -80,12 +79,10 @@ output 			wb_we_o;
 output 	[3:0] 	wb_sel_o;
 output 	[31:0] 	wb_adr_o;
 output 	[31:0] 	wb_dat_o;
-//output          buff_full_o;
 
-//debugging
+//Debug output to syscon
 
 output 	[31:0]	buf_a, buf_b, buf_c, buf_d;
-output [1:0] state_o;
 
 //Internal registers
 
@@ -129,10 +126,8 @@ assign buf_a = buf32a;
 assign buf_b = buf32b;
 assign buf_c = buf32c;
 assign buf_d = buf32d;
-//assign buff_full_o = buff_full;
 
-/*******************			
-****************
+/***********************************
 * Blockram interface state machine *
 ***********************************/
 
@@ -183,10 +178,10 @@ always @(posedge wb_clk_i) begin
 		
 		STATE_WAIT_FOR_DATA: begin
 			
-			//if (buff_full) begin		//Checks for full buffer
+			if (buff_full && !all_written) begin		//Checks for full buffer
 				//Checks if all the ram has been written to (for testing), does nothing if it has all been written to
 				state <= STATE_WRITE_BRAM;	
-			//end
+			end
 			
 			//Wishbone bus in inactive mode
 			r_wb_cyc_o <= 1'b0;	//Cycle signal unasserted - bus is inactive
@@ -207,7 +202,7 @@ always @(posedge wb_clk_i) begin
 			
 			//Set data, select, and address lanes to appropriate values
 			
-			r_wb_dat_o <= test_value;			//Testing
+			r_wb_dat_o <= buf32d;			//Testing
 			r_wb_sel_o <= 4'b1111;			//32 bit write (writes all 4 brams at once)
 			
 			/*
@@ -223,8 +218,7 @@ always @(posedge wb_clk_i) begin
 			
 			*/
 			
-			//wb_adr_o <= {16'dx, 3'dx, adr_ctr, 2'dx};
-			r_wb_adr_o <= {16'd0, 3'd0, adr_ctr, 2'd0};		//Testing with zeros instead of don't cares for debugging purposes
+			r_wb_adr_o <= {16'bx, 3'bx, adr_ctr, 2'bx};
 			
 			//Data sent, now wait for receiving module's ack
 			
@@ -259,9 +253,9 @@ always @(posedge wb_clk_i) begin
 			
 			//Syncronize clock domains with modulator clock
 			
-			//if (!buff_full) begin
+			if (!buff_full) begin
 				state <= STATE_WAIT_FOR_DATA;
-			//end
+			end
 			
 		end
 	
@@ -277,8 +271,5 @@ assign  wb_we_o  = r_wb_we_o;
 assign  wb_sel_o = r_wb_sel_o;
 assign  wb_adr_o = r_wb_adr_o;
 assign  wb_dat_o = r_wb_dat_o;
-
-//Debugging
-assign state_o = state;
 
 endmodule

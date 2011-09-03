@@ -66,7 +66,8 @@ module blockram_8kbyte(
   wb5_stb_i,
   wb5_ack_o,
   wb5_we_i,
-  wb5_sel_i
+  wb5_sel_i,
+  
 );
 
 input wb_clk_i, wb_rst_i;
@@ -78,9 +79,6 @@ input wb5_cyc_i, wb5_stb_i, wb5_we_i;
 input [3:0] wb1_sel_i, wb2_sel_i, wb3_sel_i, wb4_sel_i, wb5_sel_i;
 output [31:0] wb1_dat_o, wb2_dat_o, wb3_dat_o, wb4_dat_o, wb5_dat_o;
 output wb1_ack_o, wb2_ack_o, wb3_ack_o, wb4_ack_o, wb5_ack_o;
-
-// Set if wb1 and wb2 are opposite endianness
-//parameter endian_swap = 1'b0;
 
 reg wb1_ack, wbn_ack;
 wire [31:0] wbn_dat, wbn_dat_i, wbn_adr_i;
@@ -280,8 +278,6 @@ end
 
 //Ack handler
 
-assign wb1_ack_o = wb1_ack;
-
 always @(posedge wb_clk_i) begin
 	
   wb1_ack <= 1'b0;
@@ -300,6 +296,8 @@ always @(posedge wb_clk_i) begin
   end
   
 end
+
+assign wb1_ack_o = wb1_ack;
 
 endmodule
 

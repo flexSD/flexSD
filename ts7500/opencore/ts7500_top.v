@@ -322,6 +322,10 @@ wire [31:0] ramwbs2_adr_i;
 wire [3:0] ramwbs2_sel_i, ramwbs1_sel_i;
 assign sbus_enabled = 1'b1;
 assign dcs_clk = pll_75mhz;
+
+//Debugging
+wire [3:0] debug;
+
 blockram_8kbyte sramcore(
   .wb_clk_i(dcs_clk),		//Removed xuart_opt check from clock
   .wb_rst_i(rst),
@@ -345,6 +349,7 @@ blockram_8kbyte sramcore(
   .wb2_adr_i(ramwbs2_adr_i),
   .wb2_ack_o(ramwbs2_ack_o),
   .wb2_sel_i(ramwbs2_sel_i)
+
 );
 
 
@@ -569,8 +574,6 @@ assign dio_pad = {dio_reg[40:0]};
 
 wire [31:0] buf32a, buf32b, buf32c, buf32d;
 
-wire [1:0] bram_state;
-
 //Blockram data logging module instatiation:
 bram_logging adc_logging(
 
@@ -588,12 +591,10 @@ bram_logging adc_logging(
 	.wb_stb_o(ramwbs1_stb_i),
 	.wb_we_o(ramwbs1_we_i),
 	.wb_sel_o(ramwbs1_sel_i),
-	.wb_adr_o(ramwbs1_ard_i),
+	.wb_adr_o(ramwbs1_adr_i),
 	.wb_dat_o(ramwbs1_dat_i),
 	.wb_dat_i(ramwbs1_dat_o),
 	.wb_ack_i(ramwbs1_ack_o),
-	
-	.state_o(bram_state),
 	
 	.buf_a(buf32a),
 	.buf_b(buf32b),
@@ -725,9 +726,10 @@ syscon #(
   .adc_data_a(buf32a[15:0]),
   .adc_data_b(buf32b[15:0]),
   .adc_data_c(buf32c[15:0]),
-  .adc_data_d(buf32d[15:0]),
+  .adc_data_d(buf32d[15:0])
   
-  .state_i(bram_state)
+  //.debug1(),
+  //.debug2()
 );
 
 
