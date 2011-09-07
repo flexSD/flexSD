@@ -565,9 +565,14 @@ integer i;
 wire can_tx, can_wbaccess;
 reg [40:0] dio_reg;
 assign dio_pad = dio_reg;
+
+assign dio_oe[21:17] = 5'b0;
+
 always @(*) begin
   for (i = 0; i <= 40; i = i + 1) begin
-    dio_reg[i] = dio_oe[i] ? dio[i] : 1'bz;
+	  if(i != 22) begin
+		dio_reg[i] = dio_oe[i] ? dio[i] : 1'bz;
+		end
   end
 
   /* DIO#7 is one of our latched bootstrap pins */
@@ -683,6 +688,34 @@ syscon #(
   .can_enable_o(can_enable)
 );
 
+biquad biquad(
+
+	.clock(dio_pad[21]),
+	.reset(rst),
+
+	.mainIn(dio_pad[20]),
+	.mainOut(dio_pad[22]),
+	
+	.ffGain1(24'd10),
+	.ffGain2(-24'd10),
+	.ffGain3(24'd10),
+	.ffGain4(-24'd10),
+	.ffGain5(24'd10),
+	
+	.fbGain1(24'd15),
+	.fbGain2(-24'd12),
+	.fbGain3(24'd20),
+	.fbGain4(-24'd13),
+	
+	.inlineGain1(3'd1),
+	.inlineGain2(3'd1),
+	.inlineGain3(3'd1),
+	.inlineGain4(3'd1),
+	
+	.fbGainSigmaDelta(24'd1)
+
+);
+
 
 /****************************************************************************
  * SPI SBUS blockram window (for XUART 8kbyte memory access)
@@ -773,6 +806,8 @@ wb_memwindow16to8 mwincore2(
   .wbm_dat_i(canwbs_dat_o),
   .wbm_ack_i(canwbs_ack_o)
 );
+
+
 
 
 
