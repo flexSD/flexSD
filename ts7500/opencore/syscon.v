@@ -136,8 +136,6 @@ module syscon(
   mode2_i,
   mode3_i,
   pllphase_o,
-  can_enable_o,
-  can_wbaccess_i
 );
 
 input wb_clk_i, wb_rst_i, wb_cyc_i, wb_stb_i, wb_we_i;
@@ -160,11 +158,8 @@ input clk_100mhz_i, mode1_i, mode2_i, mode3_i;
 input cpu_uart_txd_i;
 output cpu_uart_rxd_o;
 output [4:0] pllphase_o;
-output can_enable_o;
-input can_wbaccess_i;
 
 parameter wdog_default = 2;
-parameter can_opt = 0;
 
 localparam model = 16'h7500;
 localparam submodel = 4'h0;
@@ -216,16 +211,6 @@ always @(*) begin
 end
 
 wire [15:0] random;
-/*
-crc randnumgen(
-  .dat_i(clk_100mhz_i),
-  .clk_i(random_clk),
-  .clken_i(shift),
-  .rst_i(wb_rst_i),
-  .shift_i(1'b0),
-  .crc16_o(random)
-);
-*/
 /*
 SEDBA sedcore (
   .SEDENABLE(1'b1),
@@ -287,8 +272,7 @@ assign led_red_o = led_red;
 reg [1:0] scratch;
 reg [4:0] pllphase;
 assign pllphase_o = pllphase;
-reg can_enable;
-assign can_enable_o = can_enable;
+
 always @(posedge wb_clk_i or posedge wb_rst_i) begin
   if (wb_rst_i) begin
     dio_oe <= 41'd0;
@@ -305,13 +289,14 @@ always @(posedge wb_clk_i or posedge wb_rst_i) begin
     scratch <= 2'b00;
     resetsw_en <= 1'b0;
     pllphase <= 5'h13;
-    can_enable <= 1'b0;
   end else begin
+	  
     if (wb_cyc_i && wb_stb_i && wb_we_i) case (wb_adr_i[4:0])
       5'h2: begin
-        {rtc_scl_oe, rtc_sda_oe, rtc_scl, rtc_sda} <= wb_dat_i[11:8];
+        //{rtc_scl_oe, rtc_sda_oe, rtc_scl, rtc_sda} <= wb_dat_i[11:8];
         {led_grn, led_red} <= wb_dat_i[15:14];
       end
+	  /*
       5'h6: begin
         {dio[40:37], dio_oe[40:37]} <= wb_dat_i[11:4] & {2{dio_mask[40:37]}};
         {spi_clk, spi_si, spi_csn} <= wb_dat_i[3:1];
@@ -321,25 +306,26 @@ always @(posedge wb_clk_i or posedge wb_rst_i) begin
       5'h10: dio[20:5] <= wb_dat_i[15:0] & dio_mask[20:5];
       5'h12: dio_oe[20:5] <= wb_dat_i[15:0] & dio_mask[20:5];
       5'h16: begin
-        if (can_opt) can_enable <= wb_dat_i[11];
         pllphase <= wb_dat_i[10:6];
         scratch <= wb_dat_i[3:2];
         resetsw_en <= wb_dat_i[4];
       end
+	  */
     endcase
-    if (can_opt && can_wbaccess_i) can_enable <= 1'b1;
   end
 end
 
 reg wb_ack;
 assign wb_ack_o = wb_ack;
+
 always @(*) begin
   wb_ack = wb_cyc_i && wb_stb_i;
   wb_dat = 16'hxxxx;
   feed_en = 1'b0;
-
+  
+  /*
   case (wb_adr_i[4:0]) 
-  5'h0: wb_dat = model[15:0]; /* Model ID */ 
+  5'h0: wb_dat = model[15:0]; // Model ID
   5'h2: wb_dat = {led_grn, led_red, rtc_scl_i, rtc_sda_i, rtc_scl_oe,
     rtc_sda_oe, rtc_scl, rtc_sda, submodel[3:0], revision[3:0]};
   5'h4: wb_dat = random[15:0];
@@ -358,6 +344,7 @@ always @(*) begin
   5'h16: wb_dat = {{4{1'bx}}, can_enable, pllphase, mode3_i, resetsw_en,
     scratch, mode2_i, mode1_i};
   endcase
+  */
 end
 
 endmodule

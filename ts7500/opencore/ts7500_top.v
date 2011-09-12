@@ -195,25 +195,16 @@ assign gpio_a23_pad = 1'bz;
 assign eth_left_ledn_pad = gpio_a22_pad;
 assign eth_right_ledn_pad = gpio_a23_pad;
 
-parameter sdcard_opt = 1'b1;
-parameter can_opt = 1'b1;
 parameter spi_opt = 1'b1;
-/* software currently requires these to be enabled/disabled contiguously. */
-parameter xuart0_opt = 1'b1;
-parameter xuart1_opt = 1'b1;
-parameter xuart2_opt = 1'b1;
-parameter xuart3_opt = 1'b0;
-parameter xuart4_opt = 1'b0;
-parameter xuart5_opt = 1'b0;
-parameter xuart6_opt = 1'b0;
-parameter xuart7_opt = 1'b0;
 
 /****************************************************************************
  * Boilerplate FPGA configuration (clocks, PLL, DLL, reset) 
  ****************************************************************************/
+ 
 wire pll_75mhz, pll_75mhz_shifted, pll_100mhz;
 wire lock, lock2;
 wire [4:0] pllphase;
+
 pll clkgen (
   .CLK(fpga_25mhz_pad),
   .CLKOP(pll_75mhz),
@@ -225,14 +216,17 @@ pll clkgen (
   .DPHASE0(pllphase[1]),
   .WRDEL(pllphase[0])
 );
+
 pll2 clkgen2 (
   .CLK(fpga_25mhz_pad),
   .CLKOP(pll_100mhz),
   .LOCK(lock2)
 );
+
 wire internal_osc;
 reg [15:0] rst_counter = 16'd0;
 reg rstn = 1'b0;
+
 always @(posedge internal_osc) begin
   if (lock && lock2) rst_counter <= rst_counter + 1'b1;
   else begin
@@ -241,6 +235,7 @@ always @(posedge internal_osc) begin
   end
   if (rst_counter[15]) rstn <= 1'b1;
 end
+
 wire rst = !rstn;
 wire reboot;
 assign wd_resetn_pad = !reboot;
@@ -250,12 +245,12 @@ reg spi_boot_done;
 wire sbus_enabled;
 wire can_irqn, xuart_irq;
 assign gpio_a0_pad = xuart_irq;
-assign gpio_a1_pad = (!can_irqn && can_opt);
-wire [4:0] gpio_a17to13 = {gpio_a17_pad, gpio_a16_pad, gpio_a15_pad,
-  gpio_a14_pad, gpio_a13_pad};
+assign gpio_a1_pad = 1'b0;//(!can_irqn && can_opt);
+wire [4:0] gpio_a17to13 = {gpio_a17_pad, gpio_a16_pad, gpio_a15_pad, gpio_a14_pad, gpio_a13_pad};
 assign un_reset_pad = unreset;
 wire wb_clk;
 reg mode1, mode2, mode3;
+
 always @(posedge pll_75mhz or posedge rst) begin
   if (rst) begin
     timer <= 32'd0;
@@ -278,11 +273,13 @@ always @(posedge pll_75mhz or posedge rst) begin
       spi_boot_done <= 1'b1;
   end
 end
+
 assign ser_flash_wp_padn = unreset;
 assign clk_32khz_pad = 1'b0;
 reg [4:0] seq_24mhz;
 reg clk_24mhz;
 wire can_enable;
+
 always @(posedge pll_100mhz or posedge rst) begin
   if (rst) begin
     clk_24mhz <= 1'b1;
@@ -298,16 +295,14 @@ always @(posedge pll_100mhz or posedge rst) begin
     endcase
   end
 end
+
 wire led_red;
 assign red_led_pad = !led_red;
 wire led_grn;
 assign green_led_pad = !led_grn;
-assign wb_rst = rst;
-wire [7:0] xuart_disable = {!xuart7_opt[0], !xuart6_opt[0], !xuart5_opt[0],
-  !xuart4_opt[0], !xuart3_opt[0], !xuart2_opt[0], !xuart1_opt[0],
-  !xuart0_opt[0]};
-wire xuart_opt = (xuart_disable[7:0] != 8'hff);
 
+//Main reset signal
+assign wb_rst = rst;
 
 /****************************************************************************
  * XUART blockram 
@@ -323,6 +318,7 @@ wire [31:0] ramwbs2_adr_i;
 wire [3:0] ramwbs2_sel_i, ramwbs1_sel_i;
 assign sbus_enabled = 1'b1;
 assign dcs_clk = pll_75mhz;
+
 blockram_8kbyte sramcore(
   .wb_clk_i(dcs_clk && xuart_opt),
   .wb_rst_i(rst),
@@ -347,7 +343,6 @@ blockram_8kbyte sramcore(
   .wb2_ack_o(ramwbs2_ack_o),
   .wb2_sel_i(ramwbs2_sel_i)
 );
-
 
 /****************************************************************************
  * SBUS protocol core (SPI -> WISHBONE bridge)
@@ -403,59 +398,8 @@ spi_sbus_resync sbuscore(
   .sel_i({gpio_a17_pad, gpio_a3_pad})
 
 );
+
 assign spi_miso_pad = sbus_so;
-
-
-/****************************************************************************
- * SD card logic
- ****************************************************************************/
-reg sdwbs1_en;
-wire [31:0] sdwbs1_dat;
-wire [15:0] sdwbs1_dat_o = 
-  spiwbm_adr_o[1] ? sdwbs1_dat[31:16] : sdwbs1_dat[15:0];
-wire sdwbs1_ack_o;
-wire sd_cmd, sd_cmd_oe;
-wire [3:0] sd_dat, sd_dat_oe;
-assign sd_cmd_pad = sd_cmd_oe ? sd_cmd : 1'bz;
-assign sd_d0_pad = sd_dat_oe[0] ? sd_dat[0] : 1'bz;
-assign sd_d1_pad = sd_dat_oe[1] ? sd_dat[1] : 1'bz;
-assign sd_d2_pad = sd_dat_oe[2] ? sd_dat[2] : 1'bz;
-assign sd_d3_pad = sd_dat_oe[3] ? sd_dat[3] : 1'bz;
-wire [7:0] sd_clk;
-wire sd_busy, sd_power;
-assign en_sd_power_pad = unreset ? sd_power : 1'b1;
-/*
-ts_sdcore sdcardcore(
-  .wb_rst_i(wb_rst),
-  .wb_clk_i(wb_clk & sdcard_opt),
-
-  .wb1_adr_i(spiwbm_adr_o),
-  .wb1_cyc_i(spiwbm_cyc_o && sdwbs1_en),
-  .wb1_stb_i(spiwbm_stb_o && sdwbs1_en),
-  .wb1_dat_o(sdwbs1_dat),
-  .wb1_we_i(spiwbm_we_o),
-  .wb1_dat_i({spiwbm_dat_o, spiwbm_dat_o}),
-  .wb1_ack_o(sdwbs1_ack_o),
-  .wb1_sel_i(spiwbm32_sel_o),
-  .wb1_bte_i(2'b00),
-  .wb1_cti_i(3'b000),
-
-  .sd_cmd_i(sd_cmd_pad),
-  .sd_cmd_o(sd_cmd),
-  .sd_cmd_oe_o(sd_cmd_oe),
-  .sd_dat_i({sd_d3_pad, sd_d2_pad, sd_d1_pad, sd_d0_pad}),
-  .sd_dat_o(sd_dat),
-  .sd_dat_oe_o(sd_dat_oe),
-  .sd_clk_o(sd_clk),
- 
-  .sd_wprot_i(8'b00000000),
-  .sd_detect_i(8'b00000001),
-  .sd_power_o(sd_power),
-  .sd_busy_o(sd_busy)
-);
-*/
-assign sd_clk_pad = sd_clk[0];
-
 
 /****************************************************************************
  * SPI controller logic
@@ -473,6 +417,7 @@ wire sck, hispeed;
 assign flash_clk_pad = hispeed ? (pll_75mhz_shifted | !scken) : sck;
 wire so;
 assign flash_mosi_pad = so;
+
 wb_spi spicore(
   .wb_rst_i(wb_rst),
   .wb_clk_i(wb_clk & spi_opt),
@@ -493,64 +438,6 @@ wb_spi spicore(
   .hispeed_o(hispeed)
 );
 
-
-/****************************************************************************
- * TS-XUART super uarts
- ****************************************************************************/
- /*
-wire xuartwbs_ack_o;
-reg xuwbs_en;
-wire [31:0] uartwbm_adr_o;
-wire [15:0] uartwbm_dat_o, xuartwbs_dat_o;
-wire [15:0] uartwbm_dat_i;
-reg [7:0] xuart_rx;
-wire [7:0] xuart_active;
-wire [7:0] xuart_cts = 8'hff;
-wire [7:0] xuart_txen, xuart_tx;
-reg [7:0] xuart_rx_q, xuart_cts_q;
-always @(posedge wb_clk) begin
-  xuart_rx_q <= xuart_rx;
-  xuart_cts_q <= xuart_cts;
-end
-assign ramwbs1_dat_i[31:0] = {uartwbm_dat_o[15:0], uartwbm_dat_o[15:0]}; 
-assign ramwbs1_adr_i = {uartwbm_adr_o[15:2], 2'b00};
-assign uartwbm_dat_i[15:0] = 
-  uartwbm_adr_o[1] ? ramwbs1_dat_o[31:16] : ramwbs1_dat_o[15:0];
-assign ramwbs1_sel_i = uartwbm_adr_o[1] ? 4'b1100 : 4'b0011;
-ts_xuart tsxuartcore(
-  .wb_clk_i(wb_clk & xuart_opt),
-  .wb_rst_i(wb_rst),
-
-  .wbm_cyc_o(ramwbs1_cyc_i),
-  .wbm_stb_o(ramwbs1_stb_i),
-  .wbm_we_o(ramwbs1_we_i),
-  .wbm_ack_i(ramwbs1_ack_o),
-  .wbm_adr_o(uartwbm_adr_o),
-  .wbm_dat_i(uartwbm_dat_i),
-  .wbm_dat_o(uartwbm_dat_o),
-
-
-  .wbs_cyc_i(spiwbm_cyc_o && xuwbs_en),
-  .wbs_stb_i(spiwbm_stb_o && xuwbs_en),
-  .wbs_we_i(spiwbm_we_o),
-  .wbs_adr_i(spiwbm_adr_o),
-  .wbs_dat_i(spiwbm_dat_o),
-  .wbs_dat_o(xuartwbs_dat_o),
-  .wbs_ack_o(xuartwbs_ack_o),
-
-  .baudclk_i(pll_100mhz),
-  .cts_i(xuart_cts_q),
-  .rx_i(xuart_rx_q),
-  .tx_o(xuart_tx),
-  .txen_o(xuart_txen),
-  .active_o(xuart_active),
-  .irq_o(xuart_irq),
-  .uart_disable_i(xuart_disable)
-);
-
-*/
-
-
 /****************************************************************************
  * Syscon (misc control registers)
  ****************************************************************************/
@@ -565,6 +452,7 @@ integer i;
 wire can_tx, can_wbaccess;
 reg [40:0] dio_reg;
 assign dio_pad = dio_reg;
+
 always @(*) begin
   for (i = 0; i <= 40; i = i + 1) begin
     dio_reg[i] = dio_oe[i] ? dio[i] : 1'bz;
@@ -572,56 +460,6 @@ always @(*) begin
 
   /* DIO#7 is one of our latched bootstrap pins */
   if (!unreset) dio_reg[7] = 1'bz;
-
-  /* XUARTS take over DIO pins when they are activiated
-  xuart_rx[0] = dio_pad[6];
-  if (xuart_active[0]) begin
-    dio_reg[5] = xuart_tx[0];
-    dio_reg[6] = 1'bz;
-  end
-  xuart_rx[1] = dio_pad[20];
-  if (xuart_active[1]) begin
-    dio_reg[19] = xuart_tx[1];
-    dio_reg[20] = 1'bz;
-    dio_reg[27] = xuart_txen[1];
-  end
-  xuart_rx[2] = dio_pad[22];
-  if (xuart_active[2]) begin
-    dio_reg[21] = xuart_tx[2];
-    dio_reg[22] = 1'bz;
-    dio_reg[28] = xuart_txen[2];
-  end
-  xuart_rx[3] = dio_pad[24];
-  if (can_opt && can_enable) begin
-    dio_reg[23] = can_tx;
-    dio_reg[24] = 1'bz;
-  end else if (xuart_active[3]) begin
-    dio_reg[23] = xuart_tx[3];
-    dio_reg[24] = 1'bz;
-  end
-  xuart_rx[4] = dio_pad[26];
-  if (xuart_active[4]) begin
-    dio_reg[25] = xuart_tx[4];
-    dio_reg[26] = 1'bz;
-  end
-  xuart_rx[5] = dio_pad[32];
-  if (xuart_active[5]) begin
-    dio_reg[31] = xuart_tx[5];
-    dio_reg[32] = 1'bz;
-    dio_reg[29] = xuart_txen[5];
-  end
-  xuart_rx[6] = dio_pad[34];
-  if (xuart_active[6]) begin
-    dio_reg[33] = xuart_tx[6];
-    dio_reg[34] = 1'bz;
-    dio_reg[30] = xuart_txen[6];
-  end
-  xuart_rx[7] = dio_pad[36];
-  if (xuart_active[7]) begin
-    dio_reg[35] = xuart_tx[7];
-    dio_reg[36] = 1'bz;
-  end
-  */
 
   /* SPI controller hijacks some pins when LUN#1, #2, or #3 is active */
   if (spi_opt) begin
@@ -640,10 +478,7 @@ always @(*) begin
 
 end
 
-syscon #(
-  .wdog_default(3),
-  .can_opt(can_opt)
-) sysconcore(
+syscon #(.wdog_default(3)) sysconcore(
   .wb_clk_i(spiwbm2_clk),
   .wb_rst_i(wb_rst),
 
@@ -678,11 +513,8 @@ syscon #(
   .mode2_i(mode2),
   .mode3_i(mode3),
   .pllphase_o(pllphase),
-  .internal_osc_o(internal_osc),
-  .can_wbaccess_i(can_wbaccess),
-  .can_enable_o(can_enable)
+  .internal_osc_o(internal_osc)
 );
-
 
 /****************************************************************************
  * SPI SBUS blockram window (for XUART 8kbyte memory access)
@@ -690,6 +522,7 @@ syscon #(
 reg mwinwbs_en;
 wire [15:0] mwinwbs_dat_o;
 wire mwinwbs_ack_o;
+
 wb_memwindow16to32 mwincore(
   .wb_clk_i(wb_clk && xuart_opt),
   .wb_rst_i(wb_rst),
@@ -712,84 +545,20 @@ wb_memwindow16to32 mwincore(
   .wbm_sel_o(ramwbs2_sel_i)
 );
 
-
-
-/****************************************************************************
- * SJA1000C compatible CAN controller
- ****************************************************************************/
-
-/*
-
-wire canwbs_cyc_i, canwbs_stb_i, canwbs_we_i, canwbs_ack;
-wire [7:0] canwbs_dat_i, canwbs_dat_o;
-wire [15:0] canwbs_adr_i;
-assign can_wbaccess = canwbs_cyc_i && canwbs_stb_i;
-wire canwbs_ack_o = canwbs_ack | !can_opt;
-can_top cancore(
-  .wb_clk_i(wb_clk && can_opt),
-  .wb_rst_i(wb_rst),
-  .wb_cyc_i(canwbs_cyc_i),
-  .wb_stb_i(canwbs_stb_i),
-  .wb_we_i(canwbs_we_i),
-  .wb_dat_i(canwbs_dat_i),
-  .wb_dat_o(canwbs_dat_o),
-  .wb_adr_i(canwbs_adr_i[7:0]),
-  .wb_ack_o(canwbs_ack),
-
-  .clk_i(clk_24mhz && can_opt),
-  .rx_i(dio_pad[24]),
-  .tx_o(can_tx),
-  .irq_on(can_irqn)
-);
-
-*/
-
-/****************************************************************************
- * SPI SBUS CAN window (for 256 by 8-bit SJA1000C CAN address space)
- ****************************************************************************/
- 
- 
- 
-reg mwinwbs2_en;
-wire [15:0] mwinwbs2_dat_o;
-wire mwinwbs2_ack_o;
-wb_memwindow16to8 mwincore2(
-  .wb_clk_i(wb_clk && can_opt),
-  .wb_rst_i(wb_rst),
-
-  .wb_cyc_i(spiwbm_cyc_o && mwinwbs2_en),
-  .wb_stb_i(spiwbm_stb_o && mwinwbs2_en),
-  .wb_we_i(spiwbm_we_o),
-  .wb_adr_i(spiwbm_adr_o),
-  .wb_dat_i(spiwbm_dat_o),
-  .wb_dat_o(mwinwbs2_dat_o),
-  .wb_ack_o(mwinwbs2_ack_o),
-  
-  .wbm_cyc_o(canwbs_cyc_i),
-  .wbm_stb_o(canwbs_stb_i),
-  .wbm_we_o(canwbs_we_i),
-  .wbm_adr_o(canwbs_adr_i),
-  .wbm_dat_o(canwbs_dat_i),
-  .wbm_dat_i(canwbs_dat_o),
-  .wbm_ack_i(canwbs_ack_o)
-);
-
-
-
 /****************************************************************************
  * SPI SBUS address decode
  ****************************************************************************/
 assign gpio_a23_pad = 1'bz;
 assign gpio_a22_pad = 1'bz;
 always @(*) begin
-  sdwbs1_en = 1'b0;
+  //sdwbs1_en = 1'b0;
   //xuwbs_en = 1'b0;
   mwinwbs_en = 1'b0;
-  spiwbs_en = 1'b0;
+  //spiwbs_en = 1'b0;
   scwbs_en = 1'b0;
   spiwbm2_en = 1'b0;
   
-  mwinwbs2_en = 1'b0;
+  //mwinwbs2_en = 1'b0;
 
   spiwbm_dat_i = 16'hxxxx;
   spiwbm_ack_i = 1'b1;
@@ -813,11 +582,12 @@ always @(*) begin
    * It is possible to 8-bit writes via GPIO A17 and A3 which act as active high
    * byte lane selects.
    */
+   
   case ({gpio_a16_pad, gpio_a15_pad})
   2'd0: begin
-    sdwbs1_en = 1'b1;
-    spiwbm_dat_i = sdwbs1_dat_o;
-    spiwbm_ack_i = sdcard_opt ? sdwbs1_ack_o : 1'b1;
+    //sdwbs1_en = 1'b1;
+    //spiwbm_dat_i = sdwbs1_dat_o;
+    //spiwbm_ack_i = sdcard_opt ? sdwbs1_ack_o : 1'b1;
   end
   2'd1: begin
     if (spiwbm_adr_o[4:0] >= 5'h1c) begin
@@ -832,9 +602,9 @@ always @(*) begin
   end
   2'd2: begin
     if (spiwbm_adr_o[4:0] >= 5'h10) begin
-      mwinwbs2_en = 1'b1;
-      spiwbm_dat_i = mwinwbs2_dat_o;
-      spiwbm_ack_i = can_opt ? mwinwbs2_ack_o : 1'b1;
+      //mwinwbs2_en = 1'b1;
+      //spiwbm_dat_i = mwinwbs2_dat_o;
+      //spiwbm_ack_i = can_opt ? mwinwbs2_ack_o : 1'b1;
     end else begin
       spiwbs_en = 1'b1;
       spiwbm_dat_i = spiwbs_dat_o;
