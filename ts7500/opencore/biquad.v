@@ -65,7 +65,7 @@ assign gainAdder1_inv = mainOut ? fbGain1 : -fbGain1;		//Inverting input with fe
 assign gainAdder1_out = gainAdder1_ninv - gainAdder1_inv;	//Adder output
 
 //Delay 1
-always@(posedge clock) begin								//Creates a register
+always@(posedge clock) begin		//Creates a register
 	if(reset) begin
 		delay1_out <= 0;
 	end else begin
@@ -94,7 +94,7 @@ assign gainAdder2_inv = mainOut ? fbGain2 : -fbGain2;		//Inverting input with fe
 assign gainAdder2_out = gainAdder2_ninv - gainAdder2_inv + stage1_out;	//Adder output
 
 //Delay 2
-always@(posedge clock) begin								//Creates a register
+always@(posedge clock) begin		//Creates a register
 	if(reset) begin					//Reset condition
 		delay2_out <= 0;
 	end else begin					//1 clock delay
@@ -123,7 +123,7 @@ assign gainAdder3_inv = mainOut ? fbGain3 : -fbGain3;		//Inverting input with fe
 assign gainAdder3_out = gainAdder3_ninv - gainAdder3_inv + stage2_out;	//Adder output
 
 //Delay 3
-always@(posedge clock) begin								//Creates a register
+always@(posedge clock) begin		//Creates a register
 	if(reset) begin					//Reset condition
 		delay3_out <= 0;
 	end else begin					//1 clock delay
@@ -152,7 +152,7 @@ assign gainAdder4_inv = mainOut ? fbGain4 : -fbGain4;		//Inverting input with fe
 assign gainAdder4_out = gainAdder4_ninv - gainAdder4_inv + stage3_out;	//Adder output
 
 //Delay 4
-always@(posedge clock) begin								//Creates a register for delay
+always@(posedge clock) begin		//Creates a register for delay
 	if(reset) begin					//Reset condition
 		delay4_out <= 0;
 	end else begin					//1 clock delay

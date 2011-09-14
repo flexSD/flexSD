@@ -132,7 +132,7 @@ assign wb_ack_o = wb_ack;
 reg [7:0] odat, idat;
 reg eot, rd;
 reg [4:0] speed, cntdown;
-reg sck, hispeed;
+reg hispeed;
 assign hispeed_o = hispeed;
 assign sck_o = hispeed ? (wb_clk_i | !scken) : sck;
 assign so_o = odat[7];

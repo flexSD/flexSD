@@ -136,8 +136,6 @@ module syscon(
   mode2_i,
   mode3_i,
   pllphase_o,
-  can_enable_o,
-  can_wbaccess_i
 );
 
 input wb_clk_i, wb_rst_i, wb_cyc_i, wb_stb_i, wb_we_i;
@@ -160,11 +158,8 @@ input clk_100mhz_i, mode1_i, mode2_i, mode3_i;
 input cpu_uart_txd_i;
 output cpu_uart_rxd_o;
 output [4:0] pllphase_o;
-output can_enable_o;
-input can_wbaccess_i;
 
 parameter wdog_default = 2;
-parameter can_opt = 0;
 
 localparam model = 16'h7500;
 localparam submodel = 4'h0;
@@ -174,6 +169,7 @@ localparam dio_mask = 41'h1fffff87be0;
 wire random_clk;
 OSCE #(.NOM_FREQ("3.1")) rndosc (random_clk);
 assign internal_osc_o = random_clk;
+
 reg [15:0] rndcnt;
 reg [1:0] wdogctl;
 reg [9:0] wdogcnt;
@@ -184,28 +180,32 @@ reg [1:0] resetsw;
 wire feed_bsy, feed_rdreq;
 wire [15:0] wdog_dat;
 assign reboot_o = reboot | (resetsw_en && resetsw == 2'b00) /*| sed_err */;
+
 always @(posedge random_clk or posedge wb_rst_i) begin
-  if (wb_rst_i) begin
-    rndcnt <= 16'd0;
-    shift <= 1'b0;
-    wdogctl <= wdog_default;
-    wdogcnt <= 10'd0;
-    resetsw <= 2'b11;
-  end else begin
-    shift <= 1'b0;
-    rndcnt <= rndcnt + 1'b1;
-    if (rndcnt == 16'd0) begin
-      shift <= 1'b1;
-      resetsw[0] <= dio_i[9];
-      resetsw[1] <= resetsw[0] | dio_i[9];
-      wdogcnt <= wdogcnt + 1'b1;
-    end
-    if (feed_rdreq) begin
-      wdogctl <= wdog_dat;
-      wdogcnt <= 10'd0;
-    end
-  end
+	
+	if (wb_rst_i) begin
+		rndcnt <= 16'd0;
+		wdogctl <= wdog_default;
+		wdogcnt <= 10'd0;
+		resetsw <= 2'b11;
+	end else begin
+		rndcnt <= rndcnt + 1'b1;
+	
+		if (rndcnt == 16'd0) begin
+			resetsw[0] <= dio_i[9];
+			resetsw[1] <= resetsw[0] | dio_i[9];
+			wdogcnt <= wdogcnt + 1'b1;
+		end
+    
+		if (feed_rdreq) begin
+			wdogctl <= wdog_dat;
+			wdogcnt <= 10'd0;
+		end
+	
+	end
+	
 end
+
 always @(*) begin
   case (wdogctl)
   2'd0: reboot = wdogcnt[4]; /* approx .338 seconds */
@@ -215,25 +215,6 @@ always @(*) begin
   endcase
 end
 
-wire [15:0] random;
-/*
-crc randnumgen(
-  .dat_i(clk_100mhz_i),
-  .clk_i(random_clk),
-  .clken_i(shift),
-  .rst_i(wb_rst_i),
-  .shift_i(1'b0),
-  .crc16_o(random)
-);
-*/
-/*
-SEDBA sedcore (
-  .SEDENABLE(1'b1),
-  .SEDSTART(1'b1),
-  .SEDFRCERRN(1'b1),
-  .SEDERR(sed_err)
-);
-*/
 resync_fifo watchdogfifo(
   .rst_i(wb_rst_i),
   .wrclk_i(wb_clk_i),
@@ -246,20 +227,26 @@ resync_fifo watchdogfifo(
   .full_rdclk_o(feed_rdreq)
 );
 
+/*
 reg [6:0] count;
 reg [31:0] usec;
 always @(posedge clk_100mhz_i or posedge wb_rst_i) begin
-  if (wb_rst_i) begin
-    count <= 7'd0;
-    usec <= 32'd0;
-  end else begin
-    count <= count + 1'b1;
-    if (count == 7'd99) begin
-      count <= 7'd0;
-      usec <= usec + 1'b1;
-    end
-  end
+	if (wb_rst_i) begin
+		count <= 7'd0;
+		usec <= 32'd0;
+	end else begin
+		count <= count + 1'b1;
+		if (count == 7'd99) begin
+			count <= 7'd0;
+			usec <= usec + 1'b1;
+		end
+	end
 end
+*/
+
+/***************************************
+* Emulated SPI Flash for CPU Bootstrap *
+***************************************/
 
 reg spi_csn, spi_clk, spi_si;
 wire spi_so;
@@ -270,26 +257,34 @@ tagmem tagmemcore(
   .CS(spi_csn)
 );
 
+/****************************
+* Syscon SBUS Address Space *
+****************************/
+
 reg rtc_sda, rtc_scl, rtc_sda_oe, rtc_scl_oe;
 assign rtc_sda_o = rtc_sda;
 assign rtc_scl_o = rtc_scl;
 assign rtc_sda_oe_o = rtc_sda_oe;
 assign rtc_scl_oe_o = rtc_scl_oe;
+
 reg [40:0] dio_oe, dio;
 assign dio_oe_o = {dio_oe[40:9], 2'b01, dio_oe[6:0]};
 assign dio_o = {dio[40:8], cpu_uart_txd_i, dio[6:0]};
 assign cpu_uart_rxd_o = dio_i[8];
+
 reg [15:0] wb_dat;
 assign wb_dat_o = wb_dat;
+
 reg led_grn, led_red;
 assign led_grn_o = led_grn;
 assign led_red_o = led_red;
+
 reg [1:0] scratch;
 reg [4:0] pllphase;
 assign pllphase_o = pllphase;
-reg can_enable;
-assign can_enable_o = can_enable;
+
 always @(posedge wb_clk_i or posedge wb_rst_i) begin
+	
   if (wb_rst_i) begin
     dio_oe <= 41'd0;
     dio <= 41'd0;
@@ -305,13 +300,15 @@ always @(posedge wb_clk_i or posedge wb_rst_i) begin
     scratch <= 2'b00;
     resetsw_en <= 1'b0;
     pllphase <= 5'h13;
-    can_enable <= 1'b0;
+	
   end else begin
+	  
     if (wb_cyc_i && wb_stb_i && wb_we_i) case (wb_adr_i[4:0])
       5'h2: begin
-        {rtc_scl_oe, rtc_sda_oe, rtc_scl, rtc_sda} <= wb_dat_i[11:8];
+        //{rtc_scl_oe, rtc_sda_oe, rtc_scl, rtc_sda} <= wb_dat_i[11:8];
         {led_grn, led_red} <= wb_dat_i[15:14];
       end
+	  /*
       5'h6: begin
         {dio[40:37], dio_oe[40:37]} <= wb_dat_i[11:4] & {2{dio_mask[40:37]}};
         {spi_clk, spi_si, spi_csn} <= wb_dat_i[3:1];
@@ -321,25 +318,26 @@ always @(posedge wb_clk_i or posedge wb_rst_i) begin
       5'h10: dio[20:5] <= wb_dat_i[15:0] & dio_mask[20:5];
       5'h12: dio_oe[20:5] <= wb_dat_i[15:0] & dio_mask[20:5];
       5'h16: begin
-        if (can_opt) can_enable <= wb_dat_i[11];
         pllphase <= wb_dat_i[10:6];
         scratch <= wb_dat_i[3:2];
         resetsw_en <= wb_dat_i[4];
       end
+	  */
     endcase
-    if (can_opt && can_wbaccess_i) can_enable <= 1'b1;
   end
 end
 
 reg wb_ack;
 assign wb_ack_o = wb_ack;
+
 always @(*) begin
   wb_ack = wb_cyc_i && wb_stb_i;
   wb_dat = 16'hxxxx;
   feed_en = 1'b0;
-
+  
+  /*
   case (wb_adr_i[4:0]) 
-  5'h0: wb_dat = model[15:0]; /* Model ID */ 
+  5'h0: wb_dat = model[15:0]; // Model ID
   5'h2: wb_dat = {led_grn, led_red, rtc_scl_i, rtc_sda_i, rtc_scl_oe,
     rtc_sda_oe, rtc_scl, rtc_sda, submodel[3:0], revision[3:0]};
   5'h4: wb_dat = random[15:0];
@@ -358,6 +356,7 @@ always @(*) begin
   5'h16: wb_dat = {{4{1'bx}}, can_enable, pllphase, mode3_i, resetsw_en,
     scratch, mode2_i, mode1_i};
   endcase
+  */
 end
 
 endmodule
