@@ -1,0 +1,132 @@
+`timescale 10ns / 100ps
+
+//This testbench is for testing the load_coefficients and done_loading signals in the coefficient memorywindow
+
+module testbench2;
+	
+//Master clock and reset
+reg 			clock;
+reg 			reset;
+
+//Interconnects between memory window and bram
+wire	[10:0] 	bram_adr;
+wire	[15:0] 	bram_dat;
+wire			bram_cyc;
+wire 			bram_stb;
+wire 			bram_ack;
+wire 			bram_we;
+
+wire			load_new_coefficients;
+reg				done_loading;
+
+//SBUS wishbone input
+reg 	[15:0] 	sbusin_adr;
+wire 	[15:0] 	sbusin_dat_o;
+reg 	[15:0] 	sbusin_dat_i;
+reg 			sbusin_cyc;
+reg 			sbusin_stb;
+wire 			sbusin_ack;
+reg 			sbusin_we;
+reg 	[1:0] 	sbusin_sel;
+
+coefficient_memwindow coeff_memorywindow(
+
+  .wb_clk_i(clock),
+  .wb_rst_i(reset),
+  
+  //From sbus
+  .sbus_wb_cyc_i(sbusin_cyc),
+  .sbus_wb_stb_i(sbusin_stb),
+  .sbus_wb_we_i(sbusin_we),
+  .sbus_wb_adr_i(sbusin_adr),
+  .sbus_wb_sel_i(sbusin_sel),
+  .sbus_wb_dat_i(sbusin_dat_i),
+  .sbus_wb_dat_o(sbusin_dat_o),
+  .sbus_wb_ack_o(sbusin_ack),
+
+  //To blockram
+  .cbram_wb_cyc_o(bram_cyc),
+  .cbram_wb_stb_o(bram_stb),
+  .cbram_wb_adr_o(bram_adr),
+  .cbram_wb_dat_o(bram_dat),
+  .cbram_wb_we_o(bram_we),
+  .cbram_wb_ack_i(bram_ack),
+  
+  .load_new_coefficients(load_new_coefficients),
+  .done_loading(done_loading)
+
+);
+  
+initial begin
+
+   clock = 1;
+   reset = 0;
+   
+   sbusin_adr = 16'b0;
+   sbusin_dat_i = 16'b0;
+   sbusin_cyc = 1'b0;
+   sbusin_stb = 1'b0;
+   sbusin_we = 1'b0;
+   sbusin_sel = 2'b0;
+   
+   done_loading = 1'b1;
+   
+   //Reset everything
+   #20 reset = 1'b1;
+   #20 reset = 1'b0;
+   
+   //Write to load_coefficients register
+   #20
+   sbusin_adr = 16'h04;
+   sbusin_dat_i = 16'h1;
+   sbusin_cyc = 1'b1;
+   sbusin_stb = 1'b1;
+   sbusin_we = 1'b1;
+   
+   #20
+   sbusin_we = 1'b0;
+   sbusin_cyc = 1'b0;
+   sbusin_stb = 1'b0;
+   sbusin_dat_i = 16'hx;
+   done_loading = 1'b0;
+   
+   //Read done_loading register when it is known to be zero
+   #20
+   sbusin_adr = 16'h04;
+   sbusin_dat_i = 16'h1;
+   sbusin_cyc = 1'b1;
+   sbusin_stb = 1'b1;
+   sbusin_we = 1'b0;
+   
+   #20
+   sbusin_we = 1'b0;
+   sbusin_cyc = 1'b0;
+   sbusin_stb = 1'b0;
+   sbusin_dat_i = 16'hx;
+   done_loading = 1'b0;
+   
+   //Wait a bit, then signal that the coefficient load has completed
+   #20
+   done_loading = 1'b1;
+   
+   //Read done_loading when it is known to be 1
+   #20
+   sbusin_adr = 16'h04;
+   sbusin_cyc = 1'b1;
+   sbusin_stb = 1'b1;
+   sbusin_we = 1'b0;
+   
+   #20
+   sbusin_we = 1'b0;
+   sbusin_cyc = 1'b0;
+   sbusin_stb = 1'b0;
+   sbusin_dat_i = 16'hx;
+   sbusin_adr = 16'h0;
+      
+end
+
+always
+
+   #5 clock = !clock;
+     
+endmodule

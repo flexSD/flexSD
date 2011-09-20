@@ -1,0 +1,199 @@
+`timescale 10ns / 100ps
+module testbench;
+   
+//Master clock and reset
+reg clock;
+reg reset;
+
+//Interconnects between memory window and bram
+wire [10:0] bram_adr;
+wire [15:0] bram_dat;
+wire bram_cyc;
+wire bram_stb;
+wire bram_ack;
+wire bram_we;
+
+//SBUS wishbone input
+reg [15:0] sbus_adr;
+wire [15:0] sbus_dat_o;
+reg [15:0] sbus_dat_i;
+reg sbus_cyc;
+reg sbus_stb;
+wire sbus_ack;
+reg sbus_we;
+reg [1:0] sbus_sel;
+
+//Biquad interface
+wire [10:0] bq_adr;
+wire [15:0] bq_dat;
+wire bq_cyc;
+wire bq_stb;
+wire bq_ack;
+
+
+   
+coefficient_blockram blockram(
+
+  .wb_clk_i(clock),
+  .wb_rst_i(reset),
+
+  .sbus_wb_adr_i(bram_adr),
+  .sbus_wb_dat_i(bram_dat),
+  .sbus_wb_cyc_i(bram_cyc),
+  .sbus_wb_stb_i(bram_stb),
+  .sbus_wb_ack_o(bram_ack),
+  .sbus_wb_we_i(bram_we),
+
+  .biquad_wb_adr_i(bq_adr),
+  .biquad_wb_dat_o(bq_dat),
+  .biquad_wb_cyc_i(bq_cyc),
+  .biquad_wb_stb_i(bq_stb),
+  .biquad_wb_ack_o(bq_ack)
+  
+);
+
+coefficient_memwindow coeff_memorywindow(
+
+  .wb_clk_i(clock),
+  .wb_rst_i(reset),
+  
+  //From sbus
+  .sbus_wb_cyc_i(sbus_cyc),
+  .sbus_wb_stb_i(sbus_stb),
+  .sbus_wb_we_i(sbus_we),
+  .sbus_wb_adr_i(sbus_adr),
+  .sbus_wb_sel_i(sbus_sel),
+  .sbus_wb_dat_i(sbus_dat_i),
+  .sbus_wb_dat_o(sbus_dat_o),
+  .sbus_wb_ack_o(sbus_ack),
+
+  //To blockram
+  .bram_wb_cyc_o(bram_cyc),
+  .bram_wb_stb_o(bram_stb),
+  .bram_wb_adr_o(bram_adr),
+  .bram_wb_dat_o(bram_dat),
+  .bram_wb_we_o(bram_we),
+  .bram_wb_ack_i(bram_ack)
+
+);
+
+logging_memwindow logging_memorywindow(
+
+  .wb_clk_i(clock),
+  .wb_rst_i(reset),
+  
+  //From sbus (read only)
+  .sbus_wb_cyc_i(sbus_cyc),
+  .sbus_wb_stb_i(sbus_stb),
+  .sbus_wb_we_i(sbus_we),
+  .sbus_wb_adr_i(sbus_adr),
+  .sbus_wb_sel_i(sbus_we),
+  .sbus_wb_dat_i(sbus_dat_i),
+  .sbus_wb_dat_o(sbus_dat_o),
+  .sbus_wb_ack_o(sbus_ack),
+
+  //To blockram module
+  .bram_wb_cyc_o(bq_cyc),
+  .bram_wb_stb_o(bq_stb),
+  .bram_wb_adr_o(bq_adr),
+  .bram_wb_dat_i(bq_dat),
+  .bram_wb_ack_i(bq_ack)
+
+);
+  
+initial begin
+
+   clock = 1;
+   reset = 0;
+   
+   sbus_adr = 16'b0;
+   sbus_dat_i = 16'b0;
+   sbus_cyc = 1'b0;
+   sbus_stb = 1'b0;
+   sbus_we = 1'b0;
+   sbus_sel = 2'b0;
+   
+   //Reset everything
+   #20 reset = 1'b1;
+   #20 reset = 1'b0;
+   
+   //Begin sbus cycle - write to bram
+   #20 sbus_cyc = 1'b1;
+   sbus_stb = 1'b1;
+   sbus_we = 1'b1;
+   sbus_adr = 16'h003E;
+   sbus_dat_i = 16'hAAAA;
+   
+   #20 sbus_cyc = 1'b0;
+   sbus_stb = 1'b0;
+   sbus_we = 1'b0;
+   sbus_adr = 16'bx;
+   sbus_dat_i = 16'bx;
+   
+   //Begin sbus cycle - write to bram again, test address increment
+   #20 sbus_cyc = 1'b1;
+   sbus_stb = 1'b1;
+   sbus_we = 1'b1;
+   sbus_adr = 16'h003E;
+   sbus_dat_i = 16'hBBBB;
+   
+   #20 sbus_cyc = 1'b0;
+   sbus_stb = 1'b0;
+   sbus_we = 1'b0;
+   sbus_adr = 16'bx;
+   sbus_dat_i = 16'bx;
+   
+   //Begin logging memorywindow read
+   #20 sbus_cyc = 1'b1;
+   sbus_stb = 1'b1;
+   sbus_we = 1'b0;
+   sbus_adr = 16'h003A;
+   
+   #20 sbus_cyc = 1'b0;
+   sbus_stb = 1'b0;
+   sbus_adr = 16'bx;
+   
+   //Begin 2nd read
+   #20 sbus_cyc = 1'b1;
+   sbus_stb = 1'b1;
+   sbus_we = 1'b0;
+   sbus_adr = 16'h003A;
+    
+   #20 sbus_cyc = 1'b0;
+   sbus_stb = 1'b0;
+   sbus_adr = 16'bx;
+   
+   /*
+   //Write address to module
+   #20 sbus_cyc = 1'b1;
+   sbus_stb = 1'b1;
+   sbus_we = 1'b1;
+   sbus_adr = 16'h003C;
+   sbus_dat_i = 16'h00AA;
+   
+   #20 sbus_cyc = 1'b0;
+   sbus_stb = 1'b0;
+   sbus_we = 1'b0;
+   sbus_adr = 16'h0000;
+   sbus_dat_i = 16'h0000;
+   
+   //Read address from sbus
+   #40 sbus_cyc = 1'b1;
+   sbus_stb = 1'b1;
+   sbus_we = 1'b0;
+   sbus_adr = 16'h003C;
+   sbus_dat_i = 16'h0000;
+   
+   #20 sbus_cyc = 1'b0;
+   sbus_stb = 1'b0;
+   sbus_adr = 16'h0000;
+   */
+
+
+end
+
+always
+
+   #5 clock = !clock;
+     
+endmodule

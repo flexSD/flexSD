@@ -101,63 +101,65 @@
  *
  */
 module syscon(
-  wb_clk_i,
-  wb_rst_i,
+	
+	wb_clk_i,
+	wb_rst_i,
 
-  wb_cyc_i,
-  wb_stb_i,
-  wb_we_i,
-  wb_adr_i,
-  wb_dat_i,
-  wb_sel_i,
-  wb_dat_o,
-  wb_ack_o,
+	wb_cyc_i,
+	wb_stb_i,
+	wb_we_i,
+	wb_adr_i,
+	wb_dat_i,
+	wb_sel_i,
+	wb_dat_o,
+	wb_ack_o,
 
-  dio_i,
-  dio_oe_o,
-  dio_o,
+	dio_i,
+	dio_oe_o,
+	dio_o,
 
-  rtc_sda_o,
-  rtc_sda_i,
-  rtc_sda_oe_o,
-  rtc_scl_o,
-  rtc_scl_i,
-  rtc_scl_oe_o,
+	rtc_sda_o,
+	rtc_sda_i,
+	rtc_sda_oe_o,
+	rtc_scl_o,
+	rtc_scl_i,
+	rtc_scl_oe_o,
 
-  cpu_uart_rxd_o,
-  cpu_uart_txd_i,
+	cpu_uart_rxd_o,
+	cpu_uart_txd_i,
 
-  internal_osc_o,
-  clk_100mhz_i,
-  reboot_o,
-  led_grn_o,
-  led_red_o,
-  mode1_i,
-  mode2_i,
-  mode3_i,
-  pllphase_o,
+	internal_osc_o,
+	clk_100mhz_i,
+	reboot_o,
+	led_grn_o,
+	led_red_o,
+	mode1_i,
+	mode2_i,
+	mode3_i,
+	pllphase_o,
+	
 );
 
-input wb_clk_i, wb_rst_i, wb_cyc_i, wb_stb_i, wb_we_i;
-input [31:0] wb_adr_i;
-input [15:0] wb_dat_i;
-input [1:0] wb_sel_i;
-output [15:0] wb_dat_o;
-output wb_ack_o;
+input 			wb_clk_i, wb_rst_i, wb_cyc_i, wb_stb_i, wb_we_i;
+input 	[31:0] 	wb_adr_i;
+input 	[15:0] 	wb_dat_i;
+input 	[1:0] 	wb_sel_i;
+output 	[15:0] 	wb_dat_o;
+output 			wb_ack_o;
 
-input [40:0] dio_i;
-output [40:0] dio_oe_o;
-output [40:0] dio_o;
+input 	[40:0] 	dio_i;
+output 	[40:0] 	dio_oe_o;
+output 	[40:0] 	dio_o;
 
-input rtc_sda_i, rtc_scl_i;
-output rtc_sda_o, rtc_sda_oe_o, rtc_scl_o, rtc_scl_oe_o;
-output led_grn_o, led_red_o;
-output internal_osc_o, reboot_o;
-input clk_100mhz_i, mode1_i, mode2_i, mode3_i;
+input 			rtc_sda_i, rtc_scl_i;
+output 			rtc_sda_o, rtc_sda_oe_o, rtc_scl_o, rtc_scl_oe_o;
+output 			led_grn_o, led_red_o;
+output 			internal_osc_o, reboot_o;
+input 			clk_100mhz_i, mode1_i, mode2_i, mode3_i;
 
-input cpu_uart_txd_i;
-output cpu_uart_rxd_o;
-output [4:0] pllphase_o;
+input 			cpu_uart_txd_i;
+output 			cpu_uart_rxd_o;
+output 	[4:0] 	pllphase_o;
 
 parameter wdog_default = 2;
 
@@ -170,16 +172,16 @@ wire random_clk;
 OSCE #(.NOM_FREQ("3.1")) rndosc (random_clk);
 assign internal_osc_o = random_clk;
 
-reg [15:0] rndcnt;
-reg [1:0] wdogctl;
-reg [9:0] wdogcnt;
-reg feed_en, reboot, shift;
-wire sed_err;
-reg resetsw_en;
-reg [1:0] resetsw;
-wire feed_bsy, feed_rdreq;
-wire [15:0] wdog_dat;
-assign reboot_o = reboot | (resetsw_en && resetsw == 2'b00) /*| sed_err */;
+reg 	[15:0] 	rndcnt;
+reg 	[1:0] 	wdogctl;
+reg 	[9:0] 	wdogcnt;
+reg 			feed_en, reboot, shift;
+wire 			sed_err;
+reg 			resetsw_en;
+reg 	[1:0] 	resetsw;
+wire 			feed_bsy, feed_rdreq;
+wire 	[15:0] 	wdog_dat;
+assign 			reboot_o = reboot | (resetsw_en && resetsw == 2'b00) /*| sed_err */;
 
 always @(posedge random_clk or posedge wb_rst_i) begin
 	
@@ -207,12 +209,14 @@ always @(posedge random_clk or posedge wb_rst_i) begin
 end
 
 always @(*) begin
-  case (wdogctl)
-  2'd0: reboot = wdogcnt[4]; /* approx .338 seconds */
-  2'd1: reboot = wdogcnt[7]; /* approx 2.706 seconds */
-  2'd2: reboot = wdogcnt[9]; /* approx 10.824 seconds */
-  2'd3: reboot = 1'b0;
-  endcase
+	
+	case (wdogctl)
+		2'd0: reboot = wdogcnt[4]; /* approx .338 seconds */
+		2'd1: reboot = wdogcnt[7]; /* approx 2.706 seconds */
+		2'd2: reboot = wdogcnt[9]; /* approx 10.824 seconds */
+		2'd3: reboot = 1'b0;
+	endcase
+	
 end
 
 resync_fifo watchdogfifo(
@@ -250,39 +254,63 @@ end
 
 reg spi_csn, spi_clk, spi_si;
 wire spi_so;
+
 tagmem tagmemcore(
-  .CLK(spi_clk),
-  .SI(spi_si),
-  .SO(spi_so),
-  .CS(spi_csn)
+	
+	.CLK(spi_clk),
+	.SI(spi_si),
+	.SO(spi_so),
+	.CS(spi_csn)
+	
 );
 
 /****************************
 * Syscon SBUS Address Space *
 ****************************/
 
-reg rtc_sda, rtc_scl, rtc_sda_oe, rtc_scl_oe;
-assign rtc_sda_o = rtc_sda;
-assign rtc_scl_o = rtc_scl;
-assign rtc_sda_oe_o = rtc_sda_oe;
-assign rtc_scl_oe_o = rtc_scl_oe;
+reg 			rtc_sda, rtc_scl, rtc_sda_oe, rtc_scl_oe;
+assign 			rtc_sda_o = rtc_sda;
+assign 			rtc_scl_o = rtc_scl;
+assign 			rtc_sda_oe_o = rtc_sda_oe;
+assign 			rtc_scl_oe_o = rtc_scl_oe;
 
-reg [40:0] dio_oe, dio;
-assign dio_oe_o = {dio_oe[40:9], 2'b01, dio_oe[6:0]};
-assign dio_o = {dio[40:8], cpu_uart_txd_i, dio[6:0]};
-assign cpu_uart_rxd_o = dio_i[8];
+reg 	[40:0] 	dio_oe, dio;
+assign 			dio_oe_o = {dio_oe[40:9], 2'b01, dio_oe[6:0]};
+assign 			dio_o = {dio[40:8], cpu_uart_txd_i, dio[6:0]};
+assign 			cpu_uart_rxd_o = dio_i[8];
 
-reg [15:0] wb_dat;
-assign wb_dat_o = wb_dat;
+reg 	[15:0] 	wb_dat;
+assign 			wb_dat_o = wb_dat;
 
-reg led_grn, led_red;
-assign led_grn_o = led_grn;
-assign led_red_o = led_red;
+reg 			led_grn, led_red;
+assign 			led_grn_o = led_grn;
+assign 			led_red_o = led_red;
 
-reg [1:0] scratch;
-reg [4:0] pllphase;
-assign pllphase_o = pllphase;
+reg 	[1:0] 	scratch;
+reg 	[4:0] 	pllphase;
+assign 			pllphase_o = pllphase;
 
+//Reset condition - set initial values for control registers
+always@(posedge wb_rst_i) begin
+	
+	dio_oe <= 41'd0;
+    dio <= 41'd0;
+    rtc_sda <= 1'b0;
+    rtc_scl <= 1'b0;
+    rtc_sda_oe <= 1'b0;
+    rtc_scl_oe <= 1'b0;
+    spi_clk <= 1'b0;
+    spi_si <= 1'b0;
+    spi_csn <= 1'b1;
+    led_grn <= 1'b1;
+    led_red <= 1'b1;
+    scratch <= 2'b00;
+    resetsw_en <= 1'b0;
+    pllphase <= 5'h13;
+	
+end
+
+/*
 always @(posedge wb_clk_i or posedge wb_rst_i) begin
 	
   if (wb_rst_i) begin
@@ -304,12 +332,12 @@ always @(posedge wb_clk_i or posedge wb_rst_i) begin
   end else begin
 	  
     if (wb_cyc_i && wb_stb_i && wb_we_i) case (wb_adr_i[4:0])
-      5'h2: begin
-        //{rtc_scl_oe, rtc_sda_oe, rtc_scl, rtc_sda} <= wb_dat_i[11:8];
+      
+	  5'h2: begin
+        {rtc_scl_oe, rtc_sda_oe, rtc_scl, rtc_sda} <= wb_dat_i[11:8];
         {led_grn, led_red} <= wb_dat_i[15:14];
       end
-	  /*
-      5'h6: begin
+	  5'h6: begin
         {dio[40:37], dio_oe[40:37]} <= wb_dat_i[11:4] & {2{dio_mask[40:37]}};
         {spi_clk, spi_si, spi_csn} <= wb_dat_i[3:1];
       end
@@ -322,10 +350,11 @@ always @(posedge wb_clk_i or posedge wb_rst_i) begin
         scratch <= wb_dat_i[3:2];
         resetsw_en <= wb_dat_i[4];
       end
-	  */
+	  
     endcase
   end
 end
+*/
 
 reg wb_ack;
 assign wb_ack_o = wb_ack;

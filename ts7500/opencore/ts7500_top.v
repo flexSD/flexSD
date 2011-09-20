@@ -116,6 +116,7 @@ module ts7500_top(
 input fpga_25mhz_pad;
 input cpu_clkout_pad;
 
+//DIO control
 inout [40:0] dio_pad;
 
 input cpu_uart_txd_pad;
@@ -243,14 +244,19 @@ reg [31:0] timer;
 reg unreset;
 reg spi_boot_done;
 wire sbus_enabled;
-wire can_irqn, xuart_irq;
-assign gpio_a0_pad = xuart_irq;
+
+//Interrupts to CPU:
+
+//wire can_irqn, xuart_irq;
+assign gpio_a0_pad = 1'b0;//xuart_irq;
 assign gpio_a1_pad = 1'b0;//(!can_irqn && can_opt);
+
 wire [4:0] gpio_a17to13 = {gpio_a17_pad, gpio_a16_pad, gpio_a15_pad, gpio_a14_pad, gpio_a13_pad};
 assign un_reset_pad = unreset;
 wire wb_clk;
 reg mode1, mode2, mode3;
 
+//Boot device controller
 always @(posedge pll_75mhz or posedge rst) begin
   if (rst) begin
     timer <= 32'd0;
@@ -276,10 +282,11 @@ end
 
 assign ser_flash_wp_padn = unreset;
 assign clk_32khz_pad = 1'b0;
-reg [4:0] seq_24mhz;
-reg clk_24mhz;
-wire can_enable;
 
+//reg [4:0] seq_24mhz;
+//reg clk_24mhz;
+//wire can_enable;
+/*
 always @(posedge pll_100mhz or posedge rst) begin
   if (rst) begin
     clk_24mhz <= 1'b1;
@@ -295,7 +302,9 @@ always @(posedge pll_100mhz or posedge rst) begin
     endcase
   end
 end
+*/
 
+//Onboard LEDs
 wire led_red;
 assign red_led_pad = !led_red;
 wire led_grn;
@@ -308,75 +317,38 @@ assign wb_rst = rst;
 assign dcs_clk = pll_75mhz;
 
 /****************************************************************************
- * XUART blockram - NOT REQUIRED
- ****************************************************************************/
-/*
-wire spiboot_so;
-wire spi_cs0 = gpio_a28_pad;
-wire ramwbs1_cyc_i, ramwbs1_stb_i, ramwbs1_we_i, ramwbs1_ack_o;
-wire [31:0] ramwbs1_dat_i, ramwbs1_dat_o;
-wire [31:0] ramwbs1_adr_i;
-wire ramwbs2_cyc_i, ramwbs2_stb_i, ramwbs2_we_i, ramwbs2_ack_o;
-wire [31:0] ramwbs2_dat_i, ramwbs2_dat_o;
-wire [31:0] ramwbs2_adr_i;
-wire [3:0] ramwbs2_sel_i, ramwbs1_sel_i;
-assign sbus_enabled = 1'b1;
-assign dcs_clk = pll_75mhz;
-
-blockram_8kbyte sramcore(
-  .wb_clk_i(dcs_clk && xuart_opt),
-  .wb_rst_i(rst),
-
-  // To XUART
-  .wb1_cyc_i(ramwbs1_cyc_i),
-  .wb1_stb_i(ramwbs1_stb_i),
-  .wb1_we_i(ramwbs1_we_i),
-  .wb1_dat_i(ramwbs1_dat_i),
-  .wb1_dat_o(ramwbs1_dat_o),
-  .wb1_adr_i(ramwbs1_adr_i),
-  .wb1_ack_o(ramwbs1_ack_o),
-  .wb1_sel_i(ramwbs1_sel_i),
-
-  // To wb_memwindow
-  .wb2_cyc_i(ramwbs2_cyc_i),
-  .wb2_stb_i(ramwbs2_stb_i),
-  .wb2_we_i(ramwbs2_we_i),
-  .wb2_dat_i(ramwbs2_dat_i),
-  .wb2_dat_o(ramwbs2_dat_o),
-  .wb2_adr_i(ramwbs2_adr_i),
-  .wb2_ack_o(ramwbs2_ack_o),
-  .wb2_sel_i(ramwbs2_sel_i)
-);
-*/
-
-/****************************************************************************
  * SBUS protocol core (SPI -> WISHBONE bridge) - REQUIRED
  ****************************************************************************/ 
  
 assign sbus_enabled = 1'b1;
-wire spi_cs0 = gpio_a28_pad;
-wire spiboot_so;
-wire sbus_so;
-wire spiwbm_cyc_o, spiwbm_stb_o, spiwbm_we_o;
-wire [4:0] spiwbm_adr_o;
-wire [15:0] spiwbm_dat_o;
-reg spiwbm_ack_i;
-reg [15:0] spiwbm_dat_i;
-wire [1:0] spiwbm_sel_o;
-wire spiwbm2_cyc_o, spiwbm2_stb_o, spiwbm2_we_o;
-wire [4:0] spiwbm2_adr_o;
-wire [15:0] spiwbm2_dat_o;
-reg spiwbm2_ack_i;
-reg [15:0] spiwbm2_dat_i;
-wire [1:0] spiwbm2_sel_o;
-reg spiwbm2_en;
-wire spiwbm2_clk;
-wire [3:0] spiwbm32_sel_o = 
-  spiwbm_adr_o[1] ? {spiwbm_sel_o, 2'b00} : {2'b00, spiwbm_sel_o};
+
+wire 			spi_cs0 = gpio_a28_pad;
+wire 			spiboot_so;
+wire 			sbus_so;
+
+wire 			spiwbm_cyc_o, spiwbm_stb_o, spiwbm_we_o;
+wire 	[4:0] 	spiwbm_adr_o;
+wire 	[15:0] 	spiwbm_dat_o;
+reg 			spiwbm_ack_i;
+reg 	[15:0] 	spiwbm_dat_i;
+wire 	[1:0] 	spiwbm_sel_o;
+
+wire 			spiwbm2_cyc_o, spiwbm2_stb_o, spiwbm2_we_o;
+wire 	[4:0] 	spiwbm2_adr_o;
+wire 	[15:0] 	spiwbm2_dat_o;
+reg 			spiwbm2_ack_i;
+reg 	[15:0] 	spiwbm2_dat_i;
+wire 	[1:0] 	spiwbm2_sel_o;
+reg 			spiwbm2_en;
+wire 			spiwbm2_clk;
+wire 	[3:0] 	spiwbm32_sel_o = spiwbm_adr_o[1] ? {spiwbm_sel_o, 2'b00} : {2'b00, spiwbm_sel_o};
+
 assign wb_clk = dcs_clk;
+
 /* Note: Cavium SPI interface will actually work at 62.5Mhz even
  * though its only spec'ed to 50Mhz! 
  */
+ 
 spi_sbus_resync sbuscore(
   .wbm_clk_i(dcs_clk),
   .wbm_adr_o(spiwbm_adr_o),
@@ -413,19 +385,22 @@ assign spi_miso_pad = sbus_so;
 /****************************************************************************
  * SPI controller logic - REQUIRED
  ****************************************************************************/
-reg spiwbs_en;
-wire [15:0] spiwbs_dat_o;
-wire spiwbs_ack_o;
-wire scken;
-wire [3:0] csn;
-reg [3:0] csn_q;
+ 
+reg 			spiwbs_en;
+wire 	[15:0] 	spiwbs_dat_o;
+wire 			spiwbs_ack_o;
+wire 			scken;
+wire 	[3:0] 	csn;
+reg 	[3:0] 	csn_q;
+
 always @(posedge wb_clk) csn_q <= csn;
-assign ser_flash_cs_padn = csn[0];
-wire [3:0] si = {{3{dio_pad[12]}}, flash_miso_pad};
-wire sck, hispeed;
-assign flash_clk_pad = hispeed ? (pll_75mhz_shifted | !scken) : sck;
-wire so;
-assign flash_mosi_pad = so;
+	
+assign 			ser_flash_cs_padn = csn[0];
+wire 	[3:0] 	si = {{3{dio_pad[12]}}, flash_miso_pad};
+wire 			sck, hispeed;
+assign 			flash_clk_pad = hispeed ? (pll_75mhz_shifted | !scken) : sck;
+wire 			so;
+assign 			flash_mosi_pad = so;
 
 wb_spi spicore(
   .wb_rst_i(wb_rst),
@@ -450,17 +425,23 @@ wb_spi spicore(
 /****************************************************************************
  * Syscon (misc control registers) - REQUIRED
  ****************************************************************************/
-reg scwbs_en;
-wire [15:0] scwbs_dat_o;
-wire scwbs_ack_o;
-wire rtc_sda, rtc_scl, rtc_sda_oe, rtc_scl_oe;
-assign rtc_sda_pad = rtc_sda_oe ? rtc_sda : 1'bz;
-assign rtc_scl_pad = rtc_scl_oe ? rtc_scl : 1'bz;
-wire [40:0] dio, dio_oe;
-integer i;
-wire can_tx, can_wbaccess;
-reg [40:0] dio_reg;
-assign dio_pad = dio_reg;
+reg 			scwbs_en;
+wire 	[15:0] 	scwbs_dat_o;
+wire 			scwbs_ack_o;
+wire 			rtc_sda, rtc_scl, rtc_sda_oe, rtc_scl_oe;
+assign 			rtc_sda_pad = rtc_sda_oe ? rtc_sda : 1'bz;
+assign 			rtc_scl_pad = rtc_scl_oe ? rtc_scl : 1'bz;
+wire 	[40:0] 	dio, dio_oe;
+integer 		i;
+wire 			can_tx, can_wbaccess;
+reg 	[40:0] 	dio_reg;
+
+wire			sigmaDeltaOut;
+
+assign 			dio_pad = {dio_reg[40:23],sigmaDeltaOut,dio_reg[21:0]};
+
+assign dio_oe[21:17] = 5'b0;		//Input pins for ADC
+assign dio_oe[22] = 1'b1;			//Biquad output
 
 always @(*) begin
   for (i = 0; i <= 40; i = i + 1) begin
@@ -540,12 +521,11 @@ wire			cmemwin_wb_ack_i;
 wire 			cmemwin_wb_we_o;
 
 //Wires from biquad coefficient port
-wire	[10:0]	bq_coeff_wb_adr_o;
+wire	[8:0]	bq_coeff_wb_adr_o;
 wire			bq_coeff_wb_cyc_o;
 wire			bq_coeff_wb_stb_o;
-wire	[15:0]	bq_coeff_wb_dat_i;
+wire	[63:0]	bq_coeff_wb_dat_i;
 wire			bq_coeff_wb_ack_i;
-
 
 coefficient_blockram coefficient_blockram(
 
@@ -568,7 +548,6 @@ coefficient_blockram coefficient_blockram(
   .biquad_wb_ack_o(bq_coeff_wb_ack_i)
   
 );
-
 
 /****************************************************************************
  * Blockram for storing logged data from biquad (8kbytes, 16 bit)
@@ -612,9 +591,13 @@ coefficient_blockram coefficient_blockram(
 /****************************************************************************
  * Memory Window for biquad coefficient blockram
  ***************************************************************************/
-reg cmemwin_wbs_en;
-wire [15:0] cmemwin_wbs_dat_o;
-wire cmemwin_wbs_ack_o; 
+ 
+reg 			cmemwin_wbs_en;
+wire 	[15:0] 	cmemwin_wbs_dat_o;
+wire 			cmemwin_wbs_ack_o;
+
+wire 			load_new_coefficients;
+wire			done_loading;
 
 coefficient_memwindow coefficient_memwindow(
 
@@ -637,16 +620,20 @@ coefficient_memwindow coefficient_memwindow(
   .cbram_wb_stb_o(cmemwin_wb_stb_o),
   .cbram_wb_adr_o(cmemwin_wb_adr_o),
   .cbram_wb_dat_o(cmemwin_wb_dat_o),
-  .cbram_wb_ack_i(cmemwin_wb_ack_i)
+  .cbram_wb_ack_i(cmemwin_wb_ack_i),
+  
+  .load_new_coefficients(load_new_coefficients),
+  .done_loading(done_loading)
   
 );
 
 /****************************************************************************
  * Memory Window for data logging blockram
  ***************************************************************************/
-reg lmemwin_wbs_en;
-wire [15:0] lmemwin_wbs_dat_o;
-wire lmemwin_wbs_ack_o;
+ 
+reg 			lmemwin_wbs_en;
+wire 	[15:0] 	lmemwin_wbs_dat_o;
+wire 			lmemwin_wbs_ack_o;
 
 logging_memwindow logging_memwindow(
 	
@@ -673,42 +660,70 @@ logging_memwindow logging_memwindow(
 );
 
 /****************************************************************************
+ * ADC Buffers
+ ***************************************************************************/
+ /*
+ wire			new_adc_data;
+ 
+ wire	[31:0]	adc_a_buf_o;
+ wire	[31:0]	adc_b_buf_o;
+ wire	[31:0]	adc_c_buf_o;
+ wire	[31:0]	adc_d_buf_o;
+ 
+ adc_buffer adc_buffer(
+
+	.reset(wb_rst_i),
+	
+	.adc_a_i(dio_pad[17]),
+	.adc_b_i(dio_pad[18]),
+	.adc_c_i(dio_pad[19]),
+	.adc_d_i(dio_pad[20]),
+	.adc_clk_i(dio_pad[21]),
+	
+	.buffer_full(new_adc_data),
+	
+	.adc_a_buf_o(adc_a_buf_o),
+	.adc_b_buf_o(adc_b_buf_o),
+	.adc_c_buf_o(adc_c_buf_o),
+	.adc_d_buf_o(adc_d_buf_o)
+
+);
+*/
+/****************************************************************************
  * Biquad filter
  ***************************************************************************/
- 
- 
 
-/****************************************************************************
- * SPI SBUS blockram window (for XUART 8kbyte memory access) - NOT REQUIRED
- ****************************************************************************/
-/*
-reg mwinwbs_en;
-wire [15:0] mwinwbs_dat_o;
-wire mwinwbs_ack_o;
+wire			sigmaDeltaInput, sigmaDeltaOutput;
 
-wb_memwindow16to32 mwincore(
-  .wb_clk_i(wb_clk && xuart_opt),
-  .wb_rst_i(wb_rst),
+assign sigmaDeltaInput = dio_pad[19];
 
-  .wb_cyc_i(spiwbm_cyc_o && mwinwbs_en),
-  .wb_stb_i(spiwbm_stb_o && mwinwbs_en),
-  .wb_we_i(spiwbm_we_o),
-  .wb_adr_i(spiwbm_adr_o),
-  .wb_dat_i(spiwbm_dat_o),
-  .wb_dat_o(mwinwbs_dat_o),
-  .wb_ack_o(mwinwbs_ack_o),
-  
-  .wbm_cyc_o(ramwbs2_cyc_i),
-  .wbm_stb_o(ramwbs2_stb_i),
-  .wbm_we_o(ramwbs2_we_i),
-  .wbm_adr_o(ramwbs2_adr_i),
-  .wbm_dat_o(ramwbs2_dat_i),
-  .wbm_dat_i(ramwbs2_dat_o),
-  .wbm_ack_i(ramwbs2_ack_o),
-  .wbm_sel_o(ramwbs2_sel_i)
+wb_biquad_interface biquad1(
+
+	.wb_clk_i(wb_clk),
+	.wb_rst_i(wb_rst),
+	
+	.filter_clk_i(dio_pad[21]),
+	
+	.log_wbm_cyc_o(bq_log_wb_cyc_o),
+	.log_wbm_stb_o(bq_log_wb_stb_o),
+	.log_wbm_we_o(bq_log_wb_we_o),
+	.log_wbm_adr_o(bq_log_wb_adr_o),
+	.log_wbm_dat_o(bq_log_wb_dat_o),
+	.log_wbm_ack_i(bq_log_wb_ack_i),
+	
+	.coeff_wbm_cyc_o(bq_coeff_wb_cyc_o),
+	.coeff_wbm_stb_o(bq_coeff_wb_stb_o),
+	.coeff_wbm_adr_o(bq_coeff_wb_adr_o),
+	.coeff_wbm_dat_i(bq_coeff_wb_dat_i),
+	.coeff_wbm_ack_i(bq_coeff_wb_ack_i),
+	
+	.load_new_coefficients(load_new_coefficients),
+	.done_loading(done_loading),
+	
+	.sigmaDeltaInput(sigmaDeltaInput),
+	.sigmaDeltaOutput(sigmaDeltaOut)
+
 );
-
-*/
 
 /****************************************************************************
  * SPI SBUS address decode - REQUIRED
