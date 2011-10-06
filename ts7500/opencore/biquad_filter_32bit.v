@@ -17,11 +17,6 @@ module biquad_filter_32bit(
 	fbGain3,
 	fbGain4,
 	
-	inlineGain1,
-	inlineGain2,
-	inlineGain3,
-	inlineGain4,
-	
 	delay1_ivalue,
 	delay2_ivalue,
 	delay3_ivalue,
@@ -48,11 +43,11 @@ input 	[31:0] 	ffGain1, ffGain2, ffGain3, ffGain4, ffGain5;
 //Feedback gain coefficients
 input 	[31:0] 	fbGain1, fbGain2, fbGain3, fbGain4;
 
-//Inline gain coefficients
-input 	[2:0] 	inlineGain1, inlineGain2, inlineGain3, inlineGain4;
-
 //Initial values to set delay registers to on reset
 input	[31:0]	delay1_ivalue, delay2_ivalue, delay3_ivalue, delay4_ivalue, sdDelay_ivalue;
+
+//Bit shift parameters
+parameter 		bit_shift = 3'b111;
 
 /*****************
 * Biquad stage 1 *
@@ -81,7 +76,7 @@ end
 assign delay1_in = gainAdder1_out - delay1_out;				//Feedback for register for delay
 
 //Inline gain 1
-assign stage1_out = delay1_out >> inlineGain1;				//Programmable bit shift on the output
+assign stage1_out = delay1_out >> bit_shift;				//constant bit shift on the output
 
 /*****************
 * Biquad stage 2 *
@@ -110,7 +105,7 @@ end
 assign delay2_in = gainAdder2_out - delay2_out;				//Feedback for register for delay
 
 //Inline gain 2
-assign stage2_out = delay2_out >> inlineGain2;				//Programmable bit shift on the output
+assign stage2_out = delay2_out >> bit_shift;				//constant bit shift on the output
 
 /*****************
 * Biquad stage 3 *
@@ -139,7 +134,7 @@ end
 assign delay3_in = gainAdder3_out - delay3_out;				//Feedback for register for delay
 
 //Inline gain 3
-assign stage3_out = delay3_out >> inlineGain3;				//Programmable bit shift on the output
+assign stage3_out = delay3_out >> bit_shift;				//constant bit shift on the output
 
 /*****************
 * Biquad stage 4 *
@@ -168,7 +163,7 @@ end
 assign delay4_in = gainAdder4_out - delay4_out;				//Feedback for register
 
 //Inline gain 4
-assign stage4_out = delay4_out >> inlineGain4;				//Programmable bit shift on the output
+assign stage4_out = delay4_out >> bit_shift;				//constant bit shift on the output
 
 /***************
 * Output Adder *

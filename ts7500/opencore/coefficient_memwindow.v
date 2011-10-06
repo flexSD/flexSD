@@ -16,11 +16,11 @@
  * completed, the register resets to zero.								*
  * 																		* 
  * Register map:														*
- * base + 0x00: Address reg (RW)										*	
- * base + 0x02: Data reg (WO)											*
+ * base + 0x00: Data reg (WO)											*	
+ * base + 0x02: Address reg (RW)										*
  * base + 0x04: Coefficient load trigger reg (RW)						* 
  *																		*
- ************************************************************************/
+ ***********************************************************************/
 
 module coefficient_memwindow(
 

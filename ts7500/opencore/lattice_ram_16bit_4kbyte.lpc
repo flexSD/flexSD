@@ -16,8 +16,8 @@ CoreRevision=6.1
 ModuleName=lattice_ram_16bit_4kbyte
 SourceFormat=Verilog HDL
 ParameterFileVersion=1.0
-Date=09/16/2011
-Time=14:48:50
+Date=09/20/2011
+Time=16:41:08
 
 [Parameters]
 Verilog=1
@@ -27,8 +27,8 @@ Destination=Synplicity
 Expression=BusA(0 to 7)
 Order=Big Endian [MSB:LSB]
 IO=0
-RAddress=512
-RData=64
+RAddress=256
+RData=128
 WAddress=2048
 WData=16
 enByte=0

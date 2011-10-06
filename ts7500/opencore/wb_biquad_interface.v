@@ -58,9 +58,6 @@ output			sigmaDeltaOutput;
 //Store initial values for delay blocks in filter
 reg 	[31:0]	delay1_ivalue, delay2_ivalue, delay3_ivalue, delay4_ivalue, sdDelay_ivalue;
 
-//Signal to gate the filter clock (we don't want the filter to run while loading coefficients from bram)
-reg				filter_clock_en;
-
 //State machine variable
 reg		[2:0]	load_state;
 
@@ -73,7 +70,7 @@ reg         	load_done;
 //Coefficient storage registers - passed on to biquad filter module
 reg		[31:0]	ffGain1, ffGain2, ffGain3, ffGain4, ffGain5;
 reg		[31:0]	fbGain1, fbGain2, fbGain3, fbGain4;
-reg		[2:0]	inlineGain1, inlineGain2, inlineGain3, inlineGain4;
+//reg		[2:0]	inlineGain1, inlineGain2, inlineGain3, inlineGain4;
 
 //Wishbone connections for coefficient bram communication
 reg				coeff_wbm_cyc, coeff_wbm_stb;
@@ -104,15 +101,14 @@ always@(posedge wb_clk_i) begin
 		fbGain3 <= 0;
 		fbGain4 <= 0;
 	
-		inlineGain1 <= 0;
-		inlineGain2 <= 0;
-		inlineGain3 <= 0;
-		inlineGain4 <= 0;
+		//inlineGain1 <= 0;
+		//inlineGain2 <= 0;
+		//inlineGain3 <= 0;
+		//inlineGain4 <= 0;
 		
 		//Initial internal register values
 		load_state <= 3'd0;
 		load_done <= 1'b1;
-		filter_clock_en <= 1'b1;			
 		filter_reset <= 1'b0;
 		
 	end
@@ -124,7 +120,6 @@ always@(posedge wb_clk_i) begin
 					
 			//Run through state machine again when load coefficient wire is asserted
 			if(load_new_coefficients) begin
-				filter_clock_en <= 1'b0;		//Negate filter clock during coefficient load
 				load_state <= 3'd1;
 				load_done <= 1'b0;				//Assert load in progress
 			end
@@ -144,7 +139,7 @@ always@(posedge wb_clk_i) begin
 				coeff_wbm_cyc <= 1'b0;
 				coeff_wbm_stb <= 1'b0;
 				
-				load_state <= 3'd2;					
+				load_state <= 3'd2;	
 			end				
 		end
 		
@@ -211,10 +206,11 @@ always@(posedge wb_clk_i) begin
 			//When ack is rx'ed, load data from bus into coefficient register and end bus cycle, move to idle state
 			if(coeff_wbm_ack_i) begin					
 				fbGain4 <= coeff_wbm_dat_i[31:0];
-				inlineGain1 <= coeff_wbm_dat_i[34:32];
-				inlineGain2 <= coeff_wbm_dat_i[37:35];
-				inlineGain3 <= coeff_wbm_dat_i[40:38];
-				inlineGain4 <= coeff_wbm_dat_i[43:41];
+				
+				//inlineGain1 <= coeff_wbm_dat_i[34:32];
+				//inlineGain2 <= coeff_wbm_dat_i[37:35];
+				//inlineGain3 <= coeff_wbm_dat_i[40:38];
+				//inlineGain4 <= coeff_wbm_dat_i[43:41];
 				
 				coeff_wbm_cyc <= 1'b0;
 				coeff_wbm_stb <= 1'b0;
@@ -222,8 +218,7 @@ always@(posedge wb_clk_i) begin
 				load_done <= 1'b1;		//Assert to memory window that the coefficient load is done
 				
 				filter_reset <= 1'b1;		//Reset biquad, loads initial values into delay blocks (required to preserve previous filter state when time multiplexing)
-				filter_clock_en <= 1'b1;	//Enable filter clock - required for reset to occur
-				
+								
 				load_state <= 3'd6;
 			end				
 		end
@@ -242,7 +237,7 @@ assign coeff_wbm_stb_o = coeff_wbm_stb;
 assign coeff_wbm_adr_o = coeff_wbm_adr;
 assign done_loading = load_done;
 
-biquad_filter_32bit biquad(
+biquad_filter_32bit #(0) biquad(	//Loading constant bit shift as parameter
 
 	.filter_clock(filter_clk_i),// && filter_clock_en),
 	.reset(filter_reset),
@@ -261,10 +256,10 @@ biquad_filter_32bit biquad(
 	.fbGain3(fbGain3),
 	.fbGain4(fbGain4),
 	
-	.inlineGain1(inlineGain1),
-	.inlineGain2(inlineGain2),
-	.inlineGain3(inlineGain3),
-	.inlineGain4(inlineGain4),
+	//.inlineGain1(inlineGain1),
+	//.inlineGain2(inlineGain2),
+	//.inlineGain3(inlineGain3),
+	//.inlineGain4(inlineGain4),
 	
 	.delay1_ivalue(delay1_ivalue),
 	.delay2_ivalue(delay2_ivalue),

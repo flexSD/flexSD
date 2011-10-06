@@ -6,4 +6,5 @@ DPHASE2  i
 DPHASE3  i
 CLKOP  o
 CLKOS  o
+CLKOK  o
 LOCK  o

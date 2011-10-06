@@ -1,80 +1,93 @@
 module dac_spi_module(
-	input clk25,
-	input reset,
-	input [3:0] cmd,
-	input [3:0] addr,
-	input [15:0] value,
-	input send_data,
-	output sdo,
-	output spi_clk,
-	output cs
-	);
 
+	clk25,
+	reset,
+	
+	cmd,
+	addr,
+	value,
+	
+	send_data,
+	
+	sdo,
+	cs
+	
+);
 
-`DEFINE STATE_IDLE 			2'b00
-`DEFINE STATE_SET_BIT		2'b01
-`DEFINE STATE_WAIT_1		2'b10
+/*********************
+* Inputs and Outputs *
+*********************/
 
-reg [1:0] 	state;
-reg [23:0] 	data;
-reg [4:0]	bitindex;
-reg [15:0]	value_r;
-reg 		serial_data_out;
-reg			spi_clock;
-reg 		chip_select;
+//Main clock and reset
+input 			clk25;
+input 			reset;
 
-integer i;
+//DAC register values
+input	[3:0]	cmd;
+input	[3:0]	addr;
+input	[15:0]	value;
 
-always @(value) begin						//Reverse value register so MSB is first
-	for(i=0, i=i+1, i<16) begin	
+//Wire to trigger a packet transmission to DAC
+input			send_data;
 
-		value_r[i] = value[15-i];
-	end
-end
+//DAC SPI port
+output			sdo;
+output			cs;
 
+//State variables
+localparam STATE_IDLE 			=	1'b0;
+localparam STATE_SEND_PACKET	= 	1'b1;
+
+//Internal registers
+reg 			state;
+reg 	[23:0] 	data;
+reg 	[4:0]	bitindex;
+reg 			serial_data_out;
+reg 			chip_select;
+
+/************
+* Main Code *
+************/
+
+//State machine to load DAC values
 always @(negedge clk25) begin
 	
-	if(reset) state <= 2'b00;				//Reset condition
+	//Reset condition
+	if(reset) begin
+		
+		state <= STATE_IDLE;
+		chip_select <= 1'b1;
+		data <= 16'b0;
+		bitindex <= 23;
+		serial_data_out <= 1'b0;
 	
 	end else begin
 		
 		case(state)
 			
-			`STATE_IDLE: begin				//System waiting for send_data signal
+			STATE_IDLE: begin				//Waiting for send_data signal
+				
+				chip_select <= 1'b1;
 				
 				if(send_data) begin
-					
-					state <= `STATE_SET_BIT;		//Move to accumulator state
-					
-					chip_select <= 0		//Activate DAC by setting CS low
-					
-					data[0:3] <= cmd;		//Load data register with command, address, and value bits
-					data[4:7] <= addr;
-					data[8:23] <= value;
-					
-					bitindex <= 0;			//Reset bit index
-					
+					bitindex <= 23;				//Reset bit index to zero
+					data <= {cmd[3:0], addr[3:0], value[15:0]};	//Ensure that changes to value, address, and command registers do not affect current serial transmission
+					state <= STATE_SEND_PACKET;
 				end
 				
 			end
 			
-			`STATE_SET_BIT: begin			//Set new bit to be clocked into device
+			STATE_SEND_PACKET: begin				//Set new bit to be clocked into device
 				
-				serial_data_out <= data[bitindex];	//Load next bit into serial output line
-				bitindex <= bitindex + 1;			//Increment bit index
-				
-				if(bitindex == 24) begin
-					state <= `STATE_WAIT_1;			//Back to the accumulator
+				chip_select <= 0;					//Activate DAC		
+				serial_data_out <= data[bitindex];	//Step through data register
+				bitindex <= bitindex - 1;
+								
+				if(bitindex == 0) begin
+					state <= STATE_IDLE;
 				end
 			
-			end
-			
-			`STATE_WAIT_1: begin			//Wait an extra clock cycle before setting CS high
-
-				chip_select <= 1;			//Have to wait an extra clock cycle so last bit is clocked in before CS goes high
-				state <= `STATE_IDLE;
-			end
-			
+			end			
 		
 		endcase
 	
@@ -83,7 +96,7 @@ always @(negedge clk25) begin
 end		
 		
 assign sdo = serial_data_out;
-assign spi_clk = clk25;
+//assign spi_clk = clk25;
 assign cs = chip_select;
 
 endmodule			

@@ -202,7 +202,7 @@ parameter spi_opt = 1'b1;
  * Boilerplate FPGA configuration (clocks, PLL, DLL, reset) - REQUIRED
  ****************************************************************************/
  
-wire pll_75mhz, pll_75mhz_shifted, pll_100mhz;
+wire pll_75mhz, pll_75mhz_shifted, pll_100mhz, pll_750khz, spi_50mhz_clk;
 wire lock, lock2;
 wire [4:0] pllphase;
 
@@ -210,6 +210,7 @@ pll clkgen (
   .CLK(fpga_25mhz_pad),
   .CLKOP(pll_75mhz),
   .CLKOS(pll_75mhz_shifted),
+  .CLKOK(pll_750khz),
   .LOCK(lock),
   .DPHASE3(pllphase[4]),
   .DPHASE2(pllphase[3]),
@@ -314,7 +315,7 @@ assign green_led_pad = !led_grn;
 assign wb_rst = rst;
 
 //Wishbone clock
-assign dcs_clk = pll_75mhz;
+assign dcs_clk = pll_100mhz;//pll_75mhz;
 
 /****************************************************************************
  * SBUS protocol core (SPI -> WISHBONE bridge) - REQUIRED
@@ -427,7 +428,8 @@ wb_spi spicore(
  ****************************************************************************/
 reg 			scwbs_en;
 wire 	[15:0] 	scwbs_dat_o;
-wire 			scwbs_ack_o;
+wire 			scwbs_ack_o;	
+
 wire 			rtc_sda, rtc_scl, rtc_sda_oe, rtc_scl_oe;
 assign 			rtc_sda_pad = rtc_sda_oe ? rtc_sda : 1'bz;
 assign 			rtc_scl_pad = rtc_scl_oe ? rtc_scl : 1'bz;
@@ -437,11 +439,12 @@ wire 			can_tx, can_wbaccess;
 reg 	[40:0] 	dio_reg;
 
 wire			sigmaDeltaOut;
+wire			dac_cs, dac_sdi;
 
-assign 			dio_pad = {dio_reg[40:23],sigmaDeltaOut,dio_reg[21:0]};
+assign 			dio_pad = {dio_reg[40:26], sigmaDeltaOut, dac_sdi,fpga_25mhz_pad,dac_cs,dio_reg[21:0]};	
 
-assign dio_oe[21:17] = 5'b0;		//Input pins for ADC
-assign dio_oe[22] = 1'b1;			//Biquad output
+assign dio_oe[21:17] = 5'b0;		//Input pins from ADC
+assign dio_oe[25:22] = 4'b1;		//Biquad and dac outputs
 
 always @(*) begin
   for (i = 0; i <= 40; i = i + 1) begin
@@ -521,10 +524,10 @@ wire			cmemwin_wb_ack_i;
 wire 			cmemwin_wb_we_o;
 
 //Wires from biquad coefficient port
-wire	[8:0]	bq_coeff_wb_adr_o;
+wire	[7:0]	bq_coeff_wb_adr_o;
 wire			bq_coeff_wb_cyc_o;
 wire			bq_coeff_wb_stb_o;
-wire	[63:0]	bq_coeff_wb_dat_i;
+wire	[127:0]	bq_coeff_wb_dat_i;
 wire			bq_coeff_wb_ack_i;
 
 coefficient_blockram coefficient_blockram(
@@ -693,11 +696,11 @@ logging_memwindow logging_memwindow(
  * Biquad filter
  ***************************************************************************/
 
-wire			sigmaDeltaInput, sigmaDeltaOutput;
+wire			sigmaDeltaInput;
 
 assign sigmaDeltaInput = dio_pad[19];
 
-wb_biquad_interface biquad1(
+wb_biquad_interface_128 biquad1(
 
 	.wb_clk_i(wb_clk),
 	.wb_rst_i(wb_rst),
@@ -724,6 +727,72 @@ wb_biquad_interface biquad1(
 	.sigmaDeltaOutput(sigmaDeltaOut)
 
 );
+
+/*****************************************************************************
+ * DAC-Filter Interface Module
+ ****************************************************************************/
+
+sigma_delta_buffer_filter sigmaDeltaDACOuput(
+
+	.decimation_clk(pll_750khz),
+	.dac_clk(fpga_25mhz_pad),
+	.adc_clk(dio_pad[21]),
+	.reset(wb_rst),
+	
+	.sigmaDeltaIn(sigmaDeltaOut),
+	
+	.dac_sdo(dac_sdi),
+	.dac_cs(dac_cs)
+
+);
+
+/*
+wire	[3:0]	dac_command;
+wire	[3:0]	dac_address;
+wire	[15:0]	dac_value;
+
+wire			load_dac;
+
+dac_spi_module dac(
+
+	.clk25(fpga_25mhz_pad),//spi_50mhz_clk),
+	.reset(wb_rst),
+	
+	.cmd(dac_command),
+	.addr(dac_address),
+	.value(dac_value),
+	
+	.send_data(load_dac),
+
+	.sdo(dac_sdi),
+	.cs(dac_cs)
+
+);
+
+//Ramp generator for DAC testing
+
+reg		[4:0]	ramp_ctr;
+reg		[15:0]	value_reg;
+reg				load_reg;
+
+always@(posedge fpga_25mhz_pad) begin
+	
+	ramp_ctr <= ramp_ctr + 1;
+	load_reg <= 1'b0;
+	
+	if(ramp_ctr == 5'b1) begin
+		value_reg <= value_reg + 1;
+		load_reg <= 1'b1;
+		ramp_ctr <= 5'b0;
+	end	
+	
+end
+
+assign dac_command = 4'b0010;
+assign dac_address = 4'b1111;
+assign load_dac = load_reg;
+assign dac_value = value_reg;
+*/
 
 /****************************************************************************
  * SPI SBUS address decode - REQUIRED

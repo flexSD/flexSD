@@ -2,7 +2,7 @@
 `timescale 1 ns / 1 ps
 module tb;
     reg [10:0] WrAddress = 11'b0;
-    reg [8:0] RdAddress = 9'b0;
+    reg [7:0] RdAddress = 8'b0;
     reg [15:0] Data = 16'b0;
     reg WE = 0;
     reg RdClock = 0;
@@ -10,7 +10,7 @@ module tb;
     reg Reset = 0;
     reg WrClock = 0;
     reg WrClockEn = 0;
-    wire [63:0] Q;
+    wire [127:0] Q;
 
     integer i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 0, i5 = 0, i6 = 0, i7 = 0, i8 = 0, i9 = 0;
 
@@ -63,7 +63,7 @@ module tb;
        WE <= 1'b0;
     end
     always
-    #1.25 RdClock <= ~ RdClock;
+    #0.62 RdClock <= ~ RdClock;
 
     initial
     begin
