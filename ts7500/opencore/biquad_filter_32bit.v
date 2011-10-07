@@ -1,3 +1,10 @@
+**/**********************************************************************
+* 32 bit Biquad Filter
+*
+* This module implements a physical biquad filter with a bit depth of 32
+*
+************************************************************************/
+
 module biquad_filter_32bit(
 
 	filter_clock,
@@ -46,7 +53,7 @@ input 	[31:0] 	fbGain1, fbGain2, fbGain3, fbGain4;
 //Initial values to set delay registers to on reset
 input	[31:0]	delay1_ivalue, delay2_ivalue, delay3_ivalue, delay4_ivalue, sdDelay_ivalue;
 
-//Bit shift parameters
+//Bit shift parameter - constant
 parameter 		bit_shift = 3'b111;
 
 /*****************

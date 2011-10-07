@@ -6,9 +6,6 @@
             <Option name="HDL type" value="Verilog"/>
             <Option name="top" value="ts7500_top"/>
         </Options>
-        <Source name="wb_memwindow.v" type="Verilog">
-            <Options/>
-        </Source>
         <Source name="wb_resync.v" type="Verilog">
             <Options/>
         </Source>
@@ -27,16 +24,10 @@
         <Source name="spi_sbus.v" type="Verilog">
             <Options/>
         </Source>
-        <Source name="blockram_8kbyte.v" type="Verilog">
-            <Options/>
-        </Source>
         <Source name="ts7500_top.v" type="Verilog">
             <Options top_module="ts7500_top"/>
         </Source>
         <Source name="tagmem.ipx" type="IPX_Module">
-            <Options/>
-        </Source>
-        <Source name="lattice_ram.ipx" type="IPX_Module">
             <Options/>
         </Source>
         <Source name="pll2.ipx" type="IPX_Module">
@@ -45,28 +36,37 @@
         <Source name="pll.ipx" type="IPX_Module">
             <Options/>
         </Source>
-        <Source name="biquad.v" type="Verilog">
-            <Options/>
-        </Source>
         <Source name="coefficient_blockram.v" type="Verilog">
             <Options/>
         </Source>
-        <Source name="lattice_ram_16bit.ipx" type="IPX_Module">
+        <Source name="lattice_ram_16bit_4kbyte.ipx" type="IPX_Module">
             <Options/>
         </Source>
         <Source name="coefficient_memwindow.v" type="Verilog">
             <Options/>
         </Source>
+        <Source name="logging_bram.v" type="Verilog">
+            <Options/>
+        </Source>
+        <Source name="lattice_ram_16bit_8kbyte.ipx" type="IPX_Module">
+            <Options/>
+        </Source>
         <Source name="logging_memwindow.v" type="Verilog">
             <Options/>
         </Source>
-        <Source name="testbench.v" type="Verilog">
+        <Source name="adc_buffer.v" type="Verilog">
             <Options/>
         </Source>
-        <Source name="simulation/coefficient_bram_sim/coefficient_bram_sim.spf" type="Simulation Project File">
+        <Source name="biquad_filter_32bit.v" type="Verilog">
             <Options/>
         </Source>
-        <Source name="simulation_test/simulation_test.spf" type="Simulation Project File">
+        <Source name="wb_biquad_interface_128.v" type="Verilog">
+            <Options/>
+        </Source>
+        <Source name="sigma_delta_buffer_filter.v" type="Verilog">
+            <Options/>
+        </Source>
+        <Source name="dac_spi_module.v" type="Verilog">
             <Options/>
         </Source>
         <Source name="ts7500_opencore.lpf" type="Logic Preference">

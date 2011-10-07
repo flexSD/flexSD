@@ -12,8 +12,8 @@
  * automatically.														 *
  * 																		 * 
  * Register map:														 *
+ * base + 0x2: Data reg (W)											 	 *
  * base + 0x0: Address reg (RW)											 *	
- * base + 0x2: Data reg (W)												 *
  *																		 *
  ************************************************************************/
 
@@ -94,7 +94,7 @@ assign lbram_wb_adr_o = adr[11:0];
 always @(*) begin
   
   //Address is 0x02, read from bram
-	if (sbus_wb_adr_i[1]) begin
+	if (!sbus_wb_adr_i[1]) begin
 	  
 	   //Read from bram
 		wbm_cyc = sbus_wb_cyc_i;

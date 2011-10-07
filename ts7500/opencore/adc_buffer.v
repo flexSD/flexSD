@@ -1,3 +1,18 @@
+/****************************************************************************
+* ADC Buffer Module
+* 
+* Module provides 32 bit buffers for incoming ADC bitstreams.  Once buffers
+* are full of new data, the 'buffer_full' signal is set high in order to 
+* trigger a new filter cycle.
+* 
+* Notes:
+* 1) ADC inputs come directly from the dio_pad register in the top module
+* 2) Wishbone bus connections occur in the definition of the blockram in 
+*    the top module
+* 3) Wishbone clock is provided to the blockram module from the top module
+* 
+****************************************************************************/
+
 module adc_buffer(
 
 	reset,
@@ -17,16 +32,9 @@ module adc_buffer(
 
 );
 
-/****************************************************************************
-* Inputs, Outputs, Registers
-* 
-* Notes:
-* 1) ADC inputs come directly from the dio_pad register in the top module
-* 2) Wishbone bus connections occur in the definition of the blockram in 
-*    the top module
-* 3) Wishbone clock is provided to the blockram module from the top module
-* 
-****************************************************************************/
+/*****************************
+* Inputs, Outputs, Registers *
+*****************************/
 
 //Reset signal
 input			reset;
