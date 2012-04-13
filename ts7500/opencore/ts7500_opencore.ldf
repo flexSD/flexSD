@@ -4,7 +4,6 @@
     <Implementation title="opencore" dir="" description="ts7500_opencore" default_strategy="ts7500strategy">
         <Options>
             <Option name="HDL type" value="Verilog"/>
-            <Option name="def_top" value="ts7500_top"/>
             <Option name="top" value="ts7500_top"/>
         </Options>
         <Source name="wb_resync.v" type="Verilog">
@@ -67,7 +66,7 @@
         <Source name="sigma_delta_buffer_filter.v" type="Verilog">
             <Options/>
         </Source>
-        <Source name="dac_spi_module.v" type="Verilog">
+        <Source name="spi_module.v" type="Verilog">
             <Options/>
         </Source>
         <Source name="ts7500_opencore.lpf" type="Logic Preference">

@@ -438,13 +438,74 @@ integer 		i;
 wire 			can_tx, can_wbaccess;
 reg 	[40:0] 	dio_reg;
 
-wire			sigmaDeltaOut;
-wire			dac_cs, dac_sdi;
 
-assign 			dio_pad = {dio_reg[40:26], sigmaDeltaOut, dac_sdi,fpga_25mhz_pad,dac_cs,dio_reg[21:0]};	
+// Custom DIO mapping - OUTPUTS ONLY
+wire			pga_clk, pga_dat;						// Front end PGA
+wire			shiftreg_outputreg_clk, shiftreg_cs;	// DIO expansion shift register 
+wire			spi_dat, spi_clk;						// SPI port for DAC and shift register
+wire			dac_cs;									// DAC chip select
+wire	[7:0]	gpio;									// GPIO header - $$$ all outputs for now! $$$
+/*
+assign 			dio_pad = {
+							pga_clk,					// DIO 40
+							pga_dat,					// DIO 39
+							shiftreg_outputreg_clk,		// DIO 38
+							shiftreg_cs,				// DIO 37
+							spi_dat,					// DIO 36
+							dac_cs,						// DIO 35
+							fpga_25mhz_pad,//spi_clk,					// DIO 34
+							dio_reg[33:29],				// DIO 33-29: Modulator inputs
+							dio_reg[28:21],				// DIO 28-21: Rotary encoder inputs
+							gpio[0],					// DIO 20
+							gpio[1],					// DIO 19
+							dio_reg[18:17],				// DIO 18-17: CPU I2C ports
+							dio_reg[16:15],				// DIO 16-15: Board pwr/gnd
+							gpio[2],					// DIO 14
+							gpio[3],					// DIO 13
+							gpio[4],					// DIO 12
+							gpio[5],					// DIO 11
+							dio_reg[10:9],				// DIO 10-9: N/C
+							gpio[6],					// DIO 8
+							dio_reg[7],					// Reset pin
+							gpio[7],						// DIO 6
+							dio_reg[5:0]				// DIO 5-0: N/C
+							
+						  };	
+*/
 
-assign dio_oe[21:17] = 5'b0;		//Input pins from ADC
-assign dio_oe[25:22] = 4'b1;		//Biquad and dac outputs
+assign dio_pad[40] = pga_clk;
+assign dio_pad[39] = pga_dat;
+assign dio_pad[38] = shiftreg_outputreg_clk;
+assign dio_pad[37] = shiftreg_cs;
+assign dio_pad[36] = spi_dat;
+assign dio_pad[35] = dac_cs;
+assign dio_pad[34] = fpga_25mhz_pad;
+assign dio_pad[20] = gpio[0];
+assign dio_pad[19] = gpio[1];
+assign dio_pad[14] = gpio[2];
+assign dio_pad[13] = gpio[3];
+assign dio_pad[12] = gpio[4];
+assign dio_pad[11] = gpio[5];
+assign dio_pad[8]  = gpio[6];
+assign dio_pad[6]  = gpio[7];
+
+assign dio_pad[33:21] = dio_reg[33:21];	//Testing original configuration
+assign dio_pad[18:15] = dio_reg[18:15];
+assign dio_pad[10:9] = dio_reg[10:9];
+assign dio_pad[7] = dio_reg[7];
+assign dio_pad[5:0] = dio_reg[5:0];
+
+/*
+	Output Enables:
+	0 - inputs
+	1 - outputs
+*/
+
+assign dio_oe[40:34] = {7{1'b1}};		// SPI ports
+assign dio_oe[33:21] = 13'b0;			// Modulator and rotary encoder
+assign dio_oe[20:19] = 2'b11;			// GPIO
+assign dio_oe[18:8] = {11{1'b1}};
+assign dio_oe[6:0] = {7{1'b1}};
 
 always @(*) begin
   for (i = 0; i <= 40; i = i + 1) begin
@@ -485,7 +546,7 @@ syscon #(.wdog_default(3)) sysconcore(
   .wb_ack_o(scwbs_ack_o),
 
   .dio_i(dio_pad),
-  .dio_oe_o(dio_oe),
+ // .dio_oe_o(dio_oe),
   .dio_o(dio),
 
   .rtc_sda_o(rtc_sda),
@@ -509,10 +570,12 @@ syscon #(.wdog_default(3)) sysconcore(
   .internal_osc_o(internal_osc)
 );
 
+
+
 /****************************************************************************
  * Blockram for storing biquad coefficients (4kbytes, 16 bit)
  ***************************************************************************/
- 
+
 //NOTE: this blockram module is a SLAVE on both wishbone ports
  
 //Wires from coefficient memory window
@@ -529,7 +592,7 @@ wire			bq_coeff_wb_cyc_o;
 wire			bq_coeff_wb_stb_o;
 wire	[127:0]	bq_coeff_wb_dat_i;
 wire			bq_coeff_wb_ack_i;
-
+/*
 coefficient_blockram coefficient_blockram(
 
   .wb_clk_i(wb_clk),
@@ -551,7 +614,7 @@ coefficient_blockram coefficient_blockram(
   .biquad_wb_ack_o(bq_coeff_wb_ack_i)
   
 );
-
+*/
 /****************************************************************************
  * Blockram for storing logged data from biquad (8kbytes, 16 bit)
  ***************************************************************************/
@@ -570,7 +633,7 @@ coefficient_blockram coefficient_blockram(
  wire			bq_log_wb_we_o;
  wire	[15:0]	bq_log_wb_dat_o;
  wire			bq_log_wb_ack_i;
- 
+ /*
  logging_blockram logging_blockram(
 
   .wb_clk_i(wb_clk),
@@ -590,18 +653,18 @@ coefficient_blockram coefficient_blockram(
   .biquad_wb_ack_o(bq_log_wb_ack_i)
   
 );
-
+*/
 /****************************************************************************
  * Memory Window for biquad coefficient blockram
  ***************************************************************************/
- 
+
 reg 			cmemwin_wbs_en;
 wire 	[15:0] 	cmemwin_wbs_dat_o;
 wire 			cmemwin_wbs_ack_o;
 
 wire 			load_new_coefficients;
 wire			done_loading;
-
+/*
 coefficient_memwindow coefficient_memwindow(
 
   .wb_clk_i(wb_clk),
@@ -629,15 +692,15 @@ coefficient_memwindow coefficient_memwindow(
   .done_loading(done_loading)
   
 );
-
+*/
 /****************************************************************************
  * Memory Window for data logging blockram
  ***************************************************************************/
- 
+
 reg 			lmemwin_wbs_en;
 wire 	[15:0] 	lmemwin_wbs_dat_o;
 wire 			lmemwin_wbs_ack_o;
-
+/*
 logging_memwindow logging_memwindow(
 	
   .wb_clk_i(wb_clk),
@@ -651,7 +714,7 @@ logging_memwindow logging_memwindow(
   .sbus_wb_sel_i(spiwbm_sel_o),
   .sbus_wb_dat_i(spiwbm_dat_o),
   .sbus_wb_dat_o(lmemwin_wbs_dat_o),
-  .sbus_wb_ack_o(lmemwin_wbs_ack_o),
+  .sbus_wb_ack_o(lmemwin_wbs_ack_o),1,26
 
   //To blockram module - read only
   .lbram_wb_cyc_o(lmemwin_wb_cyc_o),
@@ -661,7 +724,7 @@ logging_memwindow logging_memwindow(
   .lbram_wb_ack_i(lmemwin_wb_ack_i)
   
 );
-
+*/
 /****************************************************************************
  * ADC Buffers
  ***************************************************************************/
@@ -695,7 +758,7 @@ logging_memwindow logging_memwindow(
 /****************************************************************************
  * Biquad filter
  ***************************************************************************/
-
+/*
 wire			sigmaDeltaInput;
 
 assign sigmaDeltaInput = dio_pad[19];
@@ -727,11 +790,11 @@ wb_biquad_interface_128 biquad1(
 	.sigmaDeltaOutput(sigmaDeltaOut)
 
 );
-
+*/
 /*****************************************************************************
  * DAC-Filter Interface Module
  ****************************************************************************/
-
+/*
 sigma_delta_buffer_filter sigmaDeltaDACOuput(
 
 	.decimation_clk(pll_750khz),
@@ -745,45 +808,74 @@ sigma_delta_buffer_filter sigmaDeltaDACOuput(
 	.dac_cs(dac_cs)
 
 );
+*/
 
-/*
 wire	[3:0]	dac_command;
 wire	[3:0]	dac_address;
 wire	[15:0]	dac_value;
 
 wire			load_dac;
 
-dac_spi_module dac(
+wire	[1:0]	led_en;
+reg		[1:0]	led_val;
+wire 	[3:0]	cal_mux;
+wire	[3:0]	pga_cs;
+wire			shiftreg_update;
+
+assign pga_cs = 4'b1111;
+assign cal_mux = 4'b1010;
+assign led_en = 2'b11;
+//assign led_val = 2'b10;
+
+
+
+spi_module spi(
 
 	.clk25(fpga_25mhz_pad),//spi_50mhz_clk),
 	.reset(wb_rst),
 	
-	.cmd(dac_command),
-	.addr(dac_address),
-	.value(dac_value),
+	.led_en(led_en[1:0]),
+	.led_val(led_val[1:0]),
+	.cal_mux(cal_mux[3:0]),
+	.pga_cs(pga_cs[3:0]),
 	
-	.send_data(load_dac),
-
-	.sdo(dac_sdi),
-	.cs(dac_cs)
+	.shiftreg_update(shiftreg_update),
+	
+	.dac_packet({dac_command, dac_address, dac_value}),
+	.dac_send(load_dac),
+			
+	// Hardware pins
+	.spi_dat(spi_dat),
+	.dac_cs(dac_cs),
+	
+	.shiftreg_cs(shiftreg_cs),
+	.shiftreg_outputreg_clk(shiftreg_outputreg_clk)
 
 );
 
 //Ramp generator for DAC testing
 
-reg		[4:0]	ramp_ctr;
+reg		[26:0]	ramp_ctr;
 reg		[15:0]	value_reg;
 reg				load_reg;
+reg				sr_load;
 
 always@(posedge fpga_25mhz_pad) begin
 	
+	if(wb_rst) led_val <= 2'b01;
+	
 	ramp_ctr <= ramp_ctr + 1;
+	sr_load <= 1'b0;
 	load_reg <= 1'b0;
 	
-	if(ramp_ctr == 5'b1) begin
-		value_reg <= value_reg + 1;
-		load_reg <= 1'b1;
+	if(ramp_ctr == {1'b1, {26{1'b0}}} ) begin
+		//value_reg <= value_reg + 1;
+		//load_reg <= 1'b1;
+		sr_load <= 1'b1;
 		ramp_ctr <= 5'b0;
+		led_val[1] <= ~led_val[1];
+		led_val[0] <= ~led_val[0];
+	
 	end	
 	
 end
@@ -792,7 +884,8 @@ assign dac_command = 4'b0010;
 assign dac_address = 4'b1111;
 assign load_dac = load_reg;
 assign dac_value = value_reg;
-*/
+
+assign shiftreg_update = sr_load;
 
 /****************************************************************************
  * SPI SBUS address decode - REQUIRED
