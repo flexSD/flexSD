@@ -114,10 +114,6 @@ module syscon(
 	wb_dat_o,
 	wb_ack_o,
 
-	dio_i,
-	dio_oe_o,
-	dio_o,
-
 	rtc_sda_o,
 	rtc_sda_i,
 	rtc_sda_oe_o,
@@ -146,10 +142,6 @@ input 	[15:0] 	wb_dat_i;
 input 	[1:0] 	wb_sel_i;
 output 	[15:0] 	wb_dat_o;
 output 			wb_ack_o;
-
-input 	[40:0] 	dio_i;
-output 	[40:0] 	dio_oe_o;
-output 	[40:0] 	dio_o;
 
 input 			rtc_sda_i, rtc_scl_i;
 output 			rtc_sda_o, rtc_sda_oe_o, rtc_scl_o, rtc_scl_oe_o;
@@ -194,8 +186,8 @@ always @(posedge random_clk or posedge wb_rst_i) begin
 		rndcnt <= rndcnt + 1'b1;
 	
 		if (rndcnt == 16'd0) begin
-			resetsw[0] <= dio_i[9];
-			resetsw[1] <= resetsw[0] | dio_i[9];
+			//resetsw[0] <= dio_i[9];
+			//resetsw[1] <= resetsw[0] | dio_i[9];
 			wdogcnt <= wdogcnt + 1'b1;
 		end
     
@@ -274,10 +266,10 @@ assign 			rtc_scl_o = rtc_scl;
 assign 			rtc_sda_oe_o = rtc_sda_oe;
 assign 			rtc_scl_oe_o = rtc_scl_oe;
 
-reg 	[40:0] 	dio_oe, dio;
-assign 			dio_oe_o = {dio_oe[40:9], 2'b01, dio_oe[6:0]};
-assign 			dio_o = {dio[40:8], cpu_uart_txd_i, dio[6:0]};
-assign 			cpu_uart_rxd_o = dio_i[8];
+//reg 	[40:0] 	dio_oe, dio;
+//assign 			dio_oe_o = {dio_oe[40:9], 2'b01, dio_oe[6:0]};
+//assign 			dio_o = {dio[40:8], cpu_uart_txd_i, dio[6:0]};
+//assign 			cpu_uart_rxd_o = dio_i[8];
 
 reg 	[15:0] 	wb_dat;
 assign 			wb_dat_o = wb_dat;
@@ -293,8 +285,8 @@ assign 			pllphase_o = pllphase;
 //Reset condition - set initial values for control registers
 always@(posedge wb_rst_i) begin
 	
-	dio_oe <= 41'd0;
-    dio <= 41'd0;
+	//dio_oe <= 41'd0;
+    //dio <= 41'd0;
     rtc_sda <= 1'b0;
     rtc_scl <= 1'b0;
     rtc_sda_oe <= 1'b0;

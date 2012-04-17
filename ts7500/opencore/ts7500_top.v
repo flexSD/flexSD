@@ -196,13 +196,13 @@ assign gpio_a23_pad = 1'bz;
 assign eth_left_ledn_pad = gpio_a22_pad;
 assign eth_right_ledn_pad = gpio_a23_pad;
 
-parameter spi_opt = 1'b1;
+//parameter spi_opt = 1'b0;		// $$$ MODIFIED - removes some code
 
 /****************************************************************************
  * Boilerplate FPGA configuration (clocks, PLL, DLL, reset) - REQUIRED
  ****************************************************************************/
  
-wire pll_75mhz, pll_75mhz_shifted, pll_100mhz, pll_750khz, spi_50mhz_clk;
+wire pll_75mhz, pll_75mhz_shifted, pll_100mhz, spi_50mhz_clk;
 wire lock, lock2;
 wire [4:0] pllphase;
 
@@ -210,7 +210,6 @@ pll clkgen (
   .CLK(fpga_25mhz_pad),
   .CLKOP(pll_75mhz),
   .CLKOS(pll_75mhz_shifted),
-  .CLKOK(pll_750khz),
   .LOCK(lock),
   .DPHASE3(pllphase[4]),
   .DPHASE2(pllphase[3]),
@@ -222,6 +221,7 @@ pll clkgen (
 pll2 clkgen2 (
   .CLK(fpga_25mhz_pad),
   .CLKOP(pll_100mhz),
+  .CLKOK(spi_50mhz_clk),
   .LOCK(lock2)
 );
 
@@ -341,7 +341,7 @@ reg 			spiwbm2_ack_i;
 reg 	[15:0] 	spiwbm2_dat_i;
 wire 	[1:0] 	spiwbm2_sel_o;
 reg 			spiwbm2_en;
-wire 			spiwbm2_clk;
+wire 			spiwbm2_clk; 
 wire 	[3:0] 	spiwbm32_sel_o = spiwbm_adr_o[1] ? {spiwbm_sel_o, 2'b00} : {2'b00, spiwbm_sel_o};
 
 assign wb_clk = dcs_clk;
@@ -385,13 +385,14 @@ assign spi_miso_pad = sbus_so;
 
 /****************************************************************************
  * SPI controller logic - REQUIRED
+ * Provides communication with ARM
  ****************************************************************************/
  
 reg 			spiwbs_en;
 wire 	[15:0] 	spiwbs_dat_o;
 wire 			spiwbs_ack_o;
 wire 			scken;
-wire 	[3:0] 	csn;
+wire 	[3:0] 	csn; 
 reg 	[3:0] 	csn_q;
 
 always @(posedge wb_clk) csn_q <= csn;
@@ -441,59 +442,37 @@ reg 	[40:0] 	dio_reg;
 
 // Custom DIO mapping - OUTPUTS ONLY
 wire			pga_clk, pga_dat;						// Front end PGA
-wire			shiftreg_outputreg_clk, shiftreg_cs;	// DIO expansion shift register 
+wire			shiftreg_outputreg_clk, shiftreg_clr;	// DIO expansion shift register 
 wire			spi_dat, spi_clk;						// SPI port for DAC and shift register
 wire			dac_cs;									// DAC chip select
 wire	[7:0]	gpio;									// GPIO header - $$$ all outputs for now! $$$
-/*
-assign 			dio_pad = {
-							pga_clk,					// DIO 40
-							pga_dat,					// DIO 39
-							shiftreg_outputreg_clk,		// DIO 38
-							shiftreg_cs,				// DIO 37
-							spi_dat,					// DIO 36
-							dac_cs,						// DIO 35
-							fpga_25mhz_pad,//spi_clk,					// DIO 34
-							dio_reg[33:29],				// DIO 33-29: Modulator inputs
-							dio_reg[28:21],				// DIO 28-21: Rotary encoder inputs
-							gpio[0],					// DIO 20
-							gpio[1],					// DIO 19
-							dio_reg[18:17],				// DIO 18-17: CPU I2C ports
-							dio_reg[16:15],				// DIO 16-15: Board pwr/gnd
-							gpio[2],					// DIO 14
-							gpio[3],					// DIO 13
-							gpio[4],					// DIO 12
-							gpio[5],					// DIO 11
-							dio_reg[10:9],				// DIO 10-9: N/C
-							gpio[6],					// DIO 8
-							dio_reg[7],					// Reset pin
-							gpio[7],						// DIO 6
-							dio_reg[5:0]				// DIO 5-0: N/C
-							
-						  };	
-*/
 
-assign dio_pad[40] = pga_clk;
-assign dio_pad[39] = pga_dat;
-assign dio_pad[38] = shiftreg_outputreg_clk;
-assign dio_pad[37] = shiftreg_cs;
-assign dio_pad[36] = spi_dat;
-assign dio_pad[35] = dac_cs;
-assign dio_pad[34] = fpga_25mhz_pad;
-assign dio_pad[20] = gpio[0];
-assign dio_pad[19] = gpio[1];
-assign dio_pad[14] = gpio[2];
-assign dio_pad[13] = gpio[3];
-assign dio_pad[12] = gpio[4];
-assign dio_pad[11] = gpio[5];
-assign dio_pad[8]  = gpio[6];
-assign dio_pad[6]  = gpio[7];
+assign dio_pad = dio_reg;		//DIO PIO connection to internal wires
 
-assign dio_pad[33:21] = dio_reg[33:21];	//Testing original configuration
-assign dio_pad[18:15] = dio_reg[18:15];
-assign dio_pad[10:9] = dio_reg[10:9];
-assign dio_pad[7] = dio_reg[7];
-assign dio_pad[5:0] = dio_reg[5:0];
+// Board peripherals
+assign dio[40] = pga_clk;
+assign dio[39] = pga_dat;
+assign dio[38] = shiftreg_outputreg_clk;
+assign dio[37] = shiftreg_clr;
+assign dio[36] = spi_dat;
+assign dio[35] = dac_cs;
+assign dio[34] = spi_50mhz_clk;//fpga_25mhz_pad;
+
+// GPIO header signals
+assign dio[20] = gpio[0];
+assign dio[19] = gpio[1];
+assign dio[14] = gpio[2];
+assign dio[13] = gpio[3];
+assign dio[12] = gpio[4];
+assign dio[11] = gpio[5];
+assign dio[8]  = gpio[6];
+assign dio[6]  = gpio[7];
+
+assign dio[33:21] = 13'b0;
+assign dio[18:17] = 2'b0;
+assign dio[10:9] = 2'b0;
+assign dio[7] = 1'b0;
+assign dio[5:0] = 6'b0;
 
 /*
 	Output Enables:
@@ -501,37 +480,24 @@ assign dio_pad[5:0] = dio_reg[5:0];
 	1 - outputs
 */
 
-assign dio_oe[40:34] = {7{1'b1}};		// SPI ports
+assign dio_oe[40:34] = {7{1'b1}};		// Peripheral SPI ports
 assign dio_oe[33:21] = 13'b0;			// Modulator and rotary encoder
 assign dio_oe[20:19] = 2'b11;			// GPIO
 assign dio_oe[18:8] = {11{1'b1}};
 assign dio_oe[6:0] = {7{1'b1}};
 
+// Tristate handler
 always @(*) begin
   for (i = 0; i <= 40; i = i + 1) begin
     dio_reg[i] = dio_oe[i] ? dio[i] : 1'bz;
   end
 
   /* DIO#7 is one of our latched bootstrap pins */
-  if (!unreset) dio_reg[7] = 1'bz;
-
-  /* SPI controller hijacks some pins when LUN#1, #2, or #3 is active */
-  if (spi_opt) begin
-    if (csn_q[1] == 1'b0) dio_reg[11] = 1'b1;
-    if (csn_q[2] == 1'b0) dio_reg[37] = 1'b1;
-    if (csn_q[3] == 1'b0) dio_reg[39] = 1'b1;
-    if (csn[1] == 1'b0) dio_reg[11] = csn[1];
-    if (csn[2] == 1'b0) dio_reg[37] = csn[2];
-    if (csn[3] == 1'b0) dio_reg[39] = csn[3];
-    if (csn[3:1] != 3'b111) begin
-      dio_reg[14] = hispeed ? (pll_75mhz_shifted | !scken) : sck;
-      dio_reg[13] = so;
-      dio_reg[12] = 1'bz;
-    end
-  end
+  //if (!unreset) dio_reg[7] = 1'bz;
 
 end
 
+// SYSCON control of DIO has been removed
 syscon #(.wdog_default(3)) sysconcore(
   .wb_clk_i(spiwbm2_clk),
   .wb_rst_i(wb_rst),
@@ -544,10 +510,6 @@ syscon #(.wdog_default(3)) sysconcore(
   .wb_sel_i(spiwbm2_sel_o),
   .wb_dat_o(scwbs_dat_o),
   .wb_ack_o(scwbs_ack_o),
-
-  .dio_i(dio_pad),
- // .dio_oe_o(dio_oe),
-  .dio_o(dio),
 
   .rtc_sda_o(rtc_sda),
   .rtc_sda_i(rtc_sda_pad),
@@ -649,7 +611,7 @@ coefficient_blockram coefficient_blockram(
   .biquad_wb_stb_i(bq_log_wb_stb_o),
   .biquad_wb_adr_i(bq_log_wb_adr_o),
   .biquad_wb_we_i(bq_log_wb_we_o),
-  .biquad_wb_dat_i(bq_log_wb_dat_o),
+  .biquad_wb_dat_i(bq_log_wb_dat_o),fpga_25mhz_pad),//
   .biquad_wb_ack_o(bq_log_wb_ack_i)
   
 );
@@ -736,7 +698,7 @@ logging_memwindow logging_memwindow(
  wire	[31:0]	adc_c_buf_o;
  wire	[31:0]	adc_d_buf_o;
  
- adc_buffer adc_buffer(
+ adc_buffer adc_buffer(fpga_25mhz_pad),//
 
 	.reset(wb_rst_i),
 	
@@ -831,7 +793,7 @@ assign led_en = 2'b11;
 
 spi_module spi(
 
-	.clk25(fpga_25mhz_pad),//spi_50mhz_clk),
+	.clk25(spi_50mhz_clk),//fpga_25mhz_pad),
 	.reset(wb_rst),
 	
 	.led_en(led_en[1:0]),
@@ -845,11 +807,11 @@ spi_module spi(
 	.dac_send(load_dac),
 			
 	// Hardware pins
-	.spi_dat(spi_dat),
-	.dac_cs(dac_cs),
+	.spi_dat_o(spi_dat),
+	.dac_cs_o(dac_cs),
 	
-	.shiftreg_cs(shiftreg_cs),
-	.shiftreg_outputreg_clk(shiftreg_outputreg_clk)
+	.shiftreg_clr_o(shiftreg_clr),
+	.shiftreg_outputreg_clk_o(shiftreg_outputreg_clk)
 
 );
 
@@ -869,14 +831,18 @@ always@(posedge fpga_25mhz_pad) begin
 	load_reg <= 1'b0;
 	
 	if(ramp_ctr == {1'b1, {26{1'b0}}} ) begin
-		//value_reg <= value_reg + 1;
-		//load_reg <= 1'b1;
+		
 		sr_load <= 1'b1;
-		ramp_ctr <= 5'b0;
+		ramp_ctr <= 27'b0;
 		led_val[1] <= ~led_val[1];
 		led_val[0] <= ~led_val[0];
 	
-	end	
+	end	else if(ramp_ctr[5:0] == 6'b100000) begin
+		
+		value_reg <= value_reg + 1;
+		load_reg <= 1'b1;
+		
+	end
 	
 end
 

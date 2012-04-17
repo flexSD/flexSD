@@ -16,8 +16,8 @@ CoreRevision=5.2
 ModuleName=pll2
 SourceFormat=Verilog HDL
 ParameterFileVersion=1.0
-Date=09/26/2011
-Time=16:31:23
+Date=04/16/2012
+Time=17:56:26
 
 [Parameters]
 Verilog=1
@@ -51,7 +51,7 @@ ClkOSBp=0
 Phase=0.0
 Duty=8
 DPD=50% Duty
-EnCLKOK=0
+EnCLKOK=1
 ClkOKBp=0
 ClkRst=0
 DutyTrimP=Falling
