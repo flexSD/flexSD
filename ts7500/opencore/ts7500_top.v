@@ -772,6 +772,36 @@ sigma_delta_buffer_filter sigmaDeltaDACOuput(
 );
 */
 
+/* PGA Control Module */
+
+wire			set_vos;
+wire			set_measure;
+wire			set_gain;
+
+wire	[4:0]	offset;
+wire	[3:0]	gain;
+
+wire 			op_complete;
+
+pga_control pga(
+
+	.clk50(spi_50mhz_clk),
+    .wb_rst(wb_rst),
+    
+    .set_vos(set_vos),
+    .set_gain(set_gain),
+    .set_measure(set_measure),
+    
+    .offset(offset),
+    .gain(gain),
+    
+    .op_complete(op_complete),
+    
+    .pga_dat(pga_dat),
+    .pga_clk(pga_clk)
+	
+);
+
 wire	[3:0]	dac_command;
 wire	[3:0]	dac_address;
 wire	[15:0]	dac_value;
