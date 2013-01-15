@@ -67,7 +67,7 @@ reg [4:0] ctr_32 = 5'b0;
 wire buff_full = (ctr_32 == 5'b11111);			//Signals that the buffer is full of 32 bits of new data
 
 //32 bit SIPO shift registers to buffer incoming ADC bitstreams
-always@(posedge adc_clk) begin
+always@(posedge adc_clk_i) begin
 	
 	buf32a <= {adc_a_i, buf32a[31:1]};	//Output A
 	buf32b <= {adc_b_i, buf32b[31:1]};	//Output B

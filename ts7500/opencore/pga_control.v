@@ -5,12 +5,13 @@ module pga_control(
     
     set_vos,
     set_gain,
-    set_measure,
     
     offset,
     gain,
+	shdn,
+	meas,
     
-    op_complete,
+    ready,
     
     pga_dat,
     pga_clk
@@ -19,47 +20,49 @@ module pga_control(
 
 /* I/O Definitions */
 
-input 			clk50;
+input 			clk50;			// 50MHz clock input
 input 			wb_rst;
 
-input 			set_vos;          // Set Vos of a PGA
-input 			set_gain;         // Set gain of a PGA
-input 			set_measure;      // Put PGA in Vos measure mode
+input 			set_vos;        // Set Vos of a PGA
+input 			set_gain;       // Set gain of a PGA
 
-input 	[4:0] 	offset;     // 5 bit offset value
-input 	[3:0] 	gain;       // 4 bit gain value
+input 	[4:0] 	offset;     	// 5 bit offset value
+input 	[3:0] 	gain;       	// 4 bit gain value
+input			shdn;			// Shutdown mode bit (active high)
+input			meas;			// Measure mode bit (active high)
 
-output 			op_complete;     // Signals to parent module that transaction has completed
+output 			ready;    // Signals to parent module that transaction has completed
 
 // Hardware pins
 output 			pga_dat;
 output 			pga_clk;
 
-/* Internal Registers and Wires */
+/* Internal Registers op_completeand Wires */
 
-reg 	[1:0]	state;
+reg 			state;
 reg 	[3:0]	clk_accumulator;   // For generating the pga clk
 
 reg 			pga_dat_o;
 reg 			pga_clk_o;
 
-reg				op_complete_o;
+reg				ready_o;
 
 reg		[2:0]	bitindex;
 reg		[7:0]	packet;
 
-assign pga_clk = pga_clk_o;
+reg				pga_clk_en;			// Clock gating for PGA
+
+assign pga_clk = ( pga_clk_en && pga_clk_o );
+assign state_clk = pga_clk_o;
 assign pga_dat = pga_dat_o;
-assign op_complete = op_complete_o;
+assign ready = ready_o;
 
 /* State Definitions */
 
-localparam STATE_IDLE 				= 	2'b00;
-localparam STATE_SET_MEASURE_MODE 	=	2'b01;
-localparam STATE_SET_VOS			= 	2'b10;
-localparam STATE_SET_GAIN			=	2'b11;
+localparam STATE_IDLE 				= 	1'b0;
+localparam STATE_SEND_PACKET	 	=	1'b1;
 
-/* Clock generation */
+/* PGA clock generation */
 
 always@(posedge clk50) begin
 	
@@ -69,11 +72,13 @@ always@(posedge clk50) begin
 		pga_clk_o <= 1'b0;
 		
 	end else begin
-		clk_accumulator <= clk_accumulator + 1'b1;
+
+		clk_accumulator <= clk_accumulator + 1'b1;
 	
 		if(clk_accumulator == 4'd4) begin
 			
-			pga_clk_o <= ~pga_clk_o;
+			pga_clk_o <= ~pga_clk_o;	
+
 			clk_accumulator <= 4'b0;
 			
 		end
@@ -83,55 +88,58 @@ end
 
 /* State Machine */
 
-always@(negedge pga_clk) begin
+always@(negedge state_clk) begin
   
   if(wb_rst) begin
     
-    state <= 2'b0;
+	state <= 1'b0;
 		
 	pga_dat_o <= 1'b0;
 	
-	op_complete_o <= 1'b0;
-    
+	ready_o <= 1'b0;
+	pga_clk_en <= 1'b0;			// Initially disable the clock
+	packet <= 8'b0;
+	
   end else begin
     
     case(state)
       
 		STATE_IDLE: begin
-		
-			if(set_measure) begin
-				state <= STATE_SET_MEASURE_MODE;
-				
-			end
 			
-			else if(set_vos) begin
-				state <= STATE_SET_VOS;
+			bitindex <= 3'b0;
+			ready_o <= 1'b1;
+			pga_clk_en <= 1'b0;
+		
+			if(set_vos) begin
+				
+				packet <= {shdn, meas, offset[4:0], 1'b0};
+				ready_o <= 1'b0;
+				state <= STATE_SEND_PACKET;
 			
 			end
 			
 			else if(set_gain) begin
-				state <= STATE_SET_GAIN;
+				
+				packet <= {shdn, meas, 1'bx, gain[3:0], 1'b1};
+				ready_o <= 1'b0;
+				state <= STATE_SEND_PACKET;
 			
 			end
 
 		end
 		
-		STATE_SET_MEASURE_MODE: begin
-		
-			state <= STATE_IDLE;
+		STATE_SEND_PACKET: begin
+			
+			pga_clk_en <= 1'b1;
+			pga_dat_o <= packet[bitindex];
+			bitindex <= bitindex + 1;
+			
+			if(bitindex == 3'b111) begin
+				
+				state <= STATE_IDLE;
+				
+			end
 
-		end
-			
-		STATE_SET_VOS: begin
-		
-			state <= STATE_IDLE;
-
-		end
-			
-		STATE_SET_GAIN: begin
-			
-			state <= STATE_IDLE;
-			
 		end
 		
 	endcase

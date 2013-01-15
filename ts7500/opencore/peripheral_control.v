@@ -1,6 +1,6 @@
 module peripheral_control(
 
-	clk25,
+	clk50,
 	wb_rst,
 
 	// Hardware Pins

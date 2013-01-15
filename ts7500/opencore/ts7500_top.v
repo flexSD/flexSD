@@ -780,8 +780,15 @@ wire			set_gain;
 
 wire	[4:0]	offset;
 wire	[3:0]	gain;
+wire			shdn;
+wire			meas;
 
 wire 			op_complete;
+
+assign shdn = 1'b0;
+assign meas = 1'b0;
+assign gain = 4'b0;
+assign vos = 5'b0;
 
 pga_control pga(
 
@@ -790,10 +797,11 @@ pga_control pga(
     
     .set_vos(set_vos),
     .set_gain(set_gain),
-    .set_measure(set_measure),
-    
+        
     .offset(offset),
     .gain(gain),
+	.shdn(shdn),
+	.meas(meas),
     
     .op_complete(op_complete),
     

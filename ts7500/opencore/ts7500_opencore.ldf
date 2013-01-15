@@ -39,16 +39,10 @@
         <Source name="coefficient_blockram.v" type="Verilog">
             <Options/>
         </Source>
-        <Source name="lattice_ram_16bit_4kbyte.ipx" type="IPX_Module">
-            <Options/>
-        </Source>
         <Source name="coefficient_memwindow.v" type="Verilog">
             <Options/>
         </Source>
         <Source name="logging_bram.v" type="Verilog">
-            <Options/>
-        </Source>
-        <Source name="lattice_ram_16bit_8kbyte.ipx" type="IPX_Module">
             <Options/>
         </Source>
         <Source name="logging_memwindow.v" type="Verilog">
@@ -67,6 +61,36 @@
             <Options/>
         </Source>
         <Source name="spi_module.v" type="Verilog">
+            <Options/>
+        </Source>
+        <Source name="peripheral_control.v" type="Verilog" excluded="TRUE">
+            <Options/>
+        </Source>
+        <Source name="pga_control.v" type="Verilog">
+            <Options/>
+        </Source>
+        <Source name="add_sub_24bit_no_outreg.ipx" type="IPX_Module">
+            <Options/>
+        </Source>
+        <Source name="add_sub_24bit_with_outreg.ipx" type="IPX_Module">
+            <Options/>
+        </Source>
+        <Source name="lattice_ram_36bit_512.ipx" type="IPX_Module">
+            <Options/>
+        </Source>
+        <Source name="lattice_ram_24bit_16word.ipx" type="IPX_Module">
+            <Options/>
+        </Source>
+        <Source name="lattice_ram_72bit_512.ipx" type="IPX_Module">
+            <Options/>
+        </Source>
+        <Source name="lattice_ram_36bit_16.ipx" type="IPX_Module">
+            <Options/>
+        </Source>
+        <Source name="linux_sim/linux_sim.spf" type="Simulation Project File">
+            <Options/>
+        </Source>
+        <Source name="slice_sim/slice_sim.spf" type="Simulation Project File">
             <Options/>
         </Source>
         <Source name="ts7500_opencore.lpf" type="Logic Preference">
