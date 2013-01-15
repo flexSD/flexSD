@@ -1,0 +1,22 @@
+PAR: Place And Route Diamond_1.2_Production (92).
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2011 Lattice Semiconductor Corporation,  All rights reserved.
+Wed Apr 18 15:30:01 2012
+
+/usr/local/diamond/1.2/ispfpga/bin/lin/par -f ts7500_opencore.p2t
+ts7500_opencore_map.ncd ts7500_opencore.dir ts7500_opencore.prf
+
+Preference file: ts7500_opencore.prf.
+
+Level/      Number      Timing      Run         NCD
+Cost [ncd]  Unrouted    Score       Time        Status
+----------  --------    --------    -----       ------------
+5_1   *     0           0           24          Complete        
+
+
+* : Design saved.
+
+par done!

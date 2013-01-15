@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="lattice_sin_cos_table" module="Sin-Cos_Table" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2012 06 01 13:49:43.664" version="1.2" type="Module" synthesis="synplify" source_format="Verilog">
+  <Package>
+		<File name="lattice_sin_cos_table.lpc" type="lpc" modified="2012 06 01 13:42:36.000"/>
+		<File name="lattice_sin_cos_table.v" type="top_level_verilog" modified="2012 06 01 13:42:36.000"/>
+		<File name="lattice_sin_cos_table_tmpl.v" type="template_verilog" modified="2012 06 01 13:42:36.000"/>
+		<File name="tb_lattice_sin_cos_table_tmpl.v" type="testbench_verilog" modified="2012 06 01 13:42:36.000"/>
+  </Package>
+</DiamondModule>

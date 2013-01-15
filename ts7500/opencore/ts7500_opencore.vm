@@ -1,0 +1,5774 @@
+//
+// Written by Synplify
+// Product Version "E-2010.09L-SP2"
+// Program "Synplify Pro", Mapper "maplat, Build 064R"
+// Wed Apr 18 15:29:40 2012
+//
+// Source file index table:
+// Object locations will have the form <file>:<line>
+// file 0 "noname"
+// file 1 "\/usr/local/diamond/1.2/synpbase/lib/lucent/xp2.v "
+// file 2 "\/usr/local/diamond/1.2/synpbase/lib/vlog/hypermods.v "
+// file 3 "\/usr/local/diamond/1.2/cae_library/synthesis/verilog/xp2.v "
+// file 4 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v "
+// file 5 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v "
+// file 6 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_spi.v "
+// file 7 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_arbiter.v "
+// file 8 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_writebuffer.v "
+// file 9 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v "
+// file 10 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v "
+// file 11 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/tagmem.v "
+// file 12 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pll2.v "
+// file 13 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pll.v "
+// file 14 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/coefficient_blockram.v "
+// file 15 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/lattice_ram_16bit_4kbyte.v "
+// file 16 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/coefficient_memwindow.v "
+// file 17 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/logging_bram.v "
+// file 18 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/lattice_ram_16bit_8kbyte.v "
+// file 19 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/logging_memwindow.v "
+// file 20 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/adc_buffer.v "
+// file 21 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/biquad_filter_32bit.v "
+// file 22 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_biquad_interface_128.v "
+// file 23 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/sigma_delta_buffer_filter.v "
+// file 24 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_module.v "
+// file 25 "\/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v "
+
+`timescale 100 ps/100 ps
+module pll (
+  lock,
+  GND,
+  fpga_25mhz_pad_c,
+  VCC,
+  pll_75mhz
+)
+;
+output lock ;
+input GND ;
+input fpga_25mhz_pad_c ;
+input VCC ;
+output pll_75mhz ;
+wire lock ;
+wire GND ;
+wire fpga_25mhz_pad_c ;
+wire VCC ;
+wire pll_75mhz ;
+wire CLKOP ;
+wire DPHASE3_inv ;
+wire CLKFB_t ;
+wire pll_75mhz_shifted ;
+wire CLKOK ;
+wire CLKOK2 ;
+wire GND_0 ;
+wire VCC_0 ;
+//@10:209
+// @13:25
+  INV INV_0 (
+	.A(VCC),
+	.Z(DPHASE3_inv)
+);
+// @13:45
+  EHXPLLE1 PLLInst_0 (
+	.CLKI(fpga_25mhz_pad_c),
+	.CLKFB(CLKFB_t),
+	.RST(GND),
+	.RSTK(GND),
+	.WRDEL(VCC),
+	.DRPAI3(VCC),
+	.DRPAI2(GND),
+	.DRPAI1(GND),
+	.DRPAI0(VCC),
+	.DFPAI3(DPHASE3_inv),
+	.DFPAI2(GND),
+	.DFPAI1(GND),
+	.DFPAI0(VCC),
+	.PWD(GND),
+	.CLKOP(CLKOP),
+	.CLKOS(pll_75mhz_shifted),
+	.CLKOK(CLKOK),
+	.CLKOK2(CLKOK2),
+	.LOCK(lock),
+	.CLKINTFB(CLKFB_t)
+);
+defparam PLLInst_0.FIN = "25.000000";
+defparam PLLInst_0.CLKI_DIV = "1";
+defparam PLLInst_0.CLKFB_DIV = "3";
+defparam PLLInst_0.CLKOP_DIV = "8";
+defparam PLLInst_0.CLKOK_DIV = "2";
+defparam PLLInst_0.PHASEADJ = "0.0";
+defparam PLLInst_0.DUTY = "8";
+defparam PLLInst_0.PHASE_CNTL = "DYNAMIC";
+defparam PLLInst_0.CLKOP_BYPASS = "DISABLED";
+defparam PLLInst_0.CLKOS_BYPASS = "DISABLED";
+defparam PLLInst_0.CLKOK_BYPASS = "DISABLED";
+defparam PLLInst_0.CLKOP_TRIM_POL = "FALLING";
+defparam PLLInst_0.CLKOP_TRIM_DELAY = "0";
+defparam PLLInst_0.CLKOS_TRIM_POL = "RISING";
+defparam PLLInst_0.CLKOS_TRIM_DELAY = "0";
+//@10:353
+  assign GND_0 = 1'b0;
+//@10:353
+  assign VCC_0 = 1'b1;
+assign pll_75mhz = CLKOP;
+endmodule /* pll */
+
+module pll2 (
+  dio,
+  lock2,
+  GND,
+  fpga_25mhz_pad_c,
+  pll_100mhz
+)
+;
+output [34:34] dio ;
+output lock2 ;
+input GND ;
+input fpga_25mhz_pad_c ;
+inout pll_100mhz /* synthesis syn_tristate = 1 */ ;
+wire lock2 ;
+wire GND ;
+wire fpga_25mhz_pad_c ;
+wire pll_100mhz ;
+wire CLKOS ;
+wire CLKINTFB ;
+wire GND_0 ;
+wire VCC ;
+//@10:221
+// @12:31
+  EPLLD1 PLLInst_0 (
+	.CLKI(fpga_25mhz_pad_c),
+	.CLKFB(pll_100mhz),
+	.RST(GND),
+	.RSTK(GND),
+	.DPAMODE(GND),
+	.DRPAI3(GND),
+	.DRPAI2(GND),
+	.DRPAI1(GND),
+	.DRPAI0(GND),
+	.DFPAI3(GND),
+	.DFPAI2(GND),
+	.DFPAI1(GND),
+	.DFPAI0(GND),
+	.PWD(GND),
+	.CLKOP(pll_100mhz),
+	.CLKOS(CLKOS),
+	.CLKOK(dio[34]),
+	.LOCK(lock2),
+	.CLKINTFB(CLKINTFB)
+);
+defparam PLLInst_0.FIN = "25.000000";
+defparam PLLInst_0.CLKI_DIV = "1";
+defparam PLLInst_0.CLKFB_DIV = "4";
+defparam PLLInst_0.CLKOP_DIV = "8";
+defparam PLLInst_0.CLKOK_DIV = "2";
+defparam PLLInst_0.PHASEADJ = "0.0";
+defparam PLLInst_0.DUTY = "8";
+defparam PLLInst_0.PHASE_CNTL = "STATIC";
+defparam PLLInst_0.CLKOP_BYPASS = "DISABLED";
+defparam PLLInst_0.CLKOS_BYPASS = "DISABLED";
+defparam PLLInst_0.CLKOK_BYPASS = "DISABLED";
+//@10:353
+  assign GND_0 = 1'b0;
+//@10:353
+  assign VCC = 1'b1;
+endmodule /* pll2 */
+
+module spi_sbus (
+  idat_0,
+  spiwbm2_adr_o,
+  wbf_ack_m,
+  un1_wb_ack_m3,
+  un1_full_NE_1,
+  wbf_ack_m_s_0_m1_e_1,
+  so_i_0_N_10,
+  first_cyc,
+  flushack,
+  un1_flushack_d,
+  first_cyc_RNIBECN,
+  N_28,
+  wbm_stb_o_0,
+  cmemwin_wbs_en11,
+  gpio_a28_pad_c,
+  tail,
+  tail_w,
+  spi_clk_pad_c_i,
+  spiwbm2_we_o,
+  VCC,
+  wbm_we_fast,
+  N_450_i,
+  spi_clk_pad_c,
+  spi_mosi_pad_c,
+  un1_wb_ack_N_4_i,
+  wbm_stb_o_0_s,
+  wrreq8_s,
+  wrreq_0_sqmuxa,
+  stb,
+  nshift,
+  wrreq_0_sqmuxa_0,
+  GND,
+  gpio_a15_pad_c,
+  gpio_a16_pad_c,
+  spiwbm2_cyc_o_i,
+  spiwbm2_cyc_o
+)
+;
+input idat_0 ;
+output [4:1] spiwbm2_adr_o ;
+output wbf_ack_m ;
+input un1_wb_ack_m3 ;
+input un1_full_NE_1 ;
+input wbf_ack_m_s_0_m1_e_1 ;
+output so_i_0_N_10 ;
+input first_cyc ;
+input flushack ;
+input un1_flushack_d ;
+input first_cyc_RNIBECN ;
+input N_28 ;
+input wbm_stb_o_0 ;
+input cmemwin_wbs_en11 ;
+input gpio_a28_pad_c ;
+input tail ;
+input tail_w ;
+input spi_clk_pad_c_i ;
+output spiwbm2_we_o ;
+input VCC ;
+output wbm_we_fast ;
+output N_450_i ;
+input spi_clk_pad_c ;
+input spi_mosi_pad_c ;
+input un1_wb_ack_N_4_i ;
+output wbm_stb_o_0_s ;
+input wrreq8_s ;
+input wrreq_0_sqmuxa ;
+output stb ;
+output nshift ;
+input wrreq_0_sqmuxa_0 ;
+input GND ;
+input gpio_a15_pad_c ;
+input gpio_a16_pad_c ;
+output spiwbm2_cyc_o_i ;
+output spiwbm2_cyc_o ;
+wire idat_0 ;
+wire wbf_ack_m ;
+wire un1_wb_ack_m3 ;
+wire un1_full_NE_1 ;
+wire wbf_ack_m_s_0_m1_e_1 ;
+wire so_i_0_N_10 ;
+wire first_cyc ;
+wire flushack ;
+wire un1_flushack_d ;
+wire first_cyc_RNIBECN ;
+wire N_28 ;
+wire wbm_stb_o_0 ;
+wire cmemwin_wbs_en11 ;
+wire gpio_a28_pad_c ;
+wire tail ;
+wire tail_w ;
+wire spi_clk_pad_c_i ;
+wire spiwbm2_we_o ;
+wire VCC ;
+wire wbm_we_fast ;
+wire N_450_i ;
+wire spi_clk_pad_c ;
+wire spi_mosi_pad_c ;
+wire un1_wb_ack_N_4_i ;
+wire wbm_stb_o_0_s ;
+wire wrreq8_s ;
+wire wrreq_0_sqmuxa ;
+wire stb ;
+wire nshift ;
+wire wrreq_0_sqmuxa_0 ;
+wire GND ;
+wire gpio_a15_pad_c ;
+wire gpio_a16_pad_c ;
+wire spiwbm2_cyc_o_i ;
+wire spiwbm2_cyc_o ;
+wire [4:0] nstate;
+wire [0:0] nstate_i;
+wire [3:0] wbm_adr_QN;
+wire [2:1] idat;
+wire [4:0] pstate_lm;
+wire [4:0] pstate;
+wire [4:0] pstate_QN;
+wire [15:0] odat;
+wire [15:0] odat_QN;
+wire [4:0] nstate_QN;
+wire [3:3] nstate_4;
+wire [0:0] idat_fast;
+wire [0:0] idat_fast_QN;
+wire [2:1] idat_QN;
+wire [0:0] odat_8_i_a3_0_1;
+wire [2:2] nstate_RNIRKCK;
+wire [15:2] odat_8_i_1;
+wire [0:0] odat_8_i_0;
+wire [4:0] pstate_s;
+wire [2:0] pstate_cry;
+wire [3:3] pstate_cry_0_COUT;
+wire [0:0] pstate_cry_0_S0;
+wire sbus_done ;
+wire sbus_done_i ;
+wire g1_0_0 ;
+wire g1_1_0 ;
+wire so_i_0_m9_i_a5_1 ;
+wire g0_14_sn ;
+wire g0_14_rn_0 ;
+wire fb_0 ;
+wire stb_RNO_7 ;
+wire stb_RNO_8 ;
+wire wb_ack_0 ;
+wire wbf_ack_m_s_0 ;
+wire g2_0_1_0_0 ;
+wire fb_0_0 ;
+wire sbus_done2_1_sqmuxa_i ;
+wire sbus_done2 ;
+wire fb_0_1 ;
+wire wbm_we3 ;
+wire wbm_we_fast_QN ;
+wire wbm_we_QN ;
+wire wbm_cyce_0 ;
+wire wbm_cyc_QN ;
+wire wbm_adr7 ;
+wire N_170_0 ;
+wire stb_2_sqmuxa_i ;
+wire stb_QN ;
+wire N_51 ;
+wire sbus_err ;
+wire sbus_err_QN ;
+wire sbus_done2p ;
+wire sbus_done2p_QN ;
+wire sbus_done2_QN ;
+wire sbus_done_QN ;
+wire N_49 ;
+wire N_13_i ;
+wire N_15_i ;
+wire N_17_i ;
+wire N_19_i ;
+wire N_21_i ;
+wire N_23_i ;
+wire N_25_i ;
+wire N_27_i ;
+wire N_451_i ;
+wire N_452_i ;
+wire N_33_i ;
+wire N_35_i ;
+wire N_37_i ;
+wire N_39_i ;
+wire N_41_i ;
+wire N_43_i ;
+wire un1_nstate_axbxc1 ;
+wire un1_nstate_axbxc2 ;
+wire N_45_i ;
+wire nshift_QN ;
+wire N_4700 ;
+wire N_4699 ;
+wire N_4698 ;
+wire N_4697 ;
+wire N_4696 ;
+wire N_4695 ;
+wire N_4694 ;
+wire N_4693 ;
+wire N_4692 ;
+wire N_4691 ;
+wire N_4690 ;
+wire N_4689 ;
+wire N_4688 ;
+wire N_4687 ;
+wire N_4686 ;
+wire N_4685 ;
+wire N_4684 ;
+wire N_4683 ;
+wire N_4682 ;
+wire N_4681 ;
+wire N_4680 ;
+wire N_4679 ;
+wire N_4678 ;
+wire N_4677 ;
+wire N_4676 ;
+wire N_4675 ;
+wire N_4674 ;
+wire N_4673 ;
+wire un1_nstate_p4 ;
+wire wbm_we3_1 ;
+wire stb_6_iv_0_0_12_i_a4_0 ;
+wire un1_nstate_ac0_3 ;
+wire so_i_0_m9_i_a5_1_1 ;
+wire so_i_0_m9_i_0 ;
+wire N_474 ;
+wire N_79 ;
+wire sbus_err_2_sqmuxa_i_a2_1 ;
+wire N_66 ;
+wire N_84 ;
+wire N_69 ;
+wire sbus_done2_1_sqmuxa_a1 ;
+wire sbus_done2_1_sqmuxa_0_0 ;
+wire so_i_0_m9_i_1 ;
+wire N_470 ;
+wire N_471 ;
+wire sbus_done2_1_sqmuxa_a0_1 ;
+wire so_i_0_m9_i_2 ;
+wire odat_8_i_a3_0_m5_i_a4_0_0 ;
+wire N_70 ;
+wire wbm_cyc4 ;
+wire N_27_i_1 ;
+wire N_19_i_1 ;
+wire N_23_i_1 ;
+wire N_15_i_1 ;
+wire N_37_i_1 ;
+wire g0_0_1 ;
+wire g0_0_2 ;
+wire N_65 ;
+wire g0_0 ;
+wire g0_1_0 ;
+wire g0_5_0 ;
+wire g0_1_3 ;
+wire g0_0_0 ;
+wire g0_1 ;
+wire g0_2 ;
+wire g0_3_0 ;
+wire stb_6_iv_0_0_i_rn_0 ;
+wire stb_6_iv_0_0_12_i_sn ;
+wire N_590 ;
+wire GND_0 ;
+wire VCC_0 ;
+// @10:353
+  INV wbm_cyc_RNIOGIA (
+	.A(spiwbm2_cyc_o),
+	.Z(spiwbm2_cyc_o_i)
+);
+// @10:353
+  INV sbus_err_RNO (
+	.A(sbus_done),
+	.Z(sbus_done_i)
+);
+// @10:353
+  INV \nstate_RNO[0]  (
+	.A(nstate[0]),
+	.Z(nstate_i[0])
+);
+assign g1_0_0 = (sbus_done) | (sbus_done & ~gpio_a15_pad_c) | (sbus_done & 
+   gpio_a15_pad_c) | (sbus_done & ~gpio_a16_pad_c & gpio_a15_pad_c) | 
+   (gpio_a16_pad_c & gpio_a15_pad_c);
+assign g1_1_0 = (sbus_done) | (~gpio_a16_pad_c) | (sbus_done & gpio_a16_pad_c) | 
+   (~gpio_a15_pad_c) | (sbus_done & gpio_a15_pad_c) | (~gpio_a16_pad_c & 
+   gpio_a15_pad_c) | (sbus_done & gpio_a16_pad_c & gpio_a15_pad_c);
+assign so_i_0_m9_i_a5_1 = (wrreq_0_sqmuxa_0 & ~nshift & spiwbm2_cyc_o & 
+   stb);
+assign fb_0 = (nshift) | (nshift & ~g0_14_sn) | (nshift & g0_14_sn) | (nshift & 
+   ~wrreq_0_sqmuxa & g0_14_sn) | (wrreq_0_sqmuxa & g0_14_sn) | (nshift & 
+   ~g0_14_rn_0) | (nshift & ~g0_14_sn & ~g0_14_rn_0) | (nshift & g0_14_sn & 
+   ~g0_14_rn_0) | (nshift & ~wrreq_0_sqmuxa & g0_14_sn & ~g0_14_rn_0) | 
+   (wrreq_0_sqmuxa & g0_14_sn & ~g0_14_rn_0) | (nshift & g0_14_rn_0) | 
+   (nshift & ~wrreq_0_sqmuxa & g0_14_rn_0) | (wrreq_0_sqmuxa & g0_14_rn_0) | 
+   (~g0_14_sn & g0_14_rn_0) | (nshift & g0_14_sn & g0_14_rn_0) | (nshift & 
+   ~wrreq_0_sqmuxa & g0_14_sn & g0_14_rn_0) | (wrreq_0_sqmuxa & g0_14_sn & 
+   g0_14_rn_0);
+// @9:360
+  PFUMX stb_RNO_4 (
+	.ALUT(stb_RNO_7),
+	.BLUT(stb_RNO_8),
+	.C0(wrreq8_s),
+	.Z(wb_ack_0)
+);
+assign stb_RNO_7 = (~wrreq_0_sqmuxa_0 & ~wbf_ack_m_s_0) | (~wbf_ack_m_s_0 & 
+   ~wbm_stb_o_0_s) | (~wrreq_0_sqmuxa_0 & ~wbf_ack_m_s_0 & wbm_stb_o_0_s) | 
+   (~wrreq_0_sqmuxa_0 & ~g2_0_1_0_0) | (~wbm_stb_o_0_s & ~g2_0_1_0_0) | 
+   (~wrreq_0_sqmuxa_0 & wbm_stb_o_0_s & ~g2_0_1_0_0) | (~wrreq_0_sqmuxa_0 & 
+   ~wbf_ack_m_s_0 & g2_0_1_0_0) | (~wbf_ack_m_s_0 & ~wbm_stb_o_0_s & g2_0_1_0_0) | 
+   (~wrreq_0_sqmuxa_0 & ~wbf_ack_m_s_0 & wbm_stb_o_0_s & g2_0_1_0_0);
+assign stb_RNO_8 = (~wbf_ack_m_s_0) | (~g2_0_1_0_0) | (~wbf_ack_m_s_0 & 
+   g2_0_1_0_0);
+assign fb_0_0 = (sbus_done) | (sbus_done & ~un1_wb_ack_N_4_i) | (un1_wb_ack_N_4_i);
+assign fb_0_1 = (sbus_done2_1_sqmuxa_i) | (sbus_done2_1_sqmuxa_i & ~sbus_done2) | 
+   (sbus_done2);
+// @9:184
+  FD1P3DX wbm_we_fast_reg (
+	.D(spi_mosi_pad_c),
+	.SP(wbm_we3),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(wbm_we_fast)
+);
+// @9:184
+  FD1P3DX wbm_we (
+	.D(spi_mosi_pad_c),
+	.SP(wbm_we3),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(spiwbm2_we_o)
+);
+// @9:227
+  FD1S3DX wbm_cyc (
+	.D(wbm_cyce_0),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(spiwbm2_cyc_o)
+);
+// @9:184
+  FD1P3DX \wbm_adr[0]  (
+	.D(spi_mosi_pad_c),
+	.SP(wbm_adr7),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(spiwbm2_adr_o[1])
+);
+// @9:184
+  FD1P3DX \wbm_adr[1]  (
+	.D(idat_0),
+	.SP(wbm_adr7),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(spiwbm2_adr_o[2])
+);
+// @9:184
+  FD1P3DX \wbm_adr[2]  (
+	.D(idat[1]),
+	.SP(wbm_adr7),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(spiwbm2_adr_o[3])
+);
+// @9:184
+  FD1P3DX \wbm_adr[3]  (
+	.D(idat[2]),
+	.SP(wbm_adr7),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(spiwbm2_adr_o[4])
+);
+// @9:227
+  FD1P3DX stb_reg (
+	.D(N_170_0),
+	.SP(stb_2_sqmuxa_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(stb)
+);
+// @9:184
+  FD1P3DX sbus_err_reg (
+	.D(sbus_done_i),
+	.SP(N_51),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(sbus_err)
+);
+// @9:184
+  FD1S3DX sbus_done2p_reg (
+	.D(sbus_done2),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(sbus_done2p)
+);
+// @9:227
+  FD1S3DX sbus_done2_reg (
+	.D(fb_0_1),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(sbus_done2)
+);
+// @9:227
+  FD1S3DX sbus_done_reg (
+	.D(fb_0_0),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(sbus_done)
+);
+// @9:184
+  FD1P3DX \pstate_reg[0]  (
+	.D(pstate_lm[0]),
+	.SP(N_49),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(pstate[0])
+);
+// @9:184
+  FD1P3DX \pstate_reg[1]  (
+	.D(pstate_lm[1]),
+	.SP(N_49),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(pstate[1])
+);
+// @9:184
+  FD1P3DX \pstate_reg[2]  (
+	.D(pstate_lm[2]),
+	.SP(N_49),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(pstate[2])
+);
+// @9:184
+  FD1P3DX \pstate_reg[3]  (
+	.D(pstate_lm[3]),
+	.SP(N_49),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(pstate[3])
+);
+// @9:184
+  FD1P3DX \pstate_reg[4]  (
+	.D(pstate_lm[4]),
+	.SP(N_49),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(pstate[4])
+);
+// @9:227
+  FD1S3DX \odat_reg[0]  (
+	.D(N_13_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[0])
+);
+// @9:227
+  FD1S3DX \odat_reg[1]  (
+	.D(N_15_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[1])
+);
+// @9:227
+  FD1S3DX \odat_reg[2]  (
+	.D(N_17_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[2])
+);
+// @9:227
+  FD1S3DX \odat_reg[3]  (
+	.D(N_19_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[3])
+);
+// @9:227
+  FD1S3DX \odat_reg[4]  (
+	.D(N_21_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[4])
+);
+// @9:227
+  FD1S3DX \odat_reg[5]  (
+	.D(N_23_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[5])
+);
+// @9:227
+  FD1S3DX \odat_reg[6]  (
+	.D(N_25_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[6])
+);
+// @9:227
+  FD1S3DX \odat_reg[7]  (
+	.D(N_27_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[7])
+);
+// @9:227
+  FD1S3DX \odat_reg[8]  (
+	.D(N_451_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[8])
+);
+// @9:227
+  FD1S3DX \odat_reg[9]  (
+	.D(N_452_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[9])
+);
+// @9:227
+  FD1S3DX \odat_reg[10]  (
+	.D(N_33_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[10])
+);
+// @9:227
+  FD1S3DX \odat_reg[11]  (
+	.D(N_35_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[11])
+);
+// @9:227
+  FD1S3DX \odat_reg[12]  (
+	.D(N_37_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[12])
+);
+// @9:227
+  FD1S3DX \odat_reg[13]  (
+	.D(N_39_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[13])
+);
+// @9:227
+  FD1S3DX \odat_reg[14]  (
+	.D(N_41_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[14])
+);
+// @9:227
+  FD1S3DX \odat_reg[15]  (
+	.D(N_43_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(odat[15])
+);
+// @9:227
+  FD1S3DX \nstate_reg[0]  (
+	.D(nstate_i[0]),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(nstate[0])
+);
+// @9:227
+  FD1S3DX \nstate_reg[1]  (
+	.D(un1_nstate_axbxc1),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(nstate[1])
+);
+// @9:227
+  FD1S3DX \nstate_reg[2]  (
+	.D(un1_nstate_axbxc2),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(nstate[2])
+);
+// @9:227
+  FD1S3DX \nstate_reg[3]  (
+	.D(nstate_4[3]),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(nstate[3])
+);
+// @9:227
+  FD1S3DX \nstate_reg[4]  (
+	.D(N_45_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(nstate[4])
+);
+// @9:227
+  FD1S3DX nshift_reg (
+	.D(fb_0),
+	.CK(spi_clk_pad_c_i),
+	.CD(N_450_i),
+	.Q(nshift)
+);
+// @9:184
+  FD1S3DX \idat_fast_reg[0]  (
+	.D(spi_mosi_pad_c),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(idat_fast[0])
+);
+// @9:184
+  FD1S3DX \idat_reg[1]  (
+	.D(idat_0),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(idat[1])
+);
+// @9:184
+  FD1S3DX \idat_reg[2]  (
+	.D(idat[1]),
+	.CK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(idat[2])
+);
+assign un1_nstate_p4 = (nstate[0] & nstate[1] & nstate[2] & nstate[3]);
+assign un1_nstate_axbxc1 = (nstate[0] & ~nstate[1]) | (~nstate[0] & nstate[1]);
+assign wbm_we3_1 = (~pstate[0] & ~pstate[1]);
+assign stb_6_iv_0_0_12_i_a4_0 = (~nstate[4] & spiwbm2_we_o);
+assign un1_nstate_axbxc2 = (nstate[0] & nstate[1] & ~nstate[2]) | (~nstate[0] & 
+   nstate[2]) | (~nstate[1] & nstate[2]) | (~nstate[0] & nstate[1] & nstate[2]);
+assign un1_nstate_ac0_3 = (nstate[0] & nstate[1] & nstate[2]);
+assign wbm_stb_o_0_s = (idat_fast[0] & nshift) | (idat_fast[0] & nshift & 
+   ~stb) | (stb);
+assign so_i_0_m9_i_a5_1_1 = (tail_w & ~tail & ~nshift & ~spiwbm2_we_o) | 
+   (~tail_w & tail & ~nshift & ~spiwbm2_we_o);
+assign so_i_0_m9_i_0 = (nshift & odat[15]) | (nshift & odat[15] & ~sbus_done) | 
+   (~nshift & sbus_done) | (~nshift & ~odat[15] & sbus_done) | (odat[15] & 
+   sbus_done);
+assign N_450_i = (gpio_a28_pad_c & sbus_done2p) | (gpio_a28_pad_c & ~sbus_err) | 
+   (gpio_a28_pad_c & sbus_done2p & sbus_err);
+assign odat_8_i_a3_0_1[0] = (~cmemwin_wbs_en11 & ~nshift & stb) | (~cmemwin_wbs_en11 & 
+   ~nshift & stb & ~spiwbm2_cyc_o) | (~nshift & stb & spiwbm2_cyc_o);
+assign wbm_we3 = (~pstate[2] & ~pstate[3] & ~pstate[4] & wbm_we3_1);
+assign wbm_adr7 = (pstate[2] & ~pstate[3] & ~pstate[4] & wbm_we3_1);
+assign N_474 = (nshift & sbus_done & sbus_err & ~spiwbm2_we_o);
+assign sbus_err_2_sqmuxa_i_a2_1 = (~N_79 & pstate[2] & pstate[4]) | (~N_79 & 
+   pstate[2] & ~spiwbm2_we_o) | (~N_79 & pstate[2] & pstate[4] & spiwbm2_we_o);
+assign N_84 = (~N_66 & nstate[0] & nstate[4] & ~sbus_err);
+assign N_69 = (N_66) | (N_66 & ~nstate[0]) | (nstate[0]) | (~nstate[4]) | 
+   (N_66 & nstate[4]) | (N_66 & ~nstate[0] & nstate[4]) | (nstate[0] & 
+   nstate[4]) | (N_66 & ~sbus_err) | (N_66 & ~nstate[0] & ~sbus_err) | 
+   (nstate[0] & ~sbus_err) | (~nstate[4] & ~sbus_err) | (N_66 & nstate[4] & 
+   ~sbus_err) | (N_66 & ~nstate[0] & nstate[4] & ~sbus_err) | (nstate[0] & 
+   nstate[4] & ~sbus_err) | (sbus_err);
+assign sbus_done2_1_sqmuxa_a1 = (cmemwin_wbs_en11 & ~wbm_stb_o_0 & spiwbm2_cyc_o & 
+   spiwbm2_we_o);
+assign N_45_i = (nstate[4] & ~nstate_RNIRKCK[2] & ~un1_nstate_p4) | (~nstate[4] & 
+   ~nstate_RNIRKCK[2] & un1_nstate_p4);
+assign nstate_4[3] = (N_84) | (N_84 & ~un1_nstate_ac0_3) | (N_84 & ~nstate_RNIRKCK[2] & 
+   ~un1_nstate_ac0_3) | (N_84 & ~nstate[3] & ~nstate_RNIRKCK[2] & ~un1_nstate_ac0_3) | 
+   (nstate[3] & ~nstate_RNIRKCK[2] & ~un1_nstate_ac0_3) | (N_84 & nstate_RNIRKCK[2] & 
+   ~un1_nstate_ac0_3) | (N_84 & un1_nstate_ac0_3) | (N_84 & ~nstate_RNIRKCK[2] & 
+   un1_nstate_ac0_3) | (~nstate[3] & ~nstate_RNIRKCK[2] & un1_nstate_ac0_3) | 
+   (N_84 & nstate[3] & ~nstate_RNIRKCK[2] & un1_nstate_ac0_3) | (N_84 & 
+   nstate_RNIRKCK[2] & un1_nstate_ac0_3);
+assign sbus_done2_1_sqmuxa_0_0 = (~sbus_done2_1_sqmuxa_a1 & ~nshift) | 
+   (~sbus_done2_1_sqmuxa_a1 & ~nstate_RNIRKCK[2]) | (~sbus_done2_1_sqmuxa_a1 & 
+   ~nshift & nstate_RNIRKCK[2]) | (~sbus_done2_1_sqmuxa_a1 & ~sbus_done) | 
+   (~sbus_done2_1_sqmuxa_a1 & ~nshift & sbus_done) | (~sbus_done2_1_sqmuxa_a1 & 
+   ~nstate_RNIRKCK[2] & sbus_done) | (~sbus_done2_1_sqmuxa_a1 & ~nshift & 
+   nstate_RNIRKCK[2] & sbus_done);
+assign so_i_0_m9_i_1 = (N_28 & cmemwin_wbs_en11 & ~nshift) | (N_28 & cmemwin_wbs_en11 & 
+   ~nshift & ~so_i_0_m9_i_0) | (so_i_0_m9_i_0);
+assign odat_8_i_1[4] = (~N_69) | (~N_69 & ~odat[3]) | (~N_69 & ~nshift & 
+   ~odat[3]) | (nshift & ~odat[3]) | (~N_69 & odat[3]) | (~N_69 & ~odat[4]) | 
+   (~nshift & ~odat[4]) | (~N_69 & nshift & ~odat[4]) | (~odat[3] & ~odat[4]) | 
+   (~N_69 & odat[3] & ~odat[4]) | (~nshift & odat[3] & ~odat[4]) | (~N_69 & 
+   nshift & odat[3] & ~odat[4]) | (~N_69 & odat[4]) | (~N_69 & ~odat[3] & 
+   odat[4]) | (~N_69 & ~nshift & ~odat[3] & odat[4]) | (nshift & ~odat[3] & 
+   odat[4]) | (~N_69 & odat[3] & odat[4]);
+assign odat_8_i_1[15] = (~N_69) | (~N_69 & ~odat[14]) | (~N_69 & ~nshift & 
+   ~odat[14]) | (nshift & ~odat[14]) | (~N_69 & odat[14]) | (~N_69 & ~odat[15]) | 
+   (~nshift & ~odat[15]) | (~N_69 & nshift & ~odat[15]) | (~odat[14] & 
+   ~odat[15]) | (~N_69 & odat[14] & ~odat[15]) | (~nshift & odat[14] & 
+   ~odat[15]) | (~N_69 & nshift & odat[14] & ~odat[15]) | (~N_69 & odat[15]) | 
+   (~N_69 & ~odat[14] & odat[15]) | (~N_69 & ~nshift & ~odat[14] & odat[15]) | 
+   (nshift & ~odat[14] & odat[15]) | (~N_69 & odat[14] & odat[15]);
+assign odat_8_i_1[8] = (~N_69) | (~N_69 & ~odat[7]) | (~N_69 & ~nshift & 
+   ~odat[7]) | (nshift & ~odat[7]) | (~N_69 & odat[7]) | (~N_69 & ~odat[8]) | 
+   (~nshift & ~odat[8]) | (~N_69 & nshift & ~odat[8]) | (~odat[7] & ~odat[8]) | 
+   (~N_69 & odat[7] & ~odat[8]) | (~nshift & odat[7] & ~odat[8]) | (~N_69 & 
+   nshift & odat[7] & ~odat[8]) | (~N_69 & odat[8]) | (~N_69 & ~odat[7] & 
+   odat[8]) | (~N_69 & ~nshift & ~odat[7] & odat[8]) | (nshift & ~odat[7] & 
+   odat[8]) | (~N_69 & odat[7] & odat[8]);
+assign odat_8_i_1[13] = (~N_69) | (~N_69 & ~odat[12]) | (~N_69 & ~nshift & 
+   ~odat[12]) | (nshift & ~odat[12]) | (~N_69 & odat[12]) | (~N_69 & ~odat[13]) | 
+   (~nshift & ~odat[13]) | (~N_69 & nshift & ~odat[13]) | (~odat[12] & 
+   ~odat[13]) | (~N_69 & odat[12] & ~odat[13]) | (~nshift & odat[12] & 
+   ~odat[13]) | (~N_69 & nshift & odat[12] & ~odat[13]) | (~N_69 & odat[13]) | 
+   (~N_69 & ~odat[12] & odat[13]) | (~N_69 & ~nshift & ~odat[12] & odat[13]) | 
+   (nshift & ~odat[12] & odat[13]) | (~N_69 & odat[12] & odat[13]);
+assign odat_8_i_1[11] = (~N_69) | (~N_69 & ~odat[10]) | (~N_69 & ~nshift & 
+   ~odat[10]) | (nshift & ~odat[10]) | (~N_69 & odat[10]) | (~N_69 & ~odat[11]) | 
+   (~nshift & ~odat[11]) | (~N_69 & nshift & ~odat[11]) | (~odat[10] & 
+   ~odat[11]) | (~N_69 & odat[10] & ~odat[11]) | (~nshift & odat[10] & 
+   ~odat[11]) | (~N_69 & nshift & odat[10] & ~odat[11]) | (~N_69 & odat[11]) | 
+   (~N_69 & ~odat[10] & odat[11]) | (~N_69 & ~nshift & ~odat[10] & odat[11]) | 
+   (nshift & ~odat[10] & odat[11]) | (~N_69 & odat[10] & odat[11]);
+assign odat_8_i_1[10] = (~N_69) | (~N_69 & ~odat[9]) | (~N_69 & ~nshift & 
+   ~odat[9]) | (nshift & ~odat[9]) | (~N_69 & odat[9]) | (~N_69 & ~odat[10]) | 
+   (~nshift & ~odat[10]) | (~N_69 & nshift & ~odat[10]) | (~odat[9] & 
+   ~odat[10]) | (~N_69 & odat[9] & ~odat[10]) | (~nshift & odat[9] & ~odat[10]) | 
+   (~N_69 & nshift & odat[9] & ~odat[10]) | (~N_69 & odat[10]) | (~N_69 & 
+   ~odat[9] & odat[10]) | (~N_69 & ~nshift & ~odat[9] & odat[10]) | (nshift & 
+   ~odat[9] & odat[10]) | (~N_69 & odat[9] & odat[10]);
+assign odat_8_i_1[14] = (~N_69) | (~N_69 & ~odat[13]) | (~N_69 & ~nshift & 
+   ~odat[13]) | (nshift & ~odat[13]) | (~N_69 & odat[13]) | (~N_69 & ~odat[14]) | 
+   (~nshift & ~odat[14]) | (~N_69 & nshift & ~odat[14]) | (~odat[13] & 
+   ~odat[14]) | (~N_69 & odat[13] & ~odat[14]) | (~nshift & odat[13] & 
+   ~odat[14]) | (~N_69 & nshift & odat[13] & ~odat[14]) | (~N_69 & odat[14]) | 
+   (~N_69 & ~odat[13] & odat[14]) | (~N_69 & ~nshift & ~odat[13] & odat[14]) | 
+   (nshift & ~odat[13] & odat[14]) | (~N_69 & odat[13] & odat[14]);
+assign odat_8_i_1[6] = (~N_69) | (~N_69 & ~odat[5]) | (~N_69 & ~nshift & 
+   ~odat[5]) | (nshift & ~odat[5]) | (~N_69 & odat[5]) | (~N_69 & ~odat[6]) | 
+   (~nshift & ~odat[6]) | (~N_69 & nshift & ~odat[6]) | (~odat[5] & ~odat[6]) | 
+   (~N_69 & odat[5] & ~odat[6]) | (~nshift & odat[5] & ~odat[6]) | (~N_69 & 
+   nshift & odat[5] & ~odat[6]) | (~N_69 & odat[6]) | (~N_69 & ~odat[5] & 
+   odat[6]) | (~N_69 & ~nshift & ~odat[5] & odat[6]) | (nshift & ~odat[5] & 
+   odat[6]) | (~N_69 & odat[5] & odat[6]);
+assign odat_8_i_0[0] = (~N_69) | (~odat[0]) | (~N_69 & odat[0]);
+assign odat_8_i_1[2] = (~N_69) | (~N_69 & ~odat[1]) | (~N_69 & ~nshift & 
+   ~odat[1]) | (nshift & ~odat[1]) | (~N_69 & odat[1]) | (~N_69 & ~odat[2]) | 
+   (~nshift & ~odat[2]) | (~N_69 & nshift & ~odat[2]) | (~odat[1] & ~odat[2]) | 
+   (~N_69 & odat[1] & ~odat[2]) | (~nshift & odat[1] & ~odat[2]) | (~N_69 & 
+   nshift & odat[1] & ~odat[2]) | (~N_69 & odat[2]) | (~N_69 & ~odat[1] & 
+   odat[2]) | (~N_69 & ~nshift & ~odat[1] & odat[2]) | (nshift & ~odat[1] & 
+   odat[2]) | (~N_69 & odat[1] & odat[2]);
+assign odat_8_i_1[9] = (~N_69) | (~N_69 & ~odat[8]) | (~N_69 & ~nshift & 
+   ~odat[8]) | (nshift & ~odat[8]) | (~N_69 & odat[8]) | (~N_69 & ~odat[9]) | 
+   (~nshift & ~odat[9]) | (~N_69 & nshift & ~odat[9]) | (~odat[8] & ~odat[9]) | 
+   (~N_69 & odat[8] & ~odat[9]) | (~nshift & odat[8] & ~odat[9]) | (~N_69 & 
+   nshift & odat[8] & ~odat[9]) | (~N_69 & odat[9]) | (~N_69 & ~odat[8] & 
+   odat[9]) | (~N_69 & ~nshift & ~odat[8] & odat[9]) | (nshift & ~odat[8] & 
+   odat[9]) | (~N_69 & odat[8] & odat[9]);
+assign pstate_lm[0] = (~N_470 & ~N_471 & pstate_s[0]);
+assign pstate_lm[1] = (~N_470 & ~N_471 & pstate_s[1]);
+assign pstate_lm[2] = (~N_470 & ~N_471 & pstate_s[2]);
+assign pstate_lm[4] = (~N_470 & ~N_471 & pstate_s[4]);
+assign pstate_lm[3] = (N_470) | (N_470 & ~N_471) | (N_471) | (N_470 & ~pstate_s[3]) | 
+   (N_470 & ~N_471 & ~pstate_s[3]) | (N_471 & ~pstate_s[3]) | (pstate_s[3]);
+assign N_51 = (N_470) | (N_470 & ~N_474) | (N_474) | (N_470 & ~sbus_err_2_sqmuxa_i_a2_1) | 
+   (N_470 & ~N_474 & ~sbus_err_2_sqmuxa_i_a2_1) | (N_474 & ~sbus_err_2_sqmuxa_i_a2_1) | 
+   (N_470 & sbus_err_2_sqmuxa_i_a2_1) | (N_470 & ~N_474 & sbus_err_2_sqmuxa_i_a2_1) | 
+   (N_474 & sbus_err_2_sqmuxa_i_a2_1) | (~sbus_done & sbus_err_2_sqmuxa_i_a2_1) | 
+   (N_470 & sbus_done & sbus_err_2_sqmuxa_i_a2_1) | (N_470 & ~N_474 & 
+   sbus_done & sbus_err_2_sqmuxa_i_a2_1) | (N_474 & sbus_done & sbus_err_2_sqmuxa_i_a2_1);
+assign sbus_done2_1_sqmuxa_a0_1 = (~cmemwin_wbs_en11 & first_cyc_RNIBECN & 
+   un1_flushack_d & spiwbm2_we_o);
+assign so_i_0_m9_i_2 = (so_i_0_m9_i_1) | (so_i_0_m9_i_1 & ~so_i_0_m9_i_a5_1_1) | 
+   (N_28 & flushack & so_i_0_m9_i_a5_1_1) | (N_28 & flushack & ~so_i_0_m9_i_1 & 
+   so_i_0_m9_i_a5_1_1) | (so_i_0_m9_i_1 & so_i_0_m9_i_a5_1_1);
+assign odat_8_i_a3_0_m5_i_a4_0_0 = (~cmemwin_wbs_en11 & ~first_cyc_RNIBECN) | 
+   (~cmemwin_wbs_en11 & ~un1_flushack_d) | (~cmemwin_wbs_en11 & ~first_cyc_RNIBECN & 
+   un1_flushack_d) | (~cmemwin_wbs_en11 & ~wrreq_0_sqmuxa_0) | (~cmemwin_wbs_en11 & 
+   ~first_cyc_RNIBECN & wrreq_0_sqmuxa_0) | (~cmemwin_wbs_en11 & ~un1_flushack_d & 
+   wrreq_0_sqmuxa_0) | (~cmemwin_wbs_en11 & ~first_cyc_RNIBECN & un1_flushack_d & 
+   wrreq_0_sqmuxa_0);
+assign so_i_0_N_10 = (so_i_0_m9_i_2) | (so_i_0_m9_i_2 & ~so_i_0_m9_i_a5_1) | 
+   (~first_cyc & so_i_0_m9_i_a5_1) | (~first_cyc & ~flushack & so_i_0_m9_i_a5_1) | 
+   (flushack & so_i_0_m9_i_a5_1) | (~first_cyc & ~so_i_0_m9_i_2 & so_i_0_m9_i_a5_1) | 
+   (~first_cyc & ~flushack & ~so_i_0_m9_i_2 & so_i_0_m9_i_a5_1) | (flushack & 
+   ~so_i_0_m9_i_2 & so_i_0_m9_i_a5_1) | (so_i_0_m9_i_2 & so_i_0_m9_i_a5_1);
+assign sbus_done2_1_sqmuxa_i = (~sbus_done2_1_sqmuxa_0_0) | (~sbus_done2_1_sqmuxa_0_0 & 
+   ~wrreq_0_sqmuxa_0) | (~sbus_done2_1_sqmuxa_0_0 & wrreq_0_sqmuxa_0) | 
+   (~sbus_done2_1_sqmuxa_0_0 & ~wbm_stb_o_0_s & wrreq_0_sqmuxa_0) | (~sbus_done2_1_sqmuxa_0_0 & 
+   wbm_stb_o_0_s & wrreq_0_sqmuxa_0) | (~sbus_done2_1_sqmuxa_0_0 & ~sbus_done2_1_sqmuxa_a0_1 & 
+   wbm_stb_o_0_s & wrreq_0_sqmuxa_0) | (sbus_done2_1_sqmuxa_a0_1 & wbm_stb_o_0_s & 
+   wrreq_0_sqmuxa_0);
+assign N_70 = (~N_69) | (~N_69 & ~odat_8_i_a3_0_m5_i_a4_0_0) | (~N_69 & 
+   ~odat_8_i_a3_0_1[0] & ~odat_8_i_a3_0_m5_i_a4_0_0) | (odat_8_i_a3_0_1[0] & 
+   ~odat_8_i_a3_0_m5_i_a4_0_0) | (~N_69 & odat_8_i_a3_0_m5_i_a4_0_0) | 
+   (~N_69 & ~wbf_ack_m_s_0) | (~N_69 & ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | 
+   (~N_69 & ~odat_8_i_a3_0_1[0] & ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | 
+   (odat_8_i_a3_0_1[0] & ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | 
+   (~N_69 & odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | (~N_69 & wbf_ack_m_s_0) | 
+   (~N_69 & ~odat_8_i_a3_0_1[0] & wbf_ack_m_s_0) | (odat_8_i_a3_0_1[0] & 
+   wbf_ack_m_s_0);
+assign N_41_i = (~odat_8_i_1[14] & ~odat_8_i_a3_0_1[0]) | (~odat_8_i_1[14] & 
+   ~odat_8_i_a3_0_1[0] & ~wbf_ack_m_s_0) | (~odat_8_i_1[14] & ~odat_8_i_a3_0_1[0] & 
+   ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | (~odat_8_i_1[14] & odat_8_i_a3_0_m5_i_a4_0_0 & 
+   ~wbf_ack_m_s_0) | (~odat_8_i_1[14] & ~odat_8_i_a3_0_1[0] & wbf_ack_m_s_0);
+assign N_43_i = (~odat_8_i_1[15] & ~odat_8_i_a3_0_1[0]) | (~odat_8_i_1[15] & 
+   ~odat_8_i_a3_0_1[0] & ~wbf_ack_m_s_0) | (~odat_8_i_1[15] & ~odat_8_i_a3_0_1[0] & 
+   ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | (~odat_8_i_1[15] & odat_8_i_a3_0_m5_i_a4_0_0 & 
+   ~wbf_ack_m_s_0) | (~odat_8_i_1[15] & ~odat_8_i_a3_0_1[0] & wbf_ack_m_s_0);
+assign N_13_i = (~odat_8_i_0[0] & ~odat_8_i_a3_0_1[0]) | (~odat_8_i_0[0] & 
+   ~odat_8_i_a3_0_1[0] & ~wbf_ack_m_s_0) | (~odat_8_i_0[0] & ~odat_8_i_a3_0_1[0] & 
+   ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | (~odat_8_i_0[0] & odat_8_i_a3_0_m5_i_a4_0_0 & 
+   ~wbf_ack_m_s_0) | (~odat_8_i_0[0] & ~odat_8_i_a3_0_1[0] & wbf_ack_m_s_0);
+assign N_17_i = (~odat_8_i_1[2] & ~odat_8_i_a3_0_1[0]) | (~odat_8_i_1[2] & 
+   ~odat_8_i_a3_0_1[0] & ~wbf_ack_m_s_0) | (~odat_8_i_1[2] & ~odat_8_i_a3_0_1[0] & 
+   ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | (~odat_8_i_1[2] & odat_8_i_a3_0_m5_i_a4_0_0 & 
+   ~wbf_ack_m_s_0) | (~odat_8_i_1[2] & ~odat_8_i_a3_0_1[0] & wbf_ack_m_s_0);
+assign N_21_i = (~odat_8_i_1[4] & ~odat_8_i_a3_0_1[0]) | (~odat_8_i_1[4] & 
+   ~odat_8_i_a3_0_1[0] & ~wbf_ack_m_s_0) | (~odat_8_i_1[4] & ~odat_8_i_a3_0_1[0] & 
+   ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | (~odat_8_i_1[4] & odat_8_i_a3_0_m5_i_a4_0_0 & 
+   ~wbf_ack_m_s_0) | (~odat_8_i_1[4] & ~odat_8_i_a3_0_1[0] & wbf_ack_m_s_0);
+assign N_25_i = (~odat_8_i_1[6] & ~odat_8_i_a3_0_1[0]) | (~odat_8_i_1[6] & 
+   ~odat_8_i_a3_0_1[0] & ~wbf_ack_m_s_0) | (~odat_8_i_1[6] & ~odat_8_i_a3_0_1[0] & 
+   ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | (~odat_8_i_1[6] & odat_8_i_a3_0_m5_i_a4_0_0 & 
+   ~wbf_ack_m_s_0) | (~odat_8_i_1[6] & ~odat_8_i_a3_0_1[0] & wbf_ack_m_s_0);
+assign N_451_i = (~odat_8_i_1[8] & ~odat_8_i_a3_0_1[0]) | (~odat_8_i_1[8] & 
+   ~odat_8_i_a3_0_1[0] & ~wbf_ack_m_s_0) | (~odat_8_i_1[8] & ~odat_8_i_a3_0_1[0] & 
+   ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | (~odat_8_i_1[8] & odat_8_i_a3_0_m5_i_a4_0_0 & 
+   ~wbf_ack_m_s_0) | (~odat_8_i_1[8] & ~odat_8_i_a3_0_1[0] & wbf_ack_m_s_0);
+assign N_452_i = (~odat_8_i_1[9] & ~odat_8_i_a3_0_1[0]) | (~odat_8_i_1[9] & 
+   ~odat_8_i_a3_0_1[0] & ~wbf_ack_m_s_0) | (~odat_8_i_1[9] & ~odat_8_i_a3_0_1[0] & 
+   ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | (~odat_8_i_1[9] & odat_8_i_a3_0_m5_i_a4_0_0 & 
+   ~wbf_ack_m_s_0) | (~odat_8_i_1[9] & ~odat_8_i_a3_0_1[0] & wbf_ack_m_s_0);
+assign N_33_i = (~odat_8_i_1[10] & ~odat_8_i_a3_0_1[0]) | (~odat_8_i_1[10] & 
+   ~odat_8_i_a3_0_1[0] & ~wbf_ack_m_s_0) | (~odat_8_i_1[10] & ~odat_8_i_a3_0_1[0] & 
+   ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | (~odat_8_i_1[10] & odat_8_i_a3_0_m5_i_a4_0_0 & 
+   ~wbf_ack_m_s_0) | (~odat_8_i_1[10] & ~odat_8_i_a3_0_1[0] & wbf_ack_m_s_0);
+assign N_35_i = (~odat_8_i_1[11] & ~odat_8_i_a3_0_1[0]) | (~odat_8_i_1[11] & 
+   ~odat_8_i_a3_0_1[0] & ~wbf_ack_m_s_0) | (~odat_8_i_1[11] & ~odat_8_i_a3_0_1[0] & 
+   ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | (~odat_8_i_1[11] & odat_8_i_a3_0_m5_i_a4_0_0 & 
+   ~wbf_ack_m_s_0) | (~odat_8_i_1[11] & ~odat_8_i_a3_0_1[0] & wbf_ack_m_s_0);
+assign N_39_i = (~odat_8_i_1[13] & ~odat_8_i_a3_0_1[0]) | (~odat_8_i_1[13] & 
+   ~odat_8_i_a3_0_1[0] & ~wbf_ack_m_s_0) | (~odat_8_i_1[13] & ~odat_8_i_a3_0_1[0] & 
+   ~odat_8_i_a3_0_m5_i_a4_0_0 & ~wbf_ack_m_s_0) | (~odat_8_i_1[13] & odat_8_i_a3_0_m5_i_a4_0_0 & 
+   ~wbf_ack_m_s_0) | (~odat_8_i_1[13] & ~odat_8_i_a3_0_1[0] & wbf_ack_m_s_0);
+assign wbm_cyce_0 = (wbm_cyc4) | (wbm_cyc4 & ~spiwbm2_cyc_o) | (spiwbm2_cyc_o);
+assign wbf_ack_m_s_0 = (~cmemwin_wbs_en11 & ~wbm_we_fast & ~wbf_ack_m_s_0_m1_e_1 & 
+   un1_full_NE_1);
+assign N_27_i_1 = (nshift & ~odat[6]) | (~nshift & ~odat[7]) | (~odat[6] & 
+   ~odat[7]) | (~nshift & odat[6] & ~odat[7]) | (nshift & ~odat[6] & odat[7]);
+assign N_27_i = (~N_70 & ~N_27_i_1) | (~N_70 & ~N_27_i_1 & ~un1_wb_ack_m3) | 
+   (~N_70 & ~nshift & ~un1_wb_ack_m3) | (~N_70 & ~N_27_i_1 & nshift & 
+   ~un1_wb_ack_m3) | (~N_70 & ~N_27_i_1 & un1_wb_ack_m3);
+assign N_19_i_1 = (nshift & ~odat[2]) | (~nshift & ~odat[3]) | (~odat[2] & 
+   ~odat[3]) | (~nshift & odat[2] & ~odat[3]) | (nshift & ~odat[2] & odat[3]);
+assign N_19_i = (~N_70 & ~N_19_i_1) | (~N_70 & ~N_19_i_1 & ~un1_wb_ack_m3) | 
+   (~N_70 & ~nshift & ~un1_wb_ack_m3) | (~N_70 & ~N_19_i_1 & nshift & 
+   ~un1_wb_ack_m3) | (~N_70 & ~N_19_i_1 & un1_wb_ack_m3);
+assign N_23_i_1 = (nshift & ~odat[4]) | (~nshift & ~odat[5]) | (~odat[4] & 
+   ~odat[5]) | (~nshift & odat[4] & ~odat[5]) | (nshift & ~odat[4] & odat[5]);
+assign N_23_i = (~N_70 & ~N_23_i_1) | (~N_70 & ~N_23_i_1 & ~un1_wb_ack_m3) | 
+   (~N_70 & ~nshift & ~un1_wb_ack_m3) | (~N_70 & ~N_23_i_1 & nshift & 
+   ~un1_wb_ack_m3) | (~N_70 & ~N_23_i_1 & un1_wb_ack_m3);
+assign N_15_i_1 = (nshift & ~odat[0]) | (~nshift & ~odat[1]) | (~odat[0] & 
+   ~odat[1]) | (~nshift & odat[0] & ~odat[1]) | (nshift & ~odat[0] & odat[1]);
+assign N_15_i = (~N_70 & ~N_15_i_1) | (~N_70 & ~N_15_i_1 & ~un1_wb_ack_m3) | 
+   (~N_70 & ~nshift & ~un1_wb_ack_m3) | (~N_70 & ~N_15_i_1 & nshift & 
+   ~un1_wb_ack_m3) | (~N_70 & ~N_15_i_1 & un1_wb_ack_m3);
+assign N_37_i_1 = (nshift & ~odat[11]) | (~nshift & ~odat[12]) | (~odat[11] & 
+   ~odat[12]) | (~nshift & odat[11] & ~odat[12]) | (nshift & ~odat[11] & 
+   odat[12]);
+assign N_37_i = (~N_70 & ~N_37_i_1) | (~N_70 & ~N_37_i_1 & ~un1_wb_ack_m3) | 
+   (~N_70 & ~nshift & ~un1_wb_ack_m3) | (~N_70 & ~N_37_i_1 & nshift & 
+   ~un1_wb_ack_m3) | (~N_70 & ~N_37_i_1 & un1_wb_ack_m3);
+assign g0_0_1 = (nstate[4] & sbus_done);
+assign N_79 = (~pstate[0]) | (~pstate[1]) | (~pstate[0] & pstate[1]) | 
+   (~pstate[0] & ~pstate[3]) | (~pstate[1] & ~pstate[3]) | (~pstate[0] & 
+   pstate[1] & ~pstate[3]) | (pstate[3]);
+assign g0_0_2 = (nstate[0] & nstate[2] & spiwbm2_we_o);
+assign N_471 = (~N_79 & pstate[2] & pstate[4]);
+assign nstate_RNIRKCK[2] = (~N_65 & nstate[0] & nstate[2] & nstate[4]);
+assign g0_0 = (~N_471) | (~N_471 & ~sbus_err) | (~N_471 & ~sbus_done & 
+   ~sbus_err) | (sbus_done & ~sbus_err) | (~N_471 & sbus_err);
+assign N_49 = (g0_0) | (g0_0 & ~g0_0_2) | (g0_0 & g0_0_2) | (g0_0 & ~g0_0_1 & 
+   g0_0_2) | (~N_65 & g0_0_1 & g0_0_2) | (~N_65 & ~g0_0 & g0_0_1 & g0_0_2) | 
+   (g0_0 & g0_0_1 & g0_0_2);
+assign N_65 = (~nstate[1]) | (~nstate[1] & ~nstate[3]) | (nstate[3]);
+assign g0_1_0 = (nstate[1] & ~nstate[3]);
+assign g0_5_0 = (~nstate[2] & ~nstate[4]);
+assign wbf_ack_m = (idat_0 & nshift & wbf_ack_m_s_0) | (idat_0 & nshift & 
+   ~stb & wbf_ack_m_s_0) | (stb & wbf_ack_m_s_0);
+assign g0_1_3 = (g0_1_0 & nstate[0] & ~nstate[2] & nstate[4]);
+assign wbm_cyc4 = (~N_65 & g0_5_0 & nstate[0] & ~sbus_err);
+assign g0_0_0 = (idat_0 & nshift) | (idat_0 & nshift & ~wbm_cyc4) | (wbm_cyc4);
+assign g0_1 = (g0_0_0) | (g0_0_0 & ~spiwbm2_we_o) | (g0_0_0 & spiwbm2_we_o) | 
+   (g0_0_0 & ~sbus_err & spiwbm2_we_o) | (g0_0_0 & ~g0_1_3 & ~sbus_err & 
+   spiwbm2_we_o) | (g0_1_3 & ~sbus_err & spiwbm2_we_o) | (g0_0_0 & sbus_err & 
+   spiwbm2_we_o);
+assign stb_2_sqmuxa_i = (N_28 & cmemwin_wbs_en11) | (N_28 & cmemwin_wbs_en11 & 
+   ~g0_1) | (g0_1) | (N_28 & ~wb_ack_0) | (~cmemwin_wbs_en11 & ~wb_ack_0) | 
+   (N_28 & cmemwin_wbs_en11 & ~wb_ack_0) | (N_28 & ~g0_1 & ~wb_ack_0) | 
+   (~cmemwin_wbs_en11 & ~g0_1 & ~wb_ack_0) | (N_28 & cmemwin_wbs_en11 & 
+   ~g0_1 & ~wb_ack_0) | (g0_1 & ~wb_ack_0) | (N_28 & cmemwin_wbs_en11 & 
+   wb_ack_0) | (N_28 & cmemwin_wbs_en11 & ~g0_1 & wb_ack_0) | (g0_1 & 
+   wb_ack_0);
+assign N_66 = (~nstate[1]) | (~nstate[2]) | (~nstate[1] & nstate[2]) | 
+   (~nstate[1] & ~nstate[3]) | (~nstate[2] & ~nstate[3]) | (~nstate[1] & 
+   nstate[2] & ~nstate[3]) | (nstate[3]);
+assign g2_0_1_0_0 = (idat_0 & nshift) | (idat_0 & nshift & ~stb) | (stb);
+assign g0_2 = (~N_66 & ~nstate[0] & ~nstate[4] & ~spiwbm2_we_o);
+assign g0_3_0 = (g0_2 & g1_1_0) | (g0_2 & g1_1_0 & ~spiwbm2_cyc_o) | (g0_2 & 
+   g1_1_0 & spiwbm2_cyc_o) | (g0_2 & g1_1_0 & ~g2_0_1_0_0 & spiwbm2_cyc_o) | 
+   (g0_2 & g2_0_1_0_0 & spiwbm2_cyc_o);
+assign g0_14_sn = (g0_3_0 & ~g1_0_0 & ~g2_0_1_0_0) | (g0_3_0 & ~g1_0_0 & 
+   ~wbf_ack_m_s_0) | (g0_3_0 & ~g1_0_0 & ~g2_0_1_0_0 & wbf_ack_m_s_0);
+assign stb_6_iv_0_0_i_rn_0 = (~N_28 & idat_0 & nshift) | (~N_28 & ~stb_6_iv_0_0_12_i_a4_0) | 
+   (~N_28 & idat_0 & nshift & stb_6_iv_0_0_12_i_a4_0);
+assign stb_6_iv_0_0_12_i_sn = (~cmemwin_wbs_en11 & idat_0 & nshift) | (~cmemwin_wbs_en11 & 
+   ~stb_6_iv_0_0_12_i_a4_0) | (~cmemwin_wbs_en11 & idat_0 & nshift & stb_6_iv_0_0_12_i_a4_0);
+assign N_170_0 = (~stb_6_iv_0_0_12_i_sn & stb_6_iv_0_0_i_rn_0) | (~stb_6_iv_0_0_12_i_sn & 
+   stb_6_iv_0_0_i_rn_0 & ~wrreq_0_sqmuxa) | (stb_6_iv_0_0_12_i_sn & ~wbf_ack_m & 
+   ~wrreq_0_sqmuxa) | (stb_6_iv_0_0_12_i_sn & ~stb_6_iv_0_0_i_rn_0 & ~wbf_ack_m & 
+   ~wrreq_0_sqmuxa) | (stb_6_iv_0_0_i_rn_0 & ~wbf_ack_m & ~wrreq_0_sqmuxa) | 
+   (~stb_6_iv_0_0_12_i_sn & stb_6_iv_0_0_i_rn_0 & wbf_ack_m & ~wrreq_0_sqmuxa) | 
+   (~stb_6_iv_0_0_12_i_sn & stb_6_iv_0_0_i_rn_0 & wrreq_0_sqmuxa);
+assign N_470 = (g0_0_2 & ~N_65 & sbus_done & nstate[4]);
+assign g0_14_rn_0 = (spiwbm2_cyc_o & g2_0_1_0_0 & g0_2) | (spiwbm2_cyc_o & 
+   g2_0_1_0_0 & ~g1_1_0 & g0_2) | (g1_1_0 & g0_2);
+// @9:184
+  CCU2B \pstate_cry_0[3]  (
+	.A0(pstate[3]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(pstate[4]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(pstate_cry[2]),
+	.COUT(pstate_cry_0_COUT[3]),
+	.S0(pstate_s[3]),
+	.S1(pstate_s[4])
+);
+defparam \pstate_cry_0[3] .INIT0=16'h0600;
+defparam \pstate_cry_0[3] .INIT1=16'h060a;
+defparam \pstate_cry_0[3] .INJECT1_0="NO";
+defparam \pstate_cry_0[3] .INJECT1_1="NO";
+// @9:184
+  CCU2B \pstate_cry_0[1]  (
+	.A0(pstate[1]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(pstate[2]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(pstate_cry[0]),
+	.COUT(pstate_cry[2]),
+	.S0(pstate_s[1]),
+	.S1(pstate_s[2])
+);
+defparam \pstate_cry_0[1] .INIT0=16'h0600;
+defparam \pstate_cry_0[1] .INIT1=16'h0600;
+defparam \pstate_cry_0[1] .INJECT1_0="NO";
+defparam \pstate_cry_0[1] .INJECT1_1="NO";
+  CCU2B \pstate_cry_0[0]  (
+	.A0(GND),
+	.B0(VCC),
+	.C0(GND),
+	.D0(VCC),
+	.A1(pstate[0]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(GND),
+	.COUT(pstate_cry[0]),
+	.S0(pstate_cry_0_S0[0]),
+	.S1(pstate_s[0])
+);
+defparam \pstate_cry_0[0] .INIT0=16'h0a0c;
+defparam \pstate_cry_0[0] .INIT1=16'h0600;
+defparam \pstate_cry_0[0] .INJECT1_0="NO";
+defparam \pstate_cry_0[0] .INJECT1_1="NO";
+//@10:353
+  assign GND_0 = 1'b0;
+//@10:353
+  assign VCC_0 = 1'b1;
+endmodule /* spi_sbus */
+
+module wb_writebuffer_fifo (
+  spiwbm2_adr_o,
+  writebuffer_q,
+  tail_1z,
+  wbf_ack_m_s_0_m1_e_1,
+  first_cyc_RNIBECN,
+  flushack,
+  tail_w,
+  un1_full_NE_1,
+  un1_full_NE_0_0,
+  GND,
+  wrreq_0_sqmuxa,
+  goingfull,
+  rdreq,
+  VCC,
+  rstn_i,
+  spi_clk_pad_c_i
+)
+;
+input [4:1] spiwbm2_adr_o ;
+output [36:36] writebuffer_q ;
+input tail_1z ;
+output wbf_ack_m_s_0_m1_e_1 ;
+input first_cyc_RNIBECN ;
+output flushack ;
+input tail_w ;
+output un1_full_NE_1 ;
+output un1_full_NE_0_0 ;
+input GND ;
+input wrreq_0_sqmuxa ;
+output goingfull ;
+input rdreq ;
+input VCC ;
+input rstn_i ;
+input spi_clk_pad_c_i ;
+wire tail_1z ;
+wire wbf_ack_m_s_0_m1_e_1 ;
+wire first_cyc_RNIBECN ;
+wire flushack ;
+wire tail_w ;
+wire un1_full_NE_1 ;
+wire un1_full_NE_0_0 ;
+wire GND ;
+wire wrreq_0_sqmuxa ;
+wire goingfull ;
+wire rdreq ;
+wire VCC ;
+wire rstn_i ;
+wire spi_clk_pad_c_i ;
+wire [3:0] tail;
+wire [3:0] tail_QN;
+wire [3:1] taile_0;
+wire [3:0] head;
+wire [3:0] head_QN;
+wire tail_e0 ;
+wire head_e0 ;
+wire head_n1 ;
+wire head_n2 ;
+wire head_n3 ;
+wire rdreq_i ;
+wire un1_goingfull5_0_i ;
+wire goingfull_QN ;
+wire fifomem_ram_15 ;
+wire fifomem_ram_16 ;
+wire fifomem_ram_17 ;
+wire tail_n2 ;
+wire wbf_ack_m_s_0_m1_e_0 ;
+wire tail_n3 ;
+wire GND_0 ;
+wire VCC_0 ;
+// @8:135
+  FD1S3DX \tail_reg[0]  (
+	.D(tail_e0),
+	.CK(spi_clk_pad_c_i),
+	.CD(rstn_i),
+	.Q(tail[0])
+);
+// @8:135
+  FD1S3DX \tail_reg[1]  (
+	.D(taile_0[1]),
+	.CK(spi_clk_pad_c_i),
+	.CD(rstn_i),
+	.Q(tail[1])
+);
+// @8:135
+  FD1S3DX \tail_reg[2]  (
+	.D(taile_0[2]),
+	.CK(spi_clk_pad_c_i),
+	.CD(rstn_i),
+	.Q(tail[2])
+);
+// @8:135
+  FD1S3DX \tail_reg[3]  (
+	.D(taile_0[3]),
+	.CK(spi_clk_pad_c_i),
+	.CD(rstn_i),
+	.Q(tail[3])
+);
+// @8:135
+  FD1S3DX \head_reg[0]  (
+	.D(head_e0),
+	.CK(spi_clk_pad_c_i),
+	.CD(rstn_i),
+	.Q(head[0])
+);
+// @8:135
+  FD1P3DX \head_reg[1]  (
+	.D(head_n1),
+	.SP(rdreq),
+	.CK(spi_clk_pad_c_i),
+	.CD(rstn_i),
+	.Q(head[1])
+);
+// @8:135
+  FD1P3DX \head_reg[2]  (
+	.D(head_n2),
+	.SP(rdreq),
+	.CK(spi_clk_pad_c_i),
+	.CD(rstn_i),
+	.Q(head[2])
+);
+// @8:135
+  FD1P3DX \head_reg[3]  (
+	.D(head_n3),
+	.SP(rdreq),
+	.CK(spi_clk_pad_c_i),
+	.CD(rstn_i),
+	.Q(head[3])
+);
+// @8:135
+  FD1P3DX goingfull_reg (
+	.D(rdreq_i),
+	.SP(un1_goingfull5_0_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(rstn_i),
+	.Q(goingfull)
+);
+// @8:149
+  DPR16X4B fifomem_ram_3 (
+	.DO0(fifomem_ram_15),
+	.DO1(fifomem_ram_16),
+	.DO2(fifomem_ram_17),
+	.DO3(writebuffer_q[36]),
+	.RAD0(head[0]),
+	.RAD1(head[1]),
+	.RAD2(head[2]),
+	.RAD3(head[3]),
+	.WAD0(tail[0]),
+	.WAD1(tail[1]),
+	.WAD2(tail[2]),
+	.WAD3(tail[3]),
+	.DI0(spiwbm2_adr_o[1]),
+	.DI1(spiwbm2_adr_o[2]),
+	.DI2(spiwbm2_adr_o[3]),
+	.DI3(spiwbm2_adr_o[4]),
+	.WRE(wrreq_0_sqmuxa),
+	.WCK(spi_clk_pad_c_i)
+);
+assign head_n1 = (head[0] & ~head[1]) | (~head[0] & head[1]);
+assign head_n2 = (head[0] & head[1] & ~head[2]) | (~head[0] & head[2]) | 
+   (~head[1] & head[2]) | (~head[0] & head[1] & head[2]);
+assign tail_n2 = (tail[0] & tail[1] & ~tail[2]) | (~tail[0] & tail[2]) | 
+   (~tail[1] & tail[2]) | (~tail[0] & tail[1] & tail[2]);
+assign un1_full_NE_0_0 = (~head[2] & ~head[3] & ~tail[2] & ~tail[3]) | 
+   (head[2] & ~head[3] & tail[2] & ~tail[3]) | (~head[2] & head[3] & ~tail[2] & 
+   tail[3]) | (head[2] & head[3] & tail[2] & tail[3]);
+assign un1_full_NE_1 = (~head[0] & ~head[1] & ~tail[0] & ~tail[1]) | (head[0] & 
+   ~head[1] & tail[0] & ~tail[1]) | (~head[0] & head[1] & ~tail[0] & tail[1]) | 
+   (head[0] & head[1] & tail[0] & tail[1]);
+assign wbf_ack_m_s_0_m1_e_0 = (tail_w & ~tail_1z & ~goingfull) | (~tail_w & 
+   tail_1z & ~goingfull);
+assign head_n3 = (head[0] & head[1] & head[2] & ~head[3]) | (~head[0] & 
+   head[3]) | (~head[1] & head[3]) | (~head[0] & head[1] & head[3]) | 
+   (~head[2] & head[3]) | (~head[0] & head[2] & head[3]) | (~head[1] & 
+   head[2] & head[3]) | (~head[0] & head[1] & head[2] & head[3]);
+assign tail_n3 = (tail[0] & tail[1] & tail[2] & ~tail[3]) | (~tail[0] & 
+   tail[3]) | (~tail[1] & tail[3]) | (~tail[0] & tail[1] & tail[3]) | 
+   (~tail[2] & tail[3]) | (~tail[0] & tail[2] & tail[3]) | (~tail[1] & 
+   tail[2] & tail[3]) | (~tail[0] & tail[1] & tail[2] & tail[3]);
+assign flushack = (~goingfull & un1_full_NE_0_0 & un1_full_NE_1);
+assign head_e0 = (~flushack & tail_w & ~tail_1z & ~head[0]) | (~flushack & 
+   ~tail_w & tail_1z & ~head[0]) | (flushack & head[0]) | (flushack & 
+   ~tail_1z & head[0]) | (~tail_w & ~tail_1z & head[0]) | (flushack & 
+   tail_w & ~tail_1z & head[0]) | (flushack & tail_1z & head[0]) | (flushack & 
+   ~tail_w & tail_1z & head[0]) | (tail_w & tail_1z & head[0]);
+assign rdreq_i = (flushack) | (flushack & ~tail_1z) | (~tail_w & ~tail_1z) | 
+   (flushack & tail_w & ~tail_1z) | (flushack & tail_1z) | (flushack & 
+   ~tail_w & tail_1z) | (tail_w & tail_1z);
+assign tail_e0 = (tail[0] & ~wrreq_0_sqmuxa) | (~tail[0] & wrreq_0_sqmuxa);
+assign un1_goingfull5_0_i = (~flushack & tail_w & ~tail_1z & ~wrreq_0_sqmuxa) | 
+   (~flushack & ~tail_w & tail_1z & ~wrreq_0_sqmuxa) | (flushack & wrreq_0_sqmuxa) | 
+   (flushack & ~tail_1z & wrreq_0_sqmuxa) | (~tail_w & ~tail_1z & wrreq_0_sqmuxa) | 
+   (flushack & tail_w & ~tail_1z & wrreq_0_sqmuxa) | (flushack & tail_1z & 
+   wrreq_0_sqmuxa) | (flushack & ~tail_w & tail_1z & wrreq_0_sqmuxa) | 
+   (tail_w & tail_1z & wrreq_0_sqmuxa);
+assign taile_0[1] = (~tail[0] & tail[1]) | (tail[1] & ~wrreq_0_sqmuxa) | 
+   (tail[0] & ~tail[1] & wrreq_0_sqmuxa) | (~tail[0] & tail[1] & wrreq_0_sqmuxa);
+assign taile_0[2] = (tail[2] & tail_n2) | (tail[2] & ~wrreq_0_sqmuxa) | 
+   (tail_n2 & wrreq_0_sqmuxa);
+assign taile_0[3] = (tail[3] & tail_n3) | (tail[3] & ~wrreq_0_sqmuxa) | 
+   (tail_n3 & wrreq_0_sqmuxa);
+assign wbf_ack_m_s_0_m1_e_1 = (~first_cyc_RNIBECN) | (~wbf_ack_m_s_0_m1_e_0) | 
+   (~first_cyc_RNIBECN & wbf_ack_m_s_0_m1_e_0) | (~un1_full_NE_0_0) | 
+   (~first_cyc_RNIBECN & un1_full_NE_0_0) | (~wbf_ack_m_s_0_m1_e_0 & un1_full_NE_0_0) | 
+   (~first_cyc_RNIBECN & wbf_ack_m_s_0_m1_e_0 & un1_full_NE_0_0);
+//@10:353
+  assign GND_0 = 1'b0;
+//@10:353
+  assign VCC_0 = 1'b1;
+endmodule /* wb_writebuffer_fifo */
+
+module wb_writebuffer (
+  idat,
+  wbf_adr,
+  spiwbm2_adr_o,
+  spi_clk_pad_c_i,
+  rstn_i,
+  VCC,
+  wrreq_0_sqmuxa,
+  first_cyc_RNIBECN,
+  wbf_ack_m_s_0_m1_e_1,
+  wrreq_0_sqmuxa_0_x,
+  N_28,
+  spiwbm2_cyc_o,
+  stb,
+  nshift,
+  wbf_stb_0,
+  spiwbm2_we_o,
+  wrreq8_s,
+  wbm_stb_o_0,
+  wrreq_0_sqmuxa_0,
+  un1_full_NE_1,
+  un1_full_NE_0_0,
+  goingfull,
+  wbm_we_fast,
+  GND,
+  tail,
+  tail_w,
+  flushack
+)
+;
+input [0:0] idat ;
+output [4:4] wbf_adr ;
+input [4:1] spiwbm2_adr_o ;
+input spi_clk_pad_c_i ;
+input rstn_i ;
+input VCC ;
+input wrreq_0_sqmuxa ;
+input first_cyc_RNIBECN ;
+output wbf_ack_m_s_0_m1_e_1 ;
+output wrreq_0_sqmuxa_0_x ;
+output N_28 ;
+input spiwbm2_cyc_o ;
+input stb ;
+input nshift ;
+output wbf_stb_0 ;
+input spiwbm2_we_o ;
+input wrreq8_s ;
+output wbm_stb_o_0 ;
+output wrreq_0_sqmuxa_0 ;
+output un1_full_NE_1 ;
+output un1_full_NE_0_0 ;
+output goingfull ;
+input wbm_we_fast ;
+input GND ;
+input tail ;
+input tail_w ;
+output flushack ;
+wire spi_clk_pad_c_i ;
+wire rstn_i ;
+wire VCC ;
+wire wrreq_0_sqmuxa ;
+wire first_cyc_RNIBECN ;
+wire wbf_ack_m_s_0_m1_e_1 ;
+wire wrreq_0_sqmuxa_0_x ;
+wire N_28 ;
+wire spiwbm2_cyc_o ;
+wire stb ;
+wire nshift ;
+wire wbf_stb_0 ;
+wire spiwbm2_we_o ;
+wire wrreq8_s ;
+wire wbm_stb_o_0 ;
+wire wrreq_0_sqmuxa_0 ;
+wire un1_full_NE_1 ;
+wire un1_full_NE_0_0 ;
+wire goingfull ;
+wire wbm_we_fast ;
+wire GND ;
+wire tail ;
+wire tail_w ;
+wire flushack ;
+wire [36:36] writebuffer_q;
+wire rdreq ;
+wire GND_0 ;
+wire VCC_0 ;
+assign rdreq = (~flushack & tail_w & ~tail) | (~flushack & ~tail_w & tail);
+assign wrreq_0_sqmuxa_0 = (wbm_we_fast & ~goingfull) | (wbm_we_fast & ~un1_full_NE_0_0) | 
+   (wbm_we_fast & ~goingfull & un1_full_NE_0_0) | (wbm_we_fast & ~un1_full_NE_1) | 
+   (wbm_we_fast & ~goingfull & un1_full_NE_1) | (wbm_we_fast & ~un1_full_NE_0_0 & 
+   un1_full_NE_1) | (wbm_we_fast & ~goingfull & un1_full_NE_0_0 & un1_full_NE_1);
+assign wbf_adr[4] = (~flushack & writebuffer_q[36]) | (~flushack & writebuffer_q[36] & 
+   ~spiwbm2_adr_o[4]) | (flushack & spiwbm2_adr_o[4]) | (flushack & ~writebuffer_q[36] & 
+   spiwbm2_adr_o[4]) | (writebuffer_q[36] & spiwbm2_adr_o[4]);
+assign wbf_stb_0 = (flushack & wbm_stb_o_0) | (flushack & ~wrreq8_s) | 
+   (flushack & wbm_stb_o_0 & wrreq8_s) | (flushack & wbm_stb_o_0 & ~spiwbm2_we_o) | 
+   (flushack & ~wrreq8_s & ~spiwbm2_we_o) | (flushack & wbm_stb_o_0 & 
+   wrreq8_s & ~spiwbm2_we_o) | (flushack & spiwbm2_we_o);
+assign N_28 = (idat[0] & nshift & spiwbm2_cyc_o) | (idat[0] & nshift & 
+   ~stb & spiwbm2_cyc_o) | (stb & spiwbm2_cyc_o);
+assign wbm_stb_o_0 = (~idat[0] & ~stb) | (~nshift & ~stb) | (~idat[0] & 
+   nshift & ~stb);
+assign wrreq_0_sqmuxa_0_x = (~goingfull) | (~un1_full_NE_0_0) | (~goingfull & 
+   un1_full_NE_0_0) | (~un1_full_NE_1) | (~goingfull & un1_full_NE_1) | 
+   (~un1_full_NE_0_0 & un1_full_NE_1) | (~goingfull & un1_full_NE_0_0 & 
+   un1_full_NE_1);
+// @8:62
+  wb_writebuffer_fifo writebuffer (
+	.spiwbm2_adr_o({spiwbm2_adr_o[4], spiwbm2_adr_o[3], spiwbm2_adr_o[2], 
+   spiwbm2_adr_o[1]}),
+	.writebuffer_q(writebuffer_q[36]),
+	.tail_1z(tail),
+	.wbf_ack_m_s_0_m1_e_1(wbf_ack_m_s_0_m1_e_1),
+	.first_cyc_RNIBECN(first_cyc_RNIBECN),
+	.flushack(flushack),
+	.tail_w(tail_w),
+	.un1_full_NE_1(un1_full_NE_1),
+	.un1_full_NE_0_0(un1_full_NE_0_0),
+	.GND(GND),
+	.wrreq_0_sqmuxa(wrreq_0_sqmuxa),
+	.goingfull(goingfull),
+	.rdreq(rdreq),
+	.VCC(VCC),
+	.rstn_i(rstn_i),
+	.spi_clk_pad_c_i(spi_clk_pad_c_i)
+);
+//@10:353
+  assign GND_0 = 1'b0;
+//@10:353
+  assign VCC_0 = 1'b1;
+endmodule /* wb_writebuffer */
+
+module resync_fifo_issueq (
+  wbf_adr,
+  gpio_a16_pad_c,
+  GND,
+  gpio_a15_pad_c,
+  wbf_stb_0,
+  tail_0,
+  un1_wbs_cyc_i,
+  head,
+  pll_100mhz,
+  VCC,
+  tail_w,
+  rstn_i,
+  spi_clk_pad_c_i
+)
+;
+input [4:4] wbf_adr ;
+input gpio_a16_pad_c ;
+input GND ;
+input gpio_a15_pad_c ;
+input wbf_stb_0 ;
+input tail_0 ;
+input un1_wbs_cyc_i ;
+output head ;
+input pll_100mhz ;
+input VCC ;
+output tail_w ;
+input rstn_i ;
+input spi_clk_pad_c_i ;
+wire gpio_a16_pad_c ;
+wire GND ;
+wire gpio_a15_pad_c ;
+wire wbf_stb_0 ;
+wire tail_0 ;
+wire un1_wbs_cyc_i ;
+wire head ;
+wire pll_100mhz ;
+wire VCC ;
+wire tail_w ;
+wire rstn_i ;
+wire spi_clk_pad_c_i ;
+wire [4:4] spiwbm_adr_o;
+wire [36:36] dat_QN;
+wire tail ;
+wire tail_w_QN ;
+wire tail_3 ;
+wire tail_QN_0 ;
+wire head_r ;
+wire head_r_QN ;
+wire head_3 ;
+wire head_QN ;
+wire tail_3_2_0_x0 ;
+wire tail_3_2_0_x1 ;
+wire N_588 ;
+wire N_587 ;
+wire N_586 ;
+wire N_585 ;
+wire N_584 ;
+wire N_583 ;
+wire N_582 ;
+wire N_581 ;
+wire N_580 ;
+wire N_579 ;
+wire N_578 ;
+wire N_577 ;
+wire N_576 ;
+wire N_575 ;
+wire N_574 ;
+wire N_573 ;
+wire N_572 ;
+wire N_571 ;
+wire N_570 ;
+wire N_569 ;
+wire N_568 ;
+wire N_567 ;
+wire N_566 ;
+wire N_431 ;
+wire N_430 ;
+wire N_429 ;
+wire N_428 ;
+wire N_427 ;
+wire N_426 ;
+wire N_425 ;
+wire N_424 ;
+wire N_423 ;
+wire N_422 ;
+wire N_421 ;
+wire N_420 ;
+wire N_419 ;
+wire N_418 ;
+wire N_417 ;
+wire N_416 ;
+wire N_415 ;
+wire N_414 ;
+wire N_413 ;
+wire N_412 ;
+wire N_411 ;
+wire N_410 ;
+wire N_409 ;
+wire N_408 ;
+wire N_407 ;
+wire N_406 ;
+wire N_405 ;
+wire N_404 ;
+wire N_403 ;
+wire N_402 ;
+wire N_401 ;
+wire N_400 ;
+wire N_399 ;
+wire N_398 ;
+wire N_397 ;
+wire N_396 ;
+wire N_395 ;
+wire N_394 ;
+wire N_393 ;
+wire N_392 ;
+wire N_391 ;
+wire N_390 ;
+wire N_389 ;
+wire N_388 ;
+wire N_387 ;
+wire N_386 ;
+wire N_385 ;
+wire N_384 ;
+wire N_383 ;
+wire N_382 ;
+wire N_381 ;
+wire N_380 ;
+wire N_379 ;
+wire N_378 ;
+wire N_377 ;
+wire N_376 ;
+wire N_375 ;
+wire N_374 ;
+wire N_373 ;
+wire N_372 ;
+wire N_371 ;
+wire N_370 ;
+wire N_369 ;
+wire N_368 ;
+wire N_367 ;
+wire N_366 ;
+wire N_365 ;
+wire N_364 ;
+wire N_363 ;
+wire N_362 ;
+wire N_361 ;
+wire N_360 ;
+wire N_359 ;
+wire N_358 ;
+wire N_357 ;
+wire N_356 ;
+wire N_355 ;
+wire N_354 ;
+wire N_353 ;
+wire N_352 ;
+wire N_351 ;
+wire N_350 ;
+wire N_349 ;
+wire N_348 ;
+wire N_347 ;
+wire N_346 ;
+wire N_345 ;
+wire N_344 ;
+wire N_343 ;
+wire N_342 ;
+wire N_341 ;
+wire N_340 ;
+wire N_339 ;
+wire N_338 ;
+wire N_337 ;
+wire N_336 ;
+wire N_335 ;
+wire N_334 ;
+wire N_333 ;
+wire N_332 ;
+wire N_331 ;
+wire N_330 ;
+wire N_329 ;
+wire N_328 ;
+wire N_327 ;
+wire N_326 ;
+wire N_325 ;
+wire N_324 ;
+wire N_323 ;
+wire N_322 ;
+wire N_321 ;
+wire N_320 ;
+wire N_319 ;
+wire N_318 ;
+wire N_317 ;
+wire N_316 ;
+wire N_315 ;
+wire N_314 ;
+wire N_313 ;
+wire N_312 ;
+wire N_311 ;
+wire N_310 ;
+wire N_309 ;
+wire N_308 ;
+wire N_307 ;
+wire N_306 ;
+wire N_305 ;
+wire N_304 ;
+wire N_303 ;
+wire N_302 ;
+wire N_301 ;
+wire N_300 ;
+wire N_299 ;
+wire N_298 ;
+wire N_297 ;
+wire N_296 ;
+wire N_295 ;
+wire N_294 ;
+wire N_293 ;
+wire N_292 ;
+wire N_291 ;
+wire N_290 ;
+wire N_289 ;
+wire N_288 ;
+wire N_287 ;
+wire N_286 ;
+wire N_285 ;
+wire N_284 ;
+wire N_283 ;
+wire N_282 ;
+wire N_281 ;
+wire N_280 ;
+wire N_279 ;
+wire N_278 ;
+wire N_277 ;
+wire N_276 ;
+wire N_275 ;
+wire N_274 ;
+wire N_273 ;
+wire N_272 ;
+wire N_271 ;
+wire N_270 ;
+wire N_269 ;
+wire N_268 ;
+wire N_267 ;
+wire N_266 ;
+wire N_265 ;
+wire N_264 ;
+wire N_263 ;
+wire N_262 ;
+wire N_261 ;
+wire N_260 ;
+wire N_259 ;
+wire N_258 ;
+wire N_257 ;
+wire N_256 ;
+wire N_255 ;
+wire N_254 ;
+wire N_253 ;
+wire N_252 ;
+wire N_251 ;
+wire N_250 ;
+wire N_249 ;
+wire N_248 ;
+wire N_247 ;
+wire N_246 ;
+wire N_245 ;
+wire N_244 ;
+wire N_243 ;
+wire N_242 ;
+wire N_241 ;
+wire N_240 ;
+wire N_239 ;
+wire N_238 ;
+wire N_237 ;
+wire N_236 ;
+wire N_235 ;
+wire N_234 ;
+wire N_233 ;
+wire N_232 ;
+wire N_231 ;
+wire N_230 ;
+wire N_229 ;
+wire N_228 ;
+wire N_227 ;
+wire GND_0 ;
+wire VCC_0 ;
+// @4:204
+  FD1S3DX tail_w_reg (
+	.D(tail),
+	.CK(spi_clk_pad_c_i),
+	.CD(rstn_i),
+	.Q(tail_w)
+);
+// @4:218
+  FD1S3DX tail_reg (
+	.D(tail_3),
+	.CK(pll_100mhz),
+	.CD(rstn_i),
+	.Q(tail)
+);
+// @4:218
+  FD1S3DX head_r_reg (
+	.D(head),
+	.CK(pll_100mhz),
+	.CD(rstn_i),
+	.Q(head_r)
+);
+// @4:204
+  FD1S3DX head_reg (
+	.D(head_3),
+	.CK(spi_clk_pad_c_i),
+	.CD(rstn_i),
+	.Q(head)
+);
+// @4:204
+  FD1P3DX \dat[36]  (
+	.D(wbf_adr[4]),
+	.SP(un1_wbs_cyc_i),
+	.CK(spi_clk_pad_c_i),
+	.CD(rstn_i),
+	.Q(spiwbm_adr_o[4])
+);
+assign head_3 = (head & ~tail_w) | (head & ~tail_0) | (head & ~tail_w & 
+   tail_0) | (head & ~tail_w & ~wbf_stb_0) | (head & ~tail_0 & ~wbf_stb_0) | 
+   (~tail_w & ~tail_0 & ~wbf_stb_0) | (head & tail_w & ~tail_0 & ~wbf_stb_0) | 
+   (head & ~tail_w & tail_0 & ~wbf_stb_0) | (head & wbf_stb_0);
+assign tail_3_2_0_x0 = (gpio_a15_pad_c & head_r) | (gpio_a15_pad_c & head_r & 
+   ~tail) | (~gpio_a15_pad_c & tail) | (~gpio_a15_pad_c & ~head_r & tail) | 
+   (head_r & tail);
+assign tail_3_2_0_x1 = (gpio_a15_pad_c & head_r) | (gpio_a15_pad_c & head_r & 
+   ~tail) | (head_r & tail) | (gpio_a15_pad_c & head_r & ~spiwbm_adr_o[4]) | 
+   (gpio_a15_pad_c & head_r & ~tail & ~spiwbm_adr_o[4]) | (~gpio_a15_pad_c & 
+   tail & ~spiwbm_adr_o[4]) | (~gpio_a15_pad_c & ~head_r & tail & ~spiwbm_adr_o[4]) | 
+   (head_r & tail & ~spiwbm_adr_o[4]) | (head_r & spiwbm_adr_o[4]);
+// @4:223
+  PFUMX tail_3_2_0 (
+	.ALUT(tail_3_2_0_x1),
+	.BLUT(tail_3_2_0_x0),
+	.C0(gpio_a16_pad_c),
+	.Z(tail_3)
+);
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+  assign GND_0 = 1'b0;
+//@10:353
+  assign VCC_0 = 1'b1;
+endmodule /* resync_fifo_issueq */
+
+module resync_fifo_resultq (
+  VCC,
+  tail,
+  rstn_i,
+  spi_clk_pad_c_i,
+  tail_w
+)
+;
+input VCC ;
+output tail ;
+input rstn_i ;
+input spi_clk_pad_c_i ;
+input tail_w ;
+wire VCC ;
+wire tail ;
+wire rstn_i ;
+wire spi_clk_pad_c_i ;
+wire tail_w ;
+wire tail_QN ;
+wire N_589 ;
+wire N_668 ;
+wire N_655 ;
+wire N_654 ;
+wire N_653 ;
+wire N_652 ;
+wire N_651 ;
+wire N_650 ;
+wire N_649 ;
+wire N_648 ;
+wire N_647 ;
+wire N_646 ;
+wire N_645 ;
+wire N_644 ;
+wire N_643 ;
+wire N_642 ;
+wire N_641 ;
+wire N_640 ;
+wire N_639 ;
+wire N_638 ;
+wire N_637 ;
+wire N_636 ;
+wire N_635 ;
+wire N_634 ;
+wire N_633 ;
+wire N_632 ;
+wire N_631 ;
+wire N_630 ;
+wire N_629 ;
+wire N_628 ;
+wire N_627 ;
+wire N_626 ;
+wire N_625 ;
+wire N_624 ;
+wire N_623 ;
+wire N_622 ;
+wire N_621 ;
+wire N_620 ;
+wire N_619 ;
+wire N_618 ;
+wire N_617 ;
+wire N_616 ;
+wire N_615 ;
+wire N_614 ;
+wire N_613 ;
+wire N_612 ;
+wire N_611 ;
+wire N_610 ;
+wire N_609 ;
+wire N_608 ;
+wire N_607 ;
+wire N_606 ;
+wire N_605 ;
+wire N_604 ;
+wire N_603 ;
+wire N_602 ;
+wire N_601 ;
+wire N_600 ;
+wire N_599 ;
+wire N_598 ;
+wire N_597 ;
+wire N_596 ;
+wire N_595 ;
+wire N_594 ;
+wire N_593 ;
+wire N_592 ;
+wire N_591 ;
+wire N_590 ;
+wire N_589_0 ;
+wire N_588 ;
+wire N_587 ;
+wire N_586 ;
+wire N_585 ;
+wire N_584 ;
+wire N_583 ;
+wire N_582 ;
+wire N_581 ;
+wire N_580 ;
+wire N_579 ;
+wire N_578 ;
+wire N_577 ;
+wire N_576 ;
+wire N_575 ;
+wire N_574 ;
+wire N_573 ;
+wire N_572 ;
+wire N_571 ;
+wire N_570 ;
+wire N_569 ;
+wire N_568 ;
+wire N_567 ;
+wire N_566 ;
+wire N_565 ;
+wire N_564 ;
+wire N_563 ;
+wire N_562 ;
+wire N_561 ;
+wire N_560 ;
+wire N_559 ;
+wire N_558 ;
+wire N_557 ;
+wire N_556 ;
+wire N_555 ;
+wire N_554 ;
+wire N_553 ;
+wire N_552 ;
+wire N_551 ;
+wire N_550 ;
+wire N_549 ;
+wire N_548 ;
+wire N_547 ;
+wire N_546 ;
+wire N_545 ;
+wire N_544 ;
+wire N_543 ;
+wire N_542 ;
+wire N_541 ;
+wire N_540 ;
+wire N_539 ;
+wire N_538 ;
+wire N_537 ;
+wire N_536 ;
+wire N_535 ;
+wire N_534 ;
+wire N_533 ;
+wire N_532 ;
+wire N_531 ;
+wire N_530 ;
+wire N_529 ;
+wire N_528 ;
+wire N_527 ;
+wire N_526 ;
+wire N_525 ;
+wire N_524 ;
+wire N_523 ;
+wire N_522 ;
+wire N_521 ;
+wire N_520 ;
+wire N_519 ;
+wire N_518 ;
+wire N_517 ;
+wire N_516 ;
+wire N_515 ;
+wire N_514 ;
+wire N_513 ;
+wire N_512 ;
+wire N_511 ;
+wire N_510 ;
+wire N_509 ;
+wire N_508 ;
+wire N_507 ;
+wire N_506 ;
+wire N_505 ;
+wire N_504 ;
+wire N_503 ;
+wire N_502 ;
+wire N_501 ;
+wire N_500 ;
+wire N_499 ;
+wire N_498 ;
+wire N_497 ;
+wire N_496 ;
+wire N_495 ;
+wire N_494 ;
+wire N_493 ;
+wire N_492 ;
+wire N_491 ;
+wire N_490 ;
+wire N_489 ;
+wire N_488 ;
+wire N_487 ;
+wire N_486 ;
+wire N_485 ;
+wire N_484 ;
+wire N_483 ;
+wire N_482 ;
+wire N_481 ;
+wire N_480 ;
+wire N_479 ;
+wire N_478 ;
+wire N_477 ;
+wire N_476 ;
+wire N_475 ;
+wire N_474 ;
+wire N_473 ;
+wire N_472 ;
+wire N_471 ;
+wire N_470 ;
+wire N_469 ;
+wire N_468 ;
+wire N_467 ;
+wire N_466 ;
+wire N_465 ;
+wire N_464 ;
+wire N_463 ;
+wire N_462 ;
+wire N_461 ;
+wire N_460 ;
+wire N_459 ;
+wire N_458 ;
+wire N_457 ;
+wire N_456 ;
+wire N_455 ;
+wire N_454 ;
+wire N_453 ;
+wire N_452 ;
+wire N_451 ;
+wire N_450 ;
+wire N_449 ;
+wire N_448 ;
+wire N_447 ;
+wire N_446 ;
+wire N_445 ;
+wire N_444 ;
+wire N_443 ;
+wire N_442 ;
+wire N_441 ;
+wire N_440 ;
+wire N_439 ;
+wire N_438 ;
+wire N_437 ;
+wire N_436 ;
+wire N_435 ;
+wire N_434 ;
+wire N_433 ;
+wire N_432 ;
+wire N_494_0 ;
+wire GND ;
+wire VCC_0 ;
+// @4:218
+  FD1S3DX tail_reg (
+	.D(tail_w),
+	.CK(spi_clk_pad_c_i),
+	.CD(rstn_i),
+	.Q(tail)
+);
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@10:353
+//@9:402
+//@10:353
+  assign GND = 1'b0;
+//@10:353
+  assign VCC_0 = 1'b1;
+endmodule /* resync_fifo_resultq */
+
+module wb_resync (
+  wbf_adr,
+  spi_clk_pad_c_i,
+  rstn_i,
+  VCC,
+  pll_100mhz,
+  gpio_a15_pad_c,
+  GND,
+  gpio_a16_pad_c,
+  wbf_stb_0,
+  tail,
+  tail_w
+)
+;
+input [4:4] wbf_adr ;
+input spi_clk_pad_c_i ;
+input rstn_i ;
+input VCC ;
+input pll_100mhz ;
+input gpio_a15_pad_c ;
+input GND ;
+input gpio_a16_pad_c ;
+input wbf_stb_0 ;
+output tail ;
+output tail_w ;
+wire spi_clk_pad_c_i ;
+wire rstn_i ;
+wire VCC ;
+wire pll_100mhz ;
+wire gpio_a15_pad_c ;
+wire GND ;
+wire gpio_a16_pad_c ;
+wire wbf_stb_0 ;
+wire tail ;
+wire tail_w ;
+wire head ;
+wire un1_wbs_cyc_i ;
+wire GND_0 ;
+wire VCC_0 ;
+assign un1_wbs_cyc_i = (~head & ~tail_w & ~tail & ~wbf_stb_0) | (head & 
+   tail_w & tail & ~wbf_stb_0);
+// @4:160
+  resync_fifo_issueq issueq (
+	.wbf_adr(wbf_adr[4]),
+	.gpio_a16_pad_c(gpio_a16_pad_c),
+	.GND(GND),
+	.gpio_a15_pad_c(gpio_a15_pad_c),
+	.wbf_stb_0(wbf_stb_0),
+	.tail_0(tail),
+	.un1_wbs_cyc_i(un1_wbs_cyc_i),
+	.head(head),
+	.pll_100mhz(pll_100mhz),
+	.VCC(VCC),
+	.tail_w(tail_w),
+	.rstn_i(rstn_i),
+	.spi_clk_pad_c_i(spi_clk_pad_c_i)
+);
+// @4:174
+  resync_fifo_resultq resultq (
+	.VCC(VCC),
+	.tail(tail),
+	.rstn_i(rstn_i),
+	.spi_clk_pad_c_i(spi_clk_pad_c_i),
+	.tail_w(tail_w)
+);
+//@10:353
+  assign GND_0 = 1'b0;
+//@10:353
+  assign VCC_0 = 1'b1;
+endmodule /* wb_resync */
+
+module spi_sbus_resync (
+  idat,
+  pll_100mhz,
+  gpio_a16_pad_c,
+  gpio_a15_pad_c,
+  spi_mosi_pad_c,
+  spi_clk_pad_c,
+  N_450_i,
+  gpio_a28_pad_c,
+  so_i_0_N_10,
+  cmemwin_wbs_en11,
+  GND,
+  VCC,
+  rstn_i,
+  spi_clk_pad_c_i
+)
+;
+input [0:0] idat ;
+input pll_100mhz ;
+input gpio_a16_pad_c ;
+input gpio_a15_pad_c ;
+input spi_mosi_pad_c ;
+input spi_clk_pad_c ;
+output N_450_i ;
+input gpio_a28_pad_c ;
+output so_i_0_N_10 ;
+input cmemwin_wbs_en11 ;
+input GND ;
+input VCC ;
+input rstn_i ;
+input spi_clk_pad_c_i ;
+wire pll_100mhz ;
+wire gpio_a16_pad_c ;
+wire gpio_a15_pad_c ;
+wire spi_mosi_pad_c ;
+wire spi_clk_pad_c ;
+wire N_450_i ;
+wire gpio_a28_pad_c ;
+wire so_i_0_N_10 ;
+wire cmemwin_wbs_en11 ;
+wire GND ;
+wire VCC ;
+wire rstn_i ;
+wire spi_clk_pad_c_i ;
+wire [4:1] spiwbm2_adr_o;
+wire [4:4] wbf_adr;
+wire spiwbm2_cyc_o_i ;
+wire un1_first_cyc5_0_i ;
+wire first_cyc ;
+wire first_cyc_QN ;
+wire goingfull ;
+wire spiwbm2_cyc_o ;
+wire first_cyc_RNIBECN ;
+wire un1_full_NE_0_0 ;
+wire un1_full_NE_1 ;
+wire un1_flushack_d ;
+wire wrreq8_s ;
+wire N_28 ;
+wire wbf_ack_m ;
+wire wrreq_0_sqmuxa ;
+wire un1_wb_ack_m3 ;
+wire un1_wb_ack_N_4_i ;
+wire wrreq_0_sqmuxa_0_x ;
+wire wbm_stb_o_0_s ;
+wire wbm_we_fast ;
+wire wbf_ack_m_s_0_m1_e_1 ;
+wire flushack ;
+wire wbm_stb_o_0 ;
+wire tail ;
+wire tail_w ;
+wire spiwbm2_we_o ;
+wire stb ;
+wire nshift ;
+wire wrreq_0_sqmuxa_0 ;
+wire wbf_stb_0 ;
+wire GND_0 ;
+wire VCC_0 ;
+// @9:364
+  FD1P3BX first_cyc_reg (
+	.D(spiwbm2_cyc_o_i),
+	.SP(un1_first_cyc5_0_i),
+	.CK(spi_clk_pad_c_i),
+	.PD(rstn_i),
+	.Q(first_cyc)
+);
+assign first_cyc_RNIBECN = (~first_cyc & spiwbm2_cyc_o) | (~goingfull & 
+   spiwbm2_cyc_o) | (~first_cyc & goingfull & spiwbm2_cyc_o);
+assign un1_flushack_d = (~first_cyc) | (~first_cyc & ~un1_full_NE_1) | 
+   (~first_cyc & un1_full_NE_1) | (~first_cyc & ~un1_full_NE_0_0 & un1_full_NE_1) | 
+   (un1_full_NE_0_0 & un1_full_NE_1);
+assign wrreq8_s = (~cmemwin_wbs_en11 & first_cyc_RNIBECN & un1_flushack_d);
+assign un1_wb_ack_m3 = (~N_28 & cmemwin_wbs_en11) | (~N_28 & cmemwin_wbs_en11 & 
+   ~wrreq_0_sqmuxa) | (~N_28 & ~wbf_ack_m & ~wrreq_0_sqmuxa) | (~cmemwin_wbs_en11 & 
+   ~wbf_ack_m & ~wrreq_0_sqmuxa) | (~N_28 & cmemwin_wbs_en11 & ~wbf_ack_m & 
+   ~wrreq_0_sqmuxa) | (~N_28 & cmemwin_wbs_en11 & wbf_ack_m & ~wrreq_0_sqmuxa) | 
+   (~N_28 & cmemwin_wbs_en11 & wrreq_0_sqmuxa);
+assign un1_first_cyc5_0_i = (wbf_ack_m) | (wbf_ack_m & ~wrreq_0_sqmuxa) | 
+   (wrreq_0_sqmuxa) | (~spiwbm2_cyc_o) | (wbf_ack_m & spiwbm2_cyc_o) | 
+   (wbf_ack_m & ~wrreq_0_sqmuxa & spiwbm2_cyc_o) | (wrreq_0_sqmuxa & spiwbm2_cyc_o);
+assign un1_wb_ack_N_4_i = (N_28 & cmemwin_wbs_en11) | (N_28 & cmemwin_wbs_en11 & 
+   ~wbf_ack_m) | (N_28 & wbf_ack_m) | (~cmemwin_wbs_en11 & wbf_ack_m) | 
+   (N_28 & cmemwin_wbs_en11 & wbf_ack_m) | (N_28 & cmemwin_wbs_en11 & 
+   ~wrreq_0_sqmuxa) | (N_28 & cmemwin_wbs_en11 & ~wbf_ack_m & ~wrreq_0_sqmuxa) | 
+   (N_28 & wbf_ack_m & ~wrreq_0_sqmuxa) | (~cmemwin_wbs_en11 & wbf_ack_m & 
+   ~wrreq_0_sqmuxa) | (N_28 & cmemwin_wbs_en11 & wbf_ack_m & ~wrreq_0_sqmuxa) | 
+   (N_28 & wrreq_0_sqmuxa) | (~cmemwin_wbs_en11 & wrreq_0_sqmuxa) | (N_28 & 
+   cmemwin_wbs_en11 & wrreq_0_sqmuxa);
+assign wrreq_0_sqmuxa = (wrreq_0_sqmuxa_0_x & wbm_stb_o_0_s & wbm_we_fast & 
+   wrreq8_s);
+// @9:344
+  spi_sbus sbuscore (
+	.idat_0(idat[0]),
+	.spiwbm2_adr_o({spiwbm2_adr_o[4], spiwbm2_adr_o[3], spiwbm2_adr_o[2], 
+   spiwbm2_adr_o[1]}),
+	.wbf_ack_m(wbf_ack_m),
+	.un1_wb_ack_m3(un1_wb_ack_m3),
+	.un1_full_NE_1(un1_full_NE_1),
+	.wbf_ack_m_s_0_m1_e_1(wbf_ack_m_s_0_m1_e_1),
+	.so_i_0_N_10(so_i_0_N_10),
+	.first_cyc(first_cyc),
+	.flushack(flushack),
+	.un1_flushack_d(un1_flushack_d),
+	.first_cyc_RNIBECN(first_cyc_RNIBECN),
+	.N_28(N_28),
+	.wbm_stb_o_0(wbm_stb_o_0),
+	.cmemwin_wbs_en11(cmemwin_wbs_en11),
+	.gpio_a28_pad_c(gpio_a28_pad_c),
+	.tail(tail),
+	.tail_w(tail_w),
+	.spi_clk_pad_c_i(spi_clk_pad_c_i),
+	.spiwbm2_we_o(spiwbm2_we_o),
+	.VCC(VCC),
+	.wbm_we_fast(wbm_we_fast),
+	.N_450_i(N_450_i),
+	.spi_clk_pad_c(spi_clk_pad_c),
+	.spi_mosi_pad_c(spi_mosi_pad_c),
+	.un1_wb_ack_N_4_i(un1_wb_ack_N_4_i),
+	.wbm_stb_o_0_s(wbm_stb_o_0_s),
+	.wrreq8_s(wrreq8_s),
+	.wrreq_0_sqmuxa(wrreq_0_sqmuxa),
+	.stb(stb),
+	.nshift(nshift),
+	.wrreq_0_sqmuxa_0(wrreq_0_sqmuxa_0),
+	.GND(GND),
+	.gpio_a15_pad_c(gpio_a15_pad_c),
+	.gpio_a16_pad_c(gpio_a16_pad_c),
+	.spiwbm2_cyc_o_i(spiwbm2_cyc_o_i),
+	.spiwbm2_cyc_o(spiwbm2_cyc_o)
+);
+// @9:377
+  wb_writebuffer wbufcore (
+	.idat(idat[0]),
+	.wbf_adr(wbf_adr[4]),
+	.spiwbm2_adr_o({spiwbm2_adr_o[4], spiwbm2_adr_o[3], spiwbm2_adr_o[2], 
+   spiwbm2_adr_o[1]}),
+	.spi_clk_pad_c_i(spi_clk_pad_c_i),
+	.rstn_i(rstn_i),
+	.VCC(VCC),
+	.wrreq_0_sqmuxa(wrreq_0_sqmuxa),
+	.first_cyc_RNIBECN(first_cyc_RNIBECN),
+	.wbf_ack_m_s_0_m1_e_1(wbf_ack_m_s_0_m1_e_1),
+	.wrreq_0_sqmuxa_0_x(wrreq_0_sqmuxa_0_x),
+	.N_28(N_28),
+	.spiwbm2_cyc_o(spiwbm2_cyc_o),
+	.stb(stb),
+	.nshift(nshift),
+	.wbf_stb_0(wbf_stb_0),
+	.spiwbm2_we_o(spiwbm2_we_o),
+	.wrreq8_s(wrreq8_s),
+	.wbm_stb_o_0(wbm_stb_o_0),
+	.wrreq_0_sqmuxa_0(wrreq_0_sqmuxa_0),
+	.un1_full_NE_1(un1_full_NE_1),
+	.un1_full_NE_0_0(un1_full_NE_0_0),
+	.goingfull(goingfull),
+	.wbm_we_fast(wbm_we_fast),
+	.GND(GND),
+	.tail(tail),
+	.tail_w(tail_w),
+	.flushack(flushack)
+);
+// @9:402
+  wb_resync resynccore (
+	.wbf_adr(wbf_adr[4]),
+	.spi_clk_pad_c_i(spi_clk_pad_c_i),
+	.rstn_i(rstn_i),
+	.VCC(VCC),
+	.pll_100mhz(pll_100mhz),
+	.gpio_a15_pad_c(gpio_a15_pad_c),
+	.GND(GND),
+	.gpio_a16_pad_c(gpio_a16_pad_c),
+	.wbf_stb_0(wbf_stb_0),
+	.tail(tail),
+	.tail_w(tail_w)
+);
+//@10:353
+  assign GND_0 = 1'b0;
+//@10:353
+  assign VCC_0 = 1'b1;
+endmodule /* spi_sbus_resync */
+
+module syscon_3s_29952_0_5_Z1 (
+  internal_osc_c
+)
+;
+output internal_osc_c ;
+wire internal_osc_c ;
+wire N_4612 ;
+wire N_4611 ;
+wire N_4610 ;
+wire N_4609 ;
+wire N_4608 ;
+wire N_4607 ;
+wire N_4606 ;
+wire N_4605 ;
+wire N_4604 ;
+wire N_4603 ;
+wire N_4602 ;
+wire N_4601 ;
+wire N_4600 ;
+wire N_4599 ;
+wire N_4598 ;
+wire N_4597 ;
+wire N_4596 ;
+wire N_4595 ;
+wire N_4594 ;
+wire N_4593 ;
+wire N_4592 ;
+wire N_1587 ;
+wire N_1586 ;
+wire N_1585 ;
+wire N_1584 ;
+wire N_1583 ;
+wire internal_osc_o ;
+wire GND ;
+wire VCC ;
+//@10:501
+// @5:164
+  OSCE rndosc (
+	.OSC(internal_osc_o)
+);
+defparam rndosc.NOM_FREQ = "3.1";
+//@10:353
+  assign GND = 1'b0;
+//@10:353
+  assign VCC = 1'b1;
+assign internal_osc_c = internal_osc_o;
+endmodule /* syscon_3s_29952_0_5_Z1 */
+
+module pga_control (
+  dio,
+  VCC,
+  rstn_i,
+  pga_clk
+)
+;
+input [34:34] dio ;
+input VCC ;
+input rstn_i ;
+output pga_clk ;
+wire VCC ;
+wire rstn_i ;
+wire pga_clk ;
+wire [3:0] clk_accumulator;
+wire [3:0] clk_accumulator_QN;
+wire fb ;
+wire pga_clk_o_QN ;
+wire clk_accumulatorc ;
+wire clk_accumulatorc_0 ;
+wire clk_accumulatorc_1 ;
+wire N_101_m ;
+wire GND ;
+wire VCC_0 ;
+assign fb = (pga_clk & clk_accumulator[3]) | (pga_clk & ~clk_accumulator[2]) | 
+   (pga_clk & clk_accumulator[3] & clk_accumulator[2]) | (pga_clk & clk_accumulator[3] & 
+   ~clk_accumulator[1]) | (pga_clk & ~clk_accumulator[2] & ~clk_accumulator[1]) | 
+   (~pga_clk & ~clk_accumulator[3] & clk_accumulator[2] & ~clk_accumulator[1]) | 
+   (pga_clk & clk_accumulator[3] & clk_accumulator[2] & ~clk_accumulator[1]) | 
+   (pga_clk & clk_accumulator[1]);
+// @25:64
+  FD1S3IX pga_clk_o (
+	.D(fb),
+	.CK(dio[34]),
+	.CD(rstn_i),
+	.Q(pga_clk)
+);
+// @25:64
+  FD1S3IX \clk_accumulator_reg[0]  (
+	.D(clk_accumulatorc),
+	.CK(dio[34]),
+	.CD(rstn_i),
+	.Q(clk_accumulator[0])
+);
+// @25:64
+  FD1S3IX \clk_accumulator_reg[1]  (
+	.D(clk_accumulatorc_0),
+	.CK(dio[34]),
+	.CD(rstn_i),
+	.Q(clk_accumulator[1])
+);
+// @25:64
+  FD1S3IX \clk_accumulator_reg[2]  (
+	.D(clk_accumulatorc_1),
+	.CK(dio[34]),
+	.CD(rstn_i),
+	.Q(clk_accumulator[2])
+);
+// @25:64
+  FD1S3IX \clk_accumulator_reg[3]  (
+	.D(N_101_m),
+	.CK(dio[34]),
+	.CD(rstn_i),
+	.Q(clk_accumulator[3])
+);
+assign N_101_m = (clk_accumulator[0] & clk_accumulator[1] & clk_accumulator[2] & 
+   ~clk_accumulator[3]) | (~clk_accumulator[0] & clk_accumulator[3]) | 
+   (~clk_accumulator[1] & clk_accumulator[3]) | (~clk_accumulator[0] & 
+   clk_accumulator[1] & clk_accumulator[3]) | (~clk_accumulator[2] & clk_accumulator[3]) | 
+   (~clk_accumulator[0] & clk_accumulator[2] & clk_accumulator[3]) | (~clk_accumulator[1] & 
+   clk_accumulator[2] & clk_accumulator[3]) | (~clk_accumulator[0] & clk_accumulator[1] & 
+   clk_accumulator[2] & clk_accumulator[3]);
+assign clk_accumulatorc = (~clk_accumulator[0] & clk_accumulator[1]) | 
+   (~clk_accumulator[0] & ~clk_accumulator[2]) | (~clk_accumulator[0] & 
+   clk_accumulator[1] & clk_accumulator[2]) | (~clk_accumulator[0] & clk_accumulator[1] & 
+   ~clk_accumulator[3]) | (~clk_accumulator[0] & ~clk_accumulator[2] & 
+   ~clk_accumulator[3]) | (~clk_accumulator[0] & clk_accumulator[1] & 
+   clk_accumulator[2] & ~clk_accumulator[3]) | (~clk_accumulator[0] & 
+   clk_accumulator[3]);
+assign clk_accumulatorc_0 = (~clk_accumulator[0] & clk_accumulator[1]) | 
+   (clk_accumulator[0] & ~clk_accumulator[1] & ~clk_accumulator[2]) | 
+   (~clk_accumulator[0] & clk_accumulator[1] & ~clk_accumulator[2]) | 
+   (~clk_accumulator[0] & clk_accumulator[1] & clk_accumulator[2]) | (~clk_accumulator[0] & 
+   clk_accumulator[1] & ~clk_accumulator[3]) | (clk_accumulator[0] & ~clk_accumulator[1] & 
+   ~clk_accumulator[2] & ~clk_accumulator[3]) | (~clk_accumulator[0] & 
+   clk_accumulator[1] & ~clk_accumulator[2] & ~clk_accumulator[3]) | (~clk_accumulator[0] & 
+   clk_accumulator[1] & clk_accumulator[2] & ~clk_accumulator[3]) | (clk_accumulator[0] & 
+   ~clk_accumulator[1] & clk_accumulator[3]) | (~clk_accumulator[0] & 
+   clk_accumulator[1] & clk_accumulator[3]);
+assign clk_accumulatorc_1 = (clk_accumulator[0] & clk_accumulator[1] & 
+   ~clk_accumulator[2]) | (~clk_accumulator[0] & clk_accumulator[1] & 
+   clk_accumulator[2]) | (clk_accumulator[0] & clk_accumulator[1] & ~clk_accumulator[2] & 
+   ~clk_accumulator[3]) | (~clk_accumulator[0] & clk_accumulator[1] & 
+   clk_accumulator[2] & ~clk_accumulator[3]) | (clk_accumulator[0] & clk_accumulator[1] & 
+   ~clk_accumulator[2] & clk_accumulator[3]) | (~clk_accumulator[0] & 
+   clk_accumulator[2] & clk_accumulator[3]) | (~clk_accumulator[1] & clk_accumulator[2] & 
+   clk_accumulator[3]) | (~clk_accumulator[0] & clk_accumulator[1] & clk_accumulator[2] & 
+   clk_accumulator[3]);
+//@10:353
+  assign GND = 1'b0;
+//@10:353
+  assign VCC_0 = 1'b1;
+endmodule /* pga_control */
+
+module spi_module (
+  led_val,
+  value_reg,
+  dio,
+  dio_pad_c_0,
+  dio_pad_c_2,
+  state_1,
+  state_i,
+  spi_dat_4,
+  rstn,
+  sr_load,
+  load_reg,
+  VCC,
+  rstn_i,
+  CN,
+  GND
+)
+;
+input [1:0] led_val ;
+input [15:0] value_reg ;
+input [34:34] dio ;
+output dio_pad_c_0 ;
+output dio_pad_c_2 ;
+output state_1 ;
+output [1:0] state_i ;
+output spi_dat_4 ;
+input rstn ;
+input sr_load ;
+input load_reg ;
+input VCC ;
+input rstn_i ;
+output CN ;
+input GND ;
+wire dio_pad_c_0 ;
+wire dio_pad_c_2 ;
+wire state_1 ;
+wire spi_dat_4 ;
+wire rstn ;
+wire sr_load ;
+wire load_reg ;
+wire VCC ;
+wire rstn_i ;
+wire CN ;
+wire GND ;
+wire [0:0] state;
+wire [1:0] state_QN;
+wire [1:1] state_nss;
+wire [15:0] data_6;
+wire [21:0] data;
+wire [16:0] data_QN;
+wire [7:1] data_6_0_i;
+wire [4:0] bitindex_lm;
+wire [4:0] bitindex;
+wire [4:0] bitindex_QN;
+wire [1:1] state_ns_0_a2_0;
+wire [4:0] bitindex_s;
+wire [3:3] bitindex_5;
+wire [2:0] bitindex_cry;
+wire [3:3] bitindex_cry_0_COUT;
+wire [0:0] bitindex_cry_0_S0;
+wire fb_0 ;
+wire chip_select ;
+wire fb ;
+wire statec ;
+wire shiftreg_clr_QN ;
+wire un1_state_2_0_a3 ;
+wire bitindex10 ;
+wire cmd ;
+wire cmd_QN ;
+wire chip_select_QN ;
+wire bitindexe_0_i ;
+wire state_105_d ;
+wire N_260 ;
+wire N_262 ;
+wire N_267 ;
+wire N_271 ;
+wire N_273 ;
+wire N_253_4 ;
+wire statec_0 ;
+wire spi_dat_2_21_am ;
+wire spi_dat_2_21_bm ;
+wire N_280 ;
+wire spi_dat_2_5_am ;
+wire spi_dat_2_5_bm ;
+wire N_264 ;
+wire spi_dat_2_10_am ;
+wire spi_dat_2_10_bm ;
+wire N_269 ;
+wire spi_dat_2_16_am ;
+wire spi_dat_2_16_bm ;
+wire N_275 ;
+wire N_270 ;
+wire N_281 ;
+wire N_285 ;
+wire N_284 ;
+wire N_283 ;
+wire N_104 ;
+wire N_103 ;
+wire N_102 ;
+wire GND_0 ;
+wire VCC_0 ;
+// @10:353
+  INV \state_RNI942F[0]  (
+	.A(state[0]),
+	.Z(state_i[0])
+);
+// @10:353
+  INV \state_RNIA82F[1]  (
+	.A(state_1),
+	.Z(state_i[1])
+);
+assign fb_0 = (dio_pad_c_2) | (dio_pad_c_2 & ~state[0]) | (~state_1 & ~state[0]) | 
+   (dio_pad_c_2 & state_1 & ~state[0]) | (dio_pad_c_2 & state[0]);
+assign fb = (state_1 & chip_select) | (~state_1 & ~state[0]) | (~state_1 & 
+   ~chip_select & ~state[0]) | (chip_select & ~state[0]) | (state_1 & 
+   chip_select & state[0]);
+  INV \state_1_.CN  (
+	.A(dio[34]),
+	.Z(CN)
+);
+// @24:93
+  FD1S3IX \state_reg[0]  (
+	.D(statec),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(state[0])
+);
+// @24:93
+  FD1S3AX \state[1]  (
+	.D(state_nss[1]),
+	.CK(CN),
+	.Q(state_1)
+);
+// @24:93
+  FD1S3IX shiftreg_clr (
+	.D(fb_0),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(dio_pad_c_2)
+);
+// @24:93
+  FD1P3IX \data_reg[0]  (
+	.D(data_6[0]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[0])
+);
+// @24:93
+  FD1P3IX \data_reg[1]  (
+	.D(data_6_0_i[1]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[1])
+);
+// @24:93
+  FD1P3IX \data_reg[2]  (
+	.D(data_6[2]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[2])
+);
+// @24:93
+  FD1P3IX \data_reg[3]  (
+	.D(data_6_0_i[3]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[3])
+);
+// @24:93
+  FD1P3IX \data_reg[4]  (
+	.D(data_6_0_i[4]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[4])
+);
+// @24:93
+  FD1P3IX \data_reg[5]  (
+	.D(data_6_0_i[5]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[5])
+);
+// @24:93
+  FD1P3IX \data_reg[6]  (
+	.D(data_6_0_i[6]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[6])
+);
+// @24:93
+  FD1P3IX \data_reg[7]  (
+	.D(data_6_0_i[7]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[7])
+);
+// @24:93
+  FD1P3IX \data_reg[8]  (
+	.D(data_6[8]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[8])
+);
+// @24:93
+  FD1P3IX \data_reg[9]  (
+	.D(data_6[9]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[9])
+);
+// @24:93
+  FD1P3IX \data_reg[10]  (
+	.D(data_6[10]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[10])
+);
+// @24:93
+  FD1P3IX \data_reg[11]  (
+	.D(data_6[11]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[11])
+);
+// @24:93
+  FD1P3IX \data_reg[12]  (
+	.D(data_6[12]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[12])
+);
+// @24:93
+  FD1P3IX \data_reg[13]  (
+	.D(data_6[13]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[13])
+);
+// @24:93
+  FD1P3IX \data_reg[14]  (
+	.D(data_6[14]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[14])
+);
+// @24:93
+  FD1P3IX \data_reg[15]  (
+	.D(data_6[15]),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[15])
+);
+// @24:93
+  FD1P3IX \data[16]  (
+	.D(load_reg),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(data[21])
+);
+// @24:93
+  FD1P3IX cmd_reg (
+	.D(bitindex10),
+	.SP(un1_state_2_0_a3),
+	.CK(CN),
+	.CD(rstn_i),
+	.Q(cmd)
+);
+// @24:93
+  FD1S3JX chip_select_reg (
+	.D(rstn_i),
+	.CK(CN),
+	.PD(fb),
+	.Q(chip_select)
+);
+// @24:93
+  FD1P3AX \bitindex_reg[0]  (
+	.D(bitindex_lm[0]),
+	.SP(bitindexe_0_i),
+	.CK(CN),
+	.Q(bitindex[0])
+);
+// @24:93
+  FD1P3AX \bitindex_reg[1]  (
+	.D(bitindex_lm[1]),
+	.SP(bitindexe_0_i),
+	.CK(CN),
+	.Q(bitindex[1])
+);
+// @24:93
+  FD1P3AX \bitindex_reg[2]  (
+	.D(bitindex_lm[2]),
+	.SP(bitindexe_0_i),
+	.CK(CN),
+	.Q(bitindex[2])
+);
+// @24:93
+  FD1P3AX \bitindex_reg[3]  (
+	.D(bitindex_lm[3]),
+	.SP(bitindexe_0_i),
+	.CK(CN),
+	.Q(bitindex[3])
+);
+// @24:93
+  FD1P3AX \bitindex_reg[4]  (
+	.D(bitindex_lm[4]),
+	.SP(bitindexe_0_i),
+	.CK(CN),
+	.Q(bitindex[4])
+);
+assign state_105_d = (~state[0] & ~state_1);
+assign bitindex10 = (~load_reg & sr_load);
+assign data_6[0] = (load_reg & value_reg[0]);
+assign data_6[2] = (load_reg & value_reg[2]);
+assign data_6[12] = (load_reg & value_reg[12]);
+assign data_6[13] = (load_reg & value_reg[13]);
+assign data_6[14] = (load_reg & value_reg[14]);
+assign data_6[15] = (load_reg & value_reg[15]);
+assign state_ns_0_a2_0[1] = (cmd & state[0]);
+assign data_6[8] = (led_val[0] & ~load_reg) | (led_val[0] & ~load_reg & 
+   ~value_reg[8]) | (led_val[0] & value_reg[8]) | (led_val[0] & ~load_reg & 
+   value_reg[8]) | (load_reg & value_reg[8]);
+assign data_6[9] = (~led_val[0] & ~load_reg) | (~led_val[0] & ~load_reg & 
+   ~value_reg[9]) | (~led_val[0] & value_reg[9]) | (~led_val[0] & ~load_reg & 
+   value_reg[9]) | (load_reg & value_reg[9]);
+assign data_6[10] = (led_val[1] & ~load_reg) | (led_val[1] & ~load_reg & 
+   ~value_reg[10]) | (led_val[1] & value_reg[10]) | (led_val[1] & ~load_reg & 
+   value_reg[10]) | (load_reg & value_reg[10]);
+assign data_6[11] = (~led_val[1] & ~load_reg) | (~led_val[1] & ~load_reg & 
+   ~value_reg[11]) | (~led_val[1] & value_reg[11]) | (~led_val[1] & ~load_reg & 
+   value_reg[11]) | (load_reg & value_reg[11]);
+assign N_260 = (~bitindex[4] & data[0]) | (~bitindex[4] & data[0] & ~data[21]) | 
+   (bitindex[4] & data[21]) | (bitindex[4] & ~data[0] & data[21]) | (data[0] & 
+   data[21]);
+assign N_262 = (~bitindex[4] & data[1]) | (~bitindex[4] & data[1] & ~data[21]) | 
+   (bitindex[4] & data[21]) | (bitindex[4] & ~data[1] & data[21]) | (data[1] & 
+   data[21]);
+assign N_267 = (~bitindex[4] & data[5]) | (~bitindex[4] & data[5] & ~data[21]) | 
+   (bitindex[4] & data[21]) | (bitindex[4] & ~data[5] & data[21]) | (data[5] & 
+   data[21]);
+assign N_271 = (~bitindex[4] & data[2]) | (~bitindex[4] & data[2] & ~data[21]) | 
+   (bitindex[4] & data[21]) | (bitindex[4] & ~data[2] & data[21]) | (data[2] & 
+   data[21]);
+assign N_273 = (~bitindex[4] & data[3]) | (~bitindex[4] & data[3] & ~data[21]) | 
+   (bitindex[4] & data[21]) | (bitindex[4] & ~data[3] & data[21]) | (data[3] & 
+   data[21]);
+assign data_6_0_i[1] = (~load_reg) | (~load_reg & ~value_reg[1]) | (value_reg[1]);
+assign data_6_0_i[3] = (~load_reg) | (~load_reg & ~value_reg[3]) | (value_reg[3]);
+assign data_6_0_i[4] = (~load_reg) | (~load_reg & ~value_reg[4]) | (value_reg[4]);
+assign data_6_0_i[5] = (~load_reg) | (~load_reg & ~value_reg[5]) | (value_reg[5]);
+assign data_6_0_i[6] = (~load_reg) | (~load_reg & ~value_reg[6]) | (value_reg[6]);
+assign data_6_0_i[7] = (~load_reg) | (~load_reg & ~value_reg[7]) | (value_reg[7]);
+assign un1_state_2_0_a3 = (load_reg & ~state[0] & ~state_1) | (load_reg & 
+   ~state[0] & ~state_1 & ~sr_load) | (~state[0] & ~state_1 & sr_load);
+assign dio_pad_c_0 = (chip_select) | (chip_select & ~cmd) | (cmd);
+assign bitindex_lm[0] = (~rstn) | (~rstn & ~bitindex_s[0]) | (bitindex_s[0]) | 
+   (~state[0]) | (~rstn & state[0]) | (~rstn & ~bitindex_s[0] & state[0]) | 
+   (bitindex_s[0] & state[0]);
+assign bitindex_lm[1] = (~rstn) | (~rstn & ~bitindex_s[1]) | (bitindex_s[1]) | 
+   (~state[0]) | (~rstn & state[0]) | (~rstn & ~bitindex_s[1] & state[0]) | 
+   (bitindex_s[1] & state[0]);
+assign bitindex_lm[2] = (~rstn) | (~rstn & ~bitindex_s[2]) | (bitindex_s[2]) | 
+   (~state[0]) | (~rstn & state[0]) | (~rstn & ~bitindex_s[2] & state[0]) | 
+   (bitindex_s[2] & state[0]);
+assign N_253_4 = (~bitindex[0] & ~bitindex[1] & ~bitindex[2] & ~bitindex[3]);
+assign bitindex_5[3] = (rstn & bitindex10 & ~state[0] & ~state_1);
+assign statec_0 = (load_reg & ~state_1) | (load_reg & ~state[0] & ~state_1) | 
+   (state[0] & ~state_1) | (load_reg & ~state_1 & ~sr_load) | (load_reg & 
+   ~state[0] & ~state_1 & ~sr_load) | (state[0] & ~state_1 & ~sr_load) | 
+   (~state_1 & sr_load);
+assign state_nss[1] = (rstn & N_253_4 & ~bitindex[4] & state_ns_0_a2_0[1]);
+assign bitindexe_0_i = (~rstn) | (~rstn & ~un1_state_2_0_a3) | (un1_state_2_0_a3) | 
+   (~rstn & ~state[0]) | (~rstn & ~un1_state_2_0_a3 & ~state[0]) | (un1_state_2_0_a3 & 
+   ~state[0]) | (state[0]);
+assign spi_dat_2_21_am = (~bitindex[3] & ~bitindex[4] & data[6]) | (~bitindex[3] & 
+   ~bitindex[4] & data[6] & ~data[14]) | (bitindex[3] & data[14]) | (bitindex[3] & 
+   ~data[6] & data[14]) | (bitindex[3] & data[6] & data[14]) | (~bitindex[4] & 
+   data[6] & data[14]) | (bitindex[3] & bitindex[4] & data[6] & data[14]);
+assign spi_dat_2_21_bm = (~bitindex[3] & ~bitindex[4] & data[7]) | (~bitindex[3] & 
+   ~bitindex[4] & data[7] & ~data[15]) | (bitindex[3] & data[15]) | (bitindex[3] & 
+   ~data[7] & data[15]) | (bitindex[3] & data[7] & data[15]) | (~bitindex[4] & 
+   data[7] & data[15]) | (bitindex[3] & bitindex[4] & data[7] & data[15]);
+// @24:141
+  PFUMX spi_dat_2_21 (
+	.ALUT(spi_dat_2_21_bm),
+	.BLUT(spi_dat_2_21_am),
+	.C0(bitindex[0]),
+	.Z(N_280)
+);
+assign statec = (~N_253_4 & statec_0) | (~N_253_4 & ~bitindex[4] & statec_0) | 
+   (bitindex[4] & statec_0) | (~state[0] & statec_0) | (~N_253_4 & state[0] & 
+   statec_0) | (~N_253_4 & ~bitindex[4] & state[0] & statec_0) | (bitindex[4] & 
+   state[0] & statec_0);
+assign spi_dat_2_5_am = (N_260 & ~bitindex[3]) | (N_260 & ~bitindex[3] & 
+   ~data[8]) | (N_260 & data[8]) | (N_260 & ~bitindex[3] & data[8]) | 
+   (bitindex[3] & data[8]);
+assign spi_dat_2_5_bm = (N_262 & ~bitindex[3]) | (N_262 & ~bitindex[3] & 
+   ~data[9]) | (N_262 & data[9]) | (N_262 & ~bitindex[3] & data[9]) | 
+   (bitindex[3] & data[9]);
+// @24:141
+  PFUMX spi_dat_2_5 (
+	.ALUT(spi_dat_2_5_bm),
+	.BLUT(spi_dat_2_5_am),
+	.C0(bitindex[0]),
+	.Z(N_264)
+);
+assign spi_dat_2_10_am = (~bitindex[3] & ~bitindex[4] & data[4]) | (~bitindex[3] & 
+   ~bitindex[4] & data[4] & ~data[12]) | (bitindex[3] & data[12]) | (bitindex[3] & 
+   ~data[4] & data[12]) | (bitindex[3] & data[4] & data[12]) | (~bitindex[4] & 
+   data[4] & data[12]) | (bitindex[3] & bitindex[4] & data[4] & data[12]);
+assign spi_dat_2_10_bm = (N_267 & ~bitindex[3]) | (N_267 & ~bitindex[3] & 
+   ~data[13]) | (N_267 & data[13]) | (N_267 & ~bitindex[3] & data[13]) | 
+   (bitindex[3] & data[13]);
+// @24:141
+  PFUMX spi_dat_2_10 (
+	.ALUT(spi_dat_2_10_bm),
+	.BLUT(spi_dat_2_10_am),
+	.C0(bitindex[0]),
+	.Z(N_269)
+);
+assign spi_dat_2_16_am = (N_271 & ~bitindex[3]) | (N_271 & ~bitindex[3] & 
+   ~data[10]) | (N_271 & data[10]) | (N_271 & ~bitindex[3] & data[10]) | 
+   (bitindex[3] & data[10]);
+assign spi_dat_2_16_bm = (N_273 & ~bitindex[3]) | (N_273 & ~bitindex[3] & 
+   ~data[11]) | (N_273 & data[11]) | (N_273 & ~bitindex[3] & data[11]) | 
+   (bitindex[3] & data[11]);
+// @24:141
+  PFUMX spi_dat_2_16 (
+	.ALUT(spi_dat_2_16_bm),
+	.BLUT(spi_dat_2_16_am),
+	.C0(bitindex[0]),
+	.Z(N_275)
+);
+assign bitindex_lm[3] = (~rstn & bitindex_5[3]) | (~rstn & bitindex_5[3] & 
+   ~bitindex_s[3]) | (bitindex_5[3] & bitindex_s[3]) | (bitindex_5[3] & 
+   ~state[0]) | (~rstn & bitindex_5[3] & state[0]) | (~rstn & bitindex_5[3] & 
+   ~bitindex_s[3] & state[0]) | (rstn & bitindex_s[3] & state[0]) | (rstn & 
+   ~bitindex_5[3] & bitindex_s[3] & state[0]) | (bitindex_5[3] & bitindex_s[3] & 
+   state[0]);
+assign bitindex_lm[4] = (~rstn & ~bitindex_5[3]) | (~rstn & ~bitindex_5[3] & 
+   ~bitindex_s[4]) | (~bitindex_5[3] & bitindex_s[4]) | (~bitindex_5[3] & 
+   ~state[0]) | (~rstn & ~bitindex_5[3] & state[0]) | (~rstn & ~bitindex_5[3] & 
+   ~bitindex_s[4] & state[0]) | (rstn & bitindex_s[4] & state[0]) | (~bitindex_5[3] & 
+   bitindex_s[4] & state[0]) | (rstn & bitindex_5[3] & bitindex_s[4] & 
+   state[0]);
+// @24:141
+  L6MUX21 spi_dat_2_11 (
+	.D1(N_269),
+	.D0(N_264),
+	.SD(bitindex[2]),
+	.Z(N_270)
+);
+// @24:141
+  L6MUX21 spi_dat_2_22 (
+	.D1(N_280),
+	.D0(N_275),
+	.SD(bitindex[2]),
+	.Z(N_281)
+);
+assign spi_dat_4 = (N_270 & N_281 & ~state_105_d) | (N_270 & ~bitindex[1] & 
+   ~state_105_d) | (N_281 & bitindex[1] & ~state_105_d);
+// @24:93
+  CCU2B \bitindex_cry_0[3]  (
+	.A0(bitindex[3]),
+	.B0(VCC),
+	.C0(GND),
+	.D0(VCC),
+	.A1(bitindex[4]),
+	.B1(VCC),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(bitindex_cry[2]),
+	.COUT(bitindex_cry_0_COUT[3]),
+	.S0(bitindex_s[3]),
+	.S1(bitindex_s[4])
+);
+defparam \bitindex_cry_0[3] .INIT0=16'h060f;
+defparam \bitindex_cry_0[3] .INIT1=16'h060a;
+defparam \bitindex_cry_0[3] .INJECT1_0="NO";
+defparam \bitindex_cry_0[3] .INJECT1_1="NO";
+// @24:93
+  CCU2B \bitindex_cry_0[1]  (
+	.A0(bitindex[1]),
+	.B0(VCC),
+	.C0(GND),
+	.D0(VCC),
+	.A1(bitindex[2]),
+	.B1(VCC),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(bitindex_cry[0]),
+	.COUT(bitindex_cry[2]),
+	.S0(bitindex_s[1]),
+	.S1(bitindex_s[2])
+);
+defparam \bitindex_cry_0[1] .INIT0=16'h060f;
+defparam \bitindex_cry_0[1] .INIT1=16'h060f;
+defparam \bitindex_cry_0[1] .INJECT1_0="NO";
+defparam \bitindex_cry_0[1] .INJECT1_1="NO";
+  CCU2B \bitindex_cry_0[0]  (
+	.A0(GND),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(bitindex[0]),
+	.B1(VCC),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(GND),
+	.COUT(bitindex_cry[0]),
+	.S0(bitindex_cry_0_S0[0]),
+	.S1(bitindex_s[0])
+);
+defparam \bitindex_cry_0[0] .INIT0=16'h0a0c;
+defparam \bitindex_cry_0[0] .INIT1=16'h060f;
+defparam \bitindex_cry_0[0] .INJECT1_0="NO";
+defparam \bitindex_cry_0[0] .INJECT1_1="NO";
+//@10:824
+//@10:824
+//@10:824
+//@24:93
+//@10:353
+  assign GND_0 = 1'b0;
+//@10:353
+  assign VCC_0 = 1'b1;
+endmodule /* spi_module */
+
+module ts7500_top (
+  cpu_clkout_pad,
+  fpga_25mhz_pad,
+  clk_32khz_pad,
+  dio_pad,
+  cpu_uart_txd_pad,
+  cpu_uart_rxd_pad,
+  spi_clk_pad,
+  spi_mosi_pad,
+  spi_miso_pad,
+  gpio_a0_pad,
+  gpio_a1_pad,
+  gpio_a13_pad,
+  gpio_a14_pad,
+  gpio_a3_pad,
+  gpio_a15_pad,
+  gpio_a16_pad,
+  gpio_a17_pad,
+  gpio_a28_pad,
+  gpio_a29_pad,
+  int28_pad,
+  gpio_a22_pad,
+  gpio_a23_pad,
+  un_reset_pad,
+  wd_resetn_pad,
+  en_sd_power_pad,
+  sd_d0_pad,
+  sd_d1_pad,
+  sd_d2_pad,
+  sd_d3_pad,
+  sd_cmd_pad,
+  sd_clk_pad,
+  red_led_pad,
+  green_led_pad,
+  eth_left_ledn_pad,
+  eth_right_ledn_pad,
+  rtc_sda_pad,
+  rtc_scl_pad,
+  rtc_int1_pad,
+  ser_flash_wp_padn,
+  ser_flash_cs_padn,
+  flash_clk_pad,
+  flash_mosi_pad,
+  flash_miso_pad
+)
+;
+input cpu_clkout_pad ;
+input fpga_25mhz_pad ;
+output clk_32khz_pad ;
+inout [40:0] dio_pad /* synthesis syn_tristate = 1 */ ;
+input cpu_uart_txd_pad ;
+output cpu_uart_rxd_pad ;
+input spi_clk_pad ;
+input spi_mosi_pad ;
+output spi_miso_pad ;
+output gpio_a0_pad ;
+output gpio_a1_pad ;
+input gpio_a13_pad ;
+input gpio_a14_pad ;
+input gpio_a3_pad ;
+input gpio_a15_pad ;
+input gpio_a16_pad ;
+input gpio_a17_pad ;
+input gpio_a28_pad ;
+input gpio_a29_pad ;
+input int28_pad ;
+input gpio_a22_pad ;
+input gpio_a23_pad ;
+output un_reset_pad ;
+output wd_resetn_pad ;
+output en_sd_power_pad ;
+input sd_d0_pad ;
+input sd_d1_pad ;
+input sd_d2_pad ;
+input sd_d3_pad ;
+input sd_cmd_pad ;
+output sd_clk_pad ;
+output red_led_pad ;
+output green_led_pad ;
+output eth_left_ledn_pad ;
+output eth_right_ledn_pad ;
+output rtc_sda_pad ;
+output rtc_scl_pad ;
+input rtc_int1_pad ;
+output ser_flash_wp_padn ;
+output ser_flash_cs_padn ;
+output flash_clk_pad ;
+output flash_mosi_pad ;
+input flash_miso_pad ;
+wire cpu_clkout_pad ;
+wire fpga_25mhz_pad ;
+wire clk_32khz_pad ;
+wire cpu_uart_txd_pad ;
+wire cpu_uart_rxd_pad ;
+wire spi_clk_pad ;
+wire spi_mosi_pad ;
+wire spi_miso_pad ;
+wire gpio_a0_pad ;
+wire gpio_a1_pad ;
+wire gpio_a13_pad ;
+wire gpio_a14_pad ;
+wire gpio_a3_pad ;
+wire gpio_a15_pad ;
+wire gpio_a16_pad ;
+wire gpio_a17_pad ;
+wire gpio_a28_pad ;
+wire gpio_a29_pad ;
+wire int28_pad ;
+wire gpio_a22_pad ;
+wire gpio_a23_pad ;
+wire un_reset_pad ;
+wire wd_resetn_pad ;
+wire en_sd_power_pad ;
+wire sd_d0_pad ;
+wire sd_d1_pad ;
+wire sd_d2_pad ;
+wire sd_d3_pad ;
+wire sd_cmd_pad ;
+wire sd_clk_pad ;
+wire red_led_pad ;
+wire green_led_pad ;
+wire eth_left_ledn_pad ;
+wire eth_right_ledn_pad ;
+wire rtc_sda_pad ;
+wire rtc_scl_pad ;
+wire rtc_int1_pad ;
+wire ser_flash_wp_padn ;
+wire ser_flash_cs_padn ;
+wire flash_clk_pad ;
+wire flash_mosi_pad ;
+wire flash_miso_pad ;
+wire [1:0] led_val;
+wire [15:0] value_reg;
+wire [26:0] ramp_ctr;
+wire [1:1] led_val_5;
+wire [26:0] ramp_ctr_3;
+wire [31:0] timer;
+wire [15:0] rst_counter;
+wire [1:1] \spi.state ;
+wire [0:0] \sbuscore.sbuscore.idat ;
+wire [34:34] dio;
+wire [26:1] ramp_ctr_2;
+wire [0:0] led_val_5_0_i;
+wire [14:0] value_reg_cry;
+wire [15:0] value_reg_s;
+wire [30:0] timer_cry;
+wire [31:0] timer_s;
+wire [14:0] rst_counter_cry;
+wire [15:0] rst_counter_s;
+wire [0:0] rst_counter_cry_0_S0;
+wire [15:15] rst_counter_s_0_S1;
+wire [15:15] rst_counter_s_0_COUT;
+wire [0:0] timer_cry_0_S0;
+wire [31:31] timer_s_0_S1;
+wire [31:31] timer_s_0_COUT;
+wire [0:0] value_reg_cry_0_S0;
+wire [15:15] value_reg_s_0_S1;
+wire [15:15] value_reg_s_0_COUT;
+wire [38:35] dio_pad_c;
+wire [1:0] led_val_QN;
+wire [26:0] ramp_ctr_QN;
+wire [15:0] rst_counter_QN;
+wire [31:0] timer_QN;
+wire [15:0] value_reg_QN;
+wire [1:0] \spi.state_i ;
+wire pll_75mhz ;
+wire lock ;
+wire pll_100mhz ;
+wire lock2 ;
+wire sbus_so ;
+wire sr_load ;
+wire load_reg ;
+wire spi_dat ;
+wire pga_clk ;
+wire rstn ;
+wire unreset ;
+wire sr_load5 ;
+wire sr_load4 ;
+wire N_29 ;
+wire N_30 ;
+wire N_31 ;
+wire sr_load4_0 ;
+wire sr_load4_2 ;
+wire sr_load4_4 ;
+wire \spi.spi_dat_4  ;
+wire rst_counter_scalar ;
+wire internal_osc_c ;
+wire cmemwin_wbs_en11 ;
+wire ramp_ctr_2_cry_0 ;
+wire ramp_ctr_2_cry_2 ;
+wire ramp_ctr_2_cry_4 ;
+wire ramp_ctr_2_cry_6 ;
+wire ramp_ctr_2_cry_8 ;
+wire ramp_ctr_2_cry_10 ;
+wire ramp_ctr_2_cry_12 ;
+wire ramp_ctr_2_cry_14 ;
+wire ramp_ctr_2_cry_16 ;
+wire ramp_ctr_2_cry_18 ;
+wire ramp_ctr_2_cry_20 ;
+wire ramp_ctr_2_cry_22 ;
+wire ramp_ctr_2_cry_24 ;
+wire \sbuscore.sbuscore.so_i_0_N_10  ;
+wire spi_clk_pad_c_i ;
+wire led_val_1_sqmuxa_i ;
+wire N_548_i ;
+wire N_450_i ;
+wire sr_load5_1 ;
+wire un1_timerlto31_12 ;
+wire un1_timerlto31_13 ;
+wire un1_timerlto31_14 ;
+wire un1_timerlto31_15 ;
+wire un1_timerlto31_16 ;
+wire un1_timerlto31_17 ;
+wire un1_timerlto31_18 ;
+wire un1_timerlto31_23 ;
+wire ramp_ctr_2_cry_0_0_S0 ;
+wire ramp_ctr_2_cry_0_0_S1 ;
+wire ramp_ctr_2_cry_25_0_COUT ;
+wire sr_load4_0_0_S0 ;
+wire sr_load4_0_0_S1 ;
+wire sr_load4_1_0_S0 ;
+wire sr_load4_1_0_S1 ;
+wire sr_load4_3_0_S0 ;
+wire sr_load4_3_0_S1 ;
+wire sr_load4_5_0_S0 ;
+wire sr_load4_5_0_S1 ;
+wire sr_load4_6_cry ;
+wire sr_load4_6_0_COUT ;
+wire sr_load4_6_0_S1 ;
+wire \spi.cmd.CN  ;
+wire VCC ;
+wire GND ;
+wire \rstn.fb  ;
+wire fpga_25mhz_pad_c ;
+wire spi_clk_pad_c ;
+wire spi_mosi_pad_c ;
+wire gpio_a15_pad_c ;
+wire gpio_a16_pad_c ;
+wire gpio_a28_pad_c ;
+wire gpio_a22_pad_c ;
+wire gpio_a23_pad_c ;
+wire load_reg_QN ;
+wire rstn_QN ;
+wire sr_load_QN ;
+wire unreset_QN ;
+wire \unreset.fb_0  ;
+wire rstn_i ;
+wire GND_0 ;
+wire VCC_0 ;
+// @10:353
+  PUR PUR_INST (
+	.PUR(VCC)
+);
+// @10:353
+  GSR GSR_INST (
+	.GSR(VCC)
+);
+// @10:128
+  VLO GND_cZ (
+	.Z(GND)
+);
+// @10:128
+  VHI VCC_cZ (
+	.Z(VCC)
+);
+// @10:353
+  INV rstn_RNIB582 (
+	.A(rstn),
+	.Z(rstn_i)
+);
+assign \rstn.fb  = (rstn & lock2 & lock);
+assign \unreset.fb_0  = (N_548_i) | (N_548_i & ~unreset) | (unreset);
+  INV spi_clk_pad_pad_RNI90L2 (
+	.A(spi_clk_pad_c),
+	.Z(spi_clk_pad_c_i)
+);
+// @9:184
+  IFS1P3DX \sbuscore_sbuscore_idatio_Z[0]  (
+	.D(spi_mosi_pad_c),
+	.SP(VCC),
+	.SCLK(spi_clk_pad_c),
+	.CD(N_450_i),
+	.Q(\sbuscore.sbuscore.idat [0])
+);
+// @24:93
+  OFS1P3IX spi_spi_datio_Z (
+	.D(\spi.spi_dat_4 ),
+	.SP(\spi.state_i [1]),
+	.SCLK(\spi.cmd.CN ),
+	.CD(rstn_i),
+	.Q(spi_dat)
+);
+// @24:93
+  OFS1P3IX spi_shiftreg_outputreg_clkio_Z (
+	.D(\spi.state [1]),
+	.SP(\spi.state_i [0]),
+	.SCLK(\spi.cmd.CN ),
+	.CD(rstn_i),
+	.Q(dio_pad_c[38])
+);
+// @9:225
+  OFS1P3DX sbuscore_sbuscore_so_qio_Z (
+	.D(\sbuscore.sbuscore.so_i_0_N_10 ),
+	.SP(VCC),
+	.SCLK(spi_clk_pad_c),
+	.CD(GND),
+	.Q(sbus_so)
+);
+// @10:855
+  FD1P3AX \value_reg_reg[0]  (
+	.D(value_reg_s[0]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[0])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[1]  (
+	.D(value_reg_s[1]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[1])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[2]  (
+	.D(value_reg_s[2]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[2])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[3]  (
+	.D(value_reg_s[3]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[3])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[4]  (
+	.D(value_reg_s[4]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[4])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[5]  (
+	.D(value_reg_s[5]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[5])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[6]  (
+	.D(value_reg_s[6]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[6])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[7]  (
+	.D(value_reg_s[7]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[7])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[8]  (
+	.D(value_reg_s[8]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[8])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[9]  (
+	.D(value_reg_s[9]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[9])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[10]  (
+	.D(value_reg_s[10]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[10])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[11]  (
+	.D(value_reg_s[11]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[11])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[12]  (
+	.D(value_reg_s[12]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[12])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[13]  (
+	.D(value_reg_s[13]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[13])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[14]  (
+	.D(value_reg_s[14]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[14])
+);
+// @10:855
+  FD1P3AX \value_reg_reg[15]  (
+	.D(value_reg_s[15]),
+	.SP(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(value_reg[15])
+);
+// @10:261
+  FD1S3DX unreset_reg (
+	.D(\unreset.fb_0 ),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(unreset)
+);
+// @10:261
+  FD1S3DX \timer_reg[0]  (
+	.D(timer_s[0]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[0])
+);
+// @10:261
+  FD1S3DX \timer_reg[1]  (
+	.D(timer_s[1]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[1])
+);
+// @10:261
+  FD1S3DX \timer_reg[2]  (
+	.D(timer_s[2]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[2])
+);
+// @10:261
+  FD1S3DX \timer_reg[3]  (
+	.D(timer_s[3]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[3])
+);
+// @10:261
+  FD1S3DX \timer_reg[4]  (
+	.D(timer_s[4]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[4])
+);
+// @10:261
+  FD1S3DX \timer_reg[5]  (
+	.D(timer_s[5]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[5])
+);
+// @10:261
+  FD1S3DX \timer_reg[6]  (
+	.D(timer_s[6]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[6])
+);
+// @10:261
+  FD1S3DX \timer_reg[7]  (
+	.D(timer_s[7]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[7])
+);
+// @10:261
+  FD1S3DX \timer_reg[8]  (
+	.D(timer_s[8]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[8])
+);
+// @10:261
+  FD1S3DX \timer_reg[9]  (
+	.D(timer_s[9]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[9])
+);
+// @10:261
+  FD1S3DX \timer_reg[10]  (
+	.D(timer_s[10]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[10])
+);
+// @10:261
+  FD1S3DX \timer_reg[11]  (
+	.D(timer_s[11]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[11])
+);
+// @10:261
+  FD1S3DX \timer_reg[12]  (
+	.D(timer_s[12]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[12])
+);
+// @10:261
+  FD1S3DX \timer_reg[13]  (
+	.D(timer_s[13]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[13])
+);
+// @10:261
+  FD1S3DX \timer_reg[14]  (
+	.D(timer_s[14]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[14])
+);
+// @10:261
+  FD1S3DX \timer_reg[15]  (
+	.D(timer_s[15]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[15])
+);
+// @10:261
+  FD1S3DX \timer_reg[16]  (
+	.D(timer_s[16]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[16])
+);
+// @10:261
+  FD1S3DX \timer_reg[17]  (
+	.D(timer_s[17]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[17])
+);
+// @10:261
+  FD1S3DX \timer_reg[18]  (
+	.D(timer_s[18]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[18])
+);
+// @10:261
+  FD1S3DX \timer_reg[19]  (
+	.D(timer_s[19]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[19])
+);
+// @10:261
+  FD1S3DX \timer_reg[20]  (
+	.D(timer_s[20]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[20])
+);
+// @10:261
+  FD1S3DX \timer_reg[21]  (
+	.D(timer_s[21]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[21])
+);
+// @10:261
+  FD1S3DX \timer_reg[22]  (
+	.D(timer_s[22]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[22])
+);
+// @10:261
+  FD1S3DX \timer_reg[23]  (
+	.D(timer_s[23]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[23])
+);
+// @10:261
+  FD1S3DX \timer_reg[24]  (
+	.D(timer_s[24]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[24])
+);
+// @10:261
+  FD1S3DX \timer_reg[25]  (
+	.D(timer_s[25]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[25])
+);
+// @10:261
+  FD1S3DX \timer_reg[26]  (
+	.D(timer_s[26]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[26])
+);
+// @10:261
+  FD1S3DX \timer_reg[27]  (
+	.D(timer_s[27]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[27])
+);
+// @10:261
+  FD1S3DX \timer_reg[28]  (
+	.D(timer_s[28]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[28])
+);
+// @10:261
+  FD1S3DX \timer_reg[29]  (
+	.D(timer_s[29]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[29])
+);
+// @10:261
+  FD1S3DX \timer_reg[30]  (
+	.D(timer_s[30]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[30])
+);
+// @10:261
+  FD1S3DX \timer_reg[31]  (
+	.D(timer_s[31]),
+	.CK(pll_75mhz),
+	.CD(rstn_i),
+	.Q(timer[31])
+);
+// @10:855
+  FD1S3AX sr_load_reg (
+	.D(sr_load4),
+	.CK(fpga_25mhz_pad_c),
+	.Q(sr_load)
+);
+// @10:232
+  FD1S3JX rstn_reg (
+	.D(rst_counter[15]),
+	.CK(internal_osc_c),
+	.PD(\rstn.fb ),
+	.Q(rstn)
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[0]  (
+	.D(rst_counter_s[0]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[0])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[1]  (
+	.D(rst_counter_s[1]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[1])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[2]  (
+	.D(rst_counter_s[2]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[2])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[3]  (
+	.D(rst_counter_s[3]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[3])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[4]  (
+	.D(rst_counter_s[4]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[4])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[5]  (
+	.D(rst_counter_s[5]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[5])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[6]  (
+	.D(rst_counter_s[6]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[6])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[7]  (
+	.D(rst_counter_s[7]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[7])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[8]  (
+	.D(rst_counter_s[8]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[8])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[9]  (
+	.D(rst_counter_s[9]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[9])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[10]  (
+	.D(rst_counter_s[10]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[10])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[11]  (
+	.D(rst_counter_s[11]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[11])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[12]  (
+	.D(rst_counter_s[12]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[12])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[13]  (
+	.D(rst_counter_s[13]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[13])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[14]  (
+	.D(rst_counter_s[14]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[14])
+);
+// @10:232
+  FD1S3AX \rst_counter_reg[15]  (
+	.D(rst_counter_s[15]),
+	.CK(internal_osc_c),
+	.Q(rst_counter[15])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[0]  (
+	.D(ramp_ctr_3[0]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[0])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[1]  (
+	.D(ramp_ctr_2[1]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[1])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[2]  (
+	.D(ramp_ctr_2[2]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[2])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[3]  (
+	.D(ramp_ctr_2[3]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[3])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[4]  (
+	.D(ramp_ctr_2[4]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[4])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[5]  (
+	.D(ramp_ctr_2[5]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[5])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[6]  (
+	.D(ramp_ctr_2[6]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[6])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[7]  (
+	.D(ramp_ctr_2[7]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[7])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[8]  (
+	.D(ramp_ctr_2[8]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[8])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[9]  (
+	.D(ramp_ctr_2[9]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[9])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[10]  (
+	.D(ramp_ctr_2[10]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[10])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[11]  (
+	.D(ramp_ctr_2[11]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[11])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[12]  (
+	.D(ramp_ctr_2[12]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[12])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[13]  (
+	.D(ramp_ctr_2[13]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[13])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[14]  (
+	.D(ramp_ctr_2[14]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[14])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[15]  (
+	.D(ramp_ctr_2[15]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[15])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[16]  (
+	.D(ramp_ctr_2[16]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[16])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[17]  (
+	.D(ramp_ctr_2[17]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[17])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[18]  (
+	.D(ramp_ctr_2[18]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[18])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[19]  (
+	.D(ramp_ctr_2[19]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[19])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[20]  (
+	.D(ramp_ctr_2[20]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[20])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[21]  (
+	.D(ramp_ctr_2[21]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[21])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[22]  (
+	.D(ramp_ctr_2[22]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[22])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[23]  (
+	.D(ramp_ctr_2[23]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[23])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[24]  (
+	.D(ramp_ctr_2[24]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[24])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[25]  (
+	.D(ramp_ctr_2[25]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[25])
+);
+// @10:855
+  FD1S3AX \ramp_ctr_reg[26]  (
+	.D(ramp_ctr_3[26]),
+	.CK(fpga_25mhz_pad_c),
+	.Q(ramp_ctr[26])
+);
+// @10:855
+  FD1S3AX load_reg_reg (
+	.D(sr_load5),
+	.CK(fpga_25mhz_pad_c),
+	.Q(load_reg)
+);
+// @10:855
+  FD1P3AX \led_val_reg[0]  (
+	.D(led_val_5_0_i[0]),
+	.SP(led_val_1_sqmuxa_i),
+	.CK(fpga_25mhz_pad_c),
+	.Q(led_val[0])
+);
+// @10:855
+  FD1P3AX \led_val_reg[1]  (
+	.D(led_val_5[1]),
+	.SP(led_val_1_sqmuxa_i),
+	.CK(fpga_25mhz_pad_c),
+	.Q(led_val[1])
+);
+// @10:169
+  OB flash_mosi_pad_pad (
+	.I(GND),
+	.O(flash_mosi_pad)
+);
+// @10:170
+  OB flash_clk_pad_pad (
+	.I(VCC),
+	.O(flash_clk_pad)
+);
+// @10:168
+  OB ser_flash_cs_padn_pad (
+	.I(VCC),
+	.O(ser_flash_cs_padn)
+);
+// @10:167
+  OB ser_flash_wp_padn_pad (
+	.I(unreset),
+	.O(ser_flash_wp_padn)
+);
+// @10:183
+  OBZ rtc_scl_pad_pad (
+	.I(GND),
+	.T(VCC),
+	.O(rtc_scl_pad)
+);
+// @10:182
+  OBZ rtc_sda_pad_pad (
+	.I(GND),
+	.T(VCC),
+	.O(rtc_sda_pad)
+);
+// @10:179
+  OB eth_right_ledn_pad_pad (
+	.I(gpio_a23_pad_c),
+	.O(eth_right_ledn_pad)
+);
+// @10:178
+  OB eth_left_ledn_pad_pad (
+	.I(gpio_a22_pad_c),
+	.O(eth_left_ledn_pad)
+);
+// @10:175
+  OB green_led_pad_pad (
+	.I(GND),
+	.O(green_led_pad)
+);
+// @10:174
+  OB red_led_pad_pad (
+	.I(GND),
+	.O(red_led_pad)
+);
+// @10:164
+  OBZ sd_clk_pad_pad (
+	.I(GND),
+	.T(VCC),
+	.O(sd_clk_pad)
+);
+// @10:158
+  OBZ en_sd_power_pad_pad (
+	.I(GND),
+	.T(VCC),
+	.O(en_sd_power_pad)
+);
+// @10:155
+  OB wd_resetn_pad_pad (
+	.I(VCC),
+	.O(wd_resetn_pad)
+);
+// @10:154
+  OB un_reset_pad_pad (
+	.I(unreset),
+	.O(un_reset_pad)
+);
+// @10:151
+  IB gpio_a23_pad_pad (
+	.I(gpio_a23_pad),
+	.O(gpio_a23_pad_c)
+);
+// @10:150
+  IB gpio_a22_pad_pad (
+	.I(gpio_a22_pad),
+	.O(gpio_a22_pad_c)
+);
+// @10:145
+  IB gpio_a28_pad_pad (
+	.I(gpio_a28_pad),
+	.O(gpio_a28_pad_c)
+);
+// @10:142
+  IB gpio_a16_pad_pad (
+	.I(gpio_a16_pad),
+	.O(gpio_a16_pad_c)
+);
+// @10:141
+  IB gpio_a15_pad_pad (
+	.I(gpio_a15_pad),
+	.O(gpio_a15_pad_c)
+);
+// @10:133
+  OB gpio_a1_pad_pad (
+	.I(GND),
+	.O(gpio_a1_pad)
+);
+// @10:132
+  OB gpio_a0_pad_pad (
+	.I(GND),
+	.O(gpio_a0_pad)
+);
+// @10:129
+  OB spi_miso_pad_pad (
+	.I(sbus_so),
+	.O(spi_miso_pad)
+);
+// @10:128
+  IB spi_mosi_pad_pad (
+	.I(spi_mosi_pad),
+	.O(spi_mosi_pad_c)
+);
+// @10:127
+  IB spi_clk_pad_pad (
+	.I(spi_clk_pad),
+	.O(spi_clk_pad_c)
+);
+// @10:123
+  OBZ cpu_uart_rxd_pad_pad (
+	.I(GND),
+	.T(VCC),
+	.O(cpu_uart_rxd_pad)
+);
+// @10:120
+  OB \dio_pad_pad[40]  (
+	.I(pga_clk),
+	.O(dio_pad[40])
+);
+// @10:120
+  OB \dio_pad_pad[39]  (
+	.I(GND),
+	.O(dio_pad[39])
+);
+// @10:120
+  OB \dio_pad_pad[38]  (
+	.I(dio_pad_c[38]),
+	.O(dio_pad[38])
+);
+// @10:120
+  OB \dio_pad_pad[37]  (
+	.I(dio_pad_c[37]),
+	.O(dio_pad[37])
+);
+// @10:120
+  OB \dio_pad_pad[36]  (
+	.I(spi_dat),
+	.O(dio_pad[36])
+);
+// @10:120
+  OB \dio_pad_pad[35]  (
+	.I(dio_pad_c[35]),
+	.O(dio_pad[35])
+);
+// @10:120
+  OB \dio_pad_pad[34]  (
+	.I(dio[34]),
+	.O(dio_pad[34])
+);
+// @10:120
+  OB \dio_pad_pad[18]  (
+	.I(GND),
+	.O(dio_pad[18])
+);
+// @10:120
+  OB \dio_pad_pad[17]  (
+	.I(GND),
+	.O(dio_pad[17])
+);
+// @10:120
+  OB \dio_pad_pad[10]  (
+	.I(GND),
+	.O(dio_pad[10])
+);
+// @10:120
+  OB \dio_pad_pad[9]  (
+	.I(GND),
+	.O(dio_pad[9])
+);
+// @10:120
+  OBZ \dio_pad_pad[7]  (
+	.I(GND),
+	.T(VCC),
+	.O(dio_pad[7])
+);
+// @10:120
+  OB \dio_pad_pad[5]  (
+	.I(GND),
+	.O(dio_pad[5])
+);
+// @10:120
+  OB \dio_pad_pad[4]  (
+	.I(GND),
+	.O(dio_pad[4])
+);
+// @10:120
+  OB \dio_pad_pad[3]  (
+	.I(GND),
+	.O(dio_pad[3])
+);
+// @10:120
+  OB \dio_pad_pad[2]  (
+	.I(GND),
+	.O(dio_pad[2])
+);
+// @10:120
+  OB \dio_pad_pad[1]  (
+	.I(GND),
+	.O(dio_pad[1])
+);
+// @10:120
+  OB \dio_pad_pad[0]  (
+	.I(GND),
+	.O(dio_pad[0])
+);
+// @10:124
+  OB clk_32khz_pad_pad (
+	.I(GND),
+	.O(clk_32khz_pad)
+);
+// @10:116
+  IB fpga_25mhz_pad_pad (
+	.I(fpga_25mhz_pad),
+	.O(fpga_25mhz_pad_c)
+);
+assign rst_counter_scalar = (lock & lock2);
+assign ramp_ctr_3[0] = (~ramp_ctr[0] & ~sr_load4);
+assign ramp_ctr_3[26] = (ramp_ctr_2[26] & ~sr_load4);
+assign led_val_5[1] = (~led_val[1] & sr_load4);
+assign cmemwin_wbs_en11 = (gpio_a15_pad_c & gpio_a16_pad_c);
+assign un1_timerlto31_12 = (~timer[10] & ~timer[11]);
+assign led_val_5_0_i[0] = (~led_val[0]) | (~sr_load4) | (~led_val[0] & 
+   sr_load4);
+assign led_val_1_sqmuxa_i = (~rstn) | (~rstn & ~sr_load4) | (sr_load4);
+assign sr_load5_1 = (~ramp_ctr[0] & ~ramp_ctr[1] & ~ramp_ctr[2] & ramp_ctr[5]);
+assign un1_timerlto31_13 = (~timer[6] & ~timer[7] & ~timer[8] & ~timer[9]);
+assign un1_timerlto31_14 = (~timer[26] & ~timer[27] & ~timer[28] & ~timer[29]);
+assign un1_timerlto31_15 = (~timer[22] & ~timer[23] & ~timer[24] & ~timer[25]);
+assign un1_timerlto31_16 = (~timer[20] & ~timer[21] & ~timer[30] & ~timer[31]);
+assign un1_timerlto31_17 = (~timer[16] & ~timer[17] & ~timer[18] & ~timer[19]);
+assign un1_timerlto31_18 = (~timer[12] & ~timer[13] & ~timer[14] & ~timer[15]);
+assign sr_load5 = (~ramp_ctr[3] & ~ramp_ctr[4] & sr_load5_1);
+assign un1_timerlto31_23 = (un1_timerlto31_14 & un1_timerlto31_15 & un1_timerlto31_16 & 
+   un1_timerlto31_17);
+assign N_548_i = (~un1_timerlto31_12) | (~un1_timerlto31_13) | (~un1_timerlto31_12 & 
+   un1_timerlto31_13) | (~un1_timerlto31_18) | (~un1_timerlto31_12 & un1_timerlto31_18) | 
+   (~un1_timerlto31_13 & un1_timerlto31_18) | (~un1_timerlto31_12 & un1_timerlto31_13 & 
+   un1_timerlto31_18) | (~un1_timerlto31_23) | (~un1_timerlto31_12 & un1_timerlto31_23) | 
+   (~un1_timerlto31_13 & un1_timerlto31_23) | (~un1_timerlto31_12 & un1_timerlto31_13 & 
+   un1_timerlto31_23) | (~un1_timerlto31_18 & un1_timerlto31_23) | (~un1_timerlto31_12 & 
+   un1_timerlto31_18 & un1_timerlto31_23) | (~un1_timerlto31_13 & un1_timerlto31_18 & 
+   un1_timerlto31_23) | (~un1_timerlto31_12 & un1_timerlto31_13 & un1_timerlto31_18 & 
+   un1_timerlto31_23);
+  CCU2B sr_load4_6_0 (
+	.A0(GND),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(GND),
+	.B1(GND),
+	.C1(GND),
+	.D1(GND),
+	.CIN(sr_load4_6_cry),
+	.COUT(sr_load4_6_0_COUT),
+	.S0(sr_load4),
+	.S1(sr_load4_6_0_S1)
+);
+defparam sr_load4_6_0.INIT0=16'h0a0c;
+defparam sr_load4_6_0.INIT1=16'h0000;
+defparam sr_load4_6_0.INJECT1_0="NO";
+defparam sr_load4_6_0.INJECT1_1="NO";
+// @10:863
+  CCU2B sr_load4_5_0 (
+	.A0(ramp_ctr[19]),
+	.B0(ramp_ctr[20]),
+	.C0(ramp_ctr[21]),
+	.D0(ramp_ctr[22]),
+	.A1(ramp_ctr[23]),
+	.B1(ramp_ctr[24]),
+	.C1(ramp_ctr[25]),
+	.D1(VCC),
+	.CIN(sr_load4_4),
+	.COUT(sr_load4_6_cry),
+	.S0(sr_load4_5_0_S0),
+	.S1(sr_load4_5_0_S1)
+);
+defparam sr_load4_5_0.INIT0=16'h0001;
+defparam sr_load4_5_0.INIT1=16'h010a;
+defparam sr_load4_5_0.INJECT1_0="YES";
+defparam sr_load4_5_0.INJECT1_1="YES";
+// @10:863
+  CCU2B sr_load4_3_0 (
+	.A0(ramp_ctr[11]),
+	.B0(ramp_ctr[12]),
+	.C0(ramp_ctr[13]),
+	.D0(ramp_ctr[14]),
+	.A1(ramp_ctr[15]),
+	.B1(ramp_ctr[16]),
+	.C1(ramp_ctr[17]),
+	.D1(ramp_ctr[18]),
+	.CIN(sr_load4_2),
+	.COUT(sr_load4_4),
+	.S0(sr_load4_3_0_S0),
+	.S1(sr_load4_3_0_S1)
+);
+defparam sr_load4_3_0.INIT0=16'h0001;
+defparam sr_load4_3_0.INIT1=16'h0001;
+defparam sr_load4_3_0.INJECT1_0="YES";
+defparam sr_load4_3_0.INJECT1_1="YES";
+// @10:863
+  CCU2B sr_load4_1_0 (
+	.A0(ramp_ctr[3]),
+	.B0(ramp_ctr[4]),
+	.C0(ramp_ctr[5]),
+	.D0(ramp_ctr[6]),
+	.A1(ramp_ctr[10]),
+	.B1(ramp_ctr[7]),
+	.C1(ramp_ctr[8]),
+	.D1(ramp_ctr[9]),
+	.CIN(sr_load4_0),
+	.COUT(sr_load4_2),
+	.S0(sr_load4_1_0_S0),
+	.S1(sr_load4_1_0_S1)
+);
+defparam sr_load4_1_0.INIT0=16'h0001;
+defparam sr_load4_1_0.INIT1=16'h0001;
+defparam sr_load4_1_0.INJECT1_0="YES";
+defparam sr_load4_1_0.INJECT1_1="YES";
+  CCU2B sr_load4_0_0 (
+	.A0(GND),
+	.B0(VCC),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[0]),
+	.B1(ramp_ctr[1]),
+	.C1(ramp_ctr[26]),
+	.D1(ramp_ctr[2]),
+	.CIN(GND),
+	.COUT(sr_load4_0),
+	.S0(sr_load4_0_0_S0),
+	.S1(sr_load4_0_0_S1)
+);
+defparam sr_load4_0_0.INIT0=16'h0a0c;
+defparam sr_load4_0_0.INIT1=16'h0010;
+defparam sr_load4_0_0.INJECT1_0="NO";
+defparam sr_load4_0_0.INJECT1_1="YES";
+// @10:859
+  CCU2B ramp_ctr_2_cry_25_0 (
+	.A0(ramp_ctr[25]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[26]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(ramp_ctr_2_cry_24),
+	.COUT(ramp_ctr_2_cry_25_0_COUT),
+	.S0(ramp_ctr_2[25]),
+	.S1(ramp_ctr_2[26])
+);
+defparam ramp_ctr_2_cry_25_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_25_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_25_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_25_0.INJECT1_1="NO";
+// @10:859
+  CCU2B ramp_ctr_2_cry_23_0 (
+	.A0(ramp_ctr[23]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[24]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(ramp_ctr_2_cry_22),
+	.COUT(ramp_ctr_2_cry_24),
+	.S0(ramp_ctr_2[23]),
+	.S1(ramp_ctr_2[24])
+);
+defparam ramp_ctr_2_cry_23_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_23_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_23_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_23_0.INJECT1_1="NO";
+// @10:859
+  CCU2B ramp_ctr_2_cry_21_0 (
+	.A0(ramp_ctr[21]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[22]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(ramp_ctr_2_cry_20),
+	.COUT(ramp_ctr_2_cry_22),
+	.S0(ramp_ctr_2[21]),
+	.S1(ramp_ctr_2[22])
+);
+defparam ramp_ctr_2_cry_21_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_21_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_21_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_21_0.INJECT1_1="NO";
+// @10:859
+  CCU2B ramp_ctr_2_cry_19_0 (
+	.A0(ramp_ctr[19]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[20]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(ramp_ctr_2_cry_18),
+	.COUT(ramp_ctr_2_cry_20),
+	.S0(ramp_ctr_2[19]),
+	.S1(ramp_ctr_2[20])
+);
+defparam ramp_ctr_2_cry_19_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_19_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_19_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_19_0.INJECT1_1="NO";
+// @10:859
+  CCU2B ramp_ctr_2_cry_17_0 (
+	.A0(ramp_ctr[17]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[18]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(ramp_ctr_2_cry_16),
+	.COUT(ramp_ctr_2_cry_18),
+	.S0(ramp_ctr_2[17]),
+	.S1(ramp_ctr_2[18])
+);
+defparam ramp_ctr_2_cry_17_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_17_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_17_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_17_0.INJECT1_1="NO";
+// @10:859
+  CCU2B ramp_ctr_2_cry_15_0 (
+	.A0(ramp_ctr[15]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[16]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(ramp_ctr_2_cry_14),
+	.COUT(ramp_ctr_2_cry_16),
+	.S0(ramp_ctr_2[15]),
+	.S1(ramp_ctr_2[16])
+);
+defparam ramp_ctr_2_cry_15_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_15_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_15_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_15_0.INJECT1_1="NO";
+// @10:859
+  CCU2B ramp_ctr_2_cry_13_0 (
+	.A0(ramp_ctr[13]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[14]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(ramp_ctr_2_cry_12),
+	.COUT(ramp_ctr_2_cry_14),
+	.S0(ramp_ctr_2[13]),
+	.S1(ramp_ctr_2[14])
+);
+defparam ramp_ctr_2_cry_13_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_13_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_13_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_13_0.INJECT1_1="NO";
+// @10:859
+  CCU2B ramp_ctr_2_cry_11_0 (
+	.A0(ramp_ctr[11]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[12]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(ramp_ctr_2_cry_10),
+	.COUT(ramp_ctr_2_cry_12),
+	.S0(ramp_ctr_2[11]),
+	.S1(ramp_ctr_2[12])
+);
+defparam ramp_ctr_2_cry_11_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_11_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_11_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_11_0.INJECT1_1="NO";
+// @10:859
+  CCU2B ramp_ctr_2_cry_9_0 (
+	.A0(ramp_ctr[9]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[10]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(ramp_ctr_2_cry_8),
+	.COUT(ramp_ctr_2_cry_10),
+	.S0(ramp_ctr_2[9]),
+	.S1(ramp_ctr_2[10])
+);
+defparam ramp_ctr_2_cry_9_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_9_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_9_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_9_0.INJECT1_1="NO";
+// @10:859
+  CCU2B ramp_ctr_2_cry_7_0 (
+	.A0(ramp_ctr[7]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[8]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(ramp_ctr_2_cry_6),
+	.COUT(ramp_ctr_2_cry_8),
+	.S0(ramp_ctr_2[7]),
+	.S1(ramp_ctr_2[8])
+);
+defparam ramp_ctr_2_cry_7_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_7_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_7_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_7_0.INJECT1_1="NO";
+// @10:859
+  CCU2B ramp_ctr_2_cry_5_0 (
+	.A0(ramp_ctr[5]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[6]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(ramp_ctr_2_cry_4),
+	.COUT(ramp_ctr_2_cry_6),
+	.S0(ramp_ctr_2[5]),
+	.S1(ramp_ctr_2[6])
+);
+defparam ramp_ctr_2_cry_5_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_5_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_5_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_5_0.INJECT1_1="NO";
+// @10:859
+  CCU2B ramp_ctr_2_cry_3_0 (
+	.A0(ramp_ctr[3]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[4]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(ramp_ctr_2_cry_2),
+	.COUT(ramp_ctr_2_cry_4),
+	.S0(ramp_ctr_2[3]),
+	.S1(ramp_ctr_2[4])
+);
+defparam ramp_ctr_2_cry_3_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_3_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_3_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_3_0.INJECT1_1="NO";
+// @10:859
+  CCU2B ramp_ctr_2_cry_1_0 (
+	.A0(ramp_ctr[1]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[2]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(ramp_ctr_2_cry_0),
+	.COUT(ramp_ctr_2_cry_2),
+	.S0(ramp_ctr_2[1]),
+	.S1(ramp_ctr_2[2])
+);
+defparam ramp_ctr_2_cry_1_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_1_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_1_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_1_0.INJECT1_1="NO";
+  CCU2B ramp_ctr_2_cry_0_0 (
+	.A0(GND),
+	.B0(VCC),
+	.C0(GND),
+	.D0(VCC),
+	.A1(ramp_ctr[0]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(GND),
+	.COUT(ramp_ctr_2_cry_0),
+	.S0(ramp_ctr_2_cry_0_0_S0),
+	.S1(ramp_ctr_2_cry_0_0_S1)
+);
+defparam ramp_ctr_2_cry_0_0.INIT0=16'h0a0c;
+defparam ramp_ctr_2_cry_0_0.INIT1=16'h0a0c;
+defparam ramp_ctr_2_cry_0_0.INJECT1_0="NO";
+defparam ramp_ctr_2_cry_0_0.INJECT1_1="YES";
+// @10:855
+  CCU2B \value_reg_s_0[15]  (
+	.A0(value_reg[15]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(GND),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(value_reg_cry[14]),
+	.COUT(value_reg_s_0_COUT[15]),
+	.S0(value_reg_s[15]),
+	.S1(value_reg_s_0_S1[15])
+);
+defparam \value_reg_s_0[15] .INIT0=16'h060a;
+defparam \value_reg_s_0[15] .INIT1=16'h0a0c;
+defparam \value_reg_s_0[15] .INJECT1_0="NO";
+defparam \value_reg_s_0[15] .INJECT1_1="NO";
+// @10:855
+  CCU2B \value_reg_cry_0[13]  (
+	.A0(value_reg[13]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(value_reg[14]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(value_reg_cry[12]),
+	.COUT(value_reg_cry[14]),
+	.S0(value_reg_s[13]),
+	.S1(value_reg_s[14])
+);
+defparam \value_reg_cry_0[13] .INIT0=16'h0600;
+defparam \value_reg_cry_0[13] .INIT1=16'h0600;
+defparam \value_reg_cry_0[13] .INJECT1_0="NO";
+defparam \value_reg_cry_0[13] .INJECT1_1="NO";
+// @10:855
+  CCU2B \value_reg_cry_0[11]  (
+	.A0(value_reg[11]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(value_reg[12]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(value_reg_cry[10]),
+	.COUT(value_reg_cry[12]),
+	.S0(value_reg_s[11]),
+	.S1(value_reg_s[12])
+);
+defparam \value_reg_cry_0[11] .INIT0=16'h0600;
+defparam \value_reg_cry_0[11] .INIT1=16'h0600;
+defparam \value_reg_cry_0[11] .INJECT1_0="NO";
+defparam \value_reg_cry_0[11] .INJECT1_1="NO";
+// @10:855
+  CCU2B \value_reg_cry_0[9]  (
+	.A0(value_reg[9]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(value_reg[10]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(value_reg_cry[8]),
+	.COUT(value_reg_cry[10]),
+	.S0(value_reg_s[9]),
+	.S1(value_reg_s[10])
+);
+defparam \value_reg_cry_0[9] .INIT0=16'h0600;
+defparam \value_reg_cry_0[9] .INIT1=16'h0600;
+defparam \value_reg_cry_0[9] .INJECT1_0="NO";
+defparam \value_reg_cry_0[9] .INJECT1_1="NO";
+// @10:855
+  CCU2B \value_reg_cry_0[7]  (
+	.A0(value_reg[7]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(value_reg[8]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(value_reg_cry[6]),
+	.COUT(value_reg_cry[8]),
+	.S0(value_reg_s[7]),
+	.S1(value_reg_s[8])
+);
+defparam \value_reg_cry_0[7] .INIT0=16'h0600;
+defparam \value_reg_cry_0[7] .INIT1=16'h0600;
+defparam \value_reg_cry_0[7] .INJECT1_0="NO";
+defparam \value_reg_cry_0[7] .INJECT1_1="NO";
+// @10:855
+  CCU2B \value_reg_cry_0[5]  (
+	.A0(value_reg[5]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(value_reg[6]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(value_reg_cry[4]),
+	.COUT(value_reg_cry[6]),
+	.S0(value_reg_s[5]),
+	.S1(value_reg_s[6])
+);
+defparam \value_reg_cry_0[5] .INIT0=16'h0600;
+defparam \value_reg_cry_0[5] .INIT1=16'h0600;
+defparam \value_reg_cry_0[5] .INJECT1_0="NO";
+defparam \value_reg_cry_0[5] .INJECT1_1="NO";
+// @10:855
+  CCU2B \value_reg_cry_0[3]  (
+	.A0(value_reg[3]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(value_reg[4]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(value_reg_cry[2]),
+	.COUT(value_reg_cry[4]),
+	.S0(value_reg_s[3]),
+	.S1(value_reg_s[4])
+);
+defparam \value_reg_cry_0[3] .INIT0=16'h0600;
+defparam \value_reg_cry_0[3] .INIT1=16'h0600;
+defparam \value_reg_cry_0[3] .INJECT1_0="NO";
+defparam \value_reg_cry_0[3] .INJECT1_1="NO";
+// @10:855
+  CCU2B \value_reg_cry_0[1]  (
+	.A0(value_reg[1]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(value_reg[2]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(value_reg_cry[0]),
+	.COUT(value_reg_cry[2]),
+	.S0(value_reg_s[1]),
+	.S1(value_reg_s[2])
+);
+defparam \value_reg_cry_0[1] .INIT0=16'h0600;
+defparam \value_reg_cry_0[1] .INIT1=16'h0600;
+defparam \value_reg_cry_0[1] .INJECT1_0="NO";
+defparam \value_reg_cry_0[1] .INJECT1_1="NO";
+  CCU2B \value_reg_cry_0[0]  (
+	.A0(GND),
+	.B0(VCC),
+	.C0(GND),
+	.D0(VCC),
+	.A1(value_reg[0]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(GND),
+	.COUT(value_reg_cry[0]),
+	.S0(value_reg_cry_0_S0[0]),
+	.S1(value_reg_s[0])
+);
+defparam \value_reg_cry_0[0] .INIT0=16'h0a0c;
+defparam \value_reg_cry_0[0] .INIT1=16'h0600;
+defparam \value_reg_cry_0[0] .INJECT1_0="NO";
+defparam \value_reg_cry_0[0] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_s_0[31]  (
+	.A0(timer[31]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(GND),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[30]),
+	.COUT(timer_s_0_COUT[31]),
+	.S0(timer_s[31]),
+	.S1(timer_s_0_S1[31])
+);
+defparam \timer_s_0[31] .INIT0=16'h060a;
+defparam \timer_s_0[31] .INIT1=16'h0a0c;
+defparam \timer_s_0[31] .INJECT1_0="NO";
+defparam \timer_s_0[31] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[29]  (
+	.A0(timer[29]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[30]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[28]),
+	.COUT(timer_cry[30]),
+	.S0(timer_s[29]),
+	.S1(timer_s[30])
+);
+defparam \timer_cry_0[29] .INIT0=16'h0600;
+defparam \timer_cry_0[29] .INIT1=16'h0600;
+defparam \timer_cry_0[29] .INJECT1_0="NO";
+defparam \timer_cry_0[29] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[27]  (
+	.A0(timer[27]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[28]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[26]),
+	.COUT(timer_cry[28]),
+	.S0(timer_s[27]),
+	.S1(timer_s[28])
+);
+defparam \timer_cry_0[27] .INIT0=16'h0600;
+defparam \timer_cry_0[27] .INIT1=16'h0600;
+defparam \timer_cry_0[27] .INJECT1_0="NO";
+defparam \timer_cry_0[27] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[25]  (
+	.A0(timer[25]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[26]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[24]),
+	.COUT(timer_cry[26]),
+	.S0(timer_s[25]),
+	.S1(timer_s[26])
+);
+defparam \timer_cry_0[25] .INIT0=16'h0600;
+defparam \timer_cry_0[25] .INIT1=16'h0600;
+defparam \timer_cry_0[25] .INJECT1_0="NO";
+defparam \timer_cry_0[25] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[23]  (
+	.A0(timer[23]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[24]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[22]),
+	.COUT(timer_cry[24]),
+	.S0(timer_s[23]),
+	.S1(timer_s[24])
+);
+defparam \timer_cry_0[23] .INIT0=16'h0600;
+defparam \timer_cry_0[23] .INIT1=16'h0600;
+defparam \timer_cry_0[23] .INJECT1_0="NO";
+defparam \timer_cry_0[23] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[21]  (
+	.A0(timer[21]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[22]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[20]),
+	.COUT(timer_cry[22]),
+	.S0(timer_s[21]),
+	.S1(timer_s[22])
+);
+defparam \timer_cry_0[21] .INIT0=16'h0600;
+defparam \timer_cry_0[21] .INIT1=16'h0600;
+defparam \timer_cry_0[21] .INJECT1_0="NO";
+defparam \timer_cry_0[21] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[19]  (
+	.A0(timer[19]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[20]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[18]),
+	.COUT(timer_cry[20]),
+	.S0(timer_s[19]),
+	.S1(timer_s[20])
+);
+defparam \timer_cry_0[19] .INIT0=16'h0600;
+defparam \timer_cry_0[19] .INIT1=16'h0600;
+defparam \timer_cry_0[19] .INJECT1_0="NO";
+defparam \timer_cry_0[19] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[17]  (
+	.A0(timer[17]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[18]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[16]),
+	.COUT(timer_cry[18]),
+	.S0(timer_s[17]),
+	.S1(timer_s[18])
+);
+defparam \timer_cry_0[17] .INIT0=16'h0600;
+defparam \timer_cry_0[17] .INIT1=16'h0600;
+defparam \timer_cry_0[17] .INJECT1_0="NO";
+defparam \timer_cry_0[17] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[15]  (
+	.A0(timer[15]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[16]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[14]),
+	.COUT(timer_cry[16]),
+	.S0(timer_s[15]),
+	.S1(timer_s[16])
+);
+defparam \timer_cry_0[15] .INIT0=16'h0600;
+defparam \timer_cry_0[15] .INIT1=16'h0600;
+defparam \timer_cry_0[15] .INJECT1_0="NO";
+defparam \timer_cry_0[15] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[13]  (
+	.A0(timer[13]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[14]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[12]),
+	.COUT(timer_cry[14]),
+	.S0(timer_s[13]),
+	.S1(timer_s[14])
+);
+defparam \timer_cry_0[13] .INIT0=16'h0600;
+defparam \timer_cry_0[13] .INIT1=16'h0600;
+defparam \timer_cry_0[13] .INJECT1_0="NO";
+defparam \timer_cry_0[13] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[11]  (
+	.A0(timer[11]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[12]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[10]),
+	.COUT(timer_cry[12]),
+	.S0(timer_s[11]),
+	.S1(timer_s[12])
+);
+defparam \timer_cry_0[11] .INIT0=16'h0600;
+defparam \timer_cry_0[11] .INIT1=16'h0600;
+defparam \timer_cry_0[11] .INJECT1_0="NO";
+defparam \timer_cry_0[11] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[9]  (
+	.A0(timer[9]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[10]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[8]),
+	.COUT(timer_cry[10]),
+	.S0(timer_s[9]),
+	.S1(timer_s[10])
+);
+defparam \timer_cry_0[9] .INIT0=16'h0600;
+defparam \timer_cry_0[9] .INIT1=16'h0600;
+defparam \timer_cry_0[9] .INJECT1_0="NO";
+defparam \timer_cry_0[9] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[7]  (
+	.A0(timer[7]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[8]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[6]),
+	.COUT(timer_cry[8]),
+	.S0(timer_s[7]),
+	.S1(timer_s[8])
+);
+defparam \timer_cry_0[7] .INIT0=16'h0600;
+defparam \timer_cry_0[7] .INIT1=16'h0600;
+defparam \timer_cry_0[7] .INJECT1_0="NO";
+defparam \timer_cry_0[7] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[5]  (
+	.A0(timer[5]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[6]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[4]),
+	.COUT(timer_cry[6]),
+	.S0(timer_s[5]),
+	.S1(timer_s[6])
+);
+defparam \timer_cry_0[5] .INIT0=16'h0600;
+defparam \timer_cry_0[5] .INIT1=16'h0600;
+defparam \timer_cry_0[5] .INJECT1_0="NO";
+defparam \timer_cry_0[5] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[3]  (
+	.A0(timer[3]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[4]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[2]),
+	.COUT(timer_cry[4]),
+	.S0(timer_s[3]),
+	.S1(timer_s[4])
+);
+defparam \timer_cry_0[3] .INIT0=16'h0600;
+defparam \timer_cry_0[3] .INIT1=16'h0600;
+defparam \timer_cry_0[3] .INJECT1_0="NO";
+defparam \timer_cry_0[3] .INJECT1_1="NO";
+// @10:261
+  CCU2B \timer_cry_0[1]  (
+	.A0(timer[1]),
+	.B0(GND),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[2]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(timer_cry[0]),
+	.COUT(timer_cry[2]),
+	.S0(timer_s[1]),
+	.S1(timer_s[2])
+);
+defparam \timer_cry_0[1] .INIT0=16'h0600;
+defparam \timer_cry_0[1] .INIT1=16'h0600;
+defparam \timer_cry_0[1] .INJECT1_0="NO";
+defparam \timer_cry_0[1] .INJECT1_1="NO";
+  CCU2B \timer_cry_0[0]  (
+	.A0(GND),
+	.B0(VCC),
+	.C0(GND),
+	.D0(VCC),
+	.A1(timer[0]),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(GND),
+	.COUT(timer_cry[0]),
+	.S0(timer_cry_0_S0[0]),
+	.S1(timer_s[0])
+);
+defparam \timer_cry_0[0] .INIT0=16'h0a0c;
+defparam \timer_cry_0[0] .INIT1=16'h0600;
+defparam \timer_cry_0[0] .INJECT1_0="NO";
+defparam \timer_cry_0[0] .INJECT1_1="NO";
+// @10:232
+  CCU2B \rst_counter_s_0[15]  (
+	.A0(rst_counter_scalar),
+	.B0(GND),
+	.C0(rst_counter[15]),
+	.D0(VCC),
+	.A1(GND),
+	.B1(GND),
+	.C1(GND),
+	.D1(VCC),
+	.CIN(rst_counter_cry[14]),
+	.COUT(rst_counter_s_0_COUT[15]),
+	.S0(rst_counter_s[15]),
+	.S1(rst_counter_s_0_S1[15])
+);
+defparam \rst_counter_s_0[15] .INIT0=16'he40a;
+defparam \rst_counter_s_0[15] .INIT1=16'h0a0c;
+defparam \rst_counter_s_0[15] .INJECT1_0="NO";
+defparam \rst_counter_s_0[15] .INJECT1_1="NO";
+// @10:232
+  CCU2B \rst_counter_cry_0[13]  (
+	.A0(rst_counter_scalar),
+	.B0(GND),
+	.C0(rst_counter[13]),
+	.D0(VCC),
+	.A1(rst_counter_scalar),
+	.B1(GND),
+	.C1(rst_counter[14]),
+	.D1(VCC),
+	.CIN(rst_counter_cry[12]),
+	.COUT(rst_counter_cry[14]),
+	.S0(rst_counter_s[13]),
+	.S1(rst_counter_s[14])
+);
+defparam \rst_counter_cry_0[13] .INIT0=16'he400;
+defparam \rst_counter_cry_0[13] .INIT1=16'he400;
+defparam \rst_counter_cry_0[13] .INJECT1_0="NO";
+defparam \rst_counter_cry_0[13] .INJECT1_1="NO";
+// @10:232
+  CCU2B \rst_counter_cry_0[11]  (
+	.A0(rst_counter_scalar),
+	.B0(GND),
+	.C0(rst_counter[11]),
+	.D0(VCC),
+	.A1(rst_counter_scalar),
+	.B1(GND),
+	.C1(rst_counter[12]),
+	.D1(VCC),
+	.CIN(rst_counter_cry[10]),
+	.COUT(rst_counter_cry[12]),
+	.S0(rst_counter_s[11]),
+	.S1(rst_counter_s[12])
+);
+defparam \rst_counter_cry_0[11] .INIT0=16'he400;
+defparam \rst_counter_cry_0[11] .INIT1=16'he400;
+defparam \rst_counter_cry_0[11] .INJECT1_0="NO";
+defparam \rst_counter_cry_0[11] .INJECT1_1="NO";
+// @10:232
+  CCU2B \rst_counter_cry_0[9]  (
+	.A0(rst_counter_scalar),
+	.B0(GND),
+	.C0(rst_counter[9]),
+	.D0(VCC),
+	.A1(rst_counter_scalar),
+	.B1(GND),
+	.C1(rst_counter[10]),
+	.D1(VCC),
+	.CIN(rst_counter_cry[8]),
+	.COUT(rst_counter_cry[10]),
+	.S0(rst_counter_s[9]),
+	.S1(rst_counter_s[10])
+);
+defparam \rst_counter_cry_0[9] .INIT0=16'he400;
+defparam \rst_counter_cry_0[9] .INIT1=16'he400;
+defparam \rst_counter_cry_0[9] .INJECT1_0="NO";
+defparam \rst_counter_cry_0[9] .INJECT1_1="NO";
+// @10:232
+  CCU2B \rst_counter_cry_0[7]  (
+	.A0(rst_counter_scalar),
+	.B0(GND),
+	.C0(rst_counter[7]),
+	.D0(VCC),
+	.A1(rst_counter_scalar),
+	.B1(GND),
+	.C1(rst_counter[8]),
+	.D1(VCC),
+	.CIN(rst_counter_cry[6]),
+	.COUT(rst_counter_cry[8]),
+	.S0(rst_counter_s[7]),
+	.S1(rst_counter_s[8])
+);
+defparam \rst_counter_cry_0[7] .INIT0=16'he400;
+defparam \rst_counter_cry_0[7] .INIT1=16'he400;
+defparam \rst_counter_cry_0[7] .INJECT1_0="NO";
+defparam \rst_counter_cry_0[7] .INJECT1_1="NO";
+// @10:232
+  CCU2B \rst_counter_cry_0[5]  (
+	.A0(rst_counter_scalar),
+	.B0(GND),
+	.C0(rst_counter[5]),
+	.D0(VCC),
+	.A1(rst_counter_scalar),
+	.B1(GND),
+	.C1(rst_counter[6]),
+	.D1(VCC),
+	.CIN(rst_counter_cry[4]),
+	.COUT(rst_counter_cry[6]),
+	.S0(rst_counter_s[5]),
+	.S1(rst_counter_s[6])
+);
+defparam \rst_counter_cry_0[5] .INIT0=16'he400;
+defparam \rst_counter_cry_0[5] .INIT1=16'he400;
+defparam \rst_counter_cry_0[5] .INJECT1_0="NO";
+defparam \rst_counter_cry_0[5] .INJECT1_1="NO";
+// @10:232
+  CCU2B \rst_counter_cry_0[3]  (
+	.A0(rst_counter_scalar),
+	.B0(GND),
+	.C0(rst_counter[3]),
+	.D0(VCC),
+	.A1(rst_counter_scalar),
+	.B1(GND),
+	.C1(rst_counter[4]),
+	.D1(VCC),
+	.CIN(rst_counter_cry[2]),
+	.COUT(rst_counter_cry[4]),
+	.S0(rst_counter_s[3]),
+	.S1(rst_counter_s[4])
+);
+defparam \rst_counter_cry_0[3] .INIT0=16'he400;
+defparam \rst_counter_cry_0[3] .INIT1=16'he400;
+defparam \rst_counter_cry_0[3] .INJECT1_0="NO";
+defparam \rst_counter_cry_0[3] .INJECT1_1="NO";
+// @10:232
+  CCU2B \rst_counter_cry_0[1]  (
+	.A0(rst_counter_scalar),
+	.B0(GND),
+	.C0(rst_counter[1]),
+	.D0(VCC),
+	.A1(rst_counter_scalar),
+	.B1(GND),
+	.C1(rst_counter[2]),
+	.D1(VCC),
+	.CIN(rst_counter_cry[0]),
+	.COUT(rst_counter_cry[2]),
+	.S0(rst_counter_s[1]),
+	.S1(rst_counter_s[2])
+);
+defparam \rst_counter_cry_0[1] .INIT0=16'he400;
+defparam \rst_counter_cry_0[1] .INIT1=16'he400;
+defparam \rst_counter_cry_0[1] .INJECT1_0="NO";
+defparam \rst_counter_cry_0[1] .INJECT1_1="NO";
+  CCU2B \rst_counter_cry_0[0]  (
+	.A0(GND),
+	.B0(rst_counter_scalar),
+	.C0(GND),
+	.D0(VCC),
+	.A1(rst_counter_scalar),
+	.B1(GND),
+	.C1(rst_counter[0]),
+	.D1(VCC),
+	.CIN(GND),
+	.COUT(rst_counter_cry[0]),
+	.S0(rst_counter_cry_0_S0[0]),
+	.S1(rst_counter_s[0])
+);
+defparam \rst_counter_cry_0[0] .INIT0=16'h0a0c;
+defparam \rst_counter_cry_0[0] .INIT1=16'he400;
+defparam \rst_counter_cry_0[0] .INJECT1_0="NO";
+defparam \rst_counter_cry_0[0] .INJECT1_1="NO";
+// @10:209
+  pll clkgen (
+	.lock(lock),
+	.GND(GND),
+	.fpga_25mhz_pad_c(fpga_25mhz_pad_c),
+	.VCC(VCC),
+	.pll_75mhz(pll_75mhz)
+);
+// @10:221
+  pll2 clkgen2 (
+	.dio(dio[34]),
+	.lock2(lock2),
+	.GND(GND),
+	.fpga_25mhz_pad_c(fpga_25mhz_pad_c),
+	.pll_100mhz(pll_100mhz)
+);
+// @10:353
+  spi_sbus_resync sbuscore (
+	.idat(\sbuscore.sbuscore.idat [0]),
+	.pll_100mhz(pll_100mhz),
+	.gpio_a16_pad_c(gpio_a16_pad_c),
+	.gpio_a15_pad_c(gpio_a15_pad_c),
+	.spi_mosi_pad_c(spi_mosi_pad_c),
+	.spi_clk_pad_c(spi_clk_pad_c),
+	.N_450_i(N_450_i),
+	.gpio_a28_pad_c(gpio_a28_pad_c),
+	.so_i_0_N_10(\sbuscore.sbuscore.so_i_0_N_10 ),
+	.cmemwin_wbs_en11(cmemwin_wbs_en11),
+	.GND(GND),
+	.VCC(VCC),
+	.rstn_i(rstn_i),
+	.spi_clk_pad_c_i(spi_clk_pad_c_i)
+);
+// @10:501
+  syscon_3s_29952_0_5_Z1 sysconcore (
+	.internal_osc_c(internal_osc_c)
+);
+// @10:786
+  pga_control pga (
+	.dio(dio[34]),
+	.VCC(VCC),
+	.rstn_i(rstn_i),
+	.pga_clk(pga_clk)
+);
+// @10:824
+  spi_module spi (
+	.led_val({led_val[1], led_val[0]}),
+	.value_reg({value_reg[15], value_reg[14], value_reg[13], value_reg[12], 
+   value_reg[11], value_reg[10], value_reg[9], value_reg[8], value_reg[7], 
+   value_reg[6], value_reg[5], value_reg[4], value_reg[3], value_reg[2], 
+   value_reg[1], value_reg[0]}),
+	.dio(dio[34]),
+	.dio_pad_c_0(dio_pad_c[35]),
+	.dio_pad_c_2(dio_pad_c[37]),
+	.state_1(\spi.state [1]),
+	.state_i({\spi.state_i [1], \spi.state_i [0]}),
+	.spi_dat_4(\spi.spi_dat_4 ),
+	.rstn(rstn),
+	.sr_load(sr_load),
+	.load_reg(load_reg),
+	.VCC(VCC),
+	.rstn_i(rstn_i),
+	.CN(\spi.cmd.CN ),
+	.GND(GND)
+);
+  assign GND_0 = 1'b0;
+  assign VCC_0 = 1'b1;
+endmodule /* ts7500_top */
+

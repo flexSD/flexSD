@@ -1,0 +1,195 @@
+----------------------------------------------------------------------
+Report for cell ts7500_top.verilog
+
+Register bits: 191 of 4752 (4%)
+PIC Latch:       0
+I/O cells:       45
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                              CCU2B       60       100.0
+                           DPR16X4B        1       100.0
+                           EHXPLLE1        1       100.0
+                             EPLLD1        1       100.0
+                            FD1P3AX       23       100.0
+                            FD1P3BX        1       100.0
+                            FD1P3DX       18       100.0
+                            FD1P3IX       18       100.0
+                            FD1S3AX       46       100.0
+                            FD1S3DX       72       100.0
+                            FD1S3IX        7       100.0
+                            FD1S3JX        2       100.0
+                                GSR        1       100.0
+                                 IB        8       100.0
+                           IFS1P3DX        1       100.0
+                                INV        9       100.0
+                            L6MUX21        2       100.0
+                                 OB       31       100.0
+                                OBZ        6       100.0
+                           OFS1P3DX        1       100.0
+                           OFS1P3IX        2       100.0
+                           ORCALUT4      210       100.0
+                               OSCE        1       100.0
+                              PFUMX        6       100.0
+                                PUR        1       100.0
+                                VHI        1       100.0
+                                VLO        1       100.0
+SUB MODULES 
+                        pga_control        1       100.0
+                                pll        1       100.0
+                               pll2        1       100.0
+                 resync_fifo_issueq        1       100.0
+                resync_fifo_resultq        1       100.0
+                         spi_module        1       100.0
+                           spi_sbus        1       100.0
+                    spi_sbus_resync        1       100.0
+             syscon_3s_29952_0_5_Z1        1       100.0
+                          wb_resync        1       100.0
+                     wb_writebuffer        1       100.0
+                wb_writebuffer_fifo        1       100.0
+                            
+                         TOTAL           543           
+----------------------------------------------------------------------
+Report for cell spi_module.netlist
+     Instance path:  spi
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                              CCU2B        3         5.0
+                            FD1P3AX        5        21.7
+                            FD1P3IX       18       100.0
+                            FD1S3AX        1         2.2
+                            FD1S3IX        2        28.6
+                            FD1S3JX        1        50.0
+                                INV        3        33.3
+                            L6MUX21        2       100.0
+                           ORCALUT4       48        22.9
+                              PFUMX        4        66.7
+                            
+                         TOTAL            87           
+----------------------------------------------------------------------
+Report for cell pga_control.netlist
+     Instance path:  pga
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                            FD1S3IX        5        71.4
+                           ORCALUT4        5         2.4
+                            
+                         TOTAL            10           
+----------------------------------------------------------------------
+Report for cell syscon_3s_29952_0_5_Z1.netlist
+     Instance path:  sysconcore
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                               OSCE        1       100.0
+                            
+                         TOTAL             1           
+----------------------------------------------------------------------
+Report for cell spi_sbus_resync.netlist
+     Instance path:  sbuscore
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                              CCU2B        3         5.0
+                           DPR16X4B        1       100.0
+                            FD1P3BX        1       100.0
+                            FD1P3DX       18       100.0
+                            FD1S3DX       39        54.2
+                                INV        3        33.3
+                           ORCALUT4      137        65.2
+                              PFUMX        2        33.3
+SUB MODULES 
+                 resync_fifo_issueq        1       100.0
+                resync_fifo_resultq        1       100.0
+                           spi_sbus        1       100.0
+                          wb_resync        1       100.0
+                     wb_writebuffer        1       100.0
+                wb_writebuffer_fifo        1       100.0
+                            
+                         TOTAL           210           
+----------------------------------------------------------------------
+Report for cell wb_resync.netlist
+     Instance path:  sbuscore.resynccore
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                            FD1P3DX        1         5.6
+                            FD1S3DX        5         6.9
+                           ORCALUT4        4         1.9
+                              PFUMX        1        16.7
+SUB MODULES 
+                 resync_fifo_issueq        1       100.0
+                resync_fifo_resultq        1       100.0
+                            
+                         TOTAL            13           
+----------------------------------------------------------------------
+Report for cell resync_fifo_resultq.netlist
+  Original Cell name resync_fifo
+     Instance path:  sbuscore.resynccore.resultq
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                            FD1S3DX        1         1.4
+                            
+                         TOTAL             1           
+----------------------------------------------------------------------
+Report for cell resync_fifo_issueq.netlist
+  Original Cell name resync_fifo
+     Instance path:  sbuscore.resynccore.issueq
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                            FD1P3DX        1         5.6
+                            FD1S3DX        4         5.6
+                           ORCALUT4        3         1.4
+                              PFUMX        1        16.7
+                            
+                         TOTAL             9           
+----------------------------------------------------------------------
+Report for cell wb_writebuffer.netlist
+     Instance path:  sbuscore.wbufcore
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                           DPR16X4B        1       100.0
+                            FD1P3DX        4        22.2
+                            FD1S3DX        5         6.9
+                           ORCALUT4       24        11.4
+SUB MODULES 
+                wb_writebuffer_fifo        1       100.0
+                            
+                         TOTAL            35           
+----------------------------------------------------------------------
+Report for cell wb_writebuffer_fifo.netlist
+     Instance path:  sbuscore.wbufcore.writebuffer
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                           DPR16X4B        1       100.0
+                            FD1P3DX        4        22.2
+                            FD1S3DX        5         6.9
+                           ORCALUT4       17         8.1
+                            
+                         TOTAL            27           
+----------------------------------------------------------------------
+Report for cell spi_sbus.netlist
+     Instance path:  sbuscore.sbuscore
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                              CCU2B        3         5.0
+                            FD1P3DX       13        72.2
+                            FD1S3DX       29        40.3
+                                INV        3        33.3
+                           ORCALUT4      102        48.6
+                              PFUMX        1        16.7
+                            
+                         TOTAL           151           
+----------------------------------------------------------------------
+Report for cell pll2.netlist
+     Instance path:  clkgen2
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                             EPLLD1        1       100.0
+                            
+                         TOTAL             1           
+----------------------------------------------------------------------
+Report for cell pll.netlist
+     Instance path:  clkgen
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                           EHXPLLE1        1       100.0
+                                INV        1        11.1
+                            
+                         TOTAL             2           

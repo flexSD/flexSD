@@ -1,0 +1,38 @@
+[Device]
+Family=latticexp2
+PartType=LFXP2-5E
+PartName=LFXP2-5E-5TN144C
+SpeedGrade=5
+Package=TQFP144
+OperatingCondition=COM
+Status=S
+
+[IP]
+VendorName=Lattice Semiconductor Corporation
+CoreType=LPM
+CoreStatus=Demo
+CoreName=Sin-Cos_Table
+CoreRevision=1.2
+ModuleName=lattice_sin_cos_table
+SourceFormat=Verilog HDL
+ParameterFileVersion=1.0
+Date=06/01/2012
+Time=13:42:36
+
+[Parameters]
+Verilog=1
+VHDL=0
+EDIF=1
+Destination=Synplicity
+Expression=BusA(0 to 7)
+Order=Big Endian [MSB:LSB]
+IO=0
+pmi_implemenntation=LUT
+pmi_dataa_width=10
+pmi_datab_width=24
+pmi_output_mode=Sin
+pmi_optimize_mem=1
+pmi_use_1bit=1
+pmi_input_reg=0
+pmi_output_reg=1
+pmi_pipeline=1

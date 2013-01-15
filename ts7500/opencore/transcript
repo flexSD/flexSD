@@ -1,0 +1,126 @@
+# //  ModelSim SE 6.1b Sep  8 2005 Linux 2.6.35.14-97.fc14.x86_64
+# //
+# //  Copyright Mentor Graphics Corporation 2005
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do {/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/linux_sim/linux_sim.mdo} 
+# Loading project linux_sim
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module wb_resync
+# -- Compiling module resync_fifo
+# 
+# Top level modules:
+# 	wb_resync
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module syscon
+# 
+# Top level modules:
+# 	syscon
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module wb_spi
+# 
+# Top level modules:
+# 	wb_spi
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module wb_arbiter
+# 
+# Top level modules:
+# 	wb_arbiter
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module wb_writebuffer
+# -- Compiling module wb_writebuffer_fifo
+# 
+# Top level modules:
+# 	wb_writebuffer
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module spi_sbus
+# -- Compiling module spi_sbus_resync
+# 
+# Top level modules:
+# 	spi_sbus_resync
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module ts7500_top
+# 
+# Top level modules:
+# 	ts7500_top
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module tagmem
+# 
+# Top level modules:
+# 	tagmem
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module pll2
+# 
+# Top level modules:
+# 	pll2
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module pll
+# 
+# Top level modules:
+# 	pll
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module coefficient_blockram
+# 
+# Top level modules:
+# 	coefficient_blockram
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module coefficient_memwindow
+# 
+# Top level modules:
+# 	coefficient_memwindow
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module logging_blockram
+# 
+# Top level modules:
+# 	logging_blockram
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module logging_memwindow
+# 
+# Top level modules:
+# 	logging_memwindow
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module adc_buffer
+# 
+# Top level modules:
+# 	adc_buffer
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module biquad_filter_32bit
+# 
+# Top level modules:
+# 	biquad_filter_32bit
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module wb_biquad_interface_128
+# 
+# Top level modules:
+# 	wb_biquad_interface_128
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module sigma_delta_buffer_filter
+# 
+# Top level modules:
+# 	sigma_delta_buffer_filter
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module spi_module
+# 
+# Top level modules:
+# 	spi_module
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module pga_control
+# 
+# Top level modules:
+# 	pga_control
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module lattice_ram_36bit_512
+# 
+# Top level modules:
+# 	lattice_ram_36bit_512
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module lattice_ram_24bit_16word
+# 
+# Top level modules:
+# 	lattice_ram_24bit_16word
+# Model Technology ModelSim SE vsim 6.1b Simulator 2005.09 Sep  8 2005

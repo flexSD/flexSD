@@ -1,0 +1,53 @@
+NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
+NOTE All Rights Reserved *
+NOTE DATE CREATED: Wed Apr 18 15:30:46 2012 *
+NOTE DESIGN NAME: ts7500_top *
+NOTE DEVICE NAME: LFXP2-5E-5TQFP144 *
+NOTE PIN ASSIGNMENTS *
+NOTE PINS dio_pad_7 : 88 : out *
+NOTE PINS clk_32khz_pad : 122 : out *
+NOTE PINS fpga_25mhz_pad : 144 : in *
+NOTE PINS flash_mosi_pad : 52 : out *
+NOTE PINS flash_clk_pad : 124 : out *
+NOTE PINS ser_flash_cs_padn : 6 : out *
+NOTE PINS ser_flash_wp_padn : 44 : out *
+NOTE PINS rtc_scl_pad : 127 : out *
+NOTE PINS rtc_sda_pad : 92 : out *
+NOTE PINS eth_right_ledn_pad : 73 : out *
+NOTE PINS eth_left_ledn_pad : 132 : out *
+NOTE PINS green_led_pad : 131 : out *
+NOTE PINS red_led_pad : 47 : out *
+NOTE PINS sd_clk_pad : 20 : out *
+NOTE PINS en_sd_power_pad : 102 : out *
+NOTE PINS wd_resetn_pad : 129 : out *
+NOTE PINS un_reset_pad : 29 : out *
+NOTE PINS gpio_a23_pad : 9 : in *
+NOTE PINS gpio_a22_pad : 7 : in *
+NOTE PINS gpio_a28_pad : 78 : in *
+NOTE PINS gpio_a16_pad : 38 : in *
+NOTE PINS gpio_a15_pad : 27 : in *
+NOTE PINS gpio_a1_pad : 137 : out *
+NOTE PINS gpio_a0_pad : 39 : out *
+NOTE PINS spi_miso_pad : 30 : out *
+NOTE PINS spi_mosi_pad : 15 : in *
+NOTE PINS spi_clk_pad : 28 : in *
+NOTE PINS cpu_uart_rxd_pad : 13 : out *
+NOTE PINS dio_pad_40 : 134 : out *
+NOTE PINS dio_pad_39 : 69 : out *
+NOTE PINS dio_pad_38 : 70 : out *
+NOTE PINS dio_pad_37 : 89 : out *
+NOTE PINS dio_pad_36 : 77 : out *
+NOTE PINS dio_pad_35 : 121 : out *
+NOTE PINS dio_pad_34 : 62 : out *
+NOTE PINS dio_pad_18 : 50 : out *
+NOTE PINS dio_pad_17 : 46 : out *
+NOTE PINS dio_pad_10 : 94 : out *
+NOTE PINS dio_pad_9 : 91 : out *
+NOTE PINS dio_pad_5 : 87 : out *
+NOTE PINS dio_pad_4 : 48 : out *
+NOTE PINS dio_pad_3 : 120 : out *
+NOTE PINS dio_pad_2 : 35 : out *
+NOTE PINS dio_pad_1 : 1 : out *
+NOTE PINS dio_pad_0 : 58 : out *
+NOTE CONFIGURATION MODE: NONE *
+NOTE COMPRESSION: off *

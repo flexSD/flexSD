@@ -1,0 +1,764 @@
+<HTML>
+<HEAD><TITLE>Lattice Map TRACE Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Map_Twr"></A><B><U><big>Map TRACE Report</big></U></B>
+
+Loading design for application trce from file ts7500_opencore_map.ncd.
+Design name: ts7500_top
+NCD version: 3.2
+Vendor:      LATTICE
+Device:      LFXP2-5E
+Package:     TQFP144
+Speed:       5
+Loading device for application trce from file 'mg5a26x29.nph' in environment: /usr/local/diamond/1.2/ispfpga.
+Package Status:               Final          Version 1.42
+Speed Hardware Data Status:   Final          Version 10.5
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+<A name="Map_Twr_setup"></A><B><U><big>Lattice TRACE Report - Setup, Version Diamond_1.2_Production (92)</big></U></B>
+Wed Apr 18 15:29:55 2012
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2011 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="mtw1_set_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ts7500_opencore.tw1 ts7500_opencore_map.ncd ts7500_opencore.prf 
+Design file:     ts7500_opencore_map.ncd
+Preference file: ts7500_opencore.prf
+Device,speed:    LFXP2-5E,5
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+<A name="mtw1_set_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<LI><A href='#map_twr_pref_0_0' Target='right'>FREQUENCY NET "fpga_25mhz_pad_c" 25.000000 MHz (0 errors)</A></LI>            738 items scored, 0 timing errors detected.
+Report:  185.529MHz is the maximum frequency for this preference.
+
+<LI><A href='#map_twr_pref_0_1' Target='right'>FREQUENCY NET "pll_75mhz" 75.000000 MHz PAR_ADJ 7.500000 (0 errors)</A></LI>            555 items scored, 0 timing errors detected.
+Report:  198.413MHz is the maximum frequency for this preference.
+
+<LI><A href='#map_twr_pref_0_2' Target='right'>FREQUENCY NET "dio_34" 50.000000 MHz (0 errors)</A></LI>            143 items scored, 0 timing errors detected.
+Report:  167.560MHz is the maximum frequency for this preference.
+
+<LI><A href='#map_twr_pref_0_3' Target='right'>FREQUENCY NET "pll_100mhz" 100.000000 MHz PAR_ADJ 10.000000 HOLD_MARGIN 0.200000 nS (0 errors)</A></LI>            4 items scored, 0 timing errors detected.
+Report:  487.329MHz is the maximum frequency for this preference.
+
+<LI><A href='#map_twr_pref_0_4' Target='right'>FREQUENCY PORT "spi_clk_pad" 50.000000 MHz PAR_ADJ 5.000000 HOLD_MARGIN 0.200000 nS (0 errors)</A></LI>            1946 items scored, 0 timing errors detected.
+Report:   72.088MHz is the maximum frequency for this preference.
+
+<LI><A href='#map_twr_pref_0_5' Target='right'>INPUT_SETUP PORT "spi_mosi_pad" 3.000000 ns HOLD 3.000000 ns CLKPORT "spi_clk_pad" ; Setup Analysis.(0 errors)</A></LI>            4 items scored, 0 timing errors detected.
+
+<LI><A href='#map_twr_pref_0_6' Target='right'>MAXDELAY FROM PORT "gpio_a22_pad" TO PORT "spi_miso_pad" 30.000000 ns (0 errors)</A></LI>            0 items scored, 0 timing errors detected.
+
+<LI><A href='#map_twr_pref_0_7' Target='right'>MAXDELAY FROM PORT "gpio_a23_pad" TO PORT "spi_miso_pad" 30.000000 ns (0 errors)</A></LI>            0 items scored, 0 timing errors detected.
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+BLOCK RD_DURING_WR_PATHS
+BLOCK INTERCLOCKDOMAIN PATHS
+BLOCK JTAG PATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+<A name="map_twr_pref_0_0"></A>Preference: FREQUENCY NET "fpga_25mhz_pad_c" 25.000000 MHz ;
+            738 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 34.610ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              ramp_ctr_6  (from fpga_25mhz_pad_c +)
+   Destination:    FF         Data in        led_val_1  (to fpga_25mhz_pad_c +)
+                   FF                        led_val_0
+
+   Delay:               5.146ns  (36.9% logic, 63.1% route), 6 logic levels.
+
+ Constraint Details:
+
+       5.146ns physical path delay SLICE_22 to SLICE_64 meets
+      40.000ns delay constraint less
+       0.244ns CE_SET requirement (totaling 39.756ns) by 34.610ns
+
+ Physical Path Details:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.383   SLICE_22.CLK to    SLICE_22.Q1 SLICE_22 (from fpga_25mhz_pad_c)
+ROUTE         2   e 1.081    SLICE_22.Q1 to    SLICE_10.D0 ramp_ctr_6
+C0TOFCO_DE  ---     0.790    SLICE_10.D0 to   SLICE_10.FCO SLICE_10
+ROUTE         1   e 0.001   SLICE_10.FCO to    SLICE_9.FCI sr_load4_2
+FCITOFCO_D  ---     0.081    SLICE_9.FCI to    SLICE_9.FCO SLICE_9
+ROUTE         1   e 0.001    SLICE_9.FCO to    SLICE_8.FCI sr_load4_4
+FCITOFCO_D  ---     0.081    SLICE_8.FCI to    SLICE_8.FCO SLICE_8
+ROUTE         1   e 0.001    SLICE_8.FCO to    SLICE_7.FCI sr_load4_6_cry
+FCITOF0_DE  ---     0.305    SLICE_7.FCI to     SLICE_7.F0 SLICE_7
+ROUTE         6   e 1.081     SLICE_7.F0 to   SLICE_166.B1 sr_load4
+CTOF_DEL    ---     0.260   SLICE_166.B1 to   SLICE_166.F1 SLICE_166
+ROUTE         1   e 1.081   SLICE_166.F1 to    SLICE_64.CE led_val_1_sqmuxa_i (to fpga_25mhz_pad_c)
+                  --------
+                    5.146   (36.9% logic, 63.1% route), 6 logic levels.
+
+Report:  185.529MHz is the maximum frequency for this preference.
+
+
+================================================================================
+<A name="map_twr_pref_0_1"></A>Preference: FREQUENCY NET "pll_75mhz" 75.000000 MHz PAR_ADJ 7.500000 ;
+            555 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 8.293ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              timer_31  (from pll_75mhz +)
+   Destination:    FF         Data in        unreset  (to pll_75mhz +)
+
+   Delay:               4.947ns  (28.8% logic, 71.2% route), 5 logic levels.
+
+ Constraint Details:
+
+       4.947ns physical path delay SLICE_35 to SLICE_125 meets
+      13.333ns delay constraint less
+       0.093ns DIN_SET requirement (totaling 13.240ns) by 8.293ns
+
+ Physical Path Details:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.383   SLICE_35.CLK to    SLICE_35.Q0 SLICE_35 (from pll_75mhz)
+ROUTE         2   e 1.081    SLICE_35.Q0 to   SLICE_165.D1 timer_31
+CTOF_DEL    ---     0.260   SLICE_165.D1 to   SLICE_165.F1 SLICE_165
+ROUTE         1   e 1.081   SLICE_165.F1 to   SLICE_158.C1 un1_timerlto31_16
+CTOF_DEL    ---     0.260   SLICE_158.C1 to   SLICE_158.F1 SLICE_158
+ROUTE         1   e 1.081   SLICE_158.F1 to   SLICE_125.D1 un1_timerlto31_23
+CTOF_DEL    ---     0.260   SLICE_125.D1 to   SLICE_125.F1 SLICE_125
+ROUTE         1   e 0.280   SLICE_125.F1 to   SLICE_125.A0 N_548_i
+CTOF_DEL    ---     0.260   SLICE_125.A0 to   SLICE_125.F0 SLICE_125
+ROUTE         1   e 0.001   SLICE_125.F0 to  SLICE_125.DI0 unreset_fb_0 (to pll_75mhz)
+                  --------
+                    4.947   (28.8% logic, 71.2% route), 5 logic levels.
+
+Report:  198.413MHz is the maximum frequency for this preference.
+
+
+================================================================================
+<A name="map_twr_pref_0_2"></A>Preference: FREQUENCY NET "dio_34" 50.000000 MHz ;
+            143 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 14.032ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              spi/data_1  (from dio_34 -)
+   Destination:    FF         Data in        spi_spi_datio  (to dio_34 -)
+
+   Delay:               5.871ns  (26.3% logic, 73.7% route), 5 logic levels.
+
+ Constraint Details:
+
+       5.871ns physical path delay spi/SLICE_114 to dio_pad_36_MGIOL meets
+      20.000ns delay constraint less
+       0.097ns ONEG0_SET requirement (totaling 19.903ns) by 14.032ns
+
+dio_pad_36_MGIOL attributes: FINE=FDEL0
+
+ Physical Path Details:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.383 *SLICE_114.CLK to */SLICE_114.Q1 spi/SLICE_114 (from dio_34)
+ROUTE         1   e 1.081 */SLICE_114.Q1 to */SLICE_174.B0 spi/data_1
+CTOF_DEL    ---     0.260 */SLICE_174.B0 to */SLICE_174.F0 spi/SLICE_174
+ROUTE         1   e 1.081 */SLICE_174.F0 to */SLICE_128.B1 spi/N_262
+CTOOFX_DEL  ---     0.494 */SLICE_128.B1 to *LICE_128.OFX0 spi/spi_dat_2_5/SLICE_128
+ROUTE         1   e 0.001 *LICE_128.OFX0 to *SLICE_128.FXA spi/N_264
+FXTOOFX_DE  ---     0.149 *SLICE_128.FXA to *LICE_128.OFX1 spi/spi_dat_2_5/SLICE_128
+ROUTE         1   e 1.081 *LICE_128.OFX1 to */SLICE_137.A1 spi/N_270
+CTOF_DEL    ---     0.260 */SLICE_137.A1 to */SLICE_137.F1 spi/SLICE_137
+ROUTE         1   e 1.081 */SLICE_137.F1 to *6_MGIOL.ONEG0 spi_spi_dat_4 (to dio_34)
+                  --------
+                    5.871   (26.3% logic, 73.7% route), 5 logic levels.
+
+Report:  167.560MHz is the maximum frequency for this preference.
+
+
+================================================================================
+<A name="map_twr_pref_0_3"></A>Preference: FREQUENCY NET "pll_100mhz" 100.000000 MHz PAR_ADJ 10.000000 HOLD_MARGIN 0.200000 nS ;
+            4 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 7.948ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              sbuscore/resynccore/issueq/head_r  (from pll_100mhz +)
+   Destination:    FF         Data in        sbuscore/resynccore/issueq/tail  (to pll_100mhz +)
+
+   Delay:               1.959ns  (44.8% logic, 55.2% route), 2 logic levels.
+
+ Constraint Details:
+
+       1.959ns physical path delay sbuscore/resynccore/issueq/SLICE_75 to sbuscore/resynccore/issueq/SLICE_77 meets
+      10.000ns delay constraint less
+       0.093ns DIN_SET requirement (totaling 9.907ns) by 7.948ns
+
+ Physical Path Details:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.383 */SLICE_75.CLK to *q/SLICE_75.Q0 sbuscore/resynccore/issueq/SLICE_75 (from pll_100mhz)
+ROUTE         2   e 1.081 *q/SLICE_75.Q0 to *q/SLICE_77.B1 sbuscore/resynccore/issueq/head_r
+CTOOFX_DEL  ---     0.494 *q/SLICE_77.B1 to *SLICE_77.OFX0 sbuscore/resynccore/issueq/SLICE_77
+ROUTE         1   e 0.001 *SLICE_77.OFX0 to */SLICE_77.DI0 sbuscore/resynccore/issueq/tail_3 (to pll_100mhz)
+                  --------
+                    1.959   (44.8% logic, 55.2% route), 2 logic levels.
+
+Report:  487.329MHz is the maximum frequency for this preference.
+
+
+================================================================================
+<A name="map_twr_pref_0_4"></A>Preference: FREQUENCY PORT "spi_clk_pad" 50.000000 MHz PAR_ADJ 5.000000 HOLD_MARGIN 0.200000 nS ;
+            1946 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 3.064ns (weighted slack = 6.128ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              sbuscore/wbufcore/writebuffer/head_3  (from spi_clk_pad_c -)
+   Destination:    FF         Data in        sbuscore_sbuscore_so_qio  (to spi_clk_pad_c +)
+
+   Delay:               6.828ns  (20.8% logic, 79.2% route), 5 logic levels.
+
+ Constraint Details:
+
+       6.828ns physical path delay sbuscore/wbufcore/SLICE_106 to spi_miso_pad_MGIOL meets
+      10.000ns delay constraint less
+       0.108ns ONEG0_SET requirement (totaling 9.892ns) by 3.064ns
+
+spi_miso_pad_MGIOL attributes: FINE=FDEL0
+
+ Physical Path Details:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.383 *SLICE_106.CLK to */SLICE_106.Q0 sbuscore/wbufcore/SLICE_106 (from spi_clk_pad_c)
+ROUTE         3   e 1.081 */SLICE_106.Q0 to */SLICE_139.B0 sbuscore/wbufcore/writebuffer/head_3
+CTOF_DEL    ---     0.260 */SLICE_139.B0 to */SLICE_139.F0 sbuscore/SLICE_139
+ROUTE         5   e 1.081 */SLICE_139.F0 to */SLICE_143.C0 sbuscore/un1_full_NE_0_0
+CTOF_DEL    ---     0.260 */SLICE_143.C0 to */SLICE_143.F0 sbuscore/SLICE_143
+ROUTE         4   e 1.081 */SLICE_143.F0 to */SLICE_168.A1 sbuscore/wrreq_0_sqmuxa_0
+CTOF_DEL    ---     0.260 */SLICE_168.A1 to */SLICE_168.F1 sbuscore/sbuscore/SLICE_168
+ROUTE         1   e 1.081 */SLICE_168.F1 to */SLICE_135.D1 sbuscore/sbuscore/so_i_0_m9_i_a5_1
+CTOF_DEL    ---     0.260 */SLICE_135.D1 to */SLICE_135.F1 sbuscore/sbuscore/SLICE_135
+ROUTE         1   e 1.081 */SLICE_135.F1 to *d_MGIOL.ONEG0 sbuscore_sbuscore_so_i_0_N_10 (to spi_clk_pad_c)
+                  --------
+                    6.828   (20.8% logic, 79.2% route), 5 logic levels.
+
+Report:   72.088MHz is the maximum frequency for this preference.
+
+
+================================================================================
+<A name="map_twr_pref_0_5"></A>Preference: INPUT_SETUP PORT "spi_mosi_pad" 3.000000 ns HOLD 3.000000 ns CLKPORT "spi_clk_pad" ; Setup Analysis.
+            4 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 1.642ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         Port       Pad            spi_mosi_pad
+   Destination:    FF         Data in        sbuscore_sbuscore_idatio_0  (to spi_clk_pad_c +)
+
+   Max Data Path Delay:     1.939ns  (44.2% logic, 55.8% route), 1 logic levels.
+
+   Min Clock Path Delay:    1.782ns  (39.3% logic, 60.7% route), 1 logic levels.
+
+spi_mosi_pad_MGIOL attributes: FINE=FDEL0
+
+ Constraint Details:
+
+      1.939ns delay spi_mosi_pad to spi_mosi_pad_MGIOL less
+      3.000ns offset spi_mosi_pad to spi_clk_pad (totaling -1.061ns) meets
+      1.782ns delay spi_clk_pad to spi_mosi_pad_MGIOL less
+      1.201ns DI_SET requirement (totaling 0.581ns) by 1.642ns
+
+ Physical Path Details:
+
+      Data path spi_mosi_pad to spi_mosi_pad_MGIOL:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.858         15.PAD to       15.PADDI spi_mosi_pad
+ROUTE         4   e 1.081       15.PADDI to *_pad_MGIOL.DI spi_mosi_pad_c (to spi_clk_pad_c)
+                  --------
+                    1.939   (44.2% logic, 55.8% route), 1 logic levels.
+
+      Clock path spi_clk_pad to spi_mosi_pad_MGIOL:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.701         28.PAD to       28.PADDI spi_clk_pad
+ROUTE        38   e 1.081       28.PADDI to *pad_MGIOL.CLK spi_clk_pad_c
+                  --------
+                    1.782   (39.3% logic, 60.7% route), 1 logic levels.
+
+Report:    1.358ns is the minimum offset for this preference.
+
+
+================================================================================
+<A name="map_twr_pref_0_6"></A>Preference: MAXDELAY FROM PORT "gpio_a22_pad" TO PORT "spi_miso_pad" 30.000000 ns ;
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+================================================================================
+<A name="map_twr_pref_0_7"></A>Preference: MAXDELAY FROM PORT "gpio_a23_pad" TO PORT "spi_miso_pad" 30.000000 ns ;
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+<A name="mtw1_set_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "fpga_25mhz_pad_c"        |             |             |
+25.000000 MHz ;                         |   25.000 MHz|  185.529 MHz|   6  
+                                        |             |             |
+FREQUENCY NET "pll_75mhz" 75.000000 MHz |             |             |
+PAR_ADJ 7.500000 ;                      |   75.000 MHz|  198.413 MHz|   5  
+                                        |             |             |
+FREQUENCY NET "dio_34" 50.000000 MHz ;  |   50.000 MHz|  167.560 MHz|   5  
+                                        |             |             |
+FREQUENCY NET "pll_100mhz" 100.000000   |             |             |
+MHz PAR_ADJ 10.000000 HOLD_MARGIN       |             |             |
+0.200000 nS ;                           |  100.000 MHz|  487.329 MHz|   2  
+                                        |             |             |
+FREQUENCY PORT "spi_clk_pad" 50.000000  |             |             |
+MHz PAR_ADJ 5.000000 HOLD_MARGIN        |             |             |
+0.200000 nS ;                           |   50.000 MHz|   72.088 MHz|   5  
+                                        |             |             |
+INPUT_SETUP PORT "spi_mosi_pad"         |             |             |
+3.000000 ns HOLD 3.000000 ns CLKPORT    |             |             |
+"spi_clk_pad" ; Setup Analysis.         |     3.000 ns|     1.358 ns|   1  
+                                        |             |             |
+MAXDELAY FROM PORT "gpio_a22_pad" TO    |             |             |
+PORT "spi_miso_pad" 30.000000 ns ;      |            -|            -|   0  
+                                        |             |             |
+MAXDELAY FROM PORT "gpio_a23_pad" TO    |             |             |
+PORT "spi_miso_pad" 30.000000 ns ;      |            -|            -|   0  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+<A name="mtw1_set_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+No clock domain analysis is done. To analyze clock domains, please remove the BLOCK INTERCLOCKDOMAIN PATHS preference.
+
+
+<A name="mtw1_set_ts"></A><B><U><big>Timing summary (Setup):</big></U></B>
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 3390 paths, 7 nets, and 1293 connections (89.4% coverage)
+
+--------------------------------------------------------------------------------
+<A name="Map_Twr_hold"></A><B><U><big>Lattice TRACE Report - Hold, Version Diamond_1.2_Production (92)</big></U></B>
+Wed Apr 18 15:29:55 2012
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2011 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="mtw1_hold_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ts7500_opencore.tw1 ts7500_opencore_map.ncd ts7500_opencore.prf 
+Design file:     ts7500_opencore_map.ncd
+Preference file: ts7500_opencore.prf
+Device,speed:    LFXP2-5E,M
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+<A name="mtw1_hold_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<LI><A href='#map_twr_pref_1_0' Target='right'>FREQUENCY NET "fpga_25mhz_pad_c" 25.000000 MHz (0 errors)</A></LI>            738 items scored, 0 timing errors detected.
+
+<LI><A href='#map_twr_pref_1_1' Target='right'>FREQUENCY NET "pll_75mhz" 75.000000 MHz PAR_ADJ 7.500000 (0 errors)</A></LI>            555 items scored, 0 timing errors detected.
+
+<LI><A href='#map_twr_pref_1_2' Target='right'>FREQUENCY NET "dio_34" 50.000000 MHz (0 errors)</A></LI>            143 items scored, 0 timing errors detected.
+
+<LI><A href='#map_twr_pref_1_3' Target='right'>FREQUENCY NET "pll_100mhz" 100.000000 MHz PAR_ADJ 10.000000 HOLD_MARGIN 0.200000 nS (0 errors)</A></LI>            4 items scored, 0 timing errors detected.
+
+<LI><A href='#map_twr_pref_1_4' Target='right'>FREQUENCY PORT "spi_clk_pad" 50.000000 MHz PAR_ADJ 5.000000 HOLD_MARGIN 0.200000 nS (0 errors)</A></LI>            1946 items scored, 0 timing errors detected.
+
+<LI><A href='#map_twr_pref_1_5' Target='right'>INPUT_SETUP PORT "spi_mosi_pad" 3.000000 ns HOLD 3.000000 ns CLKPORT "spi_clk_pad" (0 errors)</A></LI>            4 items scored, 0 timing errors detected.
+
+<LI><A href='#map_twr_pref_1_6' Target='right'>MAXDELAY FROM PORT "gpio_a22_pad" TO PORT "spi_miso_pad" 30.000000 ns (0 errors)</A></LI>            0 items scored, 0 timing errors detected.
+
+<LI><A href='#map_twr_pref_1_7' Target='right'>MAXDELAY FROM PORT "gpio_a23_pad" TO PORT "spi_miso_pad" 30.000000 ns (0 errors)</A></LI>            0 items scored, 0 timing errors detected.
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+BLOCK RD_DURING_WR_PATHS
+BLOCK INTERCLOCKDOMAIN PATHS
+BLOCK JTAG PATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+<A name="map_twr_pref_1_0"></A>Preference: FREQUENCY NET "fpga_25mhz_pad_c" 25.000000 MHz ;
+            738 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 0.282ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              ramp_ctr_25  (from fpga_25mhz_pad_c +)
+   Destination:    FF         Data in        ramp_ctr_25  (to fpga_25mhz_pad_c +)
+
+   Delay:               0.283ns  (63.3% logic, 36.7% route), 2 logic levels.
+
+ Constraint Details:
+
+       0.283ns physical path delay SLICE_12 to SLICE_12 meets 
+       0.001ns DIN_HLD and
+       0.000ns delay constraint requirement (totaling 0.001ns) by 0.282ns
+
+ Physical Path Details:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.120   SLICE_12.CLK to    SLICE_12.Q0 SLICE_12 (from fpga_25mhz_pad_c)
+ROUTE         2   e 0.103    SLICE_12.Q0 to    SLICE_12.A0 ramp_ctr_25
+CTOF_DEL    ---     0.059    SLICE_12.A0 to    SLICE_12.F0 SLICE_12
+ROUTE         1   e 0.001    SLICE_12.F0 to   SLICE_12.DI0 ramp_ctr_2_25 (to fpga_25mhz_pad_c)
+                  --------
+                    0.283   (63.3% logic, 36.7% route), 2 logic levels.
+
+
+================================================================================
+<A name="map_twr_pref_1_1"></A>Preference: FREQUENCY NET "pll_75mhz" 75.000000 MHz PAR_ADJ 7.500000 ;
+            555 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 0.282ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              unreset  (from pll_75mhz +)
+   Destination:    FF         Data in        unreset  (to pll_75mhz +)
+
+   Delay:               0.283ns  (63.3% logic, 36.7% route), 2 logic levels.
+
+ Constraint Details:
+
+       0.283ns physical path delay SLICE_125 to SLICE_125 meets 
+       0.001ns DIN_HLD and
+       0.000ns delay constraint requirement (totaling 0.001ns) by 0.282ns
+
+ Physical Path Details:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.120  SLICE_125.CLK to   SLICE_125.Q0 SLICE_125 (from pll_75mhz)
+ROUTE         3   e 0.103   SLICE_125.Q0 to   SLICE_125.B0 unreset
+CTOF_DEL    ---     0.059   SLICE_125.B0 to   SLICE_125.F0 SLICE_125
+ROUTE         1   e 0.001   SLICE_125.F0 to  SLICE_125.DI0 unreset_fb_0 (to pll_75mhz)
+                  --------
+                    0.283   (63.3% logic, 36.7% route), 2 logic levels.
+
+
+================================================================================
+<A name="map_twr_pref_1_2"></A>Preference: FREQUENCY NET "dio_34" 50.000000 MHz ;
+            143 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 0.282ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              pga/clk_accumulator_0  (from dio_34 +)
+   Destination:    FF         Data in        pga/clk_accumulator_0  (to dio_34 +)
+
+   Delay:               0.283ns  (63.3% logic, 36.7% route), 2 logic levels.
+
+ Constraint Details:
+
+       0.283ns physical path delay pga/SLICE_66 to pga/SLICE_66 meets 
+       0.001ns DIN_HLD and
+       0.000ns delay constraint requirement (totaling 0.001ns) by 0.282ns
+
+ Physical Path Details:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.120 */SLICE_66.CLK to *a/SLICE_66.Q0 pga/SLICE_66 (from dio_34)
+ROUTE         4   e 0.103 *a/SLICE_66.Q0 to *a/SLICE_66.A0 pga/clk_accumulator_0
+CTOF_DEL    ---     0.059 *a/SLICE_66.A0 to *a/SLICE_66.F0 pga/SLICE_66
+ROUTE         1   e 0.001 *a/SLICE_66.F0 to */SLICE_66.DI0 pga/clk_accumulatorc (to dio_34)
+                  --------
+                    0.283   (63.3% logic, 36.7% route), 2 logic levels.
+
+
+================================================================================
+<A name="map_twr_pref_1_3"></A>Preference: FREQUENCY NET "pll_100mhz" 100.000000 MHz PAR_ADJ 10.000000 HOLD_MARGIN 0.200000 nS ;
+            4 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 0.138ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              sbuscore/resynccore/issueq/tail  (from pll_100mhz +)
+   Destination:    FF         Data in        sbuscore/resynccore/issueq/tail  (to pll_100mhz +)
+
+   Delay:               0.339ns  (69.3% logic, 30.7% route), 2 logic levels.
+
+ Constraint Details:
+
+       0.339ns physical path delay sbuscore/resynccore/issueq/SLICE_77 to sbuscore/resynccore/issueq/SLICE_77 meets 
+       0.001ns DIN_HLD and
+       0.200ns delay constraint requirement (totaling 0.201ns) by 0.138ns
+
+ Physical Path Details:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.120 */SLICE_77.CLK to *q/SLICE_77.Q0 sbuscore/resynccore/issueq/SLICE_77 (from pll_100mhz)
+ROUTE         3   e 0.103 *q/SLICE_77.Q0 to *q/SLICE_77.C0 sbuscore/resynccore/issueq/tail
+CTOOFX_DEL  ---     0.115 *q/SLICE_77.C0 to *SLICE_77.OFX0 sbuscore/resynccore/issueq/SLICE_77
+ROUTE         1   e 0.001 *SLICE_77.OFX0 to */SLICE_77.DI0 sbuscore/resynccore/issueq/tail_3 (to pll_100mhz)
+                  --------
+                    0.339   (69.3% logic, 30.7% route), 2 logic levels.
+
+
+================================================================================
+<A name="map_twr_pref_1_4"></A>Preference: FREQUENCY PORT "spi_clk_pad" 50.000000 MHz PAR_ADJ 5.000000 HOLD_MARGIN 0.200000 nS ;
+            1946 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 0.037ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              sbuscore/resynccore/issueq/tail_w  (from spi_clk_pad_c -)
+   Destination:    FF         Data in        sbuscore/resynccore/resultq/tail  (to spi_clk_pad_c -)
+
+   Delay:               0.223ns  (53.8% logic, 46.2% route), 1 logic levels.
+
+ Constraint Details:
+
+       0.223ns physical path delay sbuscore/resynccore/SLICE_102 to sbuscore/resynccore/SLICE_102 meets 
+      -0.014ns M_HLD and
+       0.200ns delay constraint requirement (totaling 0.186ns) by 0.037ns
+
+ Physical Path Details:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.120 *SLICE_102.CLK to */SLICE_102.Q0 sbuscore/resynccore/SLICE_102 (from spi_clk_pad_c)
+ROUTE         9   e 0.103 */SLICE_102.Q0 to */SLICE_102.M1 sbuscore/tail_w (to spi_clk_pad_c)
+                  --------
+                    0.223   (53.8% logic, 46.2% route), 1 logic levels.
+
+
+================================================================================
+<A name="map_twr_pref_1_5"></A>Preference: INPUT_SETUP PORT "spi_mosi_pad" 3.000000 ns HOLD 3.000000 ns CLKPORT "spi_clk_pad" ;
+            4 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 2.814ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         Port       Pad            spi_mosi_pad
+   Destination:    FF         Data in        sbuscore/sbuscore/wbm_we_fast  (to spi_clk_pad_c +)
+
+   Min Data Path Delay:     0.807ns  (44.2% logic, 55.8% route), 1 logic levels.
+
+   Max Clock Path Delay:    1.007ns  (55.3% logic, 44.7% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.807ns delay spi_mosi_pad to sbuscore/SLICE_142 plus
+      3.000ns hold offset spi_mosi_pad to spi_clk_pad (totaling 3.807ns) meets
+      1.007ns delay spi_clk_pad to sbuscore/SLICE_142 plus
+     -0.014ns M_HLD requirement (totaling 0.993ns) by 2.814ns
+
+ Physical Path Details:
+
+      Data path spi_mosi_pad to sbuscore/SLICE_142:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.357         15.PAD to       15.PADDI spi_mosi_pad
+ROUTE         4   e 0.450       15.PADDI to */SLICE_142.M0 spi_mosi_pad_c (to spi_clk_pad_c)
+                  --------
+                    0.807   (44.2% logic, 55.8% route), 1 logic levels.
+
+      Clock path spi_clk_pad to sbuscore/SLICE_142:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.557         28.PAD to       28.PADDI spi_clk_pad
+ROUTE        38   e 0.450       28.PADDI to *SLICE_142.CLK spi_clk_pad_c
+                  --------
+                    1.007   (55.3% logic, 44.7% route), 1 logic levels.
+
+Report:    0.186ns is the minimum offset for this preference.
+
+
+================================================================================
+<A name="map_twr_pref_1_6"></A>Preference: MAXDELAY FROM PORT "gpio_a22_pad" TO PORT "spi_miso_pad" 30.000000 ns ;
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+================================================================================
+<A name="map_twr_pref_1_7"></A>Preference: MAXDELAY FROM PORT "gpio_a23_pad" TO PORT "spi_miso_pad" 30.000000 ns ;
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+<A name="mtw1_hold_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "fpga_25mhz_pad_c"        |             |             |
+25.000000 MHz ;                         |            -|            -|   2  
+                                        |             |             |
+FREQUENCY NET "pll_75mhz" 75.000000 MHz |             |             |
+PAR_ADJ 7.500000 ;                      |            -|            -|   2  
+                                        |             |             |
+FREQUENCY NET "dio_34" 50.000000 MHz ;  |            -|            -|   2  
+                                        |             |             |
+FREQUENCY NET "pll_100mhz" 100.000000   |             |             |
+MHz PAR_ADJ 10.000000 HOLD_MARGIN       |             |             |
+0.200000 nS ;                           |            -|            -|   2  
+                                        |             |             |
+FREQUENCY PORT "spi_clk_pad" 50.000000  |             |             |
+MHz PAR_ADJ 5.000000 HOLD_MARGIN        |             |             |
+0.200000 nS ;                           |            -|            -|   1  
+                                        |             |             |
+INPUT_SETUP PORT "spi_mosi_pad"         |             |             |
+3.000000 ns HOLD 3.000000 ns CLKPORT    |             |             |
+"spi_clk_pad" ;                         |     3.000 ns|     0.186 ns|   1  
+                                        |             |             |
+MAXDELAY FROM PORT "gpio_a22_pad" TO    |             |             |
+PORT "spi_miso_pad" 30.000000 ns ;      |            -|            -|   0  
+                                        |             |             |
+MAXDELAY FROM PORT "gpio_a23_pad" TO    |             |             |
+PORT "spi_miso_pad" 30.000000 ns ;      |            -|            -|   0  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+<A name="mtw1_hold_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+No clock domain analysis is done. To analyze clock domains, please remove the BLOCK INTERCLOCKDOMAIN PATHS preference.
+
+
+<A name="mtw1_hold_ts"></A><B><U><big>Timing summary (Hold):</big></U></B>
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 3390 paths, 7 nets, and 1293 connections (89.4% coverage)
+
+
+
+<A name="mtw1_ts"></A><B><U><big>Timing summary (Setup and Hold):</big></U></B>
+---------------
+
+Timing errors: 0 (setup), 0 (hold)
+Score: 0 (setup), 0 (hold)
+Cumulative negative slack: 0 (0+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

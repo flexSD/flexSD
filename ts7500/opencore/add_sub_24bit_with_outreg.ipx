@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="add_sub_24bit_with_outreg" module="Adder_Subtractor" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2012 05 08 14:17:57.719" version="3.1" type="IP" synthesis="synplify" source_format="Verilog">
+  <Package>
+		<File name="add_sub_24bit_with_outreg.lpc" type="lpc" modified="2012 05 08 14:17:56.000"/>
+  </Package>
+</DiamondModule>

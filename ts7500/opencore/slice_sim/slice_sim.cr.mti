@@ -1,0 +1,172 @@
+/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module wb_resync
+-- Compiling module resync_fifo
+
+Top level modules:
+	wb_resync
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_spi.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_spi.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module wb_spi
+
+Top level modules:
+	wb_spi
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_writebuffer.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_writebuffer.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module wb_writebuffer
+-- Compiling module wb_writebuffer_fifo
+
+Top level modules:
+	wb_writebuffer
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/add_sub_24bit_with_outreg.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/add_sub_24bit_with_outreg.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module add_sub_24bit_with_outreg
+
+Top level modules:
+	add_sub_24bit_with_outreg
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/biquad_filter_32bit.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/biquad_filter_32bit.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module biquad_filter_32bit
+
+Top level modules:
+	biquad_filter_32bit
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/add_sub_24bit_no_outreg.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/add_sub_24bit_no_outreg.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module add_sub_24bit_no_outreg
+
+Top level modules:
+	add_sub_24bit_no_outreg
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module syscon
+
+Top level modules:
+	syscon
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module pga_control
+
+Top level modules:
+	pga_control
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_biquad_interface_128.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_biquad_interface_128.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module wb_biquad_interface_128
+
+Top level modules:
+	wb_biquad_interface_128
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/logging_bram.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/logging_bram.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module logging_blockram
+
+Top level modules:
+	logging_blockram
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module spi_sbus
+-- Compiling module spi_sbus_resync
+
+Top level modules:
+	spi_sbus_resync
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pll.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pll.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module pll
+
+Top level modules:
+	pll
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_module.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_module.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module spi_module
+
+Top level modules:
+	spi_module
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/adc_buffer.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/adc_buffer.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module adc_buffer
+
+Top level modules:
+	adc_buffer
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pll2.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pll2.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module pll2
+
+Top level modules:
+	pll2
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/tagmem.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/tagmem.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module tagmem
+
+Top level modules:
+	tagmem
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/logging_memwindow.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/logging_memwindow.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module logging_memwindow
+
+Top level modules:
+	logging_memwindow
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module ts7500_top
+
+Top level modules:
+	ts7500_top
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/coefficient_memwindow.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/coefficient_memwindow.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module coefficient_memwindow
+
+Top level modules:
+	coefficient_memwindow
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/sigma_delta_buffer_filter.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/sigma_delta_buffer_filter.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module sigma_delta_buffer_filter
+
+Top level modules:
+	sigma_delta_buffer_filter
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_arbiter.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_arbiter.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module wb_arbiter
+
+Top level modules:
+	wb_arbiter
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/coefficient_blockram.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/coefficient_blockram.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module coefficient_blockram
+
+Top level modules:
+	coefficient_blockram
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/lattice_ram_36bit_512.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/lattice_ram_36bit_512.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module lattice_ram_36bit_512
+
+Top level modules:
+	lattice_ram_36bit_512
+
+} {} {}} /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/lattice_ram_24bit_16word.v {1 {vlog -work work /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/lattice_ram_24bit_16word.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module lattice_ram_24bit_16word
+
+Top level modules:
+	lattice_ram_24bit_16word
+
+} {} {}}

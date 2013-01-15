@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Report>
+<ReportView version="1.0">
+    <ToolReport id="toolhle_genhierarchy" path="/usr7/research/dkouba/development/verilog/controlsystem/ts7500/opencore/hdldiagram_gen_hierarchy.html" status="1"/>
+    <ToolReport id="toolhle_runbkm" path="" status="0"/>
+    <ToolReport id="toolsso" path="" status="0"/>
+</ReportView>

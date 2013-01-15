@@ -1,0 +1,312 @@
+m255
+13
+cModel Technology
+d/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/slice_sim
+vadc_buffer
+IR1zfX5kWdHG?ek:L;jS9Z3
+VKdhoh?XA72]SS@KB?nKXP0
+w1335476652
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/adc_buffer.v
+L0 16
+VKdhoh?XA72]SS@KB?nKXP0
+OE;L;6.1b;31
+r1
+31
+o-work work
+vadd_sub_24bit_no_outreg
+Ieei?N8X]kXiWV>h1B4zOZ1
+VC1fW?Hc>[K5dFA<6`Je>l0
+w1336511853
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/add_sub_24bit_no_outreg.v
+L0 8
+VC1fW?Hc>[K5dFA<6`Je>l0
+OE;L;6.1b;31
+r1
+31
+o-work work
+vadd_sub_24bit_with_outreg
+I@8SE:kfjDBb;D]fVaKGHh2
+V2D@af[P1a4LaalABjonUS1
+w1336511876
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/add_sub_24bit_with_outreg.v
+L0 8
+V2D@af[P1a4LaalABjonUS1
+OE;L;6.1b;31
+r1
+31
+o-work work
+vbiquad_filter_32bit
+I@0V[J3]]EjieBdmRP]3a<0
+V0A8><0NPB9JY=ik`kZXaK2
+w1334630276
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/biquad_filter_32bit.v
+L0 8
+V0A8><0NPB9JY=ik`kZXaK2
+OE;L;6.1b;31
+r1
+31
+o-work work
+vcoefficient_blockram
+Ic63N7Tbbm7c`Q;b<jXVf10
+VBgYm6AJ>iz^URd0gJCYDF3
+w1334630276
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/coefficient_blockram.v
+L0 12
+VBgYm6AJ>iz^URd0gJCYDF3
+OE;L;6.1b;31
+r1
+31
+o-work work
+vcoefficient_memwindow
+IIDNEe0injGbNPWklPQfa?1
+Vk`8=B`4IW^oHSn69O7I552
+w1334630276
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/coefficient_memwindow.v
+L0 25
+Vk`8=B`4IW^oHSn69O7I552
+OE;L;6.1b;31
+r1
+31
+o-work work
+vlattice_ram_24bit_16word
+I]z[J;n?bG8m:ZiEl4hC1?1
+Vk>fL3bR5]fWk`<<@<38Wl1
+w1336502730
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/lattice_ram_24bit_16word.v
+L0 8
+Vk>fL3bR5]fWk`<<@<38Wl1
+OE;L;6.1b;31
+r1
+31
+o-work work
+vlattice_ram_36bit_512
+Ig9UYG`UAEA0Z5[GZl?SjY1
+V]]P2LHN?Nf0P1U@18PU@P1
+w1336505756
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/lattice_ram_36bit_512.v
+L0 8
+V]]P2LHN?Nf0P1U@18PU@P1
+OE;L;6.1b;31
+r1
+31
+o-work work
+vlogging_blockram
+IGbz@e7YE]=<B_kI4LQW]31
+V3nJHO]z1]3H@gBUVJbhKC1
+w1334630276
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/logging_bram.v
+L0 9
+V3nJHO]z1]3H@gBUVJbhKC1
+OE;L;6.1b;31
+r1
+31
+o-work work
+vlogging_memwindow
+I=7CTjO>ViglU1Kin@F^4X0
+VHE55oUnMQ_OnO>]GEF[[?2
+w1334630276
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/logging_memwindow.v
+L0 20
+VHE55oUnMQ_OnO>]GEF[[?2
+OE;L;6.1b;31
+r1
+31
+o-work work
+vpga_control
+IUOGA4I:eaiYo>zmH[]J_I1
+Vf>BW=^8XzSVYm@<5iWzBS0
+w1335309743
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v
+L0 1
+Vf>BW=^8XzSVYm@<5iWzBS0
+OE;L;6.1b;31
+r1
+31
+o-work work
+vpll
+Ian<2Ih8GkIA[5]nMc6nQz1
+VZ2j8L2YbozfUM3:WH9b[M3
+w1334630276
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pll.v
+L0 8
+VZ2j8L2YbozfUM3:WH9b[M3
+OE;L;6.1b;31
+r1
+31
+o-work work
+vpll2
+IGV9]M5Yb0G^YGG05>E76C1
+VoA8RMQTMJ81HbZfSnilB_3
+w1334630276
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pll2.v
+L0 8
+VoA8RMQTMJ81HbZfSnilB_3
+OE;L;6.1b;31
+r1
+31
+o-work work
+vresync_fifo
+IMKA7V1aH>F?6:WmFok>No2
+V8hj7J;f6?FN@oLJW8n6ca2
+w1314919713
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v
+L0 189
+V8hj7J;f6?FN@oLJW8n6ca2
+OE;L;6.1b;31
+r1
+31
+o-work work
+vsigma_delta_buffer_filter
+I6zQ9JjY0[ioR2iJRh]zVW0
+V8M;O:GdNjm=5TcLmWfHGb1
+w1334630276
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/sigma_delta_buffer_filter.v
+L0 1
+V8M;O:GdNjm=5TcLmWfHGb1
+OE;L;6.1b;31
+r1
+31
+o-work work
+vslice_sim
+I>ij89>D@0mcL6KjoMiN]02
+VLJDi;A:8CnO1]a:G3Z1FX1
+w1336512888
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/slice_sim.v
+L0 3
+VLJDi;A:8CnO1]a:G3Z1FX1
+OE;L;6.1b;31
+r1
+31
+o-work work
+vspi_module
+InT99dJ>TkfTC5B9IcYi`Y2
+V<1I7z`?`9GK[0D?RMFP7D1
+w1334630276
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_module.v
+L0 1
+V<1I7z`?`9GK[0D?RMFP7D1
+OE;L;6.1b;31
+r1
+31
+o-work work
+vspi_sbus
+Iz5OB^@g<B8Dc^6e?V07@U3
+V?0A;NC4D772Kf8YD0dL8C2
+w1314919713
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v
+L0 139
+V?0A;NC4D772Kf8YD0dL8C2
+OE;L;6.1b;31
+r1
+31
+o-work work
+vspi_sbus_resync
+Ia>_jbYVJ;71ZIAW]W6N1K1
+V7obCNNNhW?=QHaad9>lKc1
+w1314919713
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v
+L0 284
+V7obCNNNhW?=QHaad9>lKc1
+OE;L;6.1b;31
+r1
+31
+o-work work
+vsyscon
+IfoPkiJ4YV>]B38CL6`hzC3
+V@GB?44`HTade5<S5AzPUj0
+w1334630276
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v
+L0 103
+V@GB?44`HTade5<S5AzPUj0
+OE;L;6.1b;31
+r1
+31
+o-work work
+vtagmem
+If_IE<OS8[0^bKP`AScn^G0
+VnU0jKc9GfDb[[B:`lzh=H1
+w1314919713
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/tagmem.v
+L0 8
+VnU0jKc9GfDb[[B:`lzh=H1
+OE;L;6.1b;31
+r1
+31
+o-work work
+vts7500_top
+IM[_K=U7K9F2zOL]CMVlGk1
+V;U>W]l93J2N^4HKoW]j8B1
+w1335472080
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v
+L0 46
+V;U>W]l93J2N^4HKoW]j8B1
+OE;L;6.1b;31
+r1
+31
+o-work work
+vwb_arbiter
+IGHVLSk>>l1^Ec=QQdOV=a1
+V?XP9]fgN3fdhf4FCD97Pd2
+w1314919713
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_arbiter.v
+L0 21
+V?XP9]fgN3fdhf4FCD97Pd2
+OE;L;6.1b;31
+r1
+31
+o-work work
+vwb_biquad_interface_128
+IWc7;]n90RD<iG]QBb<5Xh1
+VKSQE]IB00In42mi0G`f0Z3
+w1334630277
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_biquad_interface_128.v
+L0 12
+VKSQE]IB00In42mi0G`f0Z3
+OE;L;6.1b;31
+r1
+31
+o-work work
+vwb_resync
+IolGWKR5^[QfPbof=zFj]l1
+VhBVH9@0cd6g=[ViK:S2W:0
+w1314919713
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v
+L0 21
+VhBVH9@0cd6g=[ViK:S2W:0
+OE;L;6.1b;31
+r1
+31
+o-work work
+vwb_spi
+ISdhAOoQWO7]gOC;mHX:I70
+V<]]8`Z`b47E]``7<I6ZNS3
+w1334630277
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_spi.v
+L0 81
+V<]]8`Z`b47E]``7<I6ZNS3
+OE;L;6.1b;31
+r1
+31
+o-work work
+vwb_writebuffer
+I2P_JEl^8Tz3R@ZcS<MA;L1
+VBcCaAPczSTNGX0kXi_zP82
+w1314919713
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_writebuffer.v
+L0 21
+VBcCaAPczSTNGX0kXi_zP82
+OE;L;6.1b;31
+r1
+31
+o-work work
+vwb_writebuffer_fifo
+If[oHYGg0FIYz0PckYQmO@1
+Vn1KzznIB7[jNaGjd:@5@J3
+w1314919713
+F/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_writebuffer.v
+L0 113
+Vn1KzznIB7[jNaGjd:@5@J3
+OE;L;6.1b;31
+r1
+31
+o-work work

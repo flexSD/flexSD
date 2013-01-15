@@ -1,0 +1,34 @@
+SCUBA, Version Diamond_1.2_Production (92)
+Thu Jun  7 09:59:39 2012
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2011 Lattice Semiconductor Corporation,  All rights reserved.
+
+    Issued command   : /usr/local/diamond/1.2/ispfpga/bin/lin/scuba -w -n lattice_ram_32bit_16 -lang verilog -synth synplify -bus_exp 7 -bb -arch mg5a00 -dram -type ramdps -raddr_width 4 -rwidth 32 -waddr_width 4 -wwidth 32 -rnum_words 16 -wnum_words 16 -outData REGISTERED -e 
+    Circuit name     : lattice_ram_32bit_16
+    Module type      : sdpram
+    Module Version   : 3.5
+    Address width    : 4
+    Ports            : 
+	Inputs       : WrAddress[3:0], Data[31:0], WrClock, WE, WrClockEn, RdAddress[3:0], RdClock, RdClockEn, Reset
+	Outputs      : Q[31:0]
+    I/O buffer       : not inserted
+    Clock edge       : rising edge
+    EDIF output      : suppressed
+    Verilog output   : lattice_ram_32bit_16.v
+    Verilog template : lattice_ram_32bit_16_tmpl.v
+    Verilog testbench: tb_lattice_ram_32bit_16_tmpl.v
+    Verilog purpose  : for synthesis and simulation
+    Bus notation     : big endian
+    Report output    : lattice_ram_32bit_16.srp
+    Element Usage    :
+        FD1P3DX : 32
+        ROM16X1 : 1
+       DPR16X4B : 8
+    Estimated Resource Usage:
+            LUT : 1
+           DRAM : 8
+            Reg : 32

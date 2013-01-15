@@ -1,0 +1,41 @@
+// Design: ts7500_top
+// Package: TQFP144
+// ncd File: ts7500_opencore.ncd
+// Version: Diamond_1.2_Production (92)
+// Written on Thu Apr 12 19:30:43 2012
+// M: Minimum Speed Grade
+// iotiming ts7500_opencore.ncd ts7500_opencore.prf
+
+I/O Timing Report (All units are in ns)
+
+Worst Case Results across Speed Grades (M, 7, 6, 5):
+
+// Input Setup and Hold Times
+
+Port           Clock          Edge  Setup Speed_Grade  Hold Speed_Grade
+----------------------------------------------------------------------
+dio_pad_12     fpga_25mhz_pad R     5.172      5       0.182     M
+flash_miso_pad fpga_25mhz_pad R     4.684      5       0.595     5
+gpio_a15_pad   fpga_25mhz_pad R     5.380      5       0.283     7
+gpio_a15_pad   spi_clk_pad    F     7.651      5       0.042     M
+gpio_a16_pad   fpga_25mhz_pad R     4.831      5       1.590     5
+gpio_a16_pad   spi_clk_pad    F     8.509      5      -0.085     M
+gpio_a17_pad   spi_clk_pad    F     1.760      5       0.100     M
+gpio_a28_pad   spi_clk_pad    R     4.668      5      -0.601     M
+gpio_a3_pad    spi_clk_pad    F     1.395      5       0.034     M
+spi_mosi_pad   spi_clk_pad    R     1.283      5       2.033     5
+
+
+// Clock to Output Delay
+
+Port              Clock          Edge  Max_Delay Speed_Grade  Min_Delay Speed_Grade
+------------------------------------------------------------------------
+dio_pad_35        fpga_25mhz_pad F    10.027         5        3.203          M
+dio_pad_36        fpga_25mhz_pad F     7.600         5        2.614          M
+dio_pad_38        fpga_25mhz_pad F     7.600         5        2.614          M
+flash_clk_pad     fpga_25mhz_pad R     9.094         5        2.499          M
+flash_mosi_pad    fpga_25mhz_pad R     6.823         5        1.694          M
+ser_flash_cs_padn fpga_25mhz_pad R     9.311         5        2.530          M
+ser_flash_wp_padn fpga_25mhz_pad R     7.914         5        2.320          M
+spi_miso_pad      spi_clk_pad    R     6.089         5        2.265          M
+un_reset_pad      fpga_25mhz_pad R    10.061         5        3.447          M

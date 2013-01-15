@@ -1,0 +1,150 @@
+module pga_control(
+  
+    clk50,
+    wb_rst,
+    
+    set_vos,
+    set_gain,
+    
+    offset,
+    gain,
+	shdn,
+	meas,
+    
+    op_complete,
+    
+    pga_dat,
+    pga_clk
+  
+);
+
+/* I/O Definitions */
+
+input 			clk50;			// 50MHz clock input
+input 			wb_rst;
+
+input 			set_vos;        // Set Vos of a PGA
+input 			set_gain;       // Set gain of a PGA
+
+input 	[4:0] 	offset;     	// 5 bit offset value
+input 	[3:0] 	gain;       	// 4 bit gain value
+input			shdn;			// Shutdown mode bit (active high)
+input			meas;			// Measure mode bit (active high)
+
+output 			ready;    // Signals to parent module that transaction has completed
+
+// Hardware pins
+output 			pga_dat;
+output 			pga_clk;
+
+/* Internal Registers op_completeand Wires */
+
+reg 			state;
+reg 	[3:0]	clk_accumulator;   // For generating the pga clk
+
+reg 			pga_dat_o;
+reg 			pga_clk_o;
+
+reg				ready_o;
+
+reg		[2:0]	bitindex;
+reg		[7:0]	packet;
+
+reg				pga_clk_en;			// Clock gating for PGA
+
+assign pga_clk = ( pga_clk_en && pga_clk_o );
+assign state_clk = pga_clk_o;
+assign pga_dat = pga_dat_o;
+assign ready = ready_o;
+
+/* State Definitions */
+
+localparam STATE_IDLE 				= 	1'b0;
+localparam STATE_SEND_PACKET	 	=	1'b1;
+
+/* PGA clock generation */
+
+always@(posedge clk50) begin
+	
+	if(wb_rst) begin
+		
+		clk_accumulator <= 5'b0;
+		pga_clk_o <= 1'b0;
+		
+	end else begin
+
+		clk_accumulator <= clk_accumulator + 1'b1;
+	
+		if(clk_accumulator == 4'd4) begin
+			
+			pga_clk_o <= ~pga_clk_o;	
+
+			clk_accumulator <= 4'b0;
+			
+		end
+	end
+
+end
+
+/* State Machine */
+
+always@(negedge state_clk) begin
+  
+  if(wb_rst) begin
+    
+	state <= 1'b0;
+		
+	pga_dat_o <= 1'b0;
+	
+	ready_o <= 1'b0;
+	pga_clk_en <= 1'b0;			// Initially disable the clock
+	packet <= 8'b0;
+	
+  end else begin
+    
+    case(state)
+      
+		STATE_IDLE: begin
+			
+			bitindex <= 3'b0;
+			ready_o <= 1'b1;
+			pga_clk_en <= 1'b0;
+		
+			if(set_vos) begin
+				
+				packet <= {shdn, meas, offset[4:0], 1'b0};
+				state <= STATE_SEND_PACKET;
+			
+			end
+			
+			else if(set_gain) begin
+				
+				packet <= {shdn, meas, 1'bx, gain[3:0], 1'b1};
+				state <= STATE_SEND_PACKET;
+			
+			end
+
+		end
+		
+		STATE_SEND_PACKET: begin
+			
+			ready_o <= 1'b0;
+			pga_clk_en <= 1'b1;
+			pga_dat_o <= packet[bitindex];
+			bitindex <= bitindex + 1;
+			
+			if(bitindex == 3'b111) begin
+				
+				state <= STATE_IDLE;
+				
+			end
+
+		end
+		
+	endcase
+    
+  end
+  
+end
+
+endmodule
