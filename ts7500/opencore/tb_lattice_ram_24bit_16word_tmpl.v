@@ -7,26 +7,22 @@ module tb;
     reg WE = 0;
     reg WrClockEn = 0;
     reg [3:0] RdAddress = 4'b0;
-    reg RdClock = 0;
-    reg RdClockEn = 0;
-    reg Reset = 0;
     wire [23:0] Q;
 
-    integer i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 0, i5 = 0, i6 = 0, i7 = 0, i8 = 0, i9 = 0;
+    integer i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 0, i5 = 0, i6 = 0;
 
     GSR GSR_INST (.GSR(1'b1));
     PUR PUR_INST (.PUR(1'b1));
 
     lattice_ram_24bit_16word u1 (.WrAddress(WrAddress), .Data(Data), .WrClock(WrClock), 
-        .WE(WE), .WrClockEn(WrClockEn), .RdAddress(RdAddress), .RdClock(RdClock), 
-        .RdClockEn(RdClockEn), .Reset(Reset), .Q(Q)
+        .WE(WE), .WrClockEn(WrClockEn), .RdAddress(RdAddress), .Q(Q)
     );
 
     initial
     begin
        WrAddress <= 0;
       #100;
-      @(Reset == 1'b0);
+      #10;
       for (i1 = 0; i1 < 38; i1 = i1 + 1) begin
         @(posedge WrClock);
         #1  WrAddress <= WrAddress + 1'b1;
@@ -36,7 +32,7 @@ module tb;
     begin
        Data <= 0;
       #100;
-      @(Reset == 1'b0);
+      #10;
       for (i2 = 0; i2 < 19; i2 = i2 + 1) begin
         @(posedge WrClock);
         #1  Data <= Data + 1'b1;
@@ -48,7 +44,7 @@ module tb;
     initial
     begin
        WE <= 1'b0;
-      @(Reset == 1'b0);
+      #10;
       for (i4 = 0; i4 < 19; i4 = i4 + 1) begin
         @(posedge WrClock);
         #1  WE <= 1'b1;
@@ -59,33 +55,17 @@ module tb;
     begin
        WrClockEn <= 1'b0;
       #100;
-      @(Reset == 1'b0);
+      #10;
        WrClockEn <= 1'b1;
     end
     initial
     begin
        RdAddress <= 0;
       #100;
-      @(Reset == 1'b0);
+      #10;
       for (i6 = 0; i6 < 38; i6 = i6 + 1) begin
-        @(posedge RdClock);
-        #1  RdAddress <= RdAddress + 1'b1;
+        #10;
+         RdAddress <= RdAddress + 1'b1;
       end
-    end
-    always
-    #5.00 RdClock <= ~ RdClock;
-
-    initial
-    begin
-       RdClockEn <= 1'b0;
-      #100;
-      @(Reset == 1'b0);
-       RdClockEn <= 1'b1;
-    end
-    initial
-    begin
-       Reset <= 1'b1;
-      #100;
-       Reset <= 1'b0;
     end
 endmodule

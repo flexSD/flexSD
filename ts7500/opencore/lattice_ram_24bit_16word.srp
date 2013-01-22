@@ -1,5 +1,5 @@
 SCUBA, Version Diamond_1.2_Production (92)
-Mon May 28 15:52:55 2012
+Tue May  8 11:45:30 2012
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -7,13 +7,13 @@ Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2011 Lattice Semiconductor Corporation,  All rights reserved.
 
-    Issued command   : /usr/local/diamond/1.2/ispfpga/bin/lin/scuba -w -n lattice_ram_24bit_16word -lang verilog -synth synplify -bus_exp 7 -bb -arch mg5a00 -dram -type ramdps -raddr_width 4 -rwidth 24 -waddr_width 4 -wwidth 24 -rnum_words 16 -wnum_words 16 -outData REGISTERED -e 
+    Issued command   : /usr/local/diamond/1.2/ispfpga/bin/lin/scuba -w -n lattice_ram_24bit_16word -lang verilog -synth synplify -bus_exp 7 -bb -arch mg5a00 -dram -type ramdps -raddr_width 4 -rwidth 24 -waddr_width 4 -wwidth 24 -rnum_words 16 -wnum_words 16 -outData UNREGISTERED -e 
     Circuit name     : lattice_ram_24bit_16word
     Module type      : sdpram
     Module Version   : 3.5
     Address width    : 4
     Ports            : 
-	Inputs       : WrAddress[3:0], Data[23:0], WrClock, WE, WrClockEn, RdAddress[3:0], RdClock, RdClockEn, Reset
+	Inputs       : WrAddress[3:0], Data[23:0], WrClock, WE, WrClockEn, RdAddress[3:0]
 	Outputs      : Q[23:0]
     I/O buffer       : not inserted
     Clock edge       : rising edge
@@ -25,10 +25,8 @@ Copyright (c) 2002-2011 Lattice Semiconductor Corporation,  All rights reserved.
     Bus notation     : big endian
     Report output    : lattice_ram_24bit_16word.srp
     Element Usage    :
-        FD1P3DX : 24
         ROM16X1 : 1
        DPR16X4B : 6
     Estimated Resource Usage:
             LUT : 1
            DRAM : 6
-            Reg : 24

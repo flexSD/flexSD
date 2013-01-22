@@ -1,0 +1,186 @@
+`timescale 100ps/1ps
+
+module slice_tb;
+  
+// Sigma delta parameters  
+parameter           input_bitwidth = 24;
+parameter           full_neg = {1'b1, {(input_bitwidth-1){1'b0}}};
+parameter           full_pos = {1'b0, {(input_bitwidth-1){1'b1}}};
+  
+reg                 read_back;
+  
+reg                 clock_200, reset, slice_enable;
+reg         [8:0]   coefficient_write_adr;
+wire        [8:0]   coefficient_read_adr;
+reg         [35:0]  coefficient_write_data;
+reg                 coefficient_write_en;
+
+wire        [3:0]   state_write_adr, state_read_adr;
+reg                 sigma_delta_stream_A, sigma_delta_stream_B;
+
+reg                 log_trigger, sigma_delta_out_trigger;
+
+wire                overflow_stage_1, overflow_stage_2;
+wire signed [23:0]  log_value_out, sigma_delta_out;
+
+// For sigma delta
+reg                 clock_20;
+reg  signed [23:0]  input_signal_A, input_signal_B;
+wire                sigdel_output_A, sigdel_output_B;
+
+
+ // The GSR and PUR are needed for the flip flop primitives from Lattice
+GSR GSR_INST(~reset);   // Global Set/Reset signal (active low)
+PUR PUR_INST(~reset);   // Power up reset signal (active low)
+
+slice_sim slice1(
+
+.read_back(read_back),
+
+.clock_200(clock_200),
+.reset(reset),
+.slice_enable(slice_enable),
+
+.coefficient_read_adr(coefficient_read_adr),
+.coefficient_write_adr(coefficient_write_adr),
+.coefficient_write_data(coefficient_write_data),
+.coefficient_write_en(coefficient_write_en),
+
+.state_write_adr(state_write_adr),
+.state_read_adr(state_read_adr),
+
+.sigma_delta_stream_A(sigdel_output_A),
+.sigma_delta_stream_B(sigdel_output_B),
+
+.log_trigger(log_trigger),
+.sigma_delta_out_trigger(sigma_delta_out_trigger),
+
+.overflow_stage_1(overflow_stage_1),
+.overflow_stage_2(overflow_stage_2),
+
+.log_value_out(log_value_out),
+.sigma_delta_out(sigma_delta_out)
+
+);
+
+// Feed forward modulator stream generator
+first_order_sigdel sigdel1(
+
+  .mod_clock(clock_20),
+  .input_sig(input_signal_A),
+  .output_sig(sigdel_output_A)
+
+);
+
+// Feedback modulator stream generator
+first_order_sigdel sigdel2(
+
+  .mod_clock(clock_20),
+  .input_sig(input_signal_B),
+  .output_sig(sigdel_output_B)
+
+);
+
+integer counter;
+
+initial begin
+  
+  /* Initial Conditions */
+  
+  // Slice
+  read_back = 0;
+  
+  clock_200 = 0;
+  reset = 1;
+  slice_enable = 0;
+  //coefficient_read_adr = 10'bx;
+  coefficient_write_adr = 0;
+  coefficient_write_data = 0;
+  coefficient_write_en = 0;
+  //state_write_adr = 0;
+  //state_read_adr = 0;
+  sigma_delta_stream_A = 0;
+  sigma_delta_stream_B = 0;
+  
+  // Address counter
+  counter = 0;
+  
+  // Sigma deltas
+  clock_20 = 1;
+  input_signal_A = 0;
+  input_signal_B = 0;
+  
+  // Initial reset
+  #100 reset = 0;
+  
+  // Write 10 sets of coefficients to coeffcient RAM
+  #25 coefficient_write_en = 1;
+  
+  #25 coefficient_write_adr = 0;
+  coefficient_write_data = {18'sd100, 18'sd100};
+  #50 coefficient_write_adr = 1;
+  coefficient_write_data = {18'sd200, 18'sd200};
+  #50 coefficient_write_adr = 2;
+  coefficient_write_data = {18'sd300, 18'd300};
+  #50 coefficient_write_adr = 3;
+  coefficient_write_data = {18'sd400, 18'sd400};
+  #50 coefficient_write_adr = 4;
+  coefficient_write_data = {18'sd500, 18'sd500};
+  #50 coefficient_write_adr = 5;
+  coefficient_write_data = {18'sd600, 18'sd600};
+  #50 coefficient_write_adr = 6;
+  coefficient_write_data = {18'sd700, 18'sd700};
+  #50 coefficient_write_adr = 7;
+  coefficient_write_data = {18'sd800, 18'sd800};
+  #50 coefficient_write_adr = 8;
+  coefficient_write_data = {18'sd900, 18'sd900};
+  #50 coefficient_write_adr = 9;
+  coefficient_write_data = {18'sd1000, 18'sd1000};
+  #50 coefficient_write_en = 0;
+  
+  #100 slice_enable = 1;
+  #500 slice_enable = 0;
+  #100 counter = 0;
+  read_back = 1;
+  repeat (10) begin
+
+    #50 counter = counter + 1;
+    
+  end
+  
+  #100 slice_enable = 1;
+  #500 slice_enable = 0;
+  #100 counter = 0;
+  read_back = 1;
+  repeat (10) begin
+
+    #50 counter = counter + 1;
+    
+  end
+  
+end
+
+always begin
+  #50 if(slice_enable) counter = counter + 1;
+  if(counter == 10) counter = 0;
+end
+  
+reg [3:0] counter_reg, counter_delay_1, counter_delay_2, counter_delay_3;
+  
+always@(negedge clock_200) begin
+
+  counter_reg <= counter;
+  counter_delay_1 <= counter_reg;
+  counter_delay_2 <= counter_delay_1;
+  counter_delay_3 <= counter_delay_2;
+
+end
+      
+assign coefficient_read_adr = counter;
+assign state_write_adr = counter_delay_3;
+assign state_read_adr = counter_reg;
+
+always #25 clock_200 = ~clock_200;    // 200MHz - for slice
+always #250 clock_20 = ~clock_20;     // 20MHz - for modulator
+  
+endmodule

@@ -1,0 +1,1512 @@
+# Reading C:/modeltech_6.5/tcl/vsim/pref.tcl 
+# //  ModelSim SE 6.5 Jan 22 2009 
+# //
+# //  Copyright 1991-2009 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# OpenFile G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_sim_desktop.mpf 
+# Loading project slice_sim_desktop
+# Compile of VLIW_tb.v was successful.
+# Compile of VLIW_sim.v was successful.
+# Compile of VLIW_tb.v was successful.
+# Compile of VLIW_tb.v was successful.
+vsim -gui -novopt work.VLIW_tb
+# vsim -gui -novopt work.VLIW_tb 
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_tb
+# Loading work.VLIW_tb
+# Loading work.GSR
+# Loading work.PUR
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_sim
+# Loading work.VLIW_sim
+# Loading work.lattice_ram_72bit_512
+# Loading work.PDPW16KB
+# Loading work.DP16KB
+# Loading work.VHI
+# Loading work.VLO
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Dan  Hostname: DAN-PC  ProcessID: 2540
+#           Attempting to use alternate WLF file "./wlfte9fk01".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfte9fk01
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfte9fk01
+# G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v(59): [PCDPC] - Port size (9 or 9) does not match connection size (10) for port 'write_address'.
+#         Region: /VLIW_tb/vliw
+# ** Warning: (vsim-3015) G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v(59): [PCDPC] - Port size (9 or 9) does not match connection size (10) for port 'coefficient_read_address_1'.
+#         Region: /VLIW_tb/vliw
+# ** Warning: (vsim-3015) G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v(59): [PCDPC] - Port size (9 or 9) does not match connection size (10) for port 'coefficient_read_address_2'.
+#         Region: /VLIW_tb/vliw
+# ** Warning: (vsim-3015) G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v(59): [PCDPC] - Port size (4 or 4) does not match connection size (1) for port 'state_write_address_1'.
+#         Region: /VLIW_tb/vliw
+# Compile of VLIW_tb.v was successful.
+restart -f
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_tb
+# Loading work.VLIW_tb
+# ** Warning: (vsim-3015) G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v(59): [PCDPC] - Port size (4 or 4) does not match connection size (1) for port 'state_write_address_1'.
+#         Region: /VLIW_tb/vliw
+# Compile of VLIW_sim.v was successful.
+restart -f
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_sim
+# Loading work.VLIW_sim
+# ** Warning: (vsim-3015) G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v(59): [PCDPC] - Port size (4 or 4) does not match connection size (1) for port 'state_write_address_1'.
+#         Region: /VLIW_tb/vliw
+# Compile of VLIW_tb.v was successful.
+restart -f
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_tb
+# Loading work.VLIW_tb
+add wva e-r /*
+# add: bad option "wva": must be button, dataflow, list, log, memory, testbrowser, watch, wave
+add wave -r /*
+run 250ns
+# Compile of VLIW_tb.v was successful.
+# Compile of VLIW_sim.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_tb
+# Loading work.VLIW_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_sim
+# Loading work.VLIW_sim
+# Compile of VLIW_sim.v was successful.
+# Compile of VLIW_sim.v was successful.
+# Compile of VLIW_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_tb
+# Loading work.VLIW_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_sim
+# Loading work.VLIW_sim
+# Compile of VLIW_sim.v was successful.
+# Compile of VLIW_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+add wave -r /*
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_tb
+# Loading work.VLIW_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_sim
+# Loading work.VLIW_sim
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/coefficient_read_adress_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/coefficient_read_adress_2'. 
+# Compile of VLIW_sim.v was successful.
+# Compile of VLIW_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_tb
+# Loading work.VLIW_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_sim
+# Loading work.VLIW_sim
+# Break in Module VLIW_tb at G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v line 122
+# Compile of VLIW_sim.v was successful.
+# Compile of VLIW_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_tb
+# Loading work.VLIW_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_sim
+# Loading work.VLIW_sim
+# Break in Module VLIW_tb at G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v line 122
+restart -f; run
+restart -f; run -all
+# Break in Module VLIW_tb at G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v line 122
+# Compile of VLIW_sim.v was successful.
+# Compile of VLIW_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run -all
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_tb
+# Loading work.VLIW_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_sim
+# Loading work.VLIW_sim
+# Break in Module VLIW_tb at G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v line 122
+# Compile of VLIW_sim.v was successful.
+# Compile of VLIW_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run -all
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_tb
+# Loading work.VLIW_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_sim
+# Loading work.VLIW_sim
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw_start_delay'. 
+# Break in Module VLIW_tb at G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v line 122
+# Compile of VLIW_sim.v was successful.
+# Compile of VLIW_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run -all
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_tb
+# Loading work.VLIW_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_sim
+# Loading work.VLIW_sim
+# Break in Module VLIW_tb at G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v line 122
+add wave -r /*
+restart -f; run -all
+# Break in Module VLIW_tb at G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v line 122
+add wave -r /*
+# Compile of VLIW_sim.v was successful.
+# Compile of VLIW_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+add wave -r /*
+restart -f; run -all
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_tb
+# Loading work.VLIW_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.VLIW_sim
+# Loading work.VLIW_sim
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_write_address_i_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_write_address_i_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_write_address_i_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_write_address_i_2'. 
+# Break in Module VLIW_tb at G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v line 122
+add wave -r /*
+restart -f; run -all
+# Break in Module VLIW_tb at G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_tb.v line 122
+# Compile of slice_sim.v failed with 1 errors.
+# Compile of slice_sim.v failed with 1 errors.
+# Compile of slice_sim.v was successful.
+# Compile of slice_tb.v was successful.
+vsim -gui -novopt work.slice_tb
+# vsim -gui -novopt work.slice_tb 
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# Loading work.GSR
+# Loading work.PUR
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.lattice_ram_24bit_16word
+# Loading work.lattice_ram_24bit_16word
+# Loading work.VLO
+# Loading work.VHI
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.ROM16X1
+# Loading work.ROM16X1
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.FD1P3DX
+# Loading work.FD1P3DX
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.DPR16X4B
+# Loading work.DPR16X4B
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.lattice_ram_36bit_512
+# Loading work.lattice_ram_36bit_512
+# Loading work.PDPW16KB
+# Loading work.DP16KB
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.add_sub_24bit_no_outreg
+# Loading work.add_sub_24bit_no_outreg
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.INV
+# Loading work.INV
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.XNOR2
+# Loading work.XNOR2
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.XOR2
+# Loading work.XOR2
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.FADSU2
+# Loading work.FADSU2
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.FADD2B
+# Loading work.FADD2B
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.add_sub_24bit_with_outreg
+# Loading work.add_sub_24bit_with_outreg
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Dan  Hostname: DAN-PC  ProcessID: 2540
+#           Attempting to use alternate WLF file "./wlfticvwxn".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfticvwxn
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfticvwxn
+# G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(59): [TFMPC] - Too few port connections. Expected 18, found 17.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(59): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.UDFDL5E_UDP_X
+# Loading work.UDFDL5E_UDP_X
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/clock_200'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/reset'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/write_enable'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw_start'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/write_address'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/write_data'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/coefficient_read_address_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/coefficient_read_address_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/state_read_address_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/state_read_address_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/state_write_address_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/state_write_address_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/state_write_address_i_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/state_write_address_i_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/logging_trigger_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/logging_trigger_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/sigma_delta_storage_trigger_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/sigma_delta_storage_trigger_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_write_address_i_d1_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_write_address_i_d2_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_write_address_i_d1_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_write_address_i_d2_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/sigma_delta_write_address_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/sigma_delta_write_address_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/sigma_delta_read_address_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/sigma_delta_read_address_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/GSR_INST/GSR'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/PUR_INST/PUR'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/clock_200'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/reset'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/write_enable'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw_start'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/write_address'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/write_data'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/coefficient_read_address_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/coefficient_read_address_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/state_read_address_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/state_read_address_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/state_write_address_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/state_write_address_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_read_address_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_read_address_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_write_address_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_write_address_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/logging_trigger_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/logging_trigger_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_storage_trigger_1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/sigma_delta_storage_trigger_2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw_output'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/address_counter'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/WrAddress'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/RdAddress'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/Data'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/WE'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/RdClock'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/RdClockEn'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/Reset'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/WrClock'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/WrClockEn'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/Q'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/scuba_vhi'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/scuba_vlo'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI14'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI15'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI16'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI17'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI18'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI19'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI20'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI21'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI22'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI23'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI24'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI25'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI26'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI27'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI28'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI29'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI30'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI31'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI32'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI33'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI34'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DI35'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADW0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADW1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADW2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADW3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADW4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADW5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADW6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADW7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADW8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/BE0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/BE1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/BE2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/BE3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/CEW'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/CLKW'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/CSW0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/CSW1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/CSW2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/ADR13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/CER'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/CLKR'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/CSR0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/CSR1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/CSR2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/RST'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO14'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO15'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO16'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO17'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO18'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO19'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO20'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO21'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO22'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO23'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO24'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO25'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO26'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO27'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO28'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO29'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO30'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO31'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO32'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO33'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO34'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/DO35'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/lo'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/hi'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA14'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA15'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA16'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA17'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CEA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CLKA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/WEA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CSA0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CSA1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CSA2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/RSTA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB14'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB15'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB16'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB17'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CEB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CLKB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/WEB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CSB0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CSB1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CSB2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/RSTB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA14'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA15'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA16'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA17'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB14'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB15'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB16'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB17'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/GSR_sig'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/PUR_sig'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/init_value'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/i'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/j'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB_dob'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CSA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CSB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CEA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CEB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CLKA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CLKB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/WREA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/WREB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/RSTA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/RSTB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/SRN'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA_node_tr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA_node_wt'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA_node_rbr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB_node_tr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB_node_wt'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB_node_rbr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DO_node_tr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DO_node_wt'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DO_node_rbr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CSA_EN'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CSB_EN'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIAB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIAB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIAB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIAB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB_dob_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADA_out'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB_out'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/BWA0_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/BWA0_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/BWA0_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/BWA1_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/BWA1_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/BWA1_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/BWB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/BWB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/BWB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/BWA0_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/BWA1_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/BWB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOAB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOAB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOAB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOA_out'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DOB_out'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/WRENA_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/WRENA_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/WRENA_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/WRENB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/WRENB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/WRENB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADB_read_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/RENA_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/RENA_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/RENA_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/RENB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/RENB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/RENB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CLKA_valid'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CLKA_valid_new1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CLKA_valid_new2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CLKA_valid_new3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/last_CLKA_valid'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/last_CLKA_valid1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CLKB_valid'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CLKB_valid_new1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CLKB_valid_new2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/CLKB_valid_new3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/last_CLKB_valid'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/last_CLKB_valid1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/memchg0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/memchg1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/memchga'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/memchgb'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/v_WADDR_A'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/v_RADDR_A'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/v_WADDR_B'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/v_RADDR_B'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/v_RADDR_RBR_A'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/v_RADDR_RBR_B'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADDR_A'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/ADDR_B'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DN_ADDR_A'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/UP_ADDR_A'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DN_ADDR_B'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/UP_ADDR_B'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIA_0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/DIB_0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/wr_a_wr_b_coll'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/wr_a_rd_b_coll'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/rd_a_wr_b_coll'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/dn_coll_addr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/up_coll_addr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/SR1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/RSTA_sig'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_0_1/EBR_INST/RSTB_sig'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/scuba_vhi_inst/Z'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/scuba_vlo_inst/Z'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI14'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI15'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI16'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI17'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI18'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI19'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI20'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI21'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI22'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI23'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI24'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI25'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI26'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI27'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI28'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI29'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI30'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI31'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI32'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI33'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI34'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DI35'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADW0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADW1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADW2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADW3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADW4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADW5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADW6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADW7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADW8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/BE0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/BE1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/BE2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/BE3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/CEW'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/CLKW'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/CSW0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/CSW1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/CSW2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/ADR13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/CER'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/CLKR'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/CSR0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/CSR1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/CSR2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/RST'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO14'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO15'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO16'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO17'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO18'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO19'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO20'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO21'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO22'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO23'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO24'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO25'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO26'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO27'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO28'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO29'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO30'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO31'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO32'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO33'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO34'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/DO35'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/lo'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/hi'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA14'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA15'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA16'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA17'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CEA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CLKA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/WEA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CSA0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CSA1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CSA2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/RSTA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB14'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB15'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB16'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB17'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CEB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CLKB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/WEB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CSB0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CSB1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CSB2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/RSTB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA14'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA15'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA16'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA17'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB4'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB5'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB6'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB7'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB8'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB9'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB10'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB11'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB12'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB13'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB14'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB15'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB16'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB17'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/GSR_sig'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/PUR_sig'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/init_value'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/i'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/j'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB_dob'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CSA'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CSB'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CEA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CEB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CLKA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CLKB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/WREA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/WREB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/RSTA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/RSTB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/SRN'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA_node_tr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA_node_wt'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA_node_rbr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB_node_tr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB_node_wt'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB_node_rbr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DO_node_tr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DO_node_wt'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DO_node_rbr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CSA_EN'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CSB_EN'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIAB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIAB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIAB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIAB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB_dob_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADA_out'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB_out'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/BWA0_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/BWA0_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/BWA0_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/BWA1_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/BWA1_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/BWA1_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/BWB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/BWB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/BWB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/BWA0_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/BWA1_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/BWB_node'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOAB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOAB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOAB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOA_out'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DOB_out'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/WRENA_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/WRENA_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/WRENA_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/WRENB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/WRENB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/WRENB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADB_read_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/RENA_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/RENA_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/RENA_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/RENB_reg'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/RENB_reg_sync'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/RENB_reg_async'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CLKA_valid'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CLKA_valid_new1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CLKA_valid_new2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CLKA_valid_new3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/last_CLKA_valid'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/last_CLKA_valid1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CLKB_valid'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CLKB_valid_new1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CLKB_valid_new2'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/CLKB_valid_new3'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/last_CLKB_valid'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/last_CLKB_valid1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/memchg0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/memchg1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/memchga'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/memchgb'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/v_WADDR_A'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/v_RADDR_A'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/v_WADDR_B'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/v_RADDR_B'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/v_RADDR_RBR_A'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/v_RADDR_RBR_B'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADDR_A'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/ADDR_B'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DN_ADDR_A'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/UP_ADDR_A'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DN_ADDR_B'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/UP_ADDR_B'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIA_0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/DIB_0'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/wr_a_wr_b_coll'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/wr_a_rd_b_coll'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/rd_a_wr_b_coll'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/dn_coll_addr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/up_coll_addr'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/SR1'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/RSTA_sig'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/VLIW_tb/vliw/vliw/lattice_ram_72bit_512_0_1_0/EBR_INST/RSTB_sig'. 
+add wave -r /*
+restart -f; run 300ns
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(59): [TFMPC] - Too few port connections. Expected 18, found 17.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(59): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_sim.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(59): [TFMPC] - Too few port connections. Expected 18, found 17.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(59): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+# Compile of slice_sim.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+# Compile of slice_sim.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+# Compile of slice_sim.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+# Compile of slice_sim.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+# Compile of slice_sim.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+# Compile of slice_sim.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+# Compile of slice_sim.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+# Compile of slice_sim.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+# Compile of slice_sim.v was successful.
+# 2 compiles, 0 failed with no errors. 
+# Compile of slice_tb.v was successful.
+# Compile of slice_sim.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+# Compile of slice_sim.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+# Compile of slice_sim.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of state_ram_tb.v failed with 1 errors.
+# Compile of state_ram_tb.v failed with 1 errors.
+# Compile of state_ram_tb.v failed with 1 errors.
+# Compile of state_ram_tb.v failed with 1 errors.
+# Compile of state_ram_tb.v failed with 1 errors.
+# Compile of state_ram_tb.v was successful.
+vsim -gui -novopt work.state_ram_tb
+# vsim -gui -novopt work.state_ram_tb 
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.state_ram_tb
+# Loading work.state_ram_tb
+# Loading work.lattice_ram_24bit_16word
+# Loading work.VLO
+# Loading work.VHI
+# Loading work.ROM16X1
+# Loading work.FD1P3DX
+# Loading work.DPR16X4B
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_23
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_23
+# Loading work.UDFDL5E_UDP_X
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_22
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_22
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_21
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_21
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_20
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_20
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_19
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_19
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_18
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_18
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_17
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_17
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_16
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_16
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_15
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_15
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_14
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_14
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_13
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_13
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_12
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_12
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_11
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_11
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_10
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_10
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_9
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_9
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_8
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_8
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_7
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_7
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_6
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_6
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_5
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_5
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_4
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_4
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_3
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_3
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_2
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_2
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_1
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_1
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(40): Unresolved reference to 'GSR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_0
+# ** Error: (vsim-3043) G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3DX.v(41): Unresolved reference to 'PUR_INST'.
+#         Region: /state_ram_tb/state_ram/FF_0
+# Error loading design
+# Compile of state_ram_tb.v was successful.
+vsim -gui -novopt work.state_ram_tb
+# vsim -gui -novopt work.state_ram_tb 
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.state_ram_tb
+# Loading work.state_ram_tb
+# Loading work.GSR
+# Loading work.PUR
+# Loading work.lattice_ram_24bit_16word
+# Loading work.VLO
+# Loading work.VHI
+# Loading work.ROM16X1
+# Loading work.FD1P3DX
+# Loading work.DPR16X4B
+# Loading work.UDFDL5E_UDP_X
+restart -f; run 100ns
+add wave -r /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Dan  Hostname: DAN-PC  ProcessID: 2540
+#           Attempting to use alternate WLF file "./wlfths4tx4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfths4tx4
+restart -f; run 100ns
+restart -f; run 300ns
+# Compile of state_ram_tb.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.state_ram_tb
+# Loading work.state_ram_tb
+# Compile of state_ram_tb.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.state_ram_tb
+# Loading work.state_ram_tb
+# Compile of state_ram_tb.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.state_ram_tb
+# Loading work.state_ram_tb
+# Compile of state_ram_tb.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.state_ram_tb
+# Loading work.state_ram_tb
+vsim -gui -novopt work.slice_tb
+# vsim -gui -novopt work.slice_tb 
+# Loading work.slice_tb
+# Loading work.GSR
+# Loading work.PUR
+# Loading work.slice_sim
+# Loading work.lattice_ram_24bit_16word
+# Loading work.VLO
+# Loading work.VHI
+# Loading work.ROM16X1
+# Loading work.FD1P3DX
+# Loading work.DPR16X4B
+# Loading work.lattice_ram_36bit_512
+# Loading work.PDPW16KB
+# Loading work.DP16KB
+# Loading work.add_sub_24bit_no_outreg
+# Loading work.INV
+# Loading work.XNOR2
+# Loading work.XOR2
+# Loading work.FADSU2
+# Loading work.FADD2B
+# Loading work.add_sub_24bit_with_outreg
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Dan  Hostname: DAN-PC  ProcessID: 2540
+#           Attempting to use alternate WLF file "./wlftfvegnn".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfvegnn
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfvegnn
+# G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Loading work.UDFDL5E_UDP_X
+add wave -r /*
+restart -f; run 300ns
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of state_ram_tb.v was successful.
+restart -f; run 300ns
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of state_ram_tb.v was successful.
+restart -f; run 300ns
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+vsim -gui -novopt work.state_ram_tb
+# vsim -gui -novopt work.state_ram_tb 
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.state_ram_tb
+# Loading work.state_ram_tb
+# Loading work.GSR
+# Loading work.PUR
+# Loading work.lattice_ram_24bit_16word
+# Loading work.VLO
+# Loading work.VHI
+# Loading work.ROM16X1
+# Loading work.FD1P3DX
+# Loading work.DPR16X4B
+# Loading work.UDFDL5E_UDP_X
+add wave -r /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Dan  Hostname: DAN-PC  ProcessID: 2540
+#           Attempting to use alternate WLF file "./wlfteftx6k".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfteftx6k
+run 300ns
+# Compile of state_ram_tb.v failed with 1 errors.
+# Compile of state_ram_tb.v failed with 1 errors.
+# Compile of state_ram_tb.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.state_ram_tb
+# Loading work.state_ram_tb
+# Compile of state_ram_tb.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.state_ram_tb
+# Loading work.state_ram_tb
+# Compile of state_ram_tb.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.state_ram_tb
+# Loading work.state_ram_tb
+vsim -gui -novopt work.slice_tb
+# vsim -gui -novopt work.slice_tb 
+# Loading work.slice_tb
+# Loading work.GSR
+# Loading work.PUR
+# Loading work.slice_sim
+# Loading work.lattice_ram_24bit_16word
+# Loading work.VLO
+# Loading work.VHI
+# Loading work.ROM16X1
+# Loading work.FD1P3DX
+# Loading work.DPR16X4B
+# Loading work.lattice_ram_36bit_512
+# Loading work.PDPW16KB
+# Loading work.DP16KB
+# Loading work.add_sub_24bit_no_outreg
+# Loading work.INV
+# Loading work.XNOR2
+# Loading work.XOR2
+# Loading work.FADSU2
+# Loading work.FADD2B
+# Loading work.add_sub_24bit_with_outreg
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Dan  Hostname: DAN-PC  ProcessID: 2540
+#           Attempting to use alternate WLF file "./wlftcnhx0g".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftcnhx0g
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftcnhx0g
+# G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Loading work.UDFDL5E_UDP_X
+add wave -r /*
+restart -f; run 300ns
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of state_ram_tb.v was successful.
+# Compile of slice_sim.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# ** Error: (vsim-3053) G:/Dropbox/Dropbox/Research/opencore/slice_sim.v(153): Illegal output or inout port connection (port 'Q').
+#         Region: /slice_tb/slice1/sigma_delta_output_ram
+# No Design Loaded!
+# Compile of slice_sim.v failed with 1 errors.
+# Compile of slice_sim.v was successful.
+restart -f; run 300ns
+# No Design Loaded!
+restart -f; run 300ns
+# No Design Loaded!
+vsim -gui -novopt work.slice_tb
+# vsim -gui -novopt work.slice_tb 
+# Loading work.slice_tb
+# Loading work.GSR
+# Loading work.PUR
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# Loading work.lattice_ram_24bit_16word
+# Loading work.VLO
+# Loading work.VHI
+# Loading work.ROM16X1
+# Loading work.FD1P3DX
+# Loading work.DPR16X4B
+# Loading work.lattice_ram_36bit_512
+# Loading work.PDPW16KB
+# Loading work.DP16KB
+# Loading work.add_sub_24bit_no_outreg
+# Loading work.INV
+# Loading work.XNOR2
+# Loading work.XOR2
+# Loading work.FADSU2
+# Loading work.FADD2B
+# Loading work.add_sub_24bit_with_outreg
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Dan  Hostname: DAN-PC  ProcessID: 2540
+#           Attempting to use alternate WLF file "./wlftxjc5kr".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftxjc5kr
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftxjc5kr
+# G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Loading work.UDFDL5E_UDP_X
+restart -f; run 300ns
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_sim.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_sim
+# Loading work.slice_sim
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+# Compile of slice_tb.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(63): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v failed with 1 errors.
+# Compile of slice_tb.v failed with 1 errors.
+# Compile of slice_tb.v failed with 1 errors.
+# Compile of slice_tb.v failed with 1 errors.
+# Compile of slice_tb.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(64): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(64): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.
+# Compile of slice_tb.v was successful.
+restart -f; run 300ns
+# Refreshing G:\Dropbox\Dropbox\Research\opencore\slice_sim\work.slice_tb
+# Loading work.slice_tb
+# ** Warning: (vsim-3017) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(64): [TFMPC] - Too few port connections. Expected 19, found 18.
+#         Region: /slice_tb/slice1
+# ** Warning: (vsim-3722) G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v(64): [TFMPC] - Missing connection for port 'sigma_delta_out_adr'.

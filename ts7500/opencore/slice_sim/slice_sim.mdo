@@ -20,8 +20,9 @@ if {![file exists "/usr7/research/dkouba/project_development/verilog/controlsyst
 	project addfile "../sigma_delta_buffer_filter.v"
 	project addfile "../spi_module.v"
 	project addfile "../pga_control.v"
-	project addfile "../lattice_ram_36bit_512.v"
 	project addfile "../lattice_ram_24bit_16word.v"
+	project addfile "../lattice_ram_36bit_512.v"
+	project addfile "../slice_sim.v"
 	vlib  work
 	vdel -lib work -all 
 	vlib work
@@ -45,8 +46,9 @@ if {![file exists "/usr7/research/dkouba/project_development/verilog/controlsyst
 	vlog -work work "../sigma_delta_buffer_filter.v"
 	vlog -work work "../spi_module.v"
 	vlog -work work "../pga_control.v"
-	vlog -work work "../lattice_ram_36bit_512.v"
 	vlog -work work "../lattice_ram_24bit_16word.v"
+	vlog -work work "../lattice_ram_36bit_512.v"
+	vlog -work work "../slice_sim.v"
 } else {
 	project open "/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/slice_sim/slice_sim"
 }

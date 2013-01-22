@@ -1,0 +1,651 @@
+# Reading C:/modeltech_6.5/tcl/vsim/pref.tcl 
+# //  ModelSim SE 6.5 Jan 22 2009 
+# //
+# //  Copyright 1991-2009 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# OpenFile G:/Documents/Research/xp2/DP16KB.v 
+file mkdir G:/Documents/Research/sigma_delta
+# Loading project sigma_delta_tests
+# Compile of first_order_sigdel.v failed with 1 errors.
+# Compile of first_order_sigdel.v was successful.
+# Compile of first_order_sigdel.v was successful.
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+vsim -gui -novopt work.sigdel_tb
+# vsim -gui -novopt work.sigdel_tb 
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# ** Error: (vsim-3033) G:/Documents/Research/sigma_delta/sigdel_tb.v(25): Instantiation of 'first_order_sigdel' failed. The design unit was not found.
+#         Region: /sigdel_tb
+#         Searched libraries:
+#             G:\Documents\Research\sigma_delta\work
+# Error loading design
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+vsim -gui -novopt work.sigdel_tb
+# vsim -gui -novopt work.sigdel_tb 
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# ** Error: (vsim-3063) G:/Documents/Research/sigma_delta/sigdel_tb.v(25): Port 'sigdel_out' not found in the connected module (3rd connection).
+#         Region: /sigdel_tb/sigdel_12b
+# Error loading design
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+vsim -gui -novopt work.sigdel_tb
+# vsim -gui -novopt work.sigdel_tb 
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+add wave -r /*
+run 10us
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 10us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 10us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+restart -f; run 100us
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 100us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+add dataflow sim:/sigdel_tb/*
+add dataflow sim:/sigdel_tb/sigdel_12b/*
+restart -f; run 1ms
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 20us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+restart -f; run 200us
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 200us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+add wave sim:/sigdel_tb/sigdel_12b/#ASSIGN#27/*
+add wave -r /*
+restart -f; run 200us
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 200us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 200us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 200us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 200us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+restart -f; run 20us
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v failed with 1 errors.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 1 failed with 1 error. 
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 20us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 20us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 20us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 20us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+restart -f; run 25us
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 10us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+# Compile of first_order_sigdel.v was successful.
+restart -f; run 10us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 10us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 10us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 10us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+restart -f; run 2us
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v failed with 1 errors.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 1 failed with 1 error. 
+# Compile of first_order_sigdel.v failed with 1 errors.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 1 failed with 1 error. 
+# Compile of first_order_sigdel.v failed with 1 errors.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 1 failed with 1 error. 
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Warning in wave window restart: (vish-4014) No objects found matching '/sigdel_tb/sigdel_12b/delay_in'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/sigdel_tb/sigdel_12b/delay_out'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/sigdel_tb/sigdel_12b/comparison'. 
+add wave -r /*
+add wave -r /*
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+add wave -r /*
+add wave -r /*
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Warning in wave window restart: (vish-4014) No objects found matching '/sigdel_tb/sigdel_12b/error_fb'. 
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v failed with 1 errors.
+# 2 compiles, 1 failed with 1 error. 
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v failed with 1 errors.
+# 2 compiles, 1 failed with 1 error. 
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+add wave -r /*
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+add wave sim:/sigdel_tb/*
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Compile of first_order_sigdel.v was successful.
+# Compile of sigdel_tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+restart -f; run 2us
+# Refreshing G:\Documents\Research\sigma_delta\work.sigdel_tb
+# Loading work.sigdel_tb
+# Refreshing G:\Documents\Research\sigma_delta\work.first_order_sigdel
+# Loading work.first_order_sigdel
+# ** Warning: (vsim-3009) [TSCALE] - Module 'first_order_sigdel' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /sigdel_tb/sigdel_12b
+# Warning in wave window restart: (vish-4014) No objects found matching '/sigdel_tb/lowpass'. 

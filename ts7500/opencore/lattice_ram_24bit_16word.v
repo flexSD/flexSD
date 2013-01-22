@@ -291,7 +291,7 @@ module lattice_ram_24bit_16word (WrAddress, Data, WrClock, WE, WrClockEn,
              /* synthesis initval="0x0000000000000000" */;
 
     // synopsys translate_off
-    defparam mem_0_5.initval =  64'h0000000000000000 ;
+    defparam mem_0_5.initval =  64'h0000000000000000 ;//64'h0000000987654321;   //Special initialization value for testing purposes
     // synopsys translate_on
     DPR16X4B mem_0_5 (.DI0(Data[0]), .DI1(Data[1]), .DI2(Data[2]), .DI3(Data[3]), 
         .WCK(WrClock), .WRE(dec0_wre3), .RAD0(RdAddress[0]), .RAD1(RdAddress[1]), 

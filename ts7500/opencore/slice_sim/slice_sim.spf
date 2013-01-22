@@ -19,8 +19,9 @@
     <Source worklib="&quot;&quot;" path="sigma_delta_buffer_filter.v" type="VERILOG" include="none"/>
     <Source worklib="&quot;&quot;" path="spi_module.v" type="VERILOG" include="none"/>
     <Source worklib="&quot;&quot;" path="pga_control.v" type="VERILOG" include="none"/>
-    <Source worklib="&quot;&quot;" path="lattice_ram_36bit_512.v" type="VERILOG" include="none"/>
     <Source worklib="&quot;&quot;" path="lattice_ram_24bit_16word.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="lattice_ram_36bit_512.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="slice_sim.v" type="VERILOG" include="none"/>
     <SimLib value="pmi_work ovi_xp2"/>
     <GlbInc value=""/>
     <Macro value=""/>

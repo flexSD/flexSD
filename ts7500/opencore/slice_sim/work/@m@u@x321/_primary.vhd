@@ -1,0 +1,44 @@
+library verilog;
+use verilog.vl_types.all;
+entity MUX321 is
+    port(
+        D0              : in     vl_logic;
+        D1              : in     vl_logic;
+        D2              : in     vl_logic;
+        D3              : in     vl_logic;
+        D4              : in     vl_logic;
+        D5              : in     vl_logic;
+        D6              : in     vl_logic;
+        D7              : in     vl_logic;
+        D8              : in     vl_logic;
+        D9              : in     vl_logic;
+        D10             : in     vl_logic;
+        D11             : in     vl_logic;
+        D12             : in     vl_logic;
+        D13             : in     vl_logic;
+        D14             : in     vl_logic;
+        D15             : in     vl_logic;
+        D16             : in     vl_logic;
+        D17             : in     vl_logic;
+        D18             : in     vl_logic;
+        D19             : in     vl_logic;
+        D20             : in     vl_logic;
+        D21             : in     vl_logic;
+        D22             : in     vl_logic;
+        D23             : in     vl_logic;
+        D24             : in     vl_logic;
+        D25             : in     vl_logic;
+        D26             : in     vl_logic;
+        D27             : in     vl_logic;
+        D28             : in     vl_logic;
+        D29             : in     vl_logic;
+        D30             : in     vl_logic;
+        D31             : in     vl_logic;
+        SD1             : in     vl_logic;
+        SD2             : in     vl_logic;
+        SD3             : in     vl_logic;
+        SD4             : in     vl_logic;
+        SD5             : in     vl_logic;
+        Z               : out    vl_logic
+    );
+end MUX321;

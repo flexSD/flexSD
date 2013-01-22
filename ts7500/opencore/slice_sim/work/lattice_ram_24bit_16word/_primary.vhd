@@ -8,6 +8,9 @@ entity lattice_ram_24bit_16word is
         WE              : in     vl_logic;
         WrClockEn       : in     vl_logic;
         RdAddress       : in     vl_logic_vector(3 downto 0);
+        RdClock         : in     vl_logic;
+        RdClockEn       : in     vl_logic;
+        Reset           : in     vl_logic;
         Q               : out    vl_logic_vector(23 downto 0)
     );
 end lattice_ram_24bit_16word;

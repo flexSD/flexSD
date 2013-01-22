@@ -33,9 +33,6 @@ RdAddress[3]  i
 RdAddress[2]  i
 RdAddress[1]  i
 RdAddress[0]  i
-RdClock  i
-RdClockEn  i
-Reset  i
 Q[23]  o
 Q[22]  o
 Q[21]  o

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DiamondModule name="lattice_ram_36bit_512" module="lattice_ram_36bit_512" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2012 05 28 15:52:20.123" version="6.1" type="Module" synthesis="synplify" source_format="Verilog HDL">
+<DiamondModule name="lattice_ram_36bit_512" module="lattice_ram_36bit_512" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2012 05 15 22:42:51.578" version="6.1" type="Module" synthesis="synplify" source_format="Verilog HDL">
   <Package>
-		<File name="" type="mem" modified="2012 05 28 15:52:17.000"/>
-		<File name="lattice_ram_36bit_512.lpc" type="lpc" modified="2012 05 28 15:52:13.000"/>
-		<File name="lattice_ram_36bit_512.v" type="top_level_verilog" modified="2012 05 28 15:52:13.000"/>
-		<File name="lattice_ram_36bit_512_tmpl.v" type="template_verilog" modified="2012 05 28 15:52:13.000"/>
-		<File name="tb_lattice_ram_36bit_512_tmpl.v" type="testbench_verilog" modified="2012 05 28 15:52:13.000"/>
+		<File name="" type="mem" modified="2012 05 15 22:42:48.000"/>
+		<File name="lattice_ram_36bit_512.lpc" type="lpc" modified="2012 05 15 22:42:43.000"/>
+		<File name="lattice_ram_36bit_512.v" type="top_level_verilog" modified="2012 05 15 22:42:43.000"/>
+		<File name="lattice_ram_36bit_512_tmpl.v" type="template_verilog" modified="2012 05 15 22:42:43.000"/>
+		<File name="tb_lattice_ram_36bit_512_tmpl.v" type="testbench_verilog" modified="2012 05 15 22:42:43.000"/>
   </Package>
 </DiamondModule>

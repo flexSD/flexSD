@@ -1,0 +1,40 @@
+`timescale 100ps/1ps
+
+module sinegen_tb;
+  
+reg clock, enable, reset;
+reg [9:0] theta;
+wire signed [23:0] sine_out;
+  
+// The GSR and PUR are needed for the flip flop primitives from Lattice
+GSR GSR_INST(~reset);   // Global Set/Reset signal (active low)
+PUR PUR_INST(~reset);   // Power up reset signal (active low)
+  
+lattice_sine_table sinegen(
+
+.Clock(clock),
+.ClkEn(enable),
+.Reset(reset),
+.Theta(theta),
+.Sine(sine_out)
+
+);
+
+initial begin
+  
+  clock = 0;
+  reset = 1;
+  enable = 0;
+  theta = 0;
+  
+  #10 reset = 0;
+  #10 enable = 1;
+  
+end
+
+always #1 clock = ~clock;
+always begin
+  if(enable) #2 theta = theta + 1;
+end
+
+endmodule

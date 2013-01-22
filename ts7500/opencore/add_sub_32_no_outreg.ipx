@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<DiamondModule name="add_sub_32_no_outreg" module="Adder_Subtractor" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2012 06 07 09:49:43.915" version="3.1" type="Module" synthesis="synplify" source_format="Verilog">
-  <Package>
-		<File name="add_sub_32_no_outreg.lpc" type="lpc" modified="2012 06 07 09:49:40.000"/>
-		<File name="add_sub_32_no_outreg.v" type="top_level_verilog" modified="2012 06 07 09:49:40.000"/>
-		<File name="add_sub_32_no_outreg_tmpl.v" type="template_verilog" modified="2012 06 07 09:49:40.000"/>
-		<File name="tb_add_sub_32_no_outreg_tmpl.v" type="testbench_verilog" modified="2012 06 07 09:49:40.000"/>
-  </Package>
-</DiamondModule>

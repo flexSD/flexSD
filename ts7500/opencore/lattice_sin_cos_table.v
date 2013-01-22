@@ -5,7 +5,7 @@
 
 
 `timescale 1 ns / 1 ps
-module lattice_sin_cos_table (Clock, ClkEn, Reset, Theta, Sine);
+module lattice_sine_table (Clock, ClkEn, Reset, Theta, Sine);
     input wire Clock;
     input wire ClkEn;
     input wire Reset;

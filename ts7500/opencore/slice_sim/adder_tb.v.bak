@@ -1,0 +1,119 @@
+`timescale 100ps/1ps
+
+module adder_tb;
+
+parameter           input_bitwidth = 24;
+parameter           full_neg = {1'b1, {(input_bitwidth-1){1'b0}}};
+parameter           full_pos = {1'b0, {(input_bitwidth-1){1'b1}}};
+  
+reg                 clock_200, reset, slice_enable;
+reg         [8:0]   coefficient_read_adr, coefficient_write_adr;
+reg         [35:0]  coefficient_write_data;
+reg                 coefficient_write_en;
+
+reg         [3:0]   state_write_adr, state_read_adr;
+reg                 sigma_delta_stream_A, sigma_delta_stream_B;
+
+reg                 log_trigger, sigma_delta_out_trigger;
+
+wire                overflow_stage_1, overflow_stage_2;
+wire signed [23:0]  log_value_out, sigma_delta_out;
+
+// For sigma delta
+reg                 clock_20;
+reg  signed [23:0]  input_signal_A, input_signal_B;
+wire                sigdel_output_A, sigdel_output_B;
+
+wire                  state_write_en;
+reg signed [23:0]    state_value;              // Output of the state RAM
+
+reg signed [17:0]    coefficient_A;            // First half of the coefficient read port
+reg signed [17:0]    coefficient_B;            // Second half of the coefficient read port
+wire signed [23:0]    coefficient_A_sign_ext;   // First coefficient sign extended to 24 bits
+wire signed [23:0]    coefficient_B_sign_ext;   // Second coefficient sign extended to 24 bits
+wire                  coefficient_read_clk_en;  // 
+
+wire signed [23:0]    add_sub_result_A;         // Intermediate add/sub result (state +/- coefficient A)
+wire signed [23:0]    add_sub_result_B;         // Final add/sub result (result A +/- coefficient B)
+
+wire                  overflow_1, overflow_2;
+wire                  add_sub_2_en;             // Output register enable on second add/sub module
+
+reg signed  [23:0]    log_value_i;
+reg signed  [23:0]    sigma_delta_value_i;
+
+assign state_write_en = slice_enable;
+assign add_sub_2_en = slice_enable;
+assign coefficient_read_clk_en = slice_enable;
+
+assign coefficient_A_sign_ext = { {6{coefficient_A[17]}}, coefficient_A[17:0] };
+assign coefficient_B_sign_ext = { {6{coefficient_B[17]}}, coefficient_B[17:0] };
+
+GSR GSR_INST(reset);
+PUR PUR_INST(reset);
+
+initial begin
+  
+  // Slice
+  clock_200 = 0;
+  reset = 1;
+  slice_enable = 1;
+  coefficient_read_adr = 0;
+  coefficient_write_adr = 0;
+  coefficient_write_data = 0;
+  coefficient_write_en = 0;
+  state_write_adr = 0;
+  state_read_adr = 0;
+  sigma_delta_stream_A = 0;
+  sigma_delta_stream_B = 0;
+  
+  // Sigma deltaa
+  clock_20 = 1;
+  input_signal_A = 0;
+  input_signal_B = 0;
+  
+  // Setup
+  
+  #50 reset = 0;
+  
+  #50 coefficient_A = -18'sd7343;
+      coefficient_B = 18'sd2394;
+      state_value = 24'sd9485;
+      
+  #100 coefficient_A = -18'sd2345;
+      coefficient_B = 18'sd6468;
+      state_value = 24'sd4567;
+      
+  #100 coefficient_A = 18'sd6743;
+      coefficient_B = 18'sd812;
+      state_value = 24'sd0;
+      
+end
+      
+
+add_sub_24bit_no_outreg add_sub_1(
+
+.DataA(state_value[23:0]),
+.DataB(coefficient_A_sign_ext[23:0]),
+.Add_Sub(1'b1),
+.Result(add_sub_result_A),
+.Overflow(overflow_stage_1)
+
+);
+
+add_sub_24bit_with_outreg add_sub_2(
+
+.DataA(add_sub_result_A),
+.DataB(coefficient_B_sign_ext[23:0]),
+.Add_Sub(1'b0),
+.Clock(clock_200),
+.Reset(reset),
+.ClockEn(add_sub_2_en), 
+.Result(add_sub_result_B),
+.Overflow(overflow_stage_2)
+
+);
+
+always #25 clock_200 = ~clock_200;    // 200MHz - for slice
+
+endmodule

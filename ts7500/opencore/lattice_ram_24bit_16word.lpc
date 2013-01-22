@@ -16,8 +16,8 @@ CoreRevision=3.5
 ModuleName=lattice_ram_24bit_16word
 SourceFormat=Verilog HDL
 ParameterFileVersion=1.0
-Date=05/28/2012
-Time=15:52:55
+Date=05/08/2012
+Time=11:45:30
 
 [Parameters]
 Verilog=1
@@ -29,7 +29,7 @@ Order=Big Endian [MSB:LSB]
 IO=0
 Addresses=16
 Data=24
-LUT=1
+LUT=0
 MemFile=
 MemFormat=orca
 

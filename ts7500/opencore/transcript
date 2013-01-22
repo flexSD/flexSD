@@ -8,8 +8,8 @@
 # //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
 # //  AND IS SUBJECT TO LICENSE TERMS.
 # //
-# do {/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/linux_sim/linux_sim.mdo} 
-# Loading project linux_sim
+# do {/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/slice_sim/slice_sim.mdo} 
+# Loading project slice_sim
 # Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
 # -- Compiling module wb_resync
 # -- Compiling module resync_fifo
@@ -114,13 +114,104 @@
 # Top level modules:
 # 	pga_control
 # Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+# -- Compiling module lattice_ram_24bit_16word
+# 
+# Top level modules:
+# 	lattice_ram_24bit_16word
+# Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
 # -- Compiling module lattice_ram_36bit_512
 # 
 # Top level modules:
 # 	lattice_ram_36bit_512
 # Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
-# -- Compiling module lattice_ram_24bit_16word
-# 
-# Top level modules:
-# 	lattice_ram_24bit_16word
-# Model Technology ModelSim SE vsim 6.1b Simulator 2005.09 Sep  8 2005
+# -- Compiling module slice_sim
+# ** Error: ../slice_sim.v(31): near "input": syntax error, unexpected "input", expecting "IDENTIFIER"
+# ** Error: /usr7/local/modeltech/linux/vlog failed.
+# Error in macro /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/slice_sim/slice_sim.mdo line 54
+# /usr7/local/modeltech/linux/vlog failed.
+#     while executing
+# "vlog -work work "../slice_sim.v""
+#     invoked from within
+# "if {![file exists "/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/slice_sim/slice_sim.mpf"]} { 
+# 	project new "/usr7/r..."
+# Compile of wb_resync.v was successful.
+# Compile of syscon.v was successful.
+# Compile of wb_spi.v was successful.
+# Compile of wb_arbiter.v was successful.
+# Compile of wb_writebuffer.v was successful.
+# Compile of spi_sbus.v was successful.
+# Compile of ts7500_top.v was successful.
+# Compile of tagmem.v was successful.
+# Compile of pll2.v was successful.
+# Compile of pll.v was successful.
+# Compile of coefficient_blockram.v was successful.
+# Compile of coefficient_memwindow.v was successful.
+# Compile of logging_bram.v was successful.
+# Compile of logging_memwindow.v was successful.
+# Compile of adc_buffer.v was successful.
+# Compile of biquad_filter_32bit.v was successful.
+# Compile of wb_biquad_interface_128.v was successful.
+# Compile of sigma_delta_buffer_filter.v was successful.
+# Compile of spi_module.v was successful.
+# Compile of pga_control.v was successful.
+# Compile of lattice_ram_24bit_16word.v was successful.
+# Compile of lattice_ram_36bit_512.v was successful.
+# Compile of slice_sim.v failed with 1 errors.
+# Compile of add_sub_24bit_no_outreg.v was successful.
+# Compile of add_sub_24bit_with_outreg.v was successful.
+# 25 compiles, 1 failed with 1 error. 
+# Compile of wb_resync.v was successful.
+# Compile of syscon.v was successful.
+# Compile of wb_spi.v was successful.
+# Compile of wb_arbiter.v was successful.
+# Compile of wb_writebuffer.v was successful.
+# Compile of spi_sbus.v was successful.
+# Compile of ts7500_top.v was successful.
+# Compile of tagmem.v was successful.
+# Compile of pll2.v was successful.
+# Compile of pll.v was successful.
+# Compile of coefficient_blockram.v was successful.
+# Compile of coefficient_memwindow.v was successful.
+# Compile of logging_bram.v was successful.
+# Compile of logging_memwindow.v was successful.
+# Compile of adc_buffer.v was successful.
+# Compile of biquad_filter_32bit.v was successful.
+# Compile of wb_biquad_interface_128.v was successful.
+# Compile of sigma_delta_buffer_filter.v was successful.
+# Compile of spi_module.v was successful.
+# Compile of pga_control.v was successful.
+# Compile of lattice_ram_24bit_16word.v was successful.
+# Compile of lattice_ram_36bit_512.v was successful.
+# Compile of slice_sim.v failed with 1 errors.
+# Compile of add_sub_24bit_no_outreg.v was successful.
+# Compile of add_sub_24bit_with_outreg.v was successful.
+# 25 compiles, 1 failed with 1 error. 
+# Compile of wb_resync.v was successful.
+# Compile of syscon.v was successful.
+# Compile of wb_spi.v was successful.
+# Compile of wb_arbiter.v was successful.
+# Compile of wb_writebuffer.v was successful.
+# Compile of spi_sbus.v was successful.
+# Compile of ts7500_top.v was successful.
+# Compile of tagmem.v was successful.
+# Compile of pll2.v was successful.
+# Compile of pll.v was successful.
+# Compile of coefficient_blockram.v was successful.
+# Compile of coefficient_memwindow.v was successful.
+# Compile of logging_bram.v was successful.
+# Compile of logging_memwindow.v was successful.
+# Compile of adc_buffer.v was successful.
+# Compile of biquad_filter_32bit.v was successful.
+# Compile of wb_biquad_interface_128.v was successful.
+# Compile of sigma_delta_buffer_filter.v was successful.
+# Compile of spi_module.v was successful.
+# Compile of pga_control.v was successful.
+# Compile of lattice_ram_24bit_16word.v was successful.
+# Compile of lattice_ram_36bit_512.v was successful.
+# Compile of slice_sim.v failed with 1 errors.
+# Compile of add_sub_24bit_no_outreg.v was successful.
+# Compile of add_sub_24bit_with_outreg.v was successful.
+# 25 compiles, 1 failed with 1 error. 
+# Compile of slice_sim.v failed with 1 errors.
+# Compile of slice_sim.v failed with 1 errors.
+# Compile of slice_sim.v was successful.
