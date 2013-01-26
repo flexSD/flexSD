@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="lattice_ram_72bit_512" module="RAM_DP" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2012 05 15 22:45:25.283" version="6.1" type="IP" synthesis="synplify" source_format="Verilog">
+  <Package>
+		<File name="" type="mem" modified="2012 05 15 22:45:25.000"/>
+		<File name="lattice_ram_72bit_512.lpc" type="lpc" modified="2012 05 15 22:45:13.000"/>
+  </Package>
+</DiamondModule>

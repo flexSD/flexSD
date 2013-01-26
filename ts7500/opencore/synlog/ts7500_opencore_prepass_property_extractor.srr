@@ -1,0 +1,14 @@
+Synopsys Lattice Technology Constraint Extraction, Version maplat, Build 064R, Built Feb 17 2011 10:38:00
+Copyright (C) 1994-2011, Synopsys Inc.  All Rights Reserved
+Product Version E-2010.09L-SP2
+@N: MF249 |Running in 32-bit mode.
+@N: MF258 |Gated clock conversion disabled 
+@W: BN288 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":232:0:232:5|Register rstn with set has an initial value of 0. Ignoring initial value.  
+@W:"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":409:12:409:28|Net spicore/wb_clk_i appears to be a clock source which was not identfied. Assuming default frequency. 
+Finished Timing Extraction Phase. (Time elapsed 0h:00m:00s; Memory used current: 77MB peak: 79MB)
+
+Timing Extraction successful!
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Wed Apr 18 15:29:35 2012
+
+###########################################################]

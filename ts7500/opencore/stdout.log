@@ -1,0 +1,50 @@
+Running in Lattice mode
+
+
+Starting:    /usr/local/diamond/1.2/synpbase/linux/mbin/synbatch
+Install:     /usr/local/diamond/1.2/synpbase
+Date:        Wed Apr 18 15:29:32 2012
+Version:     E-2010.09L-SP2
+
+Arguments:   -product synplify_pro  -batch ts7500_opencore_synplify.tcl
+ProductType: synplify_pro
+
+
+
+
+
+
+Running synthesis on proj_1:opencore
+
+log file: "/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_opencore.srf"
+
+
+
+Running HDL Compiler...
+
+
+Compiler Completed with warnings
+Return Code: 1
+Run Time:00:00:01
+
+
+Running prepass_property_extractor...
+
+
+prepass_property_extractor Completed with warnings
+Return Code: 1
+Run Time:00:00:01
+
+
+Running LATTICE-XP2 Mapper...
+
+
+LATTICE-XP2 Mapper Completed with warnings
+Return Code: 1
+Run Time:00:00:06
+
+TCL script complete: "ts7500_opencore_synplify.tcl"
+
+exit status=0
+
+

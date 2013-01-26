@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+dG:\Documents\Research\xp2
+vDP16KB
+!s100 UH2AN4QS1`f]hG[DaPPbd3
+I@Zi[kQd7UfO]Y0JLNe1?N0
+V_ZXXiMX1]>8;NEU>zBRHT0
+Z0 d$flexSD/sigma_delta
+w1359237950
+8$flexSD/XP2 Verilog Primitives/DP16KB.v
+F$flexSD/XP2 Verilog Primitives/DP16KB.v
+L0 26
+Z1 OE;L;6.5;42
+r1
+!s85 0
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -L mtiAvm -L mtiOvm -L mtiUPF
+n@d@p16@k@b
+vfirst_order_sigdel
+IVcW97IlFVndU1VEi0@OEj0
+V]Jj1QT?X8IilhTfG33]XV1
+Z4 d$flexSD/sigma_delta
+Z5 w1359237951
+8$flexSD/sigma_delta/first_order_sigdel.v
+F$flexSD/sigma_delta/first_order_sigdel.v
+L0 2
+R1
+r1
+31
+R2
+R3
+!s100 :9_kW8=bU8cDbH=WTYPE83
+!s85 0
+vfirst_order_sigdel_virtualized
+IH@`I>ECaLGEHQ797d:U520
+VMN8;OiiS4B>__ebZ2AfQ:1
+R4
+R5
+8$flexSD/sigma_delta/first_order_sigdel_virtualized.v
+F$flexSD/sigma_delta/first_order_sigdel_virtualized.v
+L0 7
+R1
+r1
+31
+R2
+R3
+!s100 >e>2hfCY[acMeJTaZcO=80
+!s85 0
+vfist_order_sigdel
+I4SeVVo0B=RP:DJ_UegSFW2
+VeC63jX9ddR=Re7jaQNVPQ3
+dG:\Documents\Research\sigma_delta
+w1335402303
+8G:/Documents/Research/sigma_delta/first_order_sigdel.v
+FG:/Documents/Research/sigma_delta/first_order_sigdel.v
+L0 1
+R1
+r1
+31
+R3
+R2
+!s100 KAP@<WD2?2cV@P=4<DWYC3
+!s85 0
+vsigdel_tb
+ImDmIQ?LD@FO?DlG8W@6633
+VJL]GKKG<m0A[LmzdC8`W=3
+R4
+R5
+8$flexSD/sigma_delta/sigdel_tb.v
+F$flexSD/sigma_delta/sigdel_tb.v
+L0 3
+R1
+r1
+31
+R2
+R3
+!s100 7;iMDXVo6<5a>:jd1:Uh10
+!s85 0

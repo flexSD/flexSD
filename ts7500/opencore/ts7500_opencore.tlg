@@ -1,0 +1,301 @@
+Selecting top level module ts7500_top
+@N: CG364 :"/usr/local/diamond/1.2/cae_library/synthesis/verilog/xp2.v":797:7:797:9|Synthesizing module INV
+
+@N: CG364 :"/usr/local/diamond/1.2/cae_library/synthesis/verilog/xp2.v":1274:7:1274:9|Synthesizing module VLO
+
+@N: CG364 :"/usr/local/diamond/1.2/cae_library/synthesis/verilog/xp2.v":310:7:310:14|Synthesizing module EHXPLLE1
+
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pll.v":8:7:8:9|Synthesizing module pll
+
+@N: CG364 :"/usr/local/diamond/1.2/cae_library/synthesis/verilog/xp2.v":263:7:263:12|Synthesizing module EPLLD1
+
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pll2.v":8:7:8:10|Synthesizing module pll2
+
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":139:7:139:14|Synthesizing module spi_sbus
+
+@W: CG532 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":175:0:175:6|Initial statement will only initialize memories through the usage of $readmemh and $readmemb. Everything else is ignored
+@W: CG532 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":176:0:176:6|Initial statement will only initialize memories through the usage of $readmemh and $readmemb. Everything else is ignored
+@W: CL169 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":184:0:184:5|Pruning Register sbus_burst 
+
+@W: CL265 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":184:0:184:5|Pruning bit 15 of idat[15:0] - not in use ...
+
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_writebuffer.v":113:7:113:25|Synthesizing module wb_writebuffer_fifo
+
+@N: CL134 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_writebuffer.v":149:0:149:5|Found RAM fifomem, depth=16, width=68
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_writebuffer.v":21:7:21:20|Synthesizing module wb_writebuffer
+
+@W: CG296 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_writebuffer.v":73:9:74:62|Incomplete sensitivity list - assuming completeness
+@W: CG290 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_writebuffer.v":81:14:81:21|Referenced variable wb_sel_i is not in sensitivity list
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_arbiter.v":21:7:21:16|Synthesizing module wb_arbiter
+
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":189:7:189:17|Synthesizing module resync_fifo
+
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":21:7:21:15|Synthesizing module wb_resync
+
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":109:11:109:21|Undriven input wb1_cti_i on instance arbitercore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":109:11:109:21|Undriven input wb1_bte_i on instance arbitercore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":109:11:109:21|Undriven input wb2_cti_i on instance arbitercore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":109:11:109:21|Undriven input wb2_bte_i on instance arbitercore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":109:11:109:21|Undriven input wb3_cti_i on instance arbitercore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":109:11:109:21|Undriven input wb3_bte_i on instance arbitercore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":109:11:109:21|Undriven input wb4_cti_i on instance arbitercore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":109:11:109:21|Undriven input wb4_bte_i on instance arbitercore, tying to 0
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":164:11:164:52|Port width mismatch for port data_i.  Formal has width 256, Actual 69
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":168:8:168:49|Port width mismatch for port q_o.  Formal has width 256, Actual 69
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":179:10:179:18|Port width mismatch for port data_i.  Formal has width 256, Actual 32
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_resync.v":184:7:184:15|Port width mismatch for port q_o.  Formal has width 256, Actual 32
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":284:7:284:21|Synthesizing module spi_sbus_resync
+
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":384:12:384:18|Port width mismatch for port wb_dat_i.  Formal has width 32, Actual 16
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":386:12:386:17|Port width mismatch for port wb_sel_i.  Formal has width 4, Actual 2
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":394:13:394:20|Port width mismatch for port wbm_dat_i.  Formal has width 32, Actual 16
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":385:12:385:18|Port width mismatch for port wb_dat_o.  Formal has width 32, Actual 16
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":393:13:393:20|Port width mismatch for port wbm_dat_o.  Formal has width 32, Actual 16
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":392:13:392:19|Port width mismatch for port wbm_sel_o.  Formal has width 4, Actual 2
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":419:14:419:21|Port width mismatch for port wbs1_dat_i.  Formal has width 32, Actual 16
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":423:14:423:20|Port width mismatch for port wbs1_sel_i.  Formal has width 4, Actual 2
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs2_cyc_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs2_stb_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs2_dat_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs2_we_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs2_adr_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs2_sel_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs3_cyc_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs3_stb_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs3_dat_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs3_we_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs3_adr_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs3_sel_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs4_cyc_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs4_stb_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs4_dat_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs4_we_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs4_adr_i on instance resynccore, tying to 0
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":402:10:402:19|Undriven input wbs4_sel_i on instance resynccore, tying to 0
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":432:13:432:21|Port width mismatch for port wbm_dat_i.  Formal has width 32, Actual 16
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":420:14:420:21|Port width mismatch for port wbs1_dat_o.  Formal has width 32, Actual 16
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":431:13:431:21|Port width mismatch for port wbm_dat_o.  Formal has width 32, Actual 16
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":434:13:434:21|Port width mismatch for port wbm_sel_o.  Formal has width 4, Actual 2
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_spi.v":81:7:81:12|Synthesizing module wb_spi
+
+@W: CG133 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_spi.v":119:9:119:10|No assignment to so
+@W: CL265 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_spi.v":139:0:139:5|Pruning bit 7 of idat[7:0] - not in use ...
+
+@N: CG364 :"/usr/local/diamond/1.2/cae_library/synthesis/verilog/xp2.v":743:7:743:10|Synthesizing module OSCE
+
+@N: CG364 :"/usr/local/diamond/1.2/cae_library/synthesis/verilog/xp2.v":777:7:777:11|Synthesizing module SSPIA
+
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/tagmem.v":8:7:8:12|Synthesizing module tagmem
+
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":103:7:103:12|Synthesizing module syscon
+
+	wdog_default=32'b00000000000000000000000000000011
+	model=16'b0111010100000000
+	submodel=4'b0000
+	revision=4'b0101
+	dio_mask=41'b11111111111111111111110000111101111100000
+   Generated name = syscon_3s_29952_0_5_Z1
+
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":218:10:218:17|Port width mismatch for port data_i.  Formal has width 256, Actual 16
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":222:7:222:14|Port width mismatch for port q_o.  Formal has width 256, Actual 16
+@W: CG133 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":170:24:170:28|No assignment to shift
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":171:8:171:14|No assignment to wire sed_err
+
+@W: CL168 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":250:7:250:16|Pruning instance tagmemcore - not in use ...
+
+@W: CL169 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Pruning Register spi_clk 
+
+@W: CL169 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Pruning Register spi_si 
+
+@W: CL169 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Pruning Register spi_csn 
+
+@W: CL169 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Pruning Register scratch[1:0] 
+
+@W: CL113 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":178:0:178:5|Feedback mux created for signal resetsw[1:0].
+@W: CL251 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":178:0:178:5|All reachable assignments to resetsw[1:0] assign 1, register removed by optimization
+@W: CL189 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Register bit led_grn is always 1, optimizing ...
+@W: CL189 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Register bit led_red is always 1, optimizing ...
+@W: CL189 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Register bit resetsw_en is always 0, optimizing ...
+@W: CL189 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Register bit rtc_scl is always 0, optimizing ...
+@W: CL189 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Register bit rtc_scl_oe is always 0, optimizing ...
+@W: CL189 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Register bit rtc_sda is always 0, optimizing ...
+@W: CL189 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Register bit rtc_sda_oe is always 0, optimizing ...
+@W: CL189 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Register bit pllphase[0] is always 1, optimizing ...
+@W: CL189 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Register bit pllphase[1] is always 1, optimizing ...
+@W: CL189 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Register bit pllphase[2] is always 0, optimizing ...
+@W: CL189 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Register bit pllphase[3] is always 0, optimizing ...
+@W: CL189 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":286:0:286:5|Register bit pllphase[4] is always 1, optimizing ...
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v":1:7:1:17|Synthesizing module pga_control
+
+@W: CG133 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v":48:11:48:18|No assignment to bitindex
+@W: CG133 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v":49:11:49:16|No assignment to packet
+@W: CL169 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v":86:0:86:5|Pruning Register state[1:0] 
+
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_module.v":1:7:1:16|Synthesizing module spi_module
+
+@N: CG364 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":46:7:46:16|Synthesizing module ts7500_top
+
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":355:13:355:24|Port width mismatch for port wbm_adr_o.  Formal has width 32, Actual 5
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":366:14:366:26|Port width mismatch for port wbm2_adr_o.  Formal has width 32, Actual 5
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":414:12:414:23|Port width mismatch for port wb_adr_i.  Formal has width 32, Actual 5
+@W: CG781 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":407:7:407:13|Undriven input sck_i on instance spicore, tying to 0
+@W: CS149 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":508:12:508:24|Port width mismatch for port wb_adr_i.  Formal has width 32, Actual 5
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":327:8:327:17|No assignment to wire spiboot_so
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":439:8:439:13|No assignment to wire can_tx
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":439:16:439:27|No assignment to wire can_wbaccess
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":446:16:446:22|No assignment to wire spi_clk
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":448:11:448:14|No assignment to wire gpio
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":544:13:544:28|No assignment to wire cmemwin_wb_adr_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":545:12:545:27|No assignment to wire cmemwin_wb_dat_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":546:7:546:22|No assignment to wire cmemwin_wb_cyc_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":547:7:547:22|No assignment to wire cmemwin_wb_stb_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":548:7:548:22|No assignment to wire cmemwin_wb_ack_i
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":549:8:549:22|No assignment to wire cmemwin_wb_we_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":552:11:552:27|No assignment to wire bq_coeff_wb_adr_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":553:7:553:23|No assignment to wire bq_coeff_wb_cyc_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":554:7:554:23|No assignment to wire bq_coeff_wb_stb_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":555:13:555:29|No assignment to wire bq_coeff_wb_dat_i
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":556:7:556:23|No assignment to wire bq_coeff_wb_ack_i
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":585:8:585:23|No assignment to wire lmemwin_wb_cyc_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":586:9:586:24|No assignment to wire lmemwin_wb_stb_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":587:13:587:28|No assignment to wire lmemwin_wb_adr_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":588:13:588:28|No assignment to wire lmemwin_wb_dat_i
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":589:8:589:23|No assignment to wire lmemwin_wb_ack_i
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":592:8:592:22|No assignment to wire bq_log_wb_cyc_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":593:8:593:22|No assignment to wire bq_log_wb_stb_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":594:13:594:27|No assignment to wire bq_log_wb_adr_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":595:8:595:21|No assignment to wire bq_log_wb_we_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":596:13:596:27|No assignment to wire bq_log_wb_dat_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":597:8:597:22|No assignment to wire bq_log_wb_ack_i
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":624:14:624:30|No assignment to wire cmemwin_wbs_dat_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":625:8:625:24|No assignment to wire cmemwin_wbs_ack_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":627:8:627:28|No assignment to wire load_new_coefficients
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":628:7:628:18|No assignment to wire done_loading
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":663:14:663:30|No assignment to wire lmemwin_wbs_dat_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":664:8:664:24|No assignment to wire lmemwin_wbs_ack_o
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":777:7:777:13|No assignment to wire set_vos
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":778:7:778:17|No assignment to wire set_measure
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":779:7:779:14|No assignment to wire set_gain
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":781:11:781:16|No assignment to wire offset
+
+@W: CG360 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":782:11:782:14|No assignment to wire gain
+
+@W: CL169 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":398:0:398:5|Pruning Register csn_q[3:0] 
+
+@W: CL169 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":261:0:261:5|Pruning Register spi_boot_done 
+
+@W: CL246 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":120:13:120:19|Input port bits 18 to 17 of dio_pad[40:0] are unused
+
+@W: CL246 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":120:13:120:19|Input port bits 10 to 9 of dio_pad[40:0] are unused
+
+@W: CL246 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":120:13:120:19|Input port bits 5 to 0 of dio_pad[40:0] are unused
+
+@W: CL156 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":777:7:777:13|*Input set_vos to this expression [instance] has undriven bits which are being tied to 0 - a simulation mismatch is possible
+@W: CL156 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":779:7:779:14|*Input set_gain to this expression [instance] has undriven bits which are being tied to 0 - a simulation mismatch is possible
+@W: CL156 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":778:7:778:17|*Input set_measure to this expression [instance] has undriven bits which are being tied to 0 - a simulation mismatch is possible
+@W: CL156 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":781:11:781:16|*Input offset[4:0] to this expression [instance] has undriven bits which are being tied to 0 - a simulation mismatch is possible
+@W: CL156 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":782:11:782:14|*Input gain[3:0] to this expression [instance] has undriven bits which are being tied to 0 - a simulation mismatch is possible
+@W: CL156 :"/usr/local/diamond/1.2/synpbase/lib/lucent/xp2.v":1:1:1:2|*Input highz to this expression [not] has undriven bits which are being tied to 0 - a simulation mismatch is possible
+@W: CL156 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":409:21:409:27|*Input spi_opt to this expression [and] has undriven bits which are being tied to 0 - a simulation mismatch is possible
+@W: CL156 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":624:14:624:30|*Input cmemwin_wbs_dat_o[15:0] to this expression [pmux] has undriven bits which are being tied to 0 - a simulation mismatch is possible
+@W: CL156 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":663:14:663:30|*Input lmemwin_wbs_dat_o[15:0] to this expression [pmux] has undriven bits which are being tied to 0 - a simulation mismatch is possible
+@W: CL156 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":625:8:625:24|*Input cmemwin_wbs_ack_o to this expression [pmux] has undriven bits which are being tied to 0 - a simulation mismatch is possible
+@W: CL156 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":664:8:664:24|*Input lmemwin_wbs_ack_o to this expression [pmux] has undriven bits which are being tied to 0 - a simulation mismatch is possible
+@W: CL157 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":158:7:158:21|*Output en_sd_power_pad has undriven bits - a simulation mismatch is possible 
+@W: CL157 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":164:7:164:16|*Output sd_clk_pad has undriven bits - a simulation mismatch is possible 
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":117:6:117:19|Input cpu_clkout_pad is unused
+@W: CL158 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":136:6:136:17|Inout gpio_a13_pad is unused
+@W: CL158 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":137:6:137:17|Inout gpio_a14_pad is unused
+@W: CL158 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":146:6:146:17|Inout gpio_a29_pad is unused
+@W: CL158 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":148:6:148:14|Inout int28_pad is unused
+@W: CL158 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":159:6:159:14|Inout sd_d0_pad is unused
+@W: CL158 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":160:6:160:14|Inout sd_d1_pad is unused
+@W: CL158 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":161:6:161:14|Inout sd_d2_pad is unused
+@W: CL158 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":162:6:162:14|Inout sd_d3_pad is unused
+@W: CL158 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":163:6:163:15|Inout sd_cmd_pad is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_top.v":184:6:184:17|Input rtc_int1_pad is unused
+@N: CL201 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_module.v":93:0:93:5|Trying to extract state machine for register state
+Extracted state machine for register state
+State machine has 3 reachable states with original encodings of:
+   00
+   01
+   10
+@W: CL138 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v":86:0:86:5|Register 'op_complete_o' is only assigned 0 or its old value; the register will be removed
+@W: CL138 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v":86:0:86:5|Register 'pga_dat_o' is only assigned 0 or its old value; the register will be removed
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v":25:9:25:15|Input set_vos is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v":26:9:26:16|Input set_gain is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v":27:9:27:19|Input set_measure is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v":29:14:29:19|Input offset is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/pga_control.v":30:14:30:17|Input gain is unused
+@W: CL157 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":153:10:153:23|*Output cpu_uart_rxd_o has undriven bits - a simulation mismatch is possible 
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":139:49:139:55|Input wb_we_i is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":140:15:140:22|Input wb_adr_i is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":142:14:142:21|Input wb_sel_i is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":146:9:146:17|Input rtc_sda_i is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":146:20:146:28|Input rtc_scl_i is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":152:9:152:22|Input cpu_uart_txd_i is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":150:9:150:20|Input clk_100mhz_i is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":150:23:150:29|Input mode1_i is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":150:32:150:38|Input mode2_i is unused
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syscon.v":150:41:150:47|Input mode3_i is unused
+@N: CL201 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_spi.v":139:0:139:5|Trying to extract state machine for register state
+Extracted state machine for register state
+State machine has 8 reachable states with original encodings of:
+   0000
+   0001
+   0010
+   0011
+   0100
+   0101
+   0110
+   0111
+@W: CL246 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_spi.v":104:13:104:20|Input port bits 31 to 4 of wb_adr_i[31:0] are unused
+
+@W: CL247 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_spi.v":104:13:104:20|Input port bit 0 of wb_adr_i[31:0] is unused
+
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_spi.v":113:6:113:10|Input sck_i is unused
+@N: CL201 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_arbiter.v":208:0:208:5|Trying to extract state machine for register owner
+Extracted state machine for register owner
+State machine has 4 reachable states with original encodings of:
+   00
+   01
+   10
+   11
+@W: CL249 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/wb_arbiter.v":208:0:208:5|Initial value is not supported on state machine owner
+@W: CL159 :"/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/spi_sbus.v":164:6:164:10|Input rst_i is unused

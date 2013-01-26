@@ -1,0 +1,5 @@
+-rem
+-distrce
+-log "ts7500_opencore.log"
+-o "ts7500_opencore.csv"
+-pr "ts7500_opencore.prf"

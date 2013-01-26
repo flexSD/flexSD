@@ -1,0 +1,281 @@
+`timescale 100ps/1ps
+
+module VLIW_sim(
+  
+  clock_200,
+  reset,
+  
+  write_enable,
+  vliw_start,
+  slice_enable,
+  
+  write_address,
+  write_data,
+  
+  coefficient_read_address_1,
+  coefficient_read_address_2,
+
+  state_read_address_1,  
+  state_read_address_2,
+  
+  state_write_address_1,
+  state_write_address_2,
+  
+  ext_bitstream_read_address_1,
+  ext_bitstream_read_address_2,
+
+  sigma_delta_write_address_1,
+  sigma_delta_write_address_2,
+  
+  sigma_delta_storage_trigger_1,
+  sigma_delta_storage_trigger_2,
+  
+  logging_trigger_1,
+  logging_trigger_2,
+  
+  logging_address_1,
+  logging_address_2
+    
+  );
+  
+/* I/O Definitions */
+
+input           clock_200;
+input           reset;
+
+input           write_enable;
+input           vliw_start;      // Enables address counter, begins VLIW operation
+output          slice_enable;
+  
+input    [8:0]  write_address;
+input    [71:0] write_data;
+
+output   [8:0]  coefficient_read_address_1;
+output   [8:0]  coefficient_read_address_2;
+
+output   [3:0]  state_read_address_1;
+output   [3:0]  state_read_address_2;
+  
+output   [3:0]  state_write_address_1;
+output   [3:0]  state_write_address_2;
+
+output   [1:0]  ext_bitstream_read_address_1;
+output   [1:0]  ext_bitstream_read_address_2;
+
+output   [3:0]  sigma_delta_write_address_1;
+output   [3:0]  sigma_delta_write_address_2;
+  
+output          sigma_delta_storage_trigger_1;
+output          sigma_delta_storage_trigger_2;
+  
+output          logging_trigger_1;
+output          logging_trigger_2;
+  
+output   [3:0]  logging_address_1;
+output   [3:0]  logging_address_2;
+
+
+/* Internal Wires and Registers */
+wire    [71:0]  vliw_output;
+reg     [8:0]   address_counter;
+
+// Instantiate counter - counts from 0 to 9 and then loops
+always@(negedge clock_200) begin
+  
+  if(reset) address_counter = 9'd9;       // Always start at address '0' after reset
+  else if(vliw_start) begin
+    
+    if(address_counter == 9'd9) address_counter <= 9'b0;    // Reset to 0 if at maximum count (9)
+    else address_counter <= address_counter + 1'b1;         // Otherwise add 1 to current count
+    
+  end
+  
+end
+  
+lattice_ram_72bit_512 vliw(
+
+.WrAddress(write_address),
+.RdAddress(address_counter),
+.Data(write_data),
+.WE(write_enable),
+.RdClock(clock_200), 
+.RdClockEn(vliw_start),
+.Reset(reset),
+.WrClock(clock_200),
+.WrClockEn(write_enable),
+.Q(vliw_output)
+
+);
+
+/* Pipeline data delay alignment */
+
+// Writes are aligned with the slice enable
+parameter slice_en_delay =     3;   // Slice enable
+parameter sr_adr_delay =       3;   // State read address 
+parameter cr_adr_delay =       3;   // Coefficient read address.
+parameter ext_bit_adr_delay =  3;   // External bitstream address
+
+// Write backs are two clocks behind the reads
+parameter sw_adr_delay =    5;   // State write address
+parameter sdw_adr_delay =   5;   // Sigma delta write address
+parameter sd_store_delay =  5;   // Sigma delta store current value
+parameter log_adr_delay =   5;   // Log address operation
+
+// Delays for slice enable signal
+reg     [slice_en_delay - 1:0]    slice_enable_delay_reg;
+
+// State read and coefficient read are delayed one clock from slice enable
+reg     [8:0]   coefficient_read_address_delay_reg_1     [cr_adr_delay - 1:0];
+reg     [8:0]   coefficient_read_address_delay_reg_2     [cr_adr_delay - 1:0];
+
+reg     [3:0]   state_read_address_delay_reg_1           [sr_adr_delay - 1:0];
+reg     [3:0]   state_read_address_delay_reg_2           [sr_adr_delay - 1:0];
+
+reg     [ext_bit_adr_delay - 1:0]   external_bitstream_address_delay_reg_1;
+reg     [ext_bit_adr_delay - 1:0]   external_bitstream_address_delay_reg_2;
+
+// State and sigma delta write addresses are simply the read addresses from the previous cycle
+reg     [3:0]   state_write_address_delay_reg_1          [sw_adr_delay - 1:0];
+reg     [3:0]   state_write_address_delay_reg_2          [sw_adr_delay - 1:0];
+
+reg     [3:0]   sigma_delta_write_address_delay_reg_1    [sdw_adr_delay - 1:0];
+reg     [3:0]   sigma_delta_write_address_delay_reg_2    [sdw_adr_delay - 1:0];
+
+// Logging and sigma delta store are delayed the same as the write addresses
+reg     [sd_store_delay - 1:0]   sigma_delta_store_delay_reg_1;
+reg     [sd_store_delay - 1:0]   sigma_delta_store_delay_reg_2;
+
+reg     [3:0]   logging_address_delay_reg_1              [log_adr_delay - 1:0];
+reg     [3:0]   logging_address_delay_reg_2              [log_adr_delay - 1:0];
+
+always@(negedge clock_200) begin
+  
+  /* Depth 3 */
+  
+  // Slice enable is the VLIW start signal delayed two clocks
+  slice_enable_delay_reg[2] <= slice_enable_delay_reg[1];
+  slice_enable_delay_reg[1] <= slice_enable_delay_reg[0];
+  slice_enable_delay_reg[0] <= vliw_start;
+  
+  // Delay coefficient read addresses one clock from the slice enable
+  //coefficient_read_address_delay_reg_1[3] <= coefficient_read_address_delay_reg_1[2];
+  coefficient_read_address_delay_reg_1[2] <= coefficient_read_address_delay_reg_1[1];
+  coefficient_read_address_delay_reg_1[1] <= coefficient_read_address_delay_reg_1[0];
+  coefficient_read_address_delay_reg_1[0] <= vliw_output[8:0];
+  
+  //coefficient_read_address_delay_reg_2[3] <= coefficient_read_address_delay_reg_2[2];
+  coefficient_read_address_delay_reg_2[2] <= coefficient_read_address_delay_reg_2[1];
+  coefficient_read_address_delay_reg_2[1] <= coefficient_read_address_delay_reg_2[0];
+  coefficient_read_address_delay_reg_2[0] <= vliw_output[32:25];
+  
+  state_read_address_delay_reg_1[2] <= state_read_address_delay_reg_1[1];
+  state_read_address_delay_reg_1[1] <= state_read_address_delay_reg_1[0];
+  state_read_address_delay_reg_1[0] <= vliw_output[12:9];
+      
+  state_read_address_delay_reg_2[2] <= state_read_address_delay_reg_2[1];
+  state_read_address_delay_reg_2[1] <= state_read_address_delay_reg_2[0];
+  state_read_address_delay_reg_2[0] <= vliw_output[36:33];
+  
+  external_bitstream_address_delay_reg_1[2] <= external_bitstream_address_delay_reg_1[1];
+  external_bitstream_address_delay_reg_1[1] <= external_bitstream_address_delay_reg_1[0];
+  external_bitstream_address_delay_reg_1[0] <= vliw_output[14:13];
+  
+  external_bitstream_address_delay_reg_2[2] <= external_bitstream_address_delay_reg_2[1];
+  external_bitstream_address_delay_reg_2[1] <= external_bitstream_address_delay_reg_2[0];
+  external_bitstream_address_delay_reg_2[0] <= vliw_output[38:37];
+    
+  /* Depth 5 */
+    
+  // State write-back addresses are simply the read addresses delayed two clock cycles (+1 from DRAM read delay, +1 from adder delay)
+  state_write_address_delay_reg_1[4] <= state_write_address_delay_reg_1[3];
+  state_write_address_delay_reg_1[3] <= state_write_address_delay_reg_1[2];
+  state_write_address_delay_reg_1[2] <= state_write_address_delay_reg_1[1];
+  state_write_address_delay_reg_1[1] <= state_write_address_delay_reg_1[0];
+  state_write_address_delay_reg_1[0] <= vliw_output[12:9];
+  
+  state_write_address_delay_reg_2[4] <= state_write_address_delay_reg_2[3];
+  state_write_address_delay_reg_2[3] <= state_write_address_delay_reg_2[2];
+  state_write_address_delay_reg_2[2] <= state_write_address_delay_reg_2[1];
+  state_write_address_delay_reg_2[1] <= state_write_address_delay_reg_2[0];
+  state_write_address_delay_reg_2[0] <= vliw_output[36:33];
+
+  // Sigma delta write back is delayed 2 clocks from read (+1 from DRAM read delay, +1 from adder delay)
+  sigma_delta_write_address_delay_reg_1[4] <= sigma_delta_write_address_delay_reg_1[3];
+  sigma_delta_write_address_delay_reg_1[3] <= sigma_delta_write_address_delay_reg_1[2];
+  sigma_delta_write_address_delay_reg_1[2] <= sigma_delta_write_address_delay_reg_1[1];
+  sigma_delta_write_address_delay_reg_1[1] <= sigma_delta_write_address_delay_reg_1[0];
+  sigma_delta_write_address_delay_reg_1[0] <= vliw_output[18:15];
+
+  sigma_delta_write_address_delay_reg_2[4] <= sigma_delta_write_address_delay_reg_2[3];
+  sigma_delta_write_address_delay_reg_2[3] <= sigma_delta_write_address_delay_reg_2[2];
+  sigma_delta_write_address_delay_reg_2[2] <= sigma_delta_write_address_delay_reg_2[1];
+  sigma_delta_write_address_delay_reg_2[1] <= sigma_delta_write_address_delay_reg_2[0];
+  sigma_delta_write_address_delay_reg_2[0] <= vliw_output[42:39];  
+  
+  // Sigma delta write operation happens with sigma delta write address
+  sigma_delta_store_delay_reg_1[4] <= sigma_delta_store_delay_reg_1[3];
+  sigma_delta_store_delay_reg_1[3] <= sigma_delta_store_delay_reg_1[2];
+  sigma_delta_store_delay_reg_1[2] <= sigma_delta_store_delay_reg_1[1];
+  sigma_delta_store_delay_reg_1[1] <= sigma_delta_store_delay_reg_1[0];
+  sigma_delta_store_delay_reg_1[0] <= vliw_output[19];
+  
+  sigma_delta_store_delay_reg_2[4] <= sigma_delta_store_delay_reg_2[3];
+  sigma_delta_store_delay_reg_2[3] <= sigma_delta_store_delay_reg_2[2];
+  sigma_delta_store_delay_reg_2[2] <= sigma_delta_store_delay_reg_2[1];
+  sigma_delta_store_delay_reg_2[1] <= sigma_delta_store_delay_reg_2[0];
+  sigma_delta_store_delay_reg_2[0] <= vliw_output[43];
+  
+  /*
+  // Logging operation happens at same time as write back
+  logging_trigger_delay_reg_1[4] <= logging_trigger_delay_reg_1[3];
+  logging_trigger_delay_reg_1[3] <= logging_trigger_delay_reg_1[2];
+  logging_trigger_delay_reg_1[2] <= logging_trigger_delay_reg_1[1];
+  logging_trigger_delay_reg_1[1] <= logging_trigger_delay_reg_1[0];
+  logging_trigger_delay_reg_1[0] <= vliw_output[20];
+  
+  logging_trigger_delay_reg_2[4] <= logging_trigger_delay_reg_2[3];
+  logging_trigger_delay_reg_2[3] <= logging_trigger_delay_reg_2[2];
+  logging_trigger_delay_reg_2[2] <= logging_trigger_delay_reg_2[1];
+  logging_trigger_delay_reg_2[1] <= logging_trigger_delay_reg_2[0];
+  logging_trigger_delay_reg_2[0] <= vliw_output[44];
+  */
+  
+  // Logging address happens with logging trigger
+  logging_address_delay_reg_1[4] <= logging_address_delay_reg_1[3];
+  logging_address_delay_reg_1[3] <= logging_address_delay_reg_1[2];
+  logging_address_delay_reg_1[2] <= logging_address_delay_reg_1[1];
+  logging_address_delay_reg_1[1] <= logging_address_delay_reg_1[0];
+  logging_address_delay_reg_1[0] <= vliw_output[24:21];
+  
+  logging_address_delay_reg_2[4] <= logging_address_delay_reg_2[3];
+  logging_address_delay_reg_2[3] <= logging_address_delay_reg_2[2];
+  logging_address_delay_reg_2[2] <= logging_address_delay_reg_2[1];
+  logging_address_delay_reg_2[1] <= logging_address_delay_reg_2[0];
+  logging_address_delay_reg_2[0] <= vliw_output[48:45];
+
+end
+
+// Slice enable
+assign slice_enable = slice_enable_delay_reg[2];
+
+// Slice 1 outputs  
+assign coefficient_read_address_1 =     coefficient_read_address_delay_reg_1[1];
+assign state_read_address_1 =           state_read_address_delay_reg_1[2];
+assign state_write_address_1 =          state_write_address_delay_reg_1[4];
+assign ext_bitstream_read_address_1 =   external_bitstream_address_delay_reg_1[2];
+assign sigma_delta_write_address_1 =    sigma_delta_write_address_delay_reg_1[4];
+assign sigma_delta_storage_trigger_1 =  sigma_delta_store_delay_reg_1[4];
+assign logging_trigger_1 =              1'b0;//logging_trigger_delay_reg_1[4];             
+assign logging_address_1 =              logging_address_delay_reg_1[4];       
+
+// Slice 2 outputs
+assign coefficient_read_address_2 =     coefficient_read_address_delay_reg_2[1];
+assign state_read_address_2 =           state_read_address_delay_reg_2[2];
+assign state_write_address_2 =          state_write_address_delay_reg_2[4];
+assign ext_bitstream_read_address_2 =   external_bitstream_address_delay_reg_2[2];
+assign sigma_delta_write_address_2 =    sigma_delta_write_address_delay_reg_2[4];
+assign sigma_delta_storage_trigger_2 =  sigma_delta_store_delay_reg_2[4];
+assign logging_trigger_2 =              1'b0;//logging_trigger_delay_reg_2[4];
+assign logging_address_2 =              logging_address_delay_reg_2[4];      
+  
+endmodule

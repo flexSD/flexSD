@@ -1,0 +1,28 @@
+SCUBA, Version Diamond_1.2_Production (92)
+Tue May 15 22:42:43 2012
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2011 Lattice Semiconductor Corporation,  All rights reserved.
+
+    Issued command   : /usr/local/diamond/1.2/ispfpga/bin/lin/scuba -w -n lattice_ram_36bit_512 -lang verilog -synth synplify -bus_exp 7 -bb -arch mg5a00 -device LFXP2-5E -type ramdps -raddr_width 9 -rwidth 36 -waddr_width 9 -wwidth 36 -rnum_words 512 -wnum_words 512 -resetmode SYNC -cascade -1 -e 
+    Circuit name     : lattice_ram_36bit_512
+    Module type      : RAM_DP
+    Module Version   : 6.1
+    Ports            : 
+	Inputs       : WrAddress[8:0], RdAddress[8:0], Data[35:0], WE, RdClock, RdClockEn, Reset, WrClock, WrClockEn
+	Outputs      : Q[35:0]
+    I/O buffer       : not inserted
+    EDIF output      : suppressed
+    Verilog output   : lattice_ram_36bit_512.v
+    Verilog template : lattice_ram_36bit_512_tmpl.v
+    Verilog testbench: tb_lattice_ram_36bit_512_tmpl.v
+    Verilog purpose  : for synthesis and simulation
+    Bus notation     : big endian
+    Report output    : lattice_ram_36bit_512.srp
+    Element Usage    :
+       PDPW16KB : 1
+    Estimated Resource Usage:
+            EBR : 1

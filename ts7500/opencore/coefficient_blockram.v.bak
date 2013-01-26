@@ -1,0 +1,114 @@
+`timescale 10ns / 100ps
+/***********************************************************************
+* Module Name: Coefficient Blockram
+* Function: Provides internal storage space for biquad coeffients.
+* Coefficients are written to by the ARM SBUS, and read by the biquad
+* module.  One way communication only in order to remove the requirement
+* of a wishbone arbiter.
+* 
+* 
+***********************************************************************/
+
+module coefficient_blockram(
+
+  wb_clk_i,
+  wb_rst_i,
+
+  sbus_wb_adr_i,
+  sbus_wb_dat_i,
+  sbus_wb_cyc_i,
+  sbus_wb_stb_i,
+  sbus_wb_ack_o,
+  sbus_wb_we_i,
+
+  biquad_wb_adr_i,
+  biquad_wb_dat_o,
+  biquad_wb_cyc_i,
+  biquad_wb_stb_i,
+  biquad_wb_ack_o
+  
+);
+
+/*********************
+* Inputs and Outputs *
+*********************/
+
+//Master clock and reset
+
+input			wb_clk_i, wb_rst_i;
+
+//Wishbone from sbus, unidirectional
+
+input	[10:0]	sbus_wb_adr_i;		//Blockrams require 11 bits of address, but we are doubling the space by using 2 blockrams
+input	[15:0]	sbus_wb_dat_i;		//Only data in is used, unidirectional communication
+input			sbus_wb_cyc_i;
+input			sbus_wb_stb_i;
+output			sbus_wb_ack_o;
+input			sbus_wb_we_i;
+
+//Wishbone from biquad, unidirectional
+
+input	[10:0]	biquad_wb_adr_i;	//Blockrams require 11 bits of address, but we are doubling the space by using 2 blockrams
+output	[15:0]	biquad_wb_dat_o;	//Only data out is used, unidirectional communication
+input			biquad_wb_cyc_i;
+input			biquad_wb_stb_i;
+output			biquad_wb_ack_o;
+
+/*************************
+* Blockram Instantiation *
+*************************/
+
+wire 	[10:0] 	blockram_rdadr_i;
+wire	[10:0]	blockram_wradr_i;
+
+wire	[15:0] 	blockram_data_i;
+wire 	[15:0] 	blockram_data_o;
+
+lattice_ram_16bit biquad_coefficients (
+  .WrAddress(blockram_wradr_i),
+  .RdAddress(blockram_rdadr_i),
+  .Data(blockram_data_i[15:0]),
+  .RdClock(wb_clk_i),
+  .RdClockEn(1'b1),
+  .Reset(1'b0),
+  .WrClock(wb_clk_i),
+  .WrClockEn(sbus_write),
+  .WE(1'b1),
+  .Q(blockram_data_o[15:0])
+);
+
+/********************
+* Wishbone Bus Code *
+********************/
+
+//Wishbone address lines hooked directly to blockram
+assign blockram_rdadr_i = 	sbus_wb_adr_i;
+assign blockram_wradr_i = 	biquad_wb_adr_i;
+
+//Wishbone data lines hooked directly to blockram
+assign blockram_data_i = 	sbus_wb_dat_i;
+assign biquad_wb_dat_o = 	blockram_data_o;
+
+//Ack handler
+
+reg biquad_wb_ack;
+reg sbus_wb_ack;
+
+always @(posedge wb_clk_i) begin
+	
+	biquad_wb_ack <= 1'b0;
+	sbus_wb_ack <= 1'b0;
+  
+	if (biquad_wb_cyc_i && biquad_wb_stb_i && !biquad_wb_ack) begin
+		biquad_wb_ack <= 1'b1;
+	end else if (sbus_wb_cyc_i && sbus_wb_stb_i && sbus_wb_we_i && !sbus_wb_ack) begin
+		sbus_wb_ack <= 1'b1;
+	end
+  
+end
+
+assign biquad_wb_ack_o = 	biquad_wb_ack;
+assign sbus_wb_ack_o = 		sbus_wb_ack;
+
+endmodule
+

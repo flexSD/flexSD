@@ -1,0 +1,270 @@
+`timescale 100ps/1ps
+
+module slice_sim(
+
+read_back,
+read_back_adr,
+
+clock_200,
+clock_20,
+reset,
+slice_enable,
+
+coefficient_read_adr,
+coefficient_write_adr,
+coefficient_write_data,
+coefficient_write_en,
+
+state_write_adr,
+state_read_adr,
+
+log_address,
+
+sigma_delta_storage_trigger,
+sigma_delta_storage_adr,
+
+external_sigma_delta_streams,
+external_bitstream_read_address,
+
+overflow_stage_1,
+overflow_stage_2,
+
+log_value_reconstructed
+
+);
+
+/* Parameters */
+
+parameter           input_bitwidth = 24;
+parameter           full_neg = {1'b1, {(input_bitwidth-1){1'b0}}};
+parameter           full_pos = {1'b0, {(input_bitwidth-1){1'b1}}};
+
+parameter bit_shift = 6;        // Amount to shift the result of the slice operation before writing it back to the state RAM/storing it
+
+/* Inputs and Outputs */
+
+input          read_back;                       // For testbench
+input [3:0]    read_back_adr;
+
+input          clock_200;
+input          clock_20;
+input          reset;
+input          slice_enable;
+
+input [8:0]    coefficient_read_adr;            // From VLIW processor
+input [8:0]    coefficient_write_adr;           // Write port connected to memory window for PC access
+input [35:0]   coefficient_write_data;
+input          coefficient_write_en;
+
+input [3:0]    state_write_adr;
+input [3:0]    state_read_adr;
+
+input [3:0]    log_address;                     // Selects which bit to grab out of the sigma delta bitstream register
+
+input          sigma_delta_storage_trigger;     // Trigger write of current state write-back value to the sigma delta modulator
+input [3:0]    sigma_delta_storage_adr;         // Address of the sigma delta input value storage register to write to
+
+input [3:0]    external_sigma_delta_streams;    // Sigma delta streams from ADC
+input [1:0]    external_bitstream_read_address; // Address of external stream to use
+
+output         overflow_stage_1, overflow_stage_2;
+
+output signed [23:0]        log_value_reconstructed;         // Logging value output, represented as a sigma delta bitstream - also outputted to reconstruction filter for DAC output
+
+/* Internal wires and registers */
+
+wire                  state_write_en;           // Write enable for state RAM
+wire signed [23:0]    state_value;              // Output of the state RAM
+
+wire signed [17:0]    coefficient_A;            // First half of the coefficient read port
+wire signed [17:0]    coefficient_B;            // Second half of the coefficient read port
+wire signed [23:0]    coefficient_A_sign_ext;   // First coefficient sign extended to 24 bits
+wire signed [23:0]    coefficient_B_sign_ext;   // Second coefficient sign extended to 24 bits
+wire                  coefficient_read_clk_en;  // Enables read operation of coefficient RAM, tied to slice enable signal
+
+wire                  ff_sigma_delta_stream;    // Add/subtract control signals for adders
+wire                  fb_sigma_delta_stream;
+
+wire signed [23:0]    add_sub_result_A;         // Intermediate add/sub result (state +/- coefficient A)
+wire signed [23:0]    add_sub_result_B;         // Final add/sub result (result A +/- coefficient B)
+
+wire signed [23:0]    state_write_back_shifted; // Bit shifted value to be written back to the state storage RAM
+
+wire                  add_sub_2_en;             // Output register enable on second add/sub module
+
+wire                  modulator_enable;         // Enable internal sigma delta modulator
+
+wire        [9:0]     bitstream_reg;
+
+/* Clamping to prevent overflow errors */
+
+wire signed [23:0] result0;
+wire overflow_stage_0;
+wire signed [23:0] result0_clamped;
+assign result0_clamped = overflow_stage_0 ? ( ~result0[23] ? full_neg : full_pos ) : result0;
+
+wire signed [23:0] result1_clamped;
+assign result1_clamped = add_sub_result_A;//overflow_stage_1 ? ( ~add_sub_result_A[31] ? full_neg : full_pos ) : add_sub_result_A;
+
+wire signed [23:0] result2_clamped;
+assign result2_clamped = add_sub_result_B;//overflow_stage_2 ? ( ~add_sub_result_B[23] ? full_neg : full_pos ) : add_sub_result_B;
+
+// Parameterized bit shift for state write back value, right shifts by the parameter "bit_shift"s value
+// This bit shift is determined with the filter coefficient
+assign state_write_back_shifted = { {bit_shift{result2_clamped[23]}}, result2_clamped[23:bit_shift] };
+
+wire signed [23:0] state_output_shifted;
+assign state_output_shifted = {  {bit_shift{state_value[23]}}, state_value[23:bit_shift]  };
+
+// Sign extension to 24 bits for 18 bit coefficients (necessesary because state is stored as 24 bits)
+assign coefficient_A_sign_ext = { {6{coefficient_A[17]}}, coefficient_A[17:0] };
+assign coefficient_B_sign_ext = { {6{coefficient_B[17]}}, coefficient_B[17:0] };
+
+/* Pipeline delays for enables
+ *
+ * 0: Coefficient (2 clocks from address/enable to output)
+ * 1: Sigma Delta Read, State Read (1 clock from address/enable to output)
+ * 2: Adder (1 clock from enable to output)
+ * 3: State write, Sigma delta write, Sigma delta storage trigger, logging trigger
+ */
+
+reg enable_register, enable_delayed_1, enable_delayed_2, enable_delayed_3;
+
+always@(negedge clock_200) begin          
+  
+  enable_register <= slice_enable;        // Synchronize enable into negedge clock domain
+  enable_delayed_1 <= enable_register;    // Once cycle delay
+  enable_delayed_2 <= enable_delayed_1;   // Two cycle delay
+  enable_delayed_3 <= enable_delayed_2;   // Three cycle delay
+
+end
+
+/* Enable ties */
+
+// 0 clk delay
+assign coefficient_read_clk_en =    enable_register;
+assign state_read_en =              enable_delayed_1 | read_back;
+assign modulator_enable =           enable_register;
+
+// 1 clk delay
+assign add_sub_2_en =               enable_delayed_2;
+
+// 2 clk delay
+assign state_write_en =             enable_delayed_3;
+
+// Delay TBD
+//assign sd_write_en =                ;
+//assign sd_read_en =                 1'b0;
+
+lattice_ram_24bit_16word state_ram(
+
+.WrAddress(state_write_adr[3:0]), 
+.Data(result2_clamped), 
+.WrClock(clock_200), 
+.WE(state_write_en), 
+.WrClockEn(state_write_en), 
+.RdAddress( ( state_read_adr[3:0] & {4{~read_back}} ) | ( read_back_adr[3:0] & {4{read_back}} ) ),   ///!!!!!!!
+.RdClock(clock_200),
+.RdClockEn(state_read_en),
+.Reset(reset),
+.Q(state_value[23:0])
+
+);
+
+// Flip flop to delay the state output value for the next slice cycle
+
+reg signed [23:0] state_output_shifted_delay0;
+
+always@(negedge clock_200) begin
+  
+  if(reset) begin
+
+    state_output_shifted_delay0 <= 24'b0;
+
+  end else begin
+
+    state_output_shifted_delay0 <= state_output_shifted;
+
+  end
+  
+end
+
+//Second order virtualized sigma delta modulator
+second_order_sigdel_virtualized slice1_sigdel(
+  
+  
+  .clock_200(clock_200),
+  .clock_20(clock_20),
+  .reset(reset),
+  .mod_enable(modulator_enable),
+  
+  .write_address_in(sigma_delta_storage_adr),
+  .write_enable_in(sigma_delta_storage_trigger),
+  
+  .log_address(log_address),
+  .log_value_reconstructed(log_value_reconstructed),  
+  .log_bitstream(fb_sigma_delta_stream),
+  
+  .input_data(state_write_back_shifted[23:0]),
+  .virtualized_bitstream_reg(bitstream_reg),
+  
+  .external_bitstreams_in(external_sigma_delta_streams),
+  .external_bitstream_address(external_bitstream_read_address),
+  .external_bitstream_reg(ff_sigma_delta_stream)
+  
+);
+
+lattice_ram_36bit_512 coefficient_ram(
+
+.WrAddress(coefficient_write_adr[8:0]), 
+.RdAddress(coefficient_read_adr[8:0]), 
+.Data(coefficient_write_data), 
+.WE(coefficient_write_en), 
+.RdClock(clock_200), 
+.RdClockEn(coefficient_read_clk_en),
+.Reset(reset), 
+.WrClock(clock_200),
+.WrClockEn(coefficient_write_en), 
+.Q({coefficient_A[17:0], coefficient_B[17:0]})
+
+);
+
+// Calculate previous previous state output + the current state value
+add_sub_24bit_no_outreg add_sub_0(
+
+.DataA(state_output_shifted_delay0),//state_value[23:0]),
+.DataB(state_value),
+.Add_Sub(1'b1),
+.Result(result0),
+.Overflow(overflow_stage_0)
+
+);
+
+// Calculate state +/- coefficient A
+// Combinational logic
+add_sub_24bit_no_outreg add_sub_1(
+
+.DataA(result0_clamped),//state_value[23:0]),
+.DataB(coefficient_A_sign_ext),
+.Add_Sub(ff_sigma_delta_stream),
+.Result(add_sub_result_A),
+.Overflow(overflow_stage_1)
+
+);
+
+// Calculate result of add_sub_1 +/- coefficient B - feedback coefficient
+// This adder/subtractor has output registers
+add_sub_24bit_with_outreg add_sub_2(
+
+.DataA(result1_clamped),//add_sub_result_A),
+.DataB(coefficient_B_sign_ext),
+.Add_Sub(fb_sigma_delta_stream),
+.Clock(clock_200),
+.Reset(reset),
+.ClockEn(add_sub_2_en), 
+.Result(add_sub_result_B),
+.Overflow(overflow_stage_2)
+
+);
+
+endmodule

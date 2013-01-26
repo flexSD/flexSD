@@ -1,0 +1,937 @@
+          Lattice Mapping Report File for Design Module 'ts7500_top'
+
+Design Information
+------------------
+
+Command line:   map -a LatticeXP2 -p LFXP2-5E -t TQFP144 -s 5 -oc Commercial
+     ts7500_opencore.ngd -o ts7500_opencore_map.ncd -pr ts7500_opencore.prf -mp
+     ts7500_opencore.mrp /usr7/research/dkouba/project_development/verilog/contr
+     olsystem/ts7500/opencore/ts7500_opencore.lpf
+Target Vendor:  LATTICE
+Target Device:  LFXP2-5ETQFP144
+Target Speed:   5
+Mapper:  mg5a00,  version:  Diamond_1.2_Production (92)
+Mapped on:  04/18/12  15:29:48
+
+Design Summary
+--------------
+
+   Number of registers:    188
+      PFU registers:    184
+      PIO registers:    4
+   Number of SLICEs:           194 out of  2376 (8%)
+      SLICEs(logic/ROM):       191 out of  1971 (10%)
+      SLICEs(logic/ROM/RAM):     3 out of   405 (1%)
+          As RAM:            3 out of   405 (1%)
+          As Logic/ROM:      0 out of   405 (0%)
+   Number of logic LUT4s:     215
+   Number of distributed RAM:   3 (6 LUT4s)
+   Number of ripple logic:     60 (120 LUT4s)
+   Number of shift registers:   0
+   Total number of LUT4s:     341
+   Number of PIO sites used: 45 out of 100 (45%)
+   Number of PIO FIXEDDELAY:    0
+   Number of DQSDLLs:  0 out of 2 (0%)
+   Number of PLLs:  2 out of 2 (100%)
+   Number of block RAMs:  0 out of 9 (0%)
+   Number of CLKDIVs:  0 out of 2 (0%)
+   Number of GSRs:  1 out of 1 (100%)
+   JTAG used :      No
+   Readback used :  No
+   Oscillator used :  Yes
+   Startup used :   No
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of
+     distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and
+     ripple logic.
+
+   Number Of Mapped DSP Components:
+   --------------------------------
+   MULT36X36B          0
+   MULT18X18B          0
+   MULT18X18MACB       0
+   MULT18X18ADDSUBB    0
+   MULT18X18ADDSUBSUMB 0
+   MULT9X9B            0
+   MULT9X9ADDSUBB      0
+   MULT9X9ADDSUBSUMB   0
+   --------------------------------
+   Number of Used DSP Sites:  0 out of 24 (0 %)
+   Number of clocks:  6
+
+                                    Page 1
+
+
+
+
+Design:  ts7500_top                                    Date:  04/18/12  15:29:48
+
+Design Summary (cont)
+---------------------
+     Net fpga_25mhz_pad_c: 28 loads, 28 rising, 0 falling (Driver: PIO
+     fpga_25mhz_pad )
+     Net internal_osc_c: 10 loads, 10 rising, 0 falling (Driver:
+     sysconcore/rndosc )
+     Net pll_75mhz: 18 loads, 18 rising, 0 falling (Driver: clkgen/PLLInst_0 )
+     Net spi_clk_pad_c: 38 loads, 12 rising, 26 falling (Driver: PIO spi_clk_pad
+     )
+     Net dio_34: 22 loads, 3 rising, 19 falling (Driver: clkgen2/PLLInst_0 )
+     Net pll_100mhz: 3 loads, 3 rising, 0 falling (Driver: clkgen2/PLLInst_0 )
+   Number of Clock Enables:  15
+     Net sr_load5: 9 loads, 9 LSLICEs
+     Net spi_state_1: 1 loads, 0 LSLICEs
+     Net led_val_1_sqmuxa_i: 1 loads, 1 LSLICEs
+     Net spi/un1_state_2_0_a3: 10 loads, 10 LSLICEs
+     Net spi/state_0: 1 loads, 0 LSLICEs
+     Net spi/bitindexe_0_i: 3 loads, 3 LSLICEs
+     Net sbuscore/un1_first_cyc5_0_i: 1 loads, 1 LSLICEs
+     Net sbuscore/resynccore/un1_wbs_cyc_i: 1 loads, 1 LSLICEs
+     Net sbuscore/wbufcore/rdreq: 2 loads, 2 LSLICEs
+     Net sbuscore/wbufcore/writebuffer/un1_goingfull5_0_i: 1 loads, 1 LSLICEs
+     Net sbuscore/sbuscore/N_49: 3 loads, 3 LSLICEs
+     Net sbuscore/sbuscore/wbm_we3: 2 loads, 2 LSLICEs
+     Net sbuscore/sbuscore/wbm_adr7: 1 loads, 1 LSLICEs
+     Net sbuscore/sbuscore/stb_2_sqmuxa_i: 1 loads, 1 LSLICEs
+     Net sbuscore/sbuscore/N_51: 1 loads, 1 LSLICEs
+   Number of local set/reset loads for net rstn merged into GSR:  49
+   Number of LSRs:  5
+     Net rstn_fb: 1 loads, 1 LSLICEs
+     Net rstn: 17 loads, 15 LSLICEs
+     Net N_450_i: 26 loads, 25 LSLICEs
+     Net spi/fb: 1 loads, 1 LSLICEs
+     Net sbuscore/wrreq_0_sqmuxa: 1 loads, 1 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net VCC: 92 loads
+     Net sbuscore/nshift: 36 loads
+     Net rstn: 29 loads
+     Net N_450_i: 26 loads
+     Net GND: 23 loads
+     Net load_reg: 20 loads
+     Net rst_counter: 17 loads
+     Net sbuscore/sbuscore/wbf_ack_m_s_0: 16 loads
+     Net spi/state_0: 15 loads
+     Net sbuscore/sbuscore/nstate_0: 12 loads
+
+
+
+
+   Number of warnings:  156
+   Number of errors:    0
+
+Design Errors/Warnings
+----------------------
+
+WARNING: Semantic Error: sd_cmd_pad matches no ports in the design.  Occurred at
+     line 102 in "OUTPUT PORT "sd_cmd_pad" LOAD 10.000000 pF ;
+
+                                    Page 2
+
+
+
+
+Design:  ts7500_top                                    Date:  04/18/12  15:29:48
+
+Design Errors/Warnings (cont)
+-----------------------------
+".  Disabled this preference.
+WARNING: Semantic Error: sd_d0_pad matches no ports in the design.  Occurred at
+     line 103 in "OUTPUT PORT "sd_d0_pad" LOAD 10.000000 pF ;
+".  Disabled this preference.
+WARNING: Semantic Error: sd_d1_pad matches no ports in the design.  Occurred at
+     line 104 in "OUTPUT PORT "sd_d1_pad" LOAD 10.000000 pF ;
+".  Disabled this preference.
+WARNING: Semantic Error: sd_d2_pad matches no ports in the design.  Occurred at
+     line 105 in "OUTPUT PORT "sd_d2_pad" LOAD 10.000000 pF ;
+".  Disabled this preference.
+WARNING: Semantic Error: sd_d3_pad matches no ports in the design.  Occurred at
+     line 106 in "OUTPUT PORT "sd_d3_pad" LOAD 10.000000 pF ;
+".  Disabled this preference.
+WARNING: Semantic Error: "sd_cmd_pad" matches no ports in the design.
+     "sd_d0_pad" matches no ports in the design. "sd_d1_pad" matches no ports in
+     the design. "sd_d2_pad" matches no ports in the design. "sd_d3_pad" matches
+     no ports in the design.  Occurred at line 112 in "DEFINE PORT GROUP
+     "sdcard_databus" "sd_cmd_pad"
+"sd_d0_pad"
+"sd_d1_pad"
+"sd_d2_pad"
+"sd_d3_pad" ;
+".  Disabled this preference.
+WARNING: Semantic Error: group "sdcard_databus" doesn't find a match in design.
+     dcs_clk matches no clknets in the design.  Occurred at line 113 in
+     "INPUT_SETUP GROUP "sdcard_databus"1.500000 ns HOLD 4.500000 ns CLKNET
+     "dcs_clk" ;
+".  Disabled this preference.
+WARNING: Semantic Error: dcs_clk matches no clknets in the design.  Occurred at
+     line 114 in "CLOCK_TO_OUT PORT "sd_clk_pad" 8.000000 ns CLKNET "dcs_clk" ;
+".  Disabled this preference.
+WARNING: Semantic Error: group "sdcard_databus" doesn't find a match in design.
+     dcs_clk matches no clknets in the design.  Occurred at line 115 in
+     "CLOCK_TO_OUT GROUP "sdcard_databus" 8.000000 ns CLKNET "dcs_clk" ;
+".  Disabled this preference.
+WARNING: Semantic Error: "spi_boot_done" matches no cells in the design.
+     Occurred at line 116 in "MULTICYCLE FROM CELL "spi_boot_done" 10.000000 X ;
+".  Disabled this preference.
+WARNING: Semantic Error: "sbuscore/sbuscore/so_q" matches no registers in the
+     design.  Occurred at line 127 in "CLOCK_TO_OUT PORT "spi_miso_pad"
+     12.000000 ns MIN 4.000000 ns CLKPORT "spi_clk_pad" FROM
+     "sbuscore/sbuscore/so_q" ;
+".  Disabled this preference.
+WARNING: Semantic Error: dcs_clk matches no clknets in the design.  Occurred at
+     line 129 in "CLOCK_TO_OUT PORT "flash_mosi_pad" 15.000000 ns MIN 2.000000
+     ns CLKNET "dcs_clk" ;
+".  Disabled this preference.
+WARNING: Semantic Error: clk_24mhz_inferred_clock matches no nets in the design.
+     Occurred at line 173 in "FREQUENCY NET "clk_24mhz_inferred_clock" 25.000000
+     MHz PAR_ADJ 2.500000 HOLD_MARGIN 0.200000 nS ;
+".  Disabled this preference.
+WARNING: Port cpu_clkout_pad does not connect to any buffers
+WARNING: Port dio_pad_33 does not connect to any buffers
+WARNING: Port dio_pad_32 does not connect to any buffers
+WARNING: Port dio_pad_31 does not connect to any buffers
+WARNING: Port dio_pad_30 does not connect to any buffers
+
+                                    Page 3
+
+
+
+
+Design:  ts7500_top                                    Date:  04/18/12  15:29:48
+
+Design Errors/Warnings (cont)
+-----------------------------
+WARNING: Port dio_pad_29 does not connect to any buffers
+WARNING: Port dio_pad_28 does not connect to any buffers
+WARNING: Port dio_pad_27 does not connect to any buffers
+WARNING: Port dio_pad_26 does not connect to any buffers
+WARNING: Port dio_pad_25 does not connect to any buffers
+WARNING: Port dio_pad_24 does not connect to any buffers
+WARNING: Port dio_pad_23 does not connect to any buffers
+WARNING: Port dio_pad_22 does not connect to any buffers
+WARNING: Port dio_pad_21 does not connect to any buffers
+WARNING: Port dio_pad_20 does not connect to any buffers
+WARNING: Port dio_pad_19 does not connect to any buffers
+WARNING: Port dio_pad_16 does not connect to any buffers
+WARNING: Port dio_pad_15 does not connect to any buffers
+WARNING: Port dio_pad_14 does not connect to any buffers
+WARNING: Port dio_pad_13 does not connect to any buffers
+WARNING: Port dio_pad_12 does not connect to any buffers
+WARNING: Port dio_pad_11 does not connect to any buffers
+WARNING: Port dio_pad_8 does not connect to any buffers
+WARNING: Port dio_pad_6 does not connect to any buffers
+WARNING: Port cpu_uart_txd_pad does not connect to any buffers
+WARNING: Port gpio_a13_pad does not connect to any buffers
+WARNING: Port gpio_a14_pad does not connect to any buffers
+WARNING: Port gpio_a3_pad does not connect to any buffers
+WARNING: Port gpio_a17_pad does not connect to any buffers
+WARNING: Port gpio_a29_pad does not connect to any buffers
+WARNING: Port int28_pad does not connect to any buffers
+WARNING: Port sd_d0_pad does not connect to any buffers
+WARNING: Port sd_d1_pad does not connect to any buffers
+WARNING: Port sd_d2_pad does not connect to any buffers
+WARNING: Port sd_d3_pad does not connect to any buffers
+WARNING: Port sd_cmd_pad does not connect to any buffers
+WARNING: Port rtc_int1_pad does not connect to any buffers
+WARNING: Port flash_miso_pad does not connect to any buffers
+WARNING: Port dio_pad_11 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (47): Error in IOBUF PORT "dio_pad_11"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=FAST ;
+: Port "dio_pad_11" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_12 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (48): Error in IOBUF PORT "dio_pad_12"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW ;
+: Port "dio_pad_12" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_13 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (49): Error in IOBUF PORT "dio_pad_13"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=FAST PCICLAMP=OFF ;
+: Port "dio_pad_13" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_14 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (50): Error in IOBUF PORT "dio_pad_14"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=FAST PCICLAMP=OFF ;
+: Port "dio_pad_14" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_15 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (51): Error in IOBUF PORT "dio_pad_15"
+
+                                    Page 4
+
+
+
+
+Design:  ts7500_top                                    Date:  04/18/12  15:29:48
+
+Design Errors/Warnings (cont)
+-----------------------------
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW PCICLAMP=OFF ;
+: Port "dio_pad_15" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_16 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (52): Error in IOBUF PORT "dio_pad_16"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW PCICLAMP=OFF ;
+: Port "dio_pad_16" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_19 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (55): Error in IOBUF PORT "dio_pad_19"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW ;
+: Port "dio_pad_19" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_20 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (56): Error in IOBUF PORT "dio_pad_20"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW PCICLAMP=OFF ;
+: Port "dio_pad_20" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_21 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (57): Error in IOBUF PORT "dio_pad_21"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW ;
+: Port "dio_pad_21" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_22 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (58): Error in IOBUF PORT "dio_pad_22"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW ;
+: Port "dio_pad_22" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_23 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (59): Error in IOBUF PORT "dio_pad_23"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW ;
+: Port "dio_pad_23" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_24 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (60): Error in IOBUF PORT "dio_pad_24"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW ;
+: Port "dio_pad_24" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_25 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (61): Error in IOBUF PORT "dio_pad_25"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW PCICLAMP=OFF ;
+: Port "dio_pad_25" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_26 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (62): Error in IOBUF PORT "dio_pad_26"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW PCICLAMP=OFF ;
+: Port "dio_pad_26" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_6 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (64): Error in IOBUF PORT "dio_pad_6"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW ;
+: Port "dio_pad_6" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_8 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (66): Error in IOBUF PORT "dio_pad_8"
+     IO_TYPE=LVCMOS33 PULLMODE=NONE SLEWRATE=SLOW ;
+
+                                    Page 5
+
+
+
+
+Design:  ts7500_top                                    Date:  04/18/12  15:29:48
+
+Design Errors/Warnings (cont)
+-----------------------------
+: Port "dio_pad_8" does not exist in the design.. Disabled this preference.
+WARNING: Port gpio_a17_pad does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (70): Error in IOBUF PORT "gpio_a17_pad"
+     IO_TYPE=LVCMOS33 PULLMODE=NONE PCICLAMP=OFF ;
+: Port "gpio_a17_pad" does not exist in the design.. Disabled this preference.
+WARNING: Port gpio_a3_pad does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (74): Error in IOBUF PORT "gpio_a3_pad"
+     IO_TYPE=LVCMOS33 PULLMODE=NONE PCICLAMP=OFF ;
+: Port "gpio_a3_pad" does not exist in the design.. Disabled this preference.
+WARNING: Port cpu_uart_txd_pad does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (84): Error in IOBUF PORT "cpu_uart_txd_pad"
+     IO_TYPE=LVCMOS33 PULLMODE=NONE PCICLAMP=OFF ;
+: Port "cpu_uart_txd_pad" does not exist in the design.. Disabled this
+     preference.
+WARNING: Port sd_cmd_pad does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (97): Error in IOBUF PORT "sd_cmd_pad"
+     IO_TYPE=LVCMOS33 PCICLAMP=OFF PULLMODE=UP SLEWRATE=FAST DRIVE=12 ;
+: Port "sd_cmd_pad" does not exist in the design.. Disabled this preference.
+WARNING: Port sd_d0_pad does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (98): Error in IOBUF PORT "sd_d0_pad"
+     IO_TYPE=LVCMOS33 PCICLAMP=OFF PULLMODE=UP SLEWRATE=FAST DRIVE=12 ;
+: Port "sd_d0_pad" does not exist in the design.. Disabled this preference.
+WARNING: Port sd_d1_pad does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (99): Error in IOBUF PORT "sd_d1_pad"
+     IO_TYPE=LVCMOS33 PCICLAMP=OFF PULLMODE=UP SLEWRATE=FAST DRIVE=12 ;
+: Port "sd_d1_pad" does not exist in the design.. Disabled this preference.
+WARNING: Port sd_d2_pad does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (100): Error in IOBUF PORT "sd_d2_pad"
+     IO_TYPE=LVCMOS33 PCICLAMP=OFF PULLMODE=UP SLEWRATE=FAST DRIVE=12 ;
+: Port "sd_d2_pad" does not exist in the design.. Disabled this preference.
+WARNING: Port sd_d3_pad does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (101): Error in IOBUF PORT "sd_d3_pad"
+     IO_TYPE=LVCMOS33 PCICLAMP=OFF PULLMODE=UP SLEWRATE=FAST DRIVE=12 ;
+: Port "sd_d3_pad" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_27 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (159): Error in IOBUF PORT "dio_pad_27"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW ;
+: Port "dio_pad_27" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_28 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (160): Error in IOBUF PORT "dio_pad_28"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW PCICLAMP=OFF ;
+: Port "dio_pad_28" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_29 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (161): Error in IOBUF PORT "dio_pad_29"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW PCICLAMP=OFF ;
+
+                                    Page 6
+
+
+
+
+Design:  ts7500_top                                    Date:  04/18/12  15:29:48
+
+Design Errors/Warnings (cont)
+-----------------------------
+: Port "dio_pad_29" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_30 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (162): Error in IOBUF PORT "dio_pad_30"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW PCICLAMP=OFF ;
+: Port "dio_pad_30" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_31 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (163): Error in IOBUF PORT "dio_pad_31"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW PCICLAMP=OFF ;
+: Port "dio_pad_31" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_32 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (164): Error in IOBUF PORT "dio_pad_32"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW PCICLAMP=OFF ;
+: Port "dio_pad_32" does not exist in the design.. Disabled this preference.
+WARNING: Port dio_pad_33 does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (165): Error in IOBUF PORT "dio_pad_33"
+     IO_TYPE=LVCMOS33 PULLMODE=UP SLEWRATE=SLOW PCICLAMP=OFF ;
+: Port "dio_pad_33" does not exist in the design.. Disabled this preference.
+WARNING: Port flash_miso_pad does not connect to any buffers
+WARNING: /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/
+     opencore/ts7500_opencore.lpf (179): Error in IOBUF PORT "flash_miso_pad"
+     IO_TYPE=LVCMOS33 PULLMODE=NONE SLEWRATE=FAST PCICLAMP=OFF ;
+: Port "flash_miso_pad" does not exist in the design.. Disabled this preference.
+WARNING: Preference parsing results:  45 semantic errors detected
+WARNING: There are errors in the preference file, "/usr7/research/dkouba/project
+     _development/verilog/controlsystem/ts7500/opencore/ts7500_opencore.lpf".
+WARNING: Using local reset signal 'rstn' to infer global GSR net.
+WARNING: IO buffer missing for top level port cpu_clkout_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](33)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](32)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](31)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](30)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](29)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](28)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](27)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](26)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](25)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](24)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](23)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](22)...logic will be
+     discarded.
+
+                                    Page 7
+
+
+
+
+Design:  ts7500_top                                    Date:  04/18/12  15:29:48
+
+Design Errors/Warnings (cont)
+-----------------------------
+WARNING: IO buffer missing for top level port dio_pad[40:0](21)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](20)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](19)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](16)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](15)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](14)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](13)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](12)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](11)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](8)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port dio_pad[40:0](6)...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port cpu_uart_txd_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port gpio_a13_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port gpio_a14_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port gpio_a3_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port gpio_a17_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port gpio_a29_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port int28_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port sd_d0_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port sd_d1_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port sd_d2_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port sd_d3_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port sd_cmd_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port rtc_int1_pad...logic will be
+     discarded.
+WARNING: IO buffer missing for top level port flash_miso_pad...logic will be
+     discarded.
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+------------+------------+
+| IO Name             | Direction | Levelmode | IO         | FIXEDDELAY |
+
+                                    Page 8
+
+
+
+
+Design:  ts7500_top                                    Date:  04/18/12  15:29:48
+
+IO (PIO) Attributes (cont)
+--------------------------
+|                     |           |  IO_TYPE  | Register   |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_7           | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| clk_32khz_pad       | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| fpga_25mhz_pad      | INPUT     | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| flash_mosi_pad      | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| flash_clk_pad       | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| ser_flash_cs_padn   | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| ser_flash_wp_padn   | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| rtc_scl_pad         | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| rtc_sda_pad         | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| eth_right_ledn_pad  | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| eth_left_ledn_pad   | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| green_led_pad       | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| red_led_pad         | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| sd_clk_pad          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| en_sd_power_pad     | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| wd_resetn_pad       | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| un_reset_pad        | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| gpio_a23_pad        | INPUT     | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| gpio_a22_pad        | INPUT     | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| gpio_a28_pad        | INPUT     | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| gpio_a16_pad        | INPUT     | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| gpio_a15_pad        | INPUT     | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| gpio_a1_pad         | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| gpio_a0_pad         | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| spi_miso_pad        | OUTPUT    | LVCMOS33  | OUT        |            |
++---------------------+-----------+-----------+------------+------------+
+| spi_mosi_pad        | INPUT     | LVCMOS33  | IN         |            |
++---------------------+-----------+-----------+------------+------------+
+| spi_clk_pad         | INPUT     | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+
+                                    Page 9
+
+
+
+
+Design:  ts7500_top                                    Date:  04/18/12  15:29:48
+
+IO (PIO) Attributes (cont)
+--------------------------
+| cpu_uart_rxd_pad    | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_40          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_39          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_38          | OUTPUT    | LVCMOS33  | OUT        |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_37          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_36          | OUTPUT    | LVCMOS33  | OUT        |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_35          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_34          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_18          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_17          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_10          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_9           | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_5           | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_4           | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_3           | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_2           | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_1           | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| dio_pad_0           | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+
+Removed logic
+-------------
+
+Block sbuscore/sbuscore/wbm_adr_2 undriven or does not drive anything - clipped.
+Block sbuscore/sbuscore/wbm_adr_1 undriven or does not drive anything - clipped.
+Block sbuscore/sbuscore/wbm_adr_0 undriven or does not drive anything - clipped.
+Block sbuscore/wbufcore/writebuffer/fifomem_ram_3/RAM0 undriven or does not
+     drive anything - clipped.
+Signal spi_clk_pad_c_i was merged into signal spi_clk_pad_c
+Signal spi_cmd_CN was merged into signal dio_34
+Signal spi_state_i_1 was merged into signal spi_state_1
+Signal spi_state_i_0 was merged into signal spi/state_0
+Signal clkgen/DPHASE3_inv undriven or does not drive anything - clipped.
+Signal rst_counter_s_0_S1_15 undriven or does not drive anything - clipped.
+Signal rst_counter_s_0_COUT_15 undriven or does not drive anything - clipped.
+Signal timer_cry_0_S0_0 undriven or does not drive anything - clipped.
+Signal timer_s_0_S1_31 undriven or does not drive anything - clipped.
+Signal timer_s_0_COUT_31 undriven or does not drive anything - clipped.
+Signal value_reg_cry_0_S0_0 undriven or does not drive anything - clipped.
+
+                                   Page 10
+
+
+
+
+Design:  ts7500_top                                    Date:  04/18/12  15:29:48
+
+Removed logic (cont)
+--------------------
+Signal value_reg_s_0_S1_15 undriven or does not drive anything - clipped.
+Signal value_reg_s_0_COUT_15 undriven or does not drive anything - clipped.
+Signal ramp_ctr_2_cry_0_0_S1 undriven or does not drive anything - clipped.
+Signal ramp_ctr_2_cry_0_0_S0 undriven or does not drive anything - clipped.
+Signal ramp_ctr_2_cry_25_0_COUT undriven or does not drive anything - clipped.
+Signal sr_load4_0_0_S1 undriven or does not drive anything - clipped.
+Signal sr_load4_0_0_S0 undriven or does not drive anything - clipped.
+Signal sr_load4_1_0_S1 undriven or does not drive anything - clipped.
+Signal sr_load4_1_0_S0 undriven or does not drive anything - clipped.
+Signal sr_load4_3_0_S1 undriven or does not drive anything - clipped.
+Signal sr_load4_3_0_S0 undriven or does not drive anything - clipped.
+Signal sr_load4_5_0_S1 undriven or does not drive anything - clipped.
+Signal sr_load4_5_0_S0 undriven or does not drive anything - clipped.
+Signal sr_load4_6_0_S1 undriven or does not drive anything - clipped.
+Signal sr_load4_6_0_COUT undriven or does not drive anything - clipped.
+Signal clkgen/CLKOK2 undriven or does not drive anything - clipped.
+Signal clkgen/CLKOK undriven or does not drive anything - clipped.
+Signal clkgen/pll_75mhz_shifted undriven or does not drive anything - clipped.
+Signal clkgen2/CLKINTFB undriven or does not drive anything - clipped.
+Signal clkgen2/CLKOS undriven or does not drive anything - clipped.
+Signal sbuscore/sbuscore/pstate_cry_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal sbuscore/sbuscore/pstate_cry_0_COUT_3 undriven or does not drive anything
+     - clipped.
+Signal sbuscore/wbufcore/writebuffer/fifomem_ram_17 undriven or does not drive
+     anything - clipped.
+Signal sbuscore/wbufcore/writebuffer/fifomem_ram_15 undriven or does not drive
+     anything - clipped.
+Signal sbuscore/wbufcore/writebuffer/fifomem_ram_16 undriven or does not drive
+     anything - clipped.
+Signal spi/bitindex_cry_0_S0_0 undriven or does not drive anything - clipped.
+Signal spi/bitindex_cry_0_COUT_3 undriven or does not drive anything - clipped.
+Signal rst_counter_cry_0_S0_0 undriven or does not drive anything - clipped.
+Block spi_clk_pad_pad_RNI90L2 was optimized away.
+Block spi/state_1__CN was optimized away.
+Block spi/state_RNIA82F_1 was optimized away.
+Block spi/state_RNI942F_0 was optimized away.
+Block clkgen/INV_0 was optimized away.
+
+Memory Usage
+------------
+
+/sbuscore/wbufcore/writebuffer/fifomem_ram_3:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/sbuscore/wbufcore/writebuffer/fifomem_ram_3/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+
+
+
+
+
+                                   Page 11
+
+
+
+
+Design:  ts7500_top                                    Date:  04/18/12  15:29:48
+
+PLL/DLL Summary
+---------------
+
+PLL 1:                                     Pin/Node Value
+  PLL Instance Name:                                clkgen2/PLLInst_0
+  PLL Type:                                         EPLLD
+  Input Clock:                             PIN      fpga_25mhz_pad_c
+  Output Clock(P):                         NODE     pll_100mhz
+  Output Clock(S):                                  NONE
+  Output Clock(K):                         PIN,NODE dio_34
+  PLL Feedback Signal:                     NODE     pll_100mhz
+  PLL Reset Signal:                                 NONE
+  PLL K Divider Reset Signal:                       NONE
+  PLL LOCK Signal:                         NODE     lock2
+  Dynamic Phase Adjust Input 0:                     NONE
+  Dynamic Phase Adjust Input 1:                     NONE
+  Dynamic Phase Adjust Input 2:                     NONE
+  Dynamic Phase Adjust Input 3:                     NONE
+  Dynamic Duty Adjust Input 0:                      NONE
+  Dynamic Duty Adjust Input 1:                      NONE
+  Dynamic Duty Adjust Input 2:                      NONE
+  Dynamic Duty Adjust Input 3:                      NONE
+  Input Clock Frequency (MHz):                      25.0000
+  Output Clock(P) Frequency (MHz):                  100.0000
+  Output Clock(K) Frequency (MHz):                  50.0000
+  Output Clock(P) Actual Frequency:                 100.0000
+  CLKOP BYPASS:                                     DISABLED
+  CLKOS BYPASS:                                     DISABLED
+  CLKOK BYPASS:                                     DISABLED
+  CLKI Divider:                                     1
+  CLKFB Divider:                                    4
+  CLKOP Divider:                                    8
+  CLKOK Divider:                                    2
+  CLKOS Phase Shift (degree):                       0.0
+  CLKOS Duty Cycle (*1/16):                         8
+  Phase_Duty Control:                               STATIC
+  FB_MODE:                                          NONE
+PLL 2:                                     Pin/Node Value
+  PLL Instance Name:                                clkgen/PLLInst_0
+  PLL Type:                                         EHXPLLE
+  Input Clock:                             PIN      fpga_25mhz_pad_c
+  Output Clock(P):                         NODE     pll_75mhz
+  Output Clock(K2):                                 NONE
+  Output Clock(S):                                  NONE
+  Output Clock(K):                                  NONE
+  PLL Feedback Signal:                     NODE     clkgen/CLKFB_t
+  PLL Reset Signal:                                 NONE
+  PLL K Divider Reset Signal:                       NONE
+  PLL LOCK Signal:                         NODE     lock
+  Dynamic CLKOS Fine Delay Adjust Signal:  NODE     VCC
+  Dynamic Phase Adjust Input 0:            NODE     VCC
+  Dynamic Phase Adjust Input 1:                     NONE
+  Dynamic Phase Adjust Input 2:                     NONE
+  Dynamic Phase Adjust Input 3:            NODE     VCC
+  Dynamic Duty Adjust Input 0:             NODE     VCC
+  Dynamic Duty Adjust Input 1:                      NONE
+  Dynamic Duty Adjust Input 2:                      NONE
+  Dynamic Duty Adjust Input 3:                      NONE
+
+                                   Page 12
+
+
+
+
+Design:  ts7500_top                                    Date:  04/18/12  15:29:48
+
+PLL/DLL Summary (cont)
+----------------------
+  Dynamic Power Down Signal:                        NONE
+  Input Clock Frequency (MHz):                      25.0000
+  Output Clock(P) Frequency (MHz):                  75.0000
+  Output Clock(K) Frequency (MHz):                  NA
+  Output Clock(K2) Frequency (MHz):                 NA
+  Output Clock(P) Actual Frequency:                 75.0000
+  Output Clock(P) Frequency Tolerance:              NONE
+  CLKOP BYPASS:                                     DISABLED
+  CLKOS BYPASS:                                     DISABLED
+  CLKOK BYPASS:                                     DISABLED
+  CLKI Divider:                                     1
+  CLKFB Divider:                                    3
+  CLKOP Divider:                                    8
+  CLKOK Divider:                                    2
+  CLKOS Phase Shift (degree):                       0.0
+  CLKOS Duty Cycle (*1/16):                         8
+  Phase_Duty Control:                               DYNAMIC
+  FB_MODE:                                          NONE
+  CLKOPDutyTrimPolarity:                            FALLING
+  CLKOPDutyTrimPolarityDelay:                       0
+  CLKOSDutyTrimPolarity:                            RISING
+  CLKOSDutyTrimPolarityDelay:                       0
+
+OSC Summary
+-----------
+
+OSC 1:                                     Pin/Node Value
+  OSC Instance Name:                                sysconcore/rndosc
+  OSC Type:                                         OSCE
+  OSC Output:                              NODE     internal_osc_c
+  OSC Nominal Frequency (MHz):                      3.1
+
+ASIC Components
+---------------
+
+Instance Name: sysconcore/rndosc
+         Type: OSCE
+Instance Name: clkgen2/PLLInst_0
+         Type: EPLLD
+Instance Name: clkgen/PLLInst_0
+         Type: EHXPLLE
+
+GSR Usage
+---------
+
+GSR Component:
+   The local reset signal 'rstn' of the design has been inferred as Global Set
+        Reset (GSR). The reset signal used for GSR control is 'rstn'.
+
+GSR Property:
+   The design components with GSR property set to ENABLED will respond to global
+        set reset while the components with GSR property set to DISABLED will
+        not.
+
+Components on inferred reset domain with GSR Property disabled
+--------------------------------------------------------------
+
+These components have the GSR property set to DISABLED and are on the inferred
+     reset domain. The components will respond to the reset signal 'rstn' via
+
+                                   Page 13
+
+
+
+
+Design:  ts7500_top                                    Date:  04/18/12  15:29:48
+
+GSR Usage (cont)
+----------------
+     the local reset on the component and not the GSR component.
+
+Type and number of components of the type:
+   Register = 27
+
+Type and instance name of component:
+   Register : spi_shiftreg_outputreg_clkio
+   Register : spi/cmd
+   Register : spi/state_0
+   Register : spi/shiftreg_clr
+   Register : spi/data_0
+   Register : spi/data_1
+   Register : spi/data_2
+   Register : spi/data_3
+   Register : spi/data_4
+   Register : spi/data_5
+   Register : spi/data_6
+   Register : spi/data_7
+   Register : spi/data_8
+   Register : spi/data_9
+   Register : spi/data_10
+   Register : spi/data_11
+   Register : spi/data_12
+   Register : spi/data_13
+   Register : spi/data_14
+   Register : spi/data_15
+   Register : spi/data_16
+   Register : pga/clk_accumulator_3
+   Register : pga/pga_clk_o
+   Register : pga/clk_accumulator_0
+   Register : pga/clk_accumulator_1
+   Register : pga/clk_accumulator_2
+   Register : spi_spi_datio
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 0 secs
+   Total REAL Time: 0 secs
+   Peak Memory Usage: 62 MB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   Page 14
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995
+     AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent
+     Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems
+     All rights reserved.
+Copyright (c) 2002-2011 Lattice Semiconductor
+     Corporation,  All rights reserved.

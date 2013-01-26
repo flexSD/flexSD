@@ -1,0 +1,184 @@
+BitPort dio_pad[35] - has output constraint of 0.93ns w.r.t. clock System:r 
+BitPort dio_pad[36] - has output constraint of 1.72ns w.r.t. clock System:r 
+BitPort dio_pad[37] - has output constraint of 1.72ns w.r.t. clock System:r 
+BitPort dio_pad[38] - has output constraint of 1.72ns w.r.t. clock System:r 
+BitPort spi_mosi_pad - has input  constraint of 0.89ns w.r.t. clock System:r 
+BitPort spi_miso_pad - has output constraint of 1.72ns w.r.t. clock System:r 
+BitPort gpio_a22_pad - has input  constraint of 0.89ns w.r.t. clock System:r 
+BitPort gpio_a23_pad - has input  constraint of 2.72ns w.r.t. clock System:r 
+BitPort un_reset_pad - has output constraint of 1.56ns w.r.t. clock System:r 
+BitPort eth_left_ledn_pad - has output constraint of 2.72ns w.r.t. clock System:r 
+BitPort eth_right_ledn_pad - has output constraint of 2.72ns w.r.t. clock System:r 
+BitPort ser_flash_wp_padn - has output constraint of 1.56ns w.r.t. clock System:r 
+BitPort flash_mosi_pad - has output constraint of 1.72ns w.r.t. clock System:r 
+
+
+##### START OF TIMING REPORT #####[
+# Timing Report written on Wed Apr 18 15:29:41 2012
+#
+
+
+Top view:               ts7500_top
+Requested Frequency:    151.8 MHz
+Wire load mode:         top
+Paths requested:        3
+Constraint File(s):    
+@N: MT320 |This timing report estimates place and route data. Please look at the place and route timing report for final timing..
+
+
+Performance Summary 
+*******************
+
+
+Worst slack in design: 0.000
+
+                                                         Requested     Estimated     Requested     Estimated                Clock        Clock                
+Starting Clock                                           Frequency     Frequency     Period        Period        Slack      Type         Group                
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+pll2|CLKOP_inferred_clock                                719.5 MHz     611.5 MHz     1.390         1.635         -0.245     inferred     Autoconstr_clkgroup_4
+pll|CLKOP_inferred_clock                                 250.7 MHz     213.1 MHz     3.989         4.693         -0.704     inferred     Autoconstr_clkgroup_1
+syscon_3s_29952_0_5_Z1|internal_osc_o_inferred_clock     328.7 MHz     279.4 MHz     3.042         3.579         -0.537     inferred     Autoconstr_clkgroup_2
+ts7500_top|fpga_25mhz_pad                                224.7 MHz     191.0 MHz     4.450         5.236         -0.785     inferred     Autoconstr_clkgroup_0
+ts7500_top|spi_clk_pad                                   151.8 MHz     85.1 MHz      6.586         11.755        -2.585     inferred     Autoconstr_clkgroup_3
+System                                                   235.5 MHz     200.2 MHz     4.246         4.995         -0.749     system       system_clkgroup      
+==============================================================================================================================================================
+
+
+
+Clock Relationships
+*******************
+
+Clocks                                                                                                      |    rise  to  rise   |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Starting                                              Ending                                                |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+System                                                System                                                |  0.000       0.000  |  No paths    -      |  No paths    -      |  No paths    -    
+System                                                syscon_3s_29952_0_5_Z1|internal_osc_o_inferred_clock  |  0.000       0.130  |  No paths    -      |  No paths    -      |  No paths    -    
+System                                                ts7500_top|spi_clk_pad                                |  0.000       1.309  |  No paths    -      |  0.000       2.325  |  No paths    -    
+System                                                pll2|CLKOP_inferred_clock                             |  0.000       2.375  |  No paths    -      |  No paths    -      |  No paths    -    
+ts7500_top|fpga_25mhz_pad                             System                                                |  0.000       0.860  |  No paths    -      |  No paths    -      |  No paths    -    
+ts7500_top|fpga_25mhz_pad                             ts7500_top|fpga_25mhz_pad                             |  0.000       0.913  |  No paths    -      |  No paths    -      |  No paths    -    
+pll|CLKOP_inferred_clock                              System                                                |  0.000       2.931  |  No paths    -      |  No paths    -      |  No paths    -    
+pll|CLKOP_inferred_clock                              pll|CLKOP_inferred_clock                              |  0.000       0.913  |  No paths    -      |  No paths    -      |  No paths    -    
+syscon_3s_29952_0_5_Z1|internal_osc_o_inferred_clock  System                                                |  0.000       1.018  |  No paths    -      |  No paths    -      |  No paths    -    
+syscon_3s_29952_0_5_Z1|internal_osc_o_inferred_clock  ts7500_top|fpga_25mhz_pad                             |  Diff grp    -      |  No paths    -      |  No paths    -      |  No paths    -    
+syscon_3s_29952_0_5_Z1|internal_osc_o_inferred_clock  syscon_3s_29952_0_5_Z1|internal_osc_o_inferred_clock  |  0.000       0.686  |  No paths    -      |  No paths    -      |  No paths    -    
+ts7500_top|spi_clk_pad                                System                                                |  0.000       2.819  |  No paths    -      |  No paths    -      |  No paths    -    
+ts7500_top|spi_clk_pad                                ts7500_top|spi_clk_pad                                |  0.000       0.627  |  0.000       0.816  |  3.293       3.997  |  3.293       3.979
+ts7500_top|spi_clk_pad                                pll2|CLKOP_inferred_clock                             |  No paths    -      |  No paths    -      |  No paths    -      |  Diff grp    -    
+pll2|CLKOP_inferred_clock                             ts7500_top|spi_clk_pad                                |  No paths    -      |  No paths    -      |  Diff grp    -      |  No paths    -    
+pll2|CLKOP_inferred_clock                             pll2|CLKOP_inferred_clock                             |  0.000       1.871  |  No paths    -      |  No paths    -      |  No paths    -    
+==================================================================================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+
+
+Input Ports: 
+
+Port                 Starting            User           Arrival     Required          
+Name                 Reference           Constraint     Time        Time         Slack
+                     Clock                                                            
+--------------------------------------------------------------------------------------
+cpu_clkout_pad       NA                  NA             NA          NA           NA   
+cpu_uart_txd_pad     NA                  NA             NA          NA           NA   
+dio_pad[6]           NA                  NA             NA          NA           NA   
+dio_pad[8]           NA                  NA             NA          NA           NA   
+dio_pad[11]          NA                  NA             NA          NA           NA   
+dio_pad[12]          NA                  NA             NA          NA           NA   
+dio_pad[13]          NA                  NA             NA          NA           NA   
+dio_pad[14]          NA                  NA             NA          NA           NA   
+dio_pad[15]          NA                  NA             NA          NA           NA   
+dio_pad[16]          NA                  NA             NA          NA           NA   
+dio_pad[19]          NA                  NA             NA          NA           NA   
+dio_pad[20]          NA                  NA             NA          NA           NA   
+dio_pad[21]          NA                  NA             NA          NA           NA   
+dio_pad[22]          NA                  NA             NA          NA           NA   
+dio_pad[23]          NA                  NA             NA          NA           NA   
+dio_pad[24]          NA                  NA             NA          NA           NA   
+dio_pad[25]          NA                  NA             NA          NA           NA   
+dio_pad[26]          NA                  NA             NA          NA           NA   
+dio_pad[27]          NA                  NA             NA          NA           NA   
+dio_pad[28]          NA                  NA             NA          NA           NA   
+dio_pad[29]          NA                  NA             NA          NA           NA   
+dio_pad[30]          NA                  NA             NA          NA           NA   
+dio_pad[31]          NA                  NA             NA          NA           NA   
+dio_pad[32]          NA                  NA             NA          NA           NA   
+dio_pad[33]          NA                  NA             NA          NA           NA   
+flash_miso_pad       NA                  NA             NA          NA           NA   
+fpga_25mhz_pad       NA                  NA             NA          NA           NA   
+gpio_a3_pad          NA                  NA             NA          NA           NA   
+gpio_a13_pad         NA                  NA             NA          NA           NA   
+gpio_a14_pad         NA                  NA             NA          NA           NA   
+gpio_a15_pad         System (rising)     NA             0.000       -2.352            
+gpio_a16_pad         System (rising)     NA             0.000       -2.325            
+gpio_a17_pad         NA                  NA             NA          NA           NA   
+gpio_a22_pad         System (rising)     NA             0.000       -3.330            
+gpio_a23_pad         System (rising)     NA             0.000       -3.330            
+gpio_a28_pad         NA                  NA             NA          NA           NA   
+gpio_a29_pad         NA                  NA             NA          NA           NA   
+int28_pad            NA                  NA             NA          NA           NA   
+rtc_int1_pad         NA                  NA             NA          NA           NA   
+sd_cmd_pad           NA                  NA             NA          NA           NA   
+sd_d0_pad            NA                  NA             NA          NA           NA   
+sd_d1_pad            NA                  NA             NA          NA           NA   
+sd_d2_pad            NA                  NA             NA          NA           NA   
+sd_d3_pad            NA                  NA             NA          NA           NA   
+spi_clk_pad          NA                  NA             NA          NA           NA   
+spi_mosi_pad         System (rising)     NA             0.000       -1.309            
+======================================================================================
+
+
+Output Ports: 
+
+Port                   Starting                              User           Arrival     Required          
+Name                   Reference                             Constraint     Time        Time         Slack
+                       Clock                                                                              
+----------------------------------------------------------------------------------------------------------
+clk_32khz_pad          NA                                    NA             NA          NA           NA   
+cpu_uart_rxd_pad       NA                                    NA             NA          NA           NA   
+dio_pad[0]             NA                                    NA             NA          NA           NA   
+dio_pad[1]             NA                                    NA             NA          NA           NA   
+dio_pad[2]             NA                                    NA             NA          NA           NA   
+dio_pad[3]             NA                                    NA             NA          NA           NA   
+dio_pad[4]             NA                                    NA             NA          NA           NA   
+dio_pad[5]             NA                                    NA             NA          NA           NA   
+dio_pad[7]             NA                                    NA             NA          NA           NA   
+dio_pad[9]             NA                                    NA             NA          NA           NA   
+dio_pad[10]            NA                                    NA             NA          NA           NA   
+dio_pad[17]            NA                                    NA             NA          NA           NA   
+dio_pad[18]            NA                                    NA             NA          NA           NA   
+dio_pad[34]            System (rising)                       NA             2.115       0.000             
+dio_pad[35]            System (rising)                       NA             3.497       0.000             
+dio_pad[36]            System (rising)                       NA             2.819       0.000             
+dio_pad[37]            System (rising)                       NA             2.878       0.000             
+dio_pad[38]            System (rising)                       NA             2.819       0.000             
+dio_pad[39]            NA                                    NA             NA          NA           NA   
+dio_pad[40]            System (rising)                       NA             2.878       0.000             
+en_sd_power_pad        NA                                    NA             NA          NA           NA   
+eth_left_ledn_pad      System (rising)                       NA             3.330       0.000             
+eth_right_ledn_pad     System (rising)                       NA             3.330       0.000             
+flash_clk_pad          NA                                    NA             NA          NA           NA   
+flash_mosi_pad         NA                                    NA             NA          NA           NA   
+gpio_a0_pad            NA                                    NA             NA          NA           NA   
+gpio_a1_pad            NA                                    NA             NA          NA           NA   
+green_led_pad          NA                                    NA             NA          NA           NA   
+red_led_pad            NA                                    NA             NA          NA           NA   
+rtc_scl_pad            NA                                    NA             NA          NA           NA   
+rtc_sda_pad            NA                                    NA             NA          NA           NA   
+sd_clk_pad             NA                                    NA             NA          NA           NA   
+ser_flash_cs_padn      NA                                    NA             NA          NA           NA   
+ser_flash_wp_padn      pll|CLKOP_inferred_clock (rising)     NA             2.931       0.000             
+spi_miso_pad           ts7500_top|spi_clk_pad (rising)       NA             2.819       0.000             
+un_reset_pad           pll|CLKOP_inferred_clock (rising)     NA             2.931       0.000             
+wd_resetn_pad          NA                                    NA             NA          NA           NA   
+==========================================================================================================
+
+
+##### END OF TIMING REPORT #####]
+

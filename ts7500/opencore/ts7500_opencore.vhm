@@ -1,0 +1,4755 @@
+--
+-- Written by Synplicity
+-- Product Version "E-2010.09L-SP2"
+-- Program "Synplify Pro", Mapper "maplat, Build 064R"
+-- Wed Apr 18 15:29:40 2012
+--
+
+--
+-- Written by Synplify Pro version Build 064R
+-- Wed Apr 18 15:29:40 2012
+--
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library xp2;
+use xp2.components.all;
+
+entity resync_fifo_resultq is
+port(
+  VCC :  in std_logic;
+  tail :  out std_logic;
+  rstn_i :  in std_logic;
+  spi_clk_pad_c_i :  in std_logic;
+  tail_w :  in std_logic);
+end resync_fifo_resultq;
+
+architecture beh of resync_fifo_resultq is
+  signal TAIL_QN : std_logic ;
+  signal N_589 : std_logic ;
+  signal N_668 : std_logic ;
+  signal N_655 : std_logic ;
+  signal N_654 : std_logic ;
+  signal N_653 : std_logic ;
+  signal N_652 : std_logic ;
+  signal N_651 : std_logic ;
+  signal N_650 : std_logic ;
+  signal N_649 : std_logic ;
+  signal N_648 : std_logic ;
+  signal N_647 : std_logic ;
+  signal N_646 : std_logic ;
+  signal N_645 : std_logic ;
+  signal N_644 : std_logic ;
+  signal N_643 : std_logic ;
+  signal N_642 : std_logic ;
+  signal N_641 : std_logic ;
+  signal N_640 : std_logic ;
+  signal N_639 : std_logic ;
+  signal N_638 : std_logic ;
+  signal N_637 : std_logic ;
+  signal N_636 : std_logic ;
+  signal N_635 : std_logic ;
+  signal N_634 : std_logic ;
+  signal N_633 : std_logic ;
+  signal N_632 : std_logic ;
+  signal N_631 : std_logic ;
+  signal N_630 : std_logic ;
+  signal N_629 : std_logic ;
+  signal N_628 : std_logic ;
+  signal N_627 : std_logic ;
+  signal N_626 : std_logic ;
+  signal N_625 : std_logic ;
+  signal N_624 : std_logic ;
+  signal N_623 : std_logic ;
+  signal N_622 : std_logic ;
+  signal N_621 : std_logic ;
+  signal N_620 : std_logic ;
+  signal N_619 : std_logic ;
+  signal N_618 : std_logic ;
+  signal N_617 : std_logic ;
+  signal N_616 : std_logic ;
+  signal N_615 : std_logic ;
+  signal N_614 : std_logic ;
+  signal N_613 : std_logic ;
+  signal N_612 : std_logic ;
+  signal N_611 : std_logic ;
+  signal N_610 : std_logic ;
+  signal N_609 : std_logic ;
+  signal N_608 : std_logic ;
+  signal N_607 : std_logic ;
+  signal N_606 : std_logic ;
+  signal N_605 : std_logic ;
+  signal N_604 : std_logic ;
+  signal N_603 : std_logic ;
+  signal N_602 : std_logic ;
+  signal N_601 : std_logic ;
+  signal N_600 : std_logic ;
+  signal N_599 : std_logic ;
+  signal N_598 : std_logic ;
+  signal N_597 : std_logic ;
+  signal N_596 : std_logic ;
+  signal N_595 : std_logic ;
+  signal N_594 : std_logic ;
+  signal N_593 : std_logic ;
+  signal N_592 : std_logic ;
+  signal N_591 : std_logic ;
+  signal N_590 : std_logic ;
+  signal N_589_0 : std_logic ;
+  signal N_588 : std_logic ;
+  signal N_587 : std_logic ;
+  signal N_586 : std_logic ;
+  signal N_585 : std_logic ;
+  signal N_584 : std_logic ;
+  signal N_583 : std_logic ;
+  signal N_582 : std_logic ;
+  signal N_581 : std_logic ;
+  signal N_580 : std_logic ;
+  signal N_579 : std_logic ;
+  signal N_578 : std_logic ;
+  signal N_577 : std_logic ;
+  signal N_576 : std_logic ;
+  signal N_575 : std_logic ;
+  signal N_574 : std_logic ;
+  signal N_573 : std_logic ;
+  signal N_572 : std_logic ;
+  signal N_571 : std_logic ;
+  signal N_570 : std_logic ;
+  signal N_569 : std_logic ;
+  signal N_568 : std_logic ;
+  signal N_567 : std_logic ;
+  signal N_566 : std_logic ;
+  signal N_565 : std_logic ;
+  signal N_564 : std_logic ;
+  signal N_563 : std_logic ;
+  signal N_562 : std_logic ;
+  signal N_561 : std_logic ;
+  signal N_560 : std_logic ;
+  signal N_559 : std_logic ;
+  signal N_558 : std_logic ;
+  signal N_557 : std_logic ;
+  signal N_556 : std_logic ;
+  signal N_555 : std_logic ;
+  signal N_554 : std_logic ;
+  signal N_553 : std_logic ;
+  signal N_552 : std_logic ;
+  signal N_551 : std_logic ;
+  signal N_550 : std_logic ;
+  signal N_549 : std_logic ;
+  signal N_548 : std_logic ;
+  signal N_547 : std_logic ;
+  signal N_546 : std_logic ;
+  signal N_545 : std_logic ;
+  signal N_544 : std_logic ;
+  signal N_543 : std_logic ;
+  signal N_542 : std_logic ;
+  signal N_541 : std_logic ;
+  signal N_540 : std_logic ;
+  signal N_539 : std_logic ;
+  signal N_538 : std_logic ;
+  signal N_537 : std_logic ;
+  signal N_536 : std_logic ;
+  signal N_535 : std_logic ;
+  signal N_534 : std_logic ;
+  signal N_533 : std_logic ;
+  signal N_532 : std_logic ;
+  signal N_531 : std_logic ;
+  signal N_530 : std_logic ;
+  signal N_529 : std_logic ;
+  signal N_528 : std_logic ;
+  signal N_527 : std_logic ;
+  signal N_526 : std_logic ;
+  signal N_525 : std_logic ;
+  signal N_524 : std_logic ;
+  signal N_523 : std_logic ;
+  signal N_522 : std_logic ;
+  signal N_521 : std_logic ;
+  signal N_520 : std_logic ;
+  signal N_519 : std_logic ;
+  signal N_518 : std_logic ;
+  signal N_517 : std_logic ;
+  signal N_516 : std_logic ;
+  signal N_515 : std_logic ;
+  signal N_514 : std_logic ;
+  signal N_513 : std_logic ;
+  signal N_512 : std_logic ;
+  signal N_511 : std_logic ;
+  signal N_510 : std_logic ;
+  signal N_509 : std_logic ;
+  signal N_508 : std_logic ;
+  signal N_507 : std_logic ;
+  signal N_506 : std_logic ;
+  signal N_505 : std_logic ;
+  signal N_504 : std_logic ;
+  signal N_503 : std_logic ;
+  signal N_502 : std_logic ;
+  signal N_501 : std_logic ;
+  signal N_500 : std_logic ;
+  signal N_499 : std_logic ;
+  signal N_498 : std_logic ;
+  signal N_497 : std_logic ;
+  signal N_496 : std_logic ;
+  signal N_495 : std_logic ;
+  signal N_494 : std_logic ;
+  signal N_493 : std_logic ;
+  signal N_492 : std_logic ;
+  signal N_491 : std_logic ;
+  signal N_490 : std_logic ;
+  signal N_489 : std_logic ;
+  signal N_488 : std_logic ;
+  signal N_487 : std_logic ;
+  signal N_486 : std_logic ;
+  signal N_485 : std_logic ;
+  signal N_484 : std_logic ;
+  signal N_483 : std_logic ;
+  signal N_482 : std_logic ;
+  signal N_481 : std_logic ;
+  signal N_480 : std_logic ;
+  signal N_479 : std_logic ;
+  signal N_478 : std_logic ;
+  signal N_477 : std_logic ;
+  signal N_476 : std_logic ;
+  signal N_475 : std_logic ;
+  signal N_474 : std_logic ;
+  signal N_473 : std_logic ;
+  signal N_472 : std_logic ;
+  signal N_471 : std_logic ;
+  signal N_470 : std_logic ;
+  signal N_469 : std_logic ;
+  signal N_468 : std_logic ;
+  signal N_467 : std_logic ;
+  signal N_466 : std_logic ;
+  signal N_465 : std_logic ;
+  signal N_464 : std_logic ;
+  signal N_463 : std_logic ;
+  signal N_462 : std_logic ;
+  signal N_461 : std_logic ;
+  signal N_460 : std_logic ;
+  signal N_459 : std_logic ;
+  signal N_458 : std_logic ;
+  signal N_457 : std_logic ;
+  signal N_456 : std_logic ;
+  signal N_455 : std_logic ;
+  signal N_454 : std_logic ;
+  signal N_453 : std_logic ;
+  signal N_452 : std_logic ;
+  signal N_451 : std_logic ;
+  signal N_450 : std_logic ;
+  signal N_449 : std_logic ;
+  signal N_448 : std_logic ;
+  signal N_447 : std_logic ;
+  signal N_446 : std_logic ;
+  signal N_445 : std_logic ;
+  signal N_444 : std_logic ;
+  signal N_443 : std_logic ;
+  signal N_442 : std_logic ;
+  signal N_441 : std_logic ;
+  signal N_440 : std_logic ;
+  signal N_439 : std_logic ;
+  signal N_438 : std_logic ;
+  signal N_437 : std_logic ;
+  signal N_436 : std_logic ;
+  signal N_435 : std_logic ;
+  signal N_434 : std_logic ;
+  signal N_433 : std_logic ;
+  signal N_432 : std_logic ;
+  signal N_494_0 : std_logic ;
+  signal GND : std_logic ;
+  signal VCC_0 : std_logic ;
+begin
+TAIL_REG_Z236: FD1S3DX port map (
+    D => tail_w,
+    CK => spi_clk_pad_c_i,
+    CD => rstn_i,
+    Q => tail);
+GND <= '0';
+VCC_0 <= '1';
+end beh;
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library xp2;
+use xp2.components.all;
+
+entity resync_fifo_issueq is
+port(
+wbf_adr : in std_logic_vector(4 downto 4);
+gpio_a16_pad_c :  in std_logic;
+GND :  in std_logic;
+gpio_a15_pad_c :  in std_logic;
+wbf_stb_0 :  in std_logic;
+tail_0 :  in std_logic;
+un1_wbs_cyc_i :  in std_logic;
+head :  out std_logic;
+pll_100mhz :  in std_logic;
+VCC :  in std_logic;
+tail_w :  out std_logic;
+rstn_i :  in std_logic;
+spi_clk_pad_c_i :  in std_logic);
+end resync_fifo_issueq;
+
+architecture beh of resync_fifo_issueq is
+signal SPIWBM_ADR_O : std_logic_vector(4 to 4);
+signal DAT_QN : std_logic_vector(36 to 36);
+signal TAIL : std_logic ;
+signal TAIL_W_QN : std_logic ;
+signal TAIL_3 : std_logic ;
+signal TAIL_QN_0 : std_logic ;
+signal HEAD_R : std_logic ;
+signal HEAD_R_QN : std_logic ;
+signal HEAD_3 : std_logic ;
+signal HEAD_26 : std_logic ;
+signal HEAD_QN : std_logic ;
+signal TAIL_W_27 : std_logic ;
+signal TAIL_3_2_0_X0 : std_logic ;
+signal TAIL_3_2_0_X1 : std_logic ;
+signal N_588 : std_logic ;
+signal N_587 : std_logic ;
+signal N_586 : std_logic ;
+signal N_585 : std_logic ;
+signal N_584 : std_logic ;
+signal N_583 : std_logic ;
+signal N_582 : std_logic ;
+signal N_581 : std_logic ;
+signal N_580 : std_logic ;
+signal N_579 : std_logic ;
+signal N_578 : std_logic ;
+signal N_577 : std_logic ;
+signal N_576 : std_logic ;
+signal N_575 : std_logic ;
+signal N_574 : std_logic ;
+signal N_573 : std_logic ;
+signal N_572 : std_logic ;
+signal N_571 : std_logic ;
+signal N_570 : std_logic ;
+signal N_569 : std_logic ;
+signal N_568 : std_logic ;
+signal N_567 : std_logic ;
+signal N_566 : std_logic ;
+signal N_431 : std_logic ;
+signal N_430 : std_logic ;
+signal N_429 : std_logic ;
+signal N_428 : std_logic ;
+signal N_427 : std_logic ;
+signal N_426 : std_logic ;
+signal N_425 : std_logic ;
+signal N_424 : std_logic ;
+signal N_423 : std_logic ;
+signal N_422 : std_logic ;
+signal N_421 : std_logic ;
+signal N_420 : std_logic ;
+signal N_419 : std_logic ;
+signal N_418 : std_logic ;
+signal N_417 : std_logic ;
+signal N_416 : std_logic ;
+signal N_415 : std_logic ;
+signal N_414 : std_logic ;
+signal N_413 : std_logic ;
+signal N_412 : std_logic ;
+signal N_411 : std_logic ;
+signal N_410 : std_logic ;
+signal N_409 : std_logic ;
+signal N_408 : std_logic ;
+signal N_407 : std_logic ;
+signal N_406 : std_logic ;
+signal N_405 : std_logic ;
+signal N_404 : std_logic ;
+signal N_403 : std_logic ;
+signal N_402 : std_logic ;
+signal N_401 : std_logic ;
+signal N_400 : std_logic ;
+signal N_399 : std_logic ;
+signal N_398 : std_logic ;
+signal N_397 : std_logic ;
+signal N_396 : std_logic ;
+signal N_395 : std_logic ;
+signal N_394 : std_logic ;
+signal N_393 : std_logic ;
+signal N_392 : std_logic ;
+signal N_391 : std_logic ;
+signal N_390 : std_logic ;
+signal N_389 : std_logic ;
+signal N_388 : std_logic ;
+signal N_387 : std_logic ;
+signal N_386 : std_logic ;
+signal N_385 : std_logic ;
+signal N_384 : std_logic ;
+signal N_383 : std_logic ;
+signal N_382 : std_logic ;
+signal N_381 : std_logic ;
+signal N_380 : std_logic ;
+signal N_379 : std_logic ;
+signal N_378 : std_logic ;
+signal N_377 : std_logic ;
+signal N_376 : std_logic ;
+signal N_375 : std_logic ;
+signal N_374 : std_logic ;
+signal N_373 : std_logic ;
+signal N_372 : std_logic ;
+signal N_371 : std_logic ;
+signal N_370 : std_logic ;
+signal N_369 : std_logic ;
+signal N_368 : std_logic ;
+signal N_367 : std_logic ;
+signal N_366 : std_logic ;
+signal N_365 : std_logic ;
+signal N_364 : std_logic ;
+signal N_363 : std_logic ;
+signal N_362 : std_logic ;
+signal N_361 : std_logic ;
+signal N_360 : std_logic ;
+signal N_359 : std_logic ;
+signal N_358 : std_logic ;
+signal N_357 : std_logic ;
+signal N_356 : std_logic ;
+signal N_355 : std_logic ;
+signal N_354 : std_logic ;
+signal N_353 : std_logic ;
+signal N_352 : std_logic ;
+signal N_351 : std_logic ;
+signal N_350 : std_logic ;
+signal N_349 : std_logic ;
+signal N_348 : std_logic ;
+signal N_347 : std_logic ;
+signal N_346 : std_logic ;
+signal N_345 : std_logic ;
+signal N_344 : std_logic ;
+signal N_343 : std_logic ;
+signal N_342 : std_logic ;
+signal N_341 : std_logic ;
+signal N_340 : std_logic ;
+signal N_339 : std_logic ;
+signal N_338 : std_logic ;
+signal N_337 : std_logic ;
+signal N_336 : std_logic ;
+signal N_335 : std_logic ;
+signal N_334 : std_logic ;
+signal N_333 : std_logic ;
+signal N_332 : std_logic ;
+signal N_331 : std_logic ;
+signal N_330 : std_logic ;
+signal N_329 : std_logic ;
+signal N_328 : std_logic ;
+signal N_327 : std_logic ;
+signal N_326 : std_logic ;
+signal N_325 : std_logic ;
+signal N_324 : std_logic ;
+signal N_323 : std_logic ;
+signal N_322 : std_logic ;
+signal N_321 : std_logic ;
+signal N_320 : std_logic ;
+signal N_319 : std_logic ;
+signal N_318 : std_logic ;
+signal N_317 : std_logic ;
+signal N_316 : std_logic ;
+signal N_315 : std_logic ;
+signal N_314 : std_logic ;
+signal N_313 : std_logic ;
+signal N_312 : std_logic ;
+signal N_311 : std_logic ;
+signal N_310 : std_logic ;
+signal N_309 : std_logic ;
+signal N_308 : std_logic ;
+signal N_307 : std_logic ;
+signal N_306 : std_logic ;
+signal N_305 : std_logic ;
+signal N_304 : std_logic ;
+signal N_303 : std_logic ;
+signal N_302 : std_logic ;
+signal N_301 : std_logic ;
+signal N_300 : std_logic ;
+signal N_299 : std_logic ;
+signal N_298 : std_logic ;
+signal N_297 : std_logic ;
+signal N_296 : std_logic ;
+signal N_295 : std_logic ;
+signal N_294 : std_logic ;
+signal N_293 : std_logic ;
+signal N_292 : std_logic ;
+signal N_291 : std_logic ;
+signal N_290 : std_logic ;
+signal N_289 : std_logic ;
+signal N_288 : std_logic ;
+signal N_287 : std_logic ;
+signal N_286 : std_logic ;
+signal N_285 : std_logic ;
+signal N_284 : std_logic ;
+signal N_283 : std_logic ;
+signal N_282 : std_logic ;
+signal N_281 : std_logic ;
+signal N_280 : std_logic ;
+signal N_279 : std_logic ;
+signal N_278 : std_logic ;
+signal N_277 : std_logic ;
+signal N_276 : std_logic ;
+signal N_275 : std_logic ;
+signal N_274 : std_logic ;
+signal N_273 : std_logic ;
+signal N_272 : std_logic ;
+signal N_271 : std_logic ;
+signal N_270 : std_logic ;
+signal N_269 : std_logic ;
+signal N_268 : std_logic ;
+signal N_267 : std_logic ;
+signal N_266 : std_logic ;
+signal N_265 : std_logic ;
+signal N_264 : std_logic ;
+signal N_263 : std_logic ;
+signal N_262 : std_logic ;
+signal N_261 : std_logic ;
+signal N_260 : std_logic ;
+signal N_259 : std_logic ;
+signal N_258 : std_logic ;
+signal N_257 : std_logic ;
+signal N_256 : std_logic ;
+signal N_255 : std_logic ;
+signal N_254 : std_logic ;
+signal N_253 : std_logic ;
+signal N_252 : std_logic ;
+signal N_251 : std_logic ;
+signal N_250 : std_logic ;
+signal N_249 : std_logic ;
+signal N_248 : std_logic ;
+signal N_247 : std_logic ;
+signal N_246 : std_logic ;
+signal N_245 : std_logic ;
+signal N_244 : std_logic ;
+signal N_243 : std_logic ;
+signal N_242 : std_logic ;
+signal N_241 : std_logic ;
+signal N_240 : std_logic ;
+signal N_239 : std_logic ;
+signal N_238 : std_logic ;
+signal N_237 : std_logic ;
+signal N_236 : std_logic ;
+signal N_235 : std_logic ;
+signal N_234 : std_logic ;
+signal N_233 : std_logic ;
+signal N_232 : std_logic ;
+signal N_231 : std_logic ;
+signal N_230 : std_logic ;
+signal N_229 : std_logic ;
+signal N_228 : std_logic ;
+signal N_227 : std_logic ;
+signal GND_0 : std_logic ;
+signal VCC_0 : std_logic ;
+begin
+TAIL_W_REG_Z261: FD1S3DX port map (
+  D => TAIL,
+  CK => spi_clk_pad_c_i,
+  CD => rstn_i,
+  Q => TAIL_W_27);
+TAIL_REG_Z263: FD1S3DX port map (
+  D => TAIL_3,
+  CK => pll_100mhz,
+  CD => rstn_i,
+  Q => TAIL);
+HEAD_R_REG_Z265: FD1S3DX port map (
+  D => HEAD_26,
+  CK => pll_100mhz,
+  CD => rstn_i,
+  Q => HEAD_R);
+HEAD_REG_Z267: FD1S3DX port map (
+  D => HEAD_3,
+  CK => spi_clk_pad_c_i,
+  CD => rstn_i,
+  Q => HEAD_26);
+\DAT[36]_REG_Z269\: FD1P3DX port map (
+  D => wbf_adr(4),
+  SP => un1_wbs_cyc_i,
+  CK => spi_clk_pad_c_i,
+  CD => rstn_i,
+  Q => SPIWBM_ADR_O(4));
+HEAD_3 <= (not TAIL_W_27 and not tail_0 and not wbf_stb_0) or 
+	(HEAD_26 and not tail_0) or 
+	(HEAD_26 and not TAIL_W_27) or 
+	(HEAD_26 and wbf_stb_0);
+TAIL_3_2_0_X0 <= (gpio_a15_pad_c and HEAD_R) or 
+	(not gpio_a15_pad_c and TAIL);
+TAIL_3_2_0_X1 <= (gpio_a15_pad_c and HEAD_R) or 
+	(not gpio_a15_pad_c and TAIL and not SPIWBM_ADR_O(4)) or 
+	(HEAD_R and TAIL) or 
+	(HEAD_R and SPIWBM_ADR_O(4));
+TAIL_3_2_0: PFUMX port map (
+  ALUT => TAIL_3_2_0_X1,
+  BLUT => TAIL_3_2_0_X0,
+  C0 => gpio_a16_pad_c,
+  Z => TAIL_3);
+GND_0 <= '0';
+VCC_0 <= '1';
+head <= HEAD_26;
+tail_w <= TAIL_W_27;
+end beh;
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library xp2;
+use xp2.components.all;
+
+entity wb_writebuffer_fifo is
+port(
+spiwbm2_adr_o : in std_logic_vector(4 downto 1);
+writebuffer_q : out std_logic_vector(36 downto 36);
+tail_1z :  in std_logic;
+wbf_ack_m_s_0_m1_e_1 :  out std_logic;
+first_cyc_RNIBECN :  in std_logic;
+flushack :  out std_logic;
+tail_w :  in std_logic;
+un1_full_NE_1 :  out std_logic;
+un1_full_NE_0_0 :  out std_logic;
+GND :  in std_logic;
+wrreq_0_sqmuxa :  in std_logic;
+goingfull :  out std_logic;
+rdreq :  in std_logic;
+VCC :  in std_logic;
+rstn_i :  in std_logic;
+spi_clk_pad_c_i :  in std_logic);
+end wb_writebuffer_fifo;
+
+architecture beh of wb_writebuffer_fifo is
+signal TAIL : std_logic_vector(3 downto 0);
+signal TAIL_QN : std_logic_vector(3 downto 0);
+signal TAILE_0 : std_logic_vector(3 downto 1);
+signal HEAD : std_logic_vector(3 downto 0);
+signal HEAD_QN : std_logic_vector(3 downto 0);
+signal TAIL_E0 : std_logic ;
+signal HEAD_E0 : std_logic ;
+signal HEAD_N1 : std_logic ;
+signal HEAD_N2 : std_logic ;
+signal HEAD_N3 : std_logic ;
+signal RDREQ_I : std_logic ;
+signal UN1_GOINGFULL5_0_I : std_logic ;
+signal GOINGFULL_QN : std_logic ;
+signal FIFOMEM_RAM_15 : std_logic ;
+signal FIFOMEM_RAM_16 : std_logic ;
+signal FIFOMEM_RAM_17 : std_logic ;
+signal TAIL_N2 : std_logic ;
+signal GOINGFULL_20 : std_logic ;
+signal WBF_ACK_M_S_0_M1_E_0 : std_logic ;
+signal TAIL_N3 : std_logic ;
+signal UN1_FULL_NE_0_19 : std_logic ;
+signal UN1_FULL_NE_18 : std_logic ;
+signal FLUSHACK_17 : std_logic ;
+signal GND_0 : std_logic ;
+signal VCC_0 : std_logic ;
+begin
+\TAIL[0]_REG_Z66\: FD1S3DX port map (
+D => TAIL_E0,
+CK => spi_clk_pad_c_i,
+CD => rstn_i,
+Q => TAIL(0));
+\TAIL[1]_REG_Z68\: FD1S3DX port map (
+D => TAILE_0(1),
+CK => spi_clk_pad_c_i,
+CD => rstn_i,
+Q => TAIL(1));
+\TAIL[2]_REG_Z70\: FD1S3DX port map (
+D => TAILE_0(2),
+CK => spi_clk_pad_c_i,
+CD => rstn_i,
+Q => TAIL(2));
+\TAIL[3]_REG_Z72\: FD1S3DX port map (
+D => TAILE_0(3),
+CK => spi_clk_pad_c_i,
+CD => rstn_i,
+Q => TAIL(3));
+\HEAD[0]_REG_Z74\: FD1S3DX port map (
+D => HEAD_E0,
+CK => spi_clk_pad_c_i,
+CD => rstn_i,
+Q => HEAD(0));
+\HEAD[1]_REG_Z76\: FD1P3DX port map (
+D => HEAD_N1,
+SP => rdreq,
+CK => spi_clk_pad_c_i,
+CD => rstn_i,
+Q => HEAD(1));
+\HEAD[2]_REG_Z78\: FD1P3DX port map (
+D => HEAD_N2,
+SP => rdreq,
+CK => spi_clk_pad_c_i,
+CD => rstn_i,
+Q => HEAD(2));
+\HEAD[3]_REG_Z80\: FD1P3DX port map (
+D => HEAD_N3,
+SP => rdreq,
+CK => spi_clk_pad_c_i,
+CD => rstn_i,
+Q => HEAD(3));
+GOINGFULL_REG_Z82: FD1P3DX port map (
+D => RDREQ_I,
+SP => UN1_GOINGFULL5_0_I,
+CK => spi_clk_pad_c_i,
+CD => rstn_i,
+Q => GOINGFULL_20);
+FIFOMEM_RAM_3_REG_Z84: DPR16X4B port map (
+DO0 => FIFOMEM_RAM_15,
+DO1 => FIFOMEM_RAM_16,
+DO2 => FIFOMEM_RAM_17,
+DO3 => writebuffer_q(36),
+RAD0 => HEAD(0),
+RAD1 => HEAD(1),
+RAD2 => HEAD(2),
+RAD3 => HEAD(3),
+WAD0 => TAIL(0),
+WAD1 => TAIL(1),
+WAD2 => TAIL(2),
+WAD3 => TAIL(3),
+DI0 => spiwbm2_adr_o(1),
+DI1 => spiwbm2_adr_o(2),
+DI2 => spiwbm2_adr_o(3),
+DI3 => spiwbm2_adr_o(4),
+WRE => wrreq_0_sqmuxa,
+WCK => spi_clk_pad_c_i);
+HEAD_N1 <= (HEAD(0) and not HEAD(1)) or 
+	(not HEAD(0) and HEAD(1));
+HEAD_N2 <= (HEAD(0) and HEAD(1) and not HEAD(2)) or 
+	(not HEAD(1) and HEAD(2)) or 
+	(not HEAD(0) and HEAD(2));
+TAIL_N2 <= (TAIL(0) and TAIL(1) and not TAIL(2)) or 
+	(not TAIL(1) and TAIL(2)) or 
+	(not TAIL(0) and TAIL(2));
+UN1_FULL_NE_0_19 <= (not HEAD(2) and not HEAD(3) and not TAIL(2) and not TAIL(3)) or 
+	(HEAD(2) and not HEAD(3) and TAIL(2) and not TAIL(3)) or 
+	(not HEAD(2) and HEAD(3) and not TAIL(2) and TAIL(3)) or 
+	(HEAD(2) and HEAD(3) and TAIL(2) and TAIL(3));
+UN1_FULL_NE_18 <= (not HEAD(0) and not HEAD(1) and not TAIL(0) and not TAIL(1)) or 
+	(HEAD(0) and not HEAD(1) and TAIL(0) and not TAIL(1)) or 
+	(not HEAD(0) and HEAD(1) and not TAIL(0) and TAIL(1)) or 
+	(HEAD(0) and HEAD(1) and TAIL(0) and TAIL(1));
+WBF_ACK_M_S_0_M1_E_0 <= (tail_w and not tail_1z and not GOINGFULL_20) or 
+	(not tail_w and tail_1z and not GOINGFULL_20);
+HEAD_N3 <= (HEAD(0) and HEAD(1) and HEAD(2) and not HEAD(3)) or 
+	(not HEAD(2) and HEAD(3)) or 
+	(not HEAD(1) and HEAD(3)) or 
+	(not HEAD(0) and HEAD(3));
+TAIL_N3 <= (TAIL(0) and TAIL(1) and TAIL(2) and not TAIL(3)) or 
+	(not TAIL(2) and TAIL(3)) or 
+	(not TAIL(1) and TAIL(3)) or 
+	(not TAIL(0) and TAIL(3));
+FLUSHACK_17 <= not GOINGFULL_20 and UN1_FULL_NE_0_19 and UN1_FULL_NE_18;
+HEAD_E0 <= (not FLUSHACK_17 and tail_w and not tail_1z and not HEAD(0)) or 
+	(not FLUSHACK_17 and not tail_w and tail_1z and not HEAD(0)) or 
+	(not tail_w and not tail_1z and HEAD(0)) or 
+	(FLUSHACK_17 and HEAD(0)) or 
+	(tail_w and tail_1z and HEAD(0));
+RDREQ_I <= (not tail_w and not tail_1z) or 
+	(FLUSHACK_17) or 
+	(tail_w and tail_1z);
+TAIL_E0 <= (TAIL(0) and not wrreq_0_sqmuxa) or 
+	(not TAIL(0) and wrreq_0_sqmuxa);
+UN1_GOINGFULL5_0_I <= (not FLUSHACK_17 and tail_w and not tail_1z and not wrreq_0_sqmuxa) or 
+	(not FLUSHACK_17 and not tail_w and tail_1z and not wrreq_0_sqmuxa) or 
+	(not tail_w and not tail_1z and wrreq_0_sqmuxa) or 
+	(FLUSHACK_17 and wrreq_0_sqmuxa) or 
+	(tail_w and tail_1z and wrreq_0_sqmuxa);
+TAILE_0(1) <= (TAIL(1) and not wrreq_0_sqmuxa) or 
+	(TAIL(0) and not TAIL(1) and wrreq_0_sqmuxa) or 
+	(not TAIL(0) and TAIL(1));
+TAILE_0(2) <= (TAIL(2) and not wrreq_0_sqmuxa) or 
+	(TAIL_N2 and wrreq_0_sqmuxa);
+TAILE_0(3) <= (TAIL(3) and not wrreq_0_sqmuxa) or 
+	(TAIL_N3 and wrreq_0_sqmuxa);
+wbf_ack_m_s_0_m1_e_1 <= (not UN1_FULL_NE_0_19) or 
+	(not WBF_ACK_M_S_0_M1_E_0) or 
+	(not first_cyc_RNIBECN);
+GND_0 <= '0';
+VCC_0 <= '1';
+flushack <= FLUSHACK_17;
+un1_full_NE_1 <= UN1_FULL_NE_18;
+un1_full_NE_0_0 <= UN1_FULL_NE_0_19;
+goingfull <= GOINGFULL_20;
+end beh;
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library xp2;
+use xp2.components.all;
+
+entity wb_resync is
+port(
+wbf_adr : in std_logic_vector(4 downto 4);
+spi_clk_pad_c_i :  in std_logic;
+rstn_i :  in std_logic;
+VCC :  in std_logic;
+pll_100mhz :  in std_logic;
+gpio_a15_pad_c :  in std_logic;
+GND :  in std_logic;
+gpio_a16_pad_c :  in std_logic;
+wbf_stb_0 :  in std_logic;
+tail :  out std_logic;
+tail_w :  out std_logic);
+end wb_resync;
+
+architecture beh of wb_resync is
+signal HEAD : std_logic ;
+signal UN1_WBS_CYC_I : std_logic ;
+signal TAIL_28 : std_logic ;
+signal TAIL_W_29 : std_logic ;
+signal GND_0 : std_logic ;
+signal VCC_0 : std_logic ;
+component resync_fifo_issueq
+port(
+wbf_adr : in std_logic_vector(4 downto 4);
+gpio_a16_pad_c :  in std_logic;
+GND :  in std_logic;
+gpio_a15_pad_c :  in std_logic;
+wbf_stb_0 :  in std_logic;
+tail_0 :  in std_logic;
+un1_wbs_cyc_i :  in std_logic;
+head :  out std_logic;
+pll_100mhz :  in std_logic;
+VCC :  in std_logic;
+tail_w :  out std_logic;
+rstn_i :  in std_logic;
+spi_clk_pad_c_i :  in std_logic  );
+end component;
+component resync_fifo_resultq
+port(
+VCC :  in std_logic;
+tail :  out std_logic;
+rstn_i :  in std_logic;
+spi_clk_pad_c_i :  in std_logic;
+tail_w :  in std_logic  );
+end component;
+begin
+UN1_WBS_CYC_I <= (not HEAD and not TAIL_W_29 and not TAIL_28 and not wbf_stb_0) or 
+	(HEAD and TAIL_W_29 and TAIL_28 and not wbf_stb_0);
+ISSUEQ: resync_fifo_issueq port map (
+wbf_adr(4) => wbf_adr(4),
+gpio_a16_pad_c => gpio_a16_pad_c,
+GND => GND,
+gpio_a15_pad_c => gpio_a15_pad_c,
+wbf_stb_0 => wbf_stb_0,
+tail_0 => TAIL_28,
+un1_wbs_cyc_i => UN1_WBS_CYC_I,
+head => HEAD,
+pll_100mhz => pll_100mhz,
+VCC => VCC,
+tail_w => TAIL_W_29,
+rstn_i => rstn_i,
+spi_clk_pad_c_i => spi_clk_pad_c_i);
+RESULTQ: resync_fifo_resultq port map (
+VCC => VCC,
+tail => TAIL_28,
+rstn_i => rstn_i,
+spi_clk_pad_c_i => spi_clk_pad_c_i,
+tail_w => TAIL_W_29);
+GND_0 <= '0';
+VCC_0 <= '1';
+tail <= TAIL_28;
+tail_w <= TAIL_W_29;
+end beh;
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library xp2;
+use xp2.components.all;
+
+entity wb_writebuffer is
+port(
+idat : in std_logic_vector(0 downto 0);
+wbf_adr : out std_logic_vector(4 downto 4);
+spiwbm2_adr_o : in std_logic_vector(4 downto 1);
+spi_clk_pad_c_i :  in std_logic;
+rstn_i :  in std_logic;
+VCC :  in std_logic;
+wrreq_0_sqmuxa :  in std_logic;
+first_cyc_RNIBECN :  in std_logic;
+wbf_ack_m_s_0_m1_e_1 :  out std_logic;
+wrreq_0_sqmuxa_0_x :  out std_logic;
+N_28 :  out std_logic;
+spiwbm2_cyc_o :  in std_logic;
+stb :  in std_logic;
+nshift :  in std_logic;
+wbf_stb_0 :  out std_logic;
+spiwbm2_we_o :  in std_logic;
+wrreq8_s :  in std_logic;
+wbm_stb_o_0 :  out std_logic;
+wrreq_0_sqmuxa_0 :  out std_logic;
+un1_full_NE_1 :  out std_logic;
+un1_full_NE_0_0 :  out std_logic;
+goingfull :  out std_logic;
+wbm_we_fast :  in std_logic;
+GND :  in std_logic;
+tail :  in std_logic;
+tail_w :  in std_logic;
+flushack :  out std_logic);
+end wb_writebuffer;
+
+architecture beh of wb_writebuffer is
+signal WRITEBUFFER_Q : std_logic_vector(36 to 36);
+signal RDREQ : std_logic ;
+signal FLUSHACK_25 : std_logic ;
+signal WBM_STB_O_21 : std_logic ;
+signal GOINGFULL_24 : std_logic ;
+signal UN1_FULL_NE_0_23 : std_logic ;
+signal UN1_FULL_NE_22 : std_logic ;
+signal GND_0 : std_logic ;
+signal VCC_0 : std_logic ;
+component wb_writebuffer_fifo
+port(
+spiwbm2_adr_o : in std_logic_vector(4 downto 1);
+writebuffer_q : out std_logic_vector(36 downto 36);
+tail_1z :  in std_logic;
+wbf_ack_m_s_0_m1_e_1 :  out std_logic;
+first_cyc_RNIBECN :  in std_logic;
+flushack :  out std_logic;
+tail_w :  in std_logic;
+un1_full_NE_1 :  out std_logic;
+un1_full_NE_0_0 :  out std_logic;
+GND :  in std_logic;
+wrreq_0_sqmuxa :  in std_logic;
+goingfull :  out std_logic;
+rdreq :  in std_logic;
+VCC :  in std_logic;
+rstn_i :  in std_logic;
+spi_clk_pad_c_i :  in std_logic  );
+end component;
+begin
+RDREQ <= (not FLUSHACK_25 and tail_w and not tail) or 
+	(not FLUSHACK_25 and not tail_w and tail);
+wrreq_0_sqmuxa_0 <= (wbm_we_fast and not UN1_FULL_NE_22) or 
+	(wbm_we_fast and not UN1_FULL_NE_0_23) or 
+	(wbm_we_fast and not GOINGFULL_24);
+wbf_adr(4) <= (not FLUSHACK_25 and WRITEBUFFER_Q(36)) or 
+	(FLUSHACK_25 and spiwbm2_adr_o(4));
+wbf_stb_0 <= (FLUSHACK_25 and not wrreq8_s) or 
+	(FLUSHACK_25 and WBM_STB_O_21) or 
+	(FLUSHACK_25 and spiwbm2_we_o);
+N_28 <= (idat(0) and nshift and spiwbm2_cyc_o) or 
+	(stb and spiwbm2_cyc_o);
+WBM_STB_O_21 <= (not nshift and not stb) or 
+	(not idat(0) and not stb);
+wrreq_0_sqmuxa_0_x <= (not UN1_FULL_NE_22) or 
+	(not UN1_FULL_NE_0_23) or 
+	(not GOINGFULL_24);
+WRITEBUFFER: wb_writebuffer_fifo port map (
+spiwbm2_adr_o(1) => spiwbm2_adr_o(1),
+spiwbm2_adr_o(2) => spiwbm2_adr_o(2),
+spiwbm2_adr_o(3) => spiwbm2_adr_o(3),
+spiwbm2_adr_o(4) => spiwbm2_adr_o(4),
+writebuffer_q(36) => WRITEBUFFER_Q(36),
+tail_1z => tail,
+wbf_ack_m_s_0_m1_e_1 => wbf_ack_m_s_0_m1_e_1,
+first_cyc_RNIBECN => first_cyc_RNIBECN,
+flushack => FLUSHACK_25,
+tail_w => tail_w,
+un1_full_NE_1 => UN1_FULL_NE_22,
+un1_full_NE_0_0 => UN1_FULL_NE_0_23,
+GND => GND,
+wrreq_0_sqmuxa => wrreq_0_sqmuxa,
+goingfull => GOINGFULL_24,
+rdreq => RDREQ,
+VCC => VCC,
+rstn_i => rstn_i,
+spi_clk_pad_c_i => spi_clk_pad_c_i);
+GND_0 <= '0';
+VCC_0 <= '1';
+wbm_stb_o_0 <= WBM_STB_O_21;
+un1_full_NE_1 <= UN1_FULL_NE_22;
+un1_full_NE_0_0 <= UN1_FULL_NE_0_23;
+goingfull <= GOINGFULL_24;
+flushack <= FLUSHACK_25;
+end beh;
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library xp2;
+use xp2.components.all;
+
+entity spi_sbus is
+port(
+idat_0 :  in std_logic;
+spiwbm2_adr_o : out std_logic_vector(4 downto 1);
+wbf_ack_m :  out std_logic;
+un1_wb_ack_m3 :  in std_logic;
+un1_full_NE_1 :  in std_logic;
+wbf_ack_m_s_0_m1_e_1 :  in std_logic;
+so_i_0_N_10 :  out std_logic;
+first_cyc :  in std_logic;
+flushack :  in std_logic;
+un1_flushack_d :  in std_logic;
+first_cyc_RNIBECN :  in std_logic;
+N_28 :  in std_logic;
+wbm_stb_o_0 :  in std_logic;
+cmemwin_wbs_en11 :  in std_logic;
+gpio_a28_pad_c :  in std_logic;
+tail :  in std_logic;
+tail_w :  in std_logic;
+spi_clk_pad_c_i :  in std_logic;
+spiwbm2_we_o :  out std_logic;
+VCC :  in std_logic;
+wbm_we_fast :  out std_logic;
+N_450_i :  out std_logic;
+spi_clk_pad_c :  in std_logic;
+spi_mosi_pad_c :  in std_logic;
+un1_wb_ack_N_4_i :  in std_logic;
+wbm_stb_o_0_s :  out std_logic;
+wrreq8_s :  in std_logic;
+wrreq_0_sqmuxa :  in std_logic;
+stb :  out std_logic;
+nshift :  out std_logic;
+wrreq_0_sqmuxa_0 :  in std_logic;
+GND :  in std_logic;
+gpio_a15_pad_c :  in std_logic;
+gpio_a16_pad_c :  in std_logic;
+spiwbm2_cyc_o_i :  out std_logic;
+spiwbm2_cyc_o :  out std_logic);
+end spi_sbus;
+
+architecture beh of spi_sbus is
+signal NSTATE : std_logic_vector(4 downto 0);
+signal NSTATE_I : std_logic_vector(0 to 0);
+signal WBM_ADR_QN : std_logic_vector(3 downto 0);
+signal IDAT : std_logic_vector(2 downto 1);
+signal PSTATE_LM : std_logic_vector(4 downto 0);
+signal PSTATE : std_logic_vector(4 downto 0);
+signal PSTATE_QN : std_logic_vector(4 downto 0);
+signal ODAT : std_logic_vector(15 downto 0);
+signal ODAT_QN : std_logic_vector(15 downto 0);
+signal NSTATE_QN : std_logic_vector(4 downto 0);
+signal NSTATE_4 : std_logic_vector(3 to 3);
+signal IDAT_FAST : std_logic_vector(0 to 0);
+signal IDAT_FAST_QN : std_logic_vector(0 to 0);
+signal IDAT_QN : std_logic_vector(2 downto 1);
+signal ODAT_8_I_A3_0_1 : std_logic_vector(0 to 0);
+signal NSTATE_RNIRKCK : std_logic_vector(2 to 2);
+signal ODAT_8_I_1 : std_logic_vector(15 downto 2);
+signal ODAT_8_I_0 : std_logic_vector(0 to 0);
+signal PSTATE_S : std_logic_vector(4 downto 0);
+signal PSTATE_CRY : std_logic_vector(2 downto 0);
+signal PSTATE_CRY_0_COUT : std_logic_vector(3 to 3);
+signal PSTATE_CRY_0_S0 : std_logic_vector(0 to 0);
+signal SBUS_DONE : std_logic ;
+signal SBUS_DONE_I : std_logic ;
+signal G1_0_0 : std_logic ;
+signal G1_1_0 : std_logic ;
+signal SPIWBM2_CYC_O_16 : std_logic ;
+signal SO_I_0_M9_I_A5_1 : std_logic ;
+signal NSHIFT_15 : std_logic ;
+signal G0_14_SN : std_logic ;
+signal G0_14_RN_0 : std_logic ;
+signal FB_0 : std_logic ;
+signal STB_RNO_7 : std_logic ;
+signal STB_RNO_8 : std_logic ;
+signal WB_ACK_0 : std_logic ;
+signal WBF_ACK_M_S_0 : std_logic ;
+signal G2_0_1_0_0 : std_logic ;
+signal FB_0_0 : std_logic ;
+signal SBUS_DONE2_1_SQMUXA_I : std_logic ;
+signal SBUS_DONE2 : std_logic ;
+signal FB_0_1 : std_logic ;
+signal WBM_WE3 : std_logic ;
+signal WBM_WE_FAST_QN : std_logic ;
+signal N_450_I_12 : std_logic ;
+signal WBM_WE_QN : std_logic ;
+signal WBM_CYCE_0 : std_logic ;
+signal WBM_CYC_QN : std_logic ;
+signal WBM_ADR7 : std_logic ;
+signal N_170_0 : std_logic ;
+signal STB_2_SQMUXA_I : std_logic ;
+signal STB_14 : std_logic ;
+signal STB_QN : std_logic ;
+signal N_51 : std_logic ;
+signal SBUS_ERR : std_logic ;
+signal SBUS_ERR_QN : std_logic ;
+signal SBUS_DONE2P : std_logic ;
+signal SBUS_DONE2P_QN : std_logic ;
+signal SBUS_DONE2_QN : std_logic ;
+signal SBUS_DONE_QN : std_logic ;
+signal N_49 : std_logic ;
+signal N_13_I : std_logic ;
+signal N_15_I : std_logic ;
+signal N_17_I : std_logic ;
+signal N_19_I : std_logic ;
+signal N_21_I : std_logic ;
+signal N_23_I : std_logic ;
+signal N_25_I : std_logic ;
+signal N_27_I : std_logic ;
+signal N_451_I : std_logic ;
+signal N_452_I : std_logic ;
+signal N_33_I : std_logic ;
+signal N_35_I : std_logic ;
+signal N_37_I : std_logic ;
+signal N_39_I : std_logic ;
+signal N_41_I : std_logic ;
+signal N_43_I : std_logic ;
+signal UN1_NSTATE_AXBXC1 : std_logic ;
+signal UN1_NSTATE_AXBXC2 : std_logic ;
+signal N_45_I : std_logic ;
+signal NSHIFT_QN : std_logic ;
+signal N_4700 : std_logic ;
+signal N_4699 : std_logic ;
+signal N_4698 : std_logic ;
+signal N_4697 : std_logic ;
+signal N_4696 : std_logic ;
+signal N_4695 : std_logic ;
+signal N_4694 : std_logic ;
+signal N_4693 : std_logic ;
+signal N_4692 : std_logic ;
+signal N_4691 : std_logic ;
+signal N_4690 : std_logic ;
+signal N_4689 : std_logic ;
+signal N_4688 : std_logic ;
+signal N_4687 : std_logic ;
+signal N_4686 : std_logic ;
+signal N_4685 : std_logic ;
+signal N_4684 : std_logic ;
+signal N_4683 : std_logic ;
+signal N_4682 : std_logic ;
+signal N_4681 : std_logic ;
+signal N_4680 : std_logic ;
+signal N_4679 : std_logic ;
+signal N_4678 : std_logic ;
+signal N_4677 : std_logic ;
+signal N_4676 : std_logic ;
+signal N_4675 : std_logic ;
+signal N_4674 : std_logic ;
+signal N_4673 : std_logic ;
+signal UN1_NSTATE_P4 : std_logic ;
+signal WBM_WE3_1 : std_logic ;
+signal SPIWBM2_WE_O_10 : std_logic ;
+signal STB_6_IV_0_0_12_I_A4_0 : std_logic ;
+signal UN1_NSTATE_AC0_3 : std_logic ;
+signal WBM_STB_O_0_S_13 : std_logic ;
+signal SO_I_0_M9_I_A5_1_1 : std_logic ;
+signal SO_I_0_M9_I_0 : std_logic ;
+signal N_474 : std_logic ;
+signal N_79 : std_logic ;
+signal SBUS_ERR_2_SQMUXA_I_A2_1 : std_logic ;
+signal N_66 : std_logic ;
+signal N_84 : std_logic ;
+signal N_69 : std_logic ;
+signal SBUS_DONE2_1_SQMUXA_A1 : std_logic ;
+signal SBUS_DONE2_1_SQMUXA_0_0 : std_logic ;
+signal SO_I_0_M9_I_1 : std_logic ;
+signal N_470 : std_logic ;
+signal N_471 : std_logic ;
+signal SBUS_DONE2_1_SQMUXA_A0_1 : std_logic ;
+signal SO_I_0_M9_I_2 : std_logic ;
+signal ODAT_8_I_A3_0_M5_I_A4_0_0 : std_logic ;
+signal N_70 : std_logic ;
+signal WBM_CYC4 : std_logic ;
+signal WBM_WE_FAST_11 : std_logic ;
+signal N_27_I_1 : std_logic ;
+signal N_19_I_1 : std_logic ;
+signal N_23_I_1 : std_logic ;
+signal N_15_I_1 : std_logic ;
+signal N_37_I_1 : std_logic ;
+signal G0_0_1 : std_logic ;
+signal G0_0_2 : std_logic ;
+signal N_65 : std_logic ;
+signal G0_0 : std_logic ;
+signal G0_1_0 : std_logic ;
+signal G0_5_0 : std_logic ;
+signal G0_1_3 : std_logic ;
+signal G0_0_0 : std_logic ;
+signal G0_1 : std_logic ;
+signal G0_2 : std_logic ;
+signal G0_3_0 : std_logic ;
+signal STB_6_IV_0_0_I_RN_0 : std_logic ;
+signal STB_6_IV_0_0_12_I_SN : std_logic ;
+signal WBF_ACK_M_9 : std_logic ;
+signal N_590 : std_logic ;
+signal GND_0 : std_logic ;
+signal VCC_0 : std_logic ;
+begin
+WBM_CYC_RNIOGIA: INV port map (
+A => SPIWBM2_CYC_O_16,
+Z => spiwbm2_cyc_o_i);
+SBUS_ERR_RNO: INV port map (
+A => SBUS_DONE,
+Z => SBUS_DONE_I);
+\NSTATE_RNO[0]\: INV port map (
+A => NSTATE(0),
+Z => NSTATE_I(0));
+G1_0_0 <= (SBUS_DONE) or 
+	(gpio_a16_pad_c and gpio_a15_pad_c);
+G1_1_0 <= (not gpio_a15_pad_c) or 
+	(not gpio_a16_pad_c) or 
+	(SBUS_DONE);
+SO_I_0_M9_I_A5_1 <= wrreq_0_sqmuxa_0 and not NSHIFT_15 and SPIWBM2_CYC_O_16 and STB_14;
+FB_0 <= (NSHIFT_15) or 
+	(wrreq_0_sqmuxa and G0_14_SN) or 
+	(not G0_14_SN and G0_14_RN_0);
+STB_RNO_4: PFUMX port map (
+ALUT => STB_RNO_7,
+BLUT => STB_RNO_8,
+C0 => wrreq8_s,
+Z => WB_ACK_0);
+STB_RNO_7 <= (not WBM_STB_O_0_S_13 and not G2_0_1_0_0) or 
+	(not wrreq_0_sqmuxa_0 and not G2_0_1_0_0) or 
+	(not WBF_ACK_M_S_0 and not WBM_STB_O_0_S_13) or 
+	(not wrreq_0_sqmuxa_0 and not WBF_ACK_M_S_0);
+STB_RNO_8 <= (not G2_0_1_0_0) or 
+	(not WBF_ACK_M_S_0);
+FB_0_0 <= (SBUS_DONE) or 
+	(un1_wb_ack_N_4_i);
+FB_0_1 <= (SBUS_DONE2_1_SQMUXA_I) or 
+	(SBUS_DONE2);
+WBM_WE_FAST_REG_Z299: FD1P3DX port map (
+D => spi_mosi_pad_c,
+SP => WBM_WE3,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => WBM_WE_FAST_11);
+WBM_WE_REG_Z301: FD1P3DX port map (
+D => spi_mosi_pad_c,
+SP => WBM_WE3,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => SPIWBM2_WE_O_10);
+WBM_CYC_REG_Z303: FD1S3DX port map (
+D => WBM_CYCE_0,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => SPIWBM2_CYC_O_16);
+\WBM_ADR[0]_REG_Z305\: FD1P3DX port map (
+D => spi_mosi_pad_c,
+SP => WBM_ADR7,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => spiwbm2_adr_o(1));
+\WBM_ADR[1]_REG_Z307\: FD1P3DX port map (
+D => idat_0,
+SP => WBM_ADR7,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => spiwbm2_adr_o(2));
+\WBM_ADR[2]_REG_Z309\: FD1P3DX port map (
+D => IDAT(1),
+SP => WBM_ADR7,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => spiwbm2_adr_o(3));
+\WBM_ADR[3]_REG_Z311\: FD1P3DX port map (
+D => IDAT(2),
+SP => WBM_ADR7,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => spiwbm2_adr_o(4));
+STB_REG_Z313: FD1P3DX port map (
+D => N_170_0,
+SP => STB_2_SQMUXA_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => STB_14);
+SBUS_ERR_REG_Z315: FD1P3DX port map (
+D => SBUS_DONE_I,
+SP => N_51,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => SBUS_ERR);
+SBUS_DONE2P_REG_Z317: FD1S3DX port map (
+D => SBUS_DONE2,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => SBUS_DONE2P);
+SBUS_DONE2_REG_Z319: FD1S3DX port map (
+D => FB_0_1,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => SBUS_DONE2);
+SBUS_DONE_REG_Z321: FD1S3DX port map (
+D => FB_0_0,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => SBUS_DONE);
+\PSTATE[0]_REG_Z323\: FD1P3DX port map (
+D => PSTATE_LM(0),
+SP => N_49,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => PSTATE(0));
+\PSTATE[1]_REG_Z325\: FD1P3DX port map (
+D => PSTATE_LM(1),
+SP => N_49,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => PSTATE(1));
+\PSTATE[2]_REG_Z327\: FD1P3DX port map (
+D => PSTATE_LM(2),
+SP => N_49,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => PSTATE(2));
+\PSTATE[3]_REG_Z329\: FD1P3DX port map (
+D => PSTATE_LM(3),
+SP => N_49,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => PSTATE(3));
+\PSTATE[4]_REG_Z331\: FD1P3DX port map (
+D => PSTATE_LM(4),
+SP => N_49,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => PSTATE(4));
+\ODAT[0]_REG_Z333\: FD1S3DX port map (
+D => N_13_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(0));
+\ODAT[1]_REG_Z335\: FD1S3DX port map (
+D => N_15_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(1));
+\ODAT[2]_REG_Z337\: FD1S3DX port map (
+D => N_17_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(2));
+\ODAT[3]_REG_Z339\: FD1S3DX port map (
+D => N_19_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(3));
+\ODAT[4]_REG_Z341\: FD1S3DX port map (
+D => N_21_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(4));
+\ODAT[5]_REG_Z343\: FD1S3DX port map (
+D => N_23_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(5));
+\ODAT[6]_REG_Z345\: FD1S3DX port map (
+D => N_25_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(6));
+\ODAT[7]_REG_Z347\: FD1S3DX port map (
+D => N_27_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(7));
+\ODAT[8]_REG_Z349\: FD1S3DX port map (
+D => N_451_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(8));
+\ODAT[9]_REG_Z351\: FD1S3DX port map (
+D => N_452_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(9));
+\ODAT[10]_REG_Z353\: FD1S3DX port map (
+D => N_33_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(10));
+\ODAT[11]_REG_Z355\: FD1S3DX port map (
+D => N_35_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(11));
+\ODAT[12]_REG_Z357\: FD1S3DX port map (
+D => N_37_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(12));
+\ODAT[13]_REG_Z359\: FD1S3DX port map (
+D => N_39_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(13));
+\ODAT[14]_REG_Z361\: FD1S3DX port map (
+D => N_41_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(14));
+\ODAT[15]_REG_Z363\: FD1S3DX port map (
+D => N_43_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => ODAT(15));
+\NSTATE[0]_REG_Z365\: FD1S3DX port map (
+D => NSTATE_I(0),
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => NSTATE(0));
+\NSTATE[1]_REG_Z367\: FD1S3DX port map (
+D => UN1_NSTATE_AXBXC1,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => NSTATE(1));
+\NSTATE[2]_REG_Z369\: FD1S3DX port map (
+D => UN1_NSTATE_AXBXC2,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => NSTATE(2));
+\NSTATE[3]_REG_Z371\: FD1S3DX port map (
+D => NSTATE_4(3),
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => NSTATE(3));
+\NSTATE[4]_REG_Z373\: FD1S3DX port map (
+D => N_45_I,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => NSTATE(4));
+NSHIFT_REG_Z375: FD1S3DX port map (
+D => FB_0,
+CK => spi_clk_pad_c_i,
+CD => N_450_I_12,
+Q => NSHIFT_15);
+\IDAT_FAST[0]_REG_Z377\: FD1S3DX port map (
+D => spi_mosi_pad_c,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => IDAT_FAST(0));
+\IDAT[1]_REG_Z379\: FD1S3DX port map (
+D => idat_0,
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => IDAT(1));
+\IDAT[2]_REG_Z381\: FD1S3DX port map (
+D => IDAT(1),
+CK => spi_clk_pad_c,
+CD => N_450_I_12,
+Q => IDAT(2));
+UN1_NSTATE_P4 <= NSTATE(0) and NSTATE(1) and NSTATE(2) and NSTATE(3);
+UN1_NSTATE_AXBXC1 <= (NSTATE(0) and not NSTATE(1)) or 
+	(not NSTATE(0) and NSTATE(1));
+WBM_WE3_1 <= not PSTATE(0) and not PSTATE(1);
+STB_6_IV_0_0_12_I_A4_0 <= not NSTATE(4) and SPIWBM2_WE_O_10;
+UN1_NSTATE_AXBXC2 <= (NSTATE(0) and NSTATE(1) and not NSTATE(2)) or 
+	(not NSTATE(1) and NSTATE(2)) or 
+	(not NSTATE(0) and NSTATE(2));
+UN1_NSTATE_AC0_3 <= NSTATE(0) and NSTATE(1) and NSTATE(2);
+WBM_STB_O_0_S_13 <= (IDAT_FAST(0) and NSHIFT_15) or 
+	(STB_14);
+SO_I_0_M9_I_A5_1_1 <= (tail_w and not tail and not NSHIFT_15 and not SPIWBM2_WE_O_10) or 
+	(not tail_w and tail and not NSHIFT_15 and not SPIWBM2_WE_O_10);
+SO_I_0_M9_I_0 <= (NSHIFT_15 and ODAT(15)) or 
+	(not NSHIFT_15 and SBUS_DONE);
+N_450_I_12 <= (gpio_a28_pad_c and not SBUS_ERR) or 
+	(gpio_a28_pad_c and SBUS_DONE2P);
+ODAT_8_I_A3_0_1(0) <= (not cmemwin_wbs_en11 and not NSHIFT_15 and STB_14) or 
+	(not NSHIFT_15 and STB_14 and SPIWBM2_CYC_O_16);
+WBM_WE3 <= not PSTATE(2) and not PSTATE(3) and not PSTATE(4) and WBM_WE3_1;
+WBM_ADR7 <= PSTATE(2) and not PSTATE(3) and not PSTATE(4) and WBM_WE3_1;
+N_474 <= NSHIFT_15 and SBUS_DONE and SBUS_ERR and not SPIWBM2_WE_O_10;
+SBUS_ERR_2_SQMUXA_I_A2_1 <= (not N_79 and PSTATE(2) and not SPIWBM2_WE_O_10) or 
+	(not N_79 and PSTATE(2) and PSTATE(4));
+N_84 <= not N_66 and NSTATE(0) and NSTATE(4) and not SBUS_ERR;
+N_69 <= (not NSTATE(4)) or 
+	(N_66) or 
+	(NSTATE(0)) or 
+	(SBUS_ERR);
+SBUS_DONE2_1_SQMUXA_A1 <= cmemwin_wbs_en11 and not wbm_stb_o_0 and SPIWBM2_CYC_O_16 and SPIWBM2_WE_O_10;
+N_45_I <= (NSTATE(4) and not NSTATE_RNIRKCK(2) and not UN1_NSTATE_P4) or 
+	(not NSTATE(4) and not NSTATE_RNIRKCK(2) and UN1_NSTATE_P4);
+NSTATE_4(3) <= (N_84) or 
+	(NSTATE(3) and not NSTATE_RNIRKCK(2) and not UN1_NSTATE_AC0_3) or 
+	(not NSTATE(3) and not NSTATE_RNIRKCK(2) and UN1_NSTATE_AC0_3);
+SBUS_DONE2_1_SQMUXA_0_0 <= (not SBUS_DONE2_1_SQMUXA_A1 and not SBUS_DONE) or 
+	(not SBUS_DONE2_1_SQMUXA_A1 and not NSTATE_RNIRKCK(2)) or 
+	(not SBUS_DONE2_1_SQMUXA_A1 and not NSHIFT_15);
+SO_I_0_M9_I_1 <= (N_28 and cmemwin_wbs_en11 and not NSHIFT_15) or 
+	(SO_I_0_M9_I_0);
+ODAT_8_I_1(4) <= (not NSHIFT_15 and not ODAT(4)) or 
+	(not N_69) or 
+	(NSHIFT_15 and not ODAT(3));
+ODAT_8_I_1(15) <= (not NSHIFT_15 and not ODAT(15)) or 
+	(not N_69) or 
+	(NSHIFT_15 and not ODAT(14));
+ODAT_8_I_1(8) <= (not NSHIFT_15 and not ODAT(8)) or 
+	(not N_69) or 
+	(NSHIFT_15 and not ODAT(7));
+ODAT_8_I_1(13) <= (not NSHIFT_15 and not ODAT(13)) or 
+	(not N_69) or 
+	(NSHIFT_15 and not ODAT(12));
+ODAT_8_I_1(11) <= (not NSHIFT_15 and not ODAT(11)) or 
+	(not N_69) or 
+	(NSHIFT_15 and not ODAT(10));
+ODAT_8_I_1(10) <= (not NSHIFT_15 and not ODAT(10)) or 
+	(not N_69) or 
+	(NSHIFT_15 and not ODAT(9));
+ODAT_8_I_1(14) <= (not NSHIFT_15 and not ODAT(14)) or 
+	(not N_69) or 
+	(NSHIFT_15 and not ODAT(13));
+ODAT_8_I_1(6) <= (not NSHIFT_15 and not ODAT(6)) or 
+	(not N_69) or 
+	(NSHIFT_15 and not ODAT(5));
+ODAT_8_I_0(0) <= (not ODAT(0)) or 
+	(not N_69);
+ODAT_8_I_1(2) <= (not NSHIFT_15 and not ODAT(2)) or 
+	(not N_69) or 
+	(NSHIFT_15 and not ODAT(1));
+ODAT_8_I_1(9) <= (not NSHIFT_15 and not ODAT(9)) or 
+	(not N_69) or 
+	(NSHIFT_15 and not ODAT(8));
+PSTATE_LM(0) <= not N_470 and not N_471 and PSTATE_S(0);
+PSTATE_LM(1) <= not N_470 and not N_471 and PSTATE_S(1);
+PSTATE_LM(2) <= not N_470 and not N_471 and PSTATE_S(2);
+PSTATE_LM(4) <= not N_470 and not N_471 and PSTATE_S(4);
+PSTATE_LM(3) <= (N_470) or 
+	(N_471) or 
+	(PSTATE_S(3));
+N_51 <= (N_470) or 
+	(N_474) or 
+	(not SBUS_DONE and SBUS_ERR_2_SQMUXA_I_A2_1);
+SBUS_DONE2_1_SQMUXA_A0_1 <= not cmemwin_wbs_en11 and first_cyc_RNIBECN and un1_flushack_d and SPIWBM2_WE_O_10;
+SO_I_0_M9_I_2 <= (SO_I_0_M9_I_1) or 
+	(N_28 and flushack and SO_I_0_M9_I_A5_1_1);
+ODAT_8_I_A3_0_M5_I_A4_0_0 <= (not cmemwin_wbs_en11 and not wrreq_0_sqmuxa_0) or 
+	(not cmemwin_wbs_en11 and not un1_flushack_d) or 
+	(not cmemwin_wbs_en11 and not first_cyc_RNIBECN);
+so_i_0_N_10 <= (SO_I_0_M9_I_2) or 
+	(not first_cyc and SO_I_0_M9_I_A5_1) or 
+	(flushack and SO_I_0_M9_I_A5_1);
+SBUS_DONE2_1_SQMUXA_I <= (not SBUS_DONE2_1_SQMUXA_0_0) or 
+	(SBUS_DONE2_1_SQMUXA_A0_1 and WBM_STB_O_0_S_13 and wrreq_0_sqmuxa_0);
+N_70 <= (not N_69) or 
+	(ODAT_8_I_A3_0_1(0) and not ODAT_8_I_A3_0_M5_I_A4_0_0) or 
+	(ODAT_8_I_A3_0_1(0) and WBF_ACK_M_S_0);
+N_41_I <= (not ODAT_8_I_1(14) and not ODAT_8_I_A3_0_1(0)) or 
+	(not ODAT_8_I_1(14) and ODAT_8_I_A3_0_M5_I_A4_0_0 and not WBF_ACK_M_S_0);
+N_43_I <= (not ODAT_8_I_1(15) and not ODAT_8_I_A3_0_1(0)) or 
+	(not ODAT_8_I_1(15) and ODAT_8_I_A3_0_M5_I_A4_0_0 and not WBF_ACK_M_S_0);
+N_13_I <= (not ODAT_8_I_0(0) and not ODAT_8_I_A3_0_1(0)) or 
+	(not ODAT_8_I_0(0) and ODAT_8_I_A3_0_M5_I_A4_0_0 and not WBF_ACK_M_S_0);
+N_17_I <= (not ODAT_8_I_1(2) and not ODAT_8_I_A3_0_1(0)) or 
+	(not ODAT_8_I_1(2) and ODAT_8_I_A3_0_M5_I_A4_0_0 and not WBF_ACK_M_S_0);
+N_21_I <= (not ODAT_8_I_1(4) and not ODAT_8_I_A3_0_1(0)) or 
+	(not ODAT_8_I_1(4) and ODAT_8_I_A3_0_M5_I_A4_0_0 and not WBF_ACK_M_S_0);
+N_25_I <= (not ODAT_8_I_1(6) and not ODAT_8_I_A3_0_1(0)) or 
+	(not ODAT_8_I_1(6) and ODAT_8_I_A3_0_M5_I_A4_0_0 and not WBF_ACK_M_S_0);
+N_451_I <= (not ODAT_8_I_1(8) and not ODAT_8_I_A3_0_1(0)) or 
+	(not ODAT_8_I_1(8) and ODAT_8_I_A3_0_M5_I_A4_0_0 and not WBF_ACK_M_S_0);
+N_452_I <= (not ODAT_8_I_1(9) and not ODAT_8_I_A3_0_1(0)) or 
+	(not ODAT_8_I_1(9) and ODAT_8_I_A3_0_M5_I_A4_0_0 and not WBF_ACK_M_S_0);
+N_33_I <= (not ODAT_8_I_1(10) and not ODAT_8_I_A3_0_1(0)) or 
+	(not ODAT_8_I_1(10) and ODAT_8_I_A3_0_M5_I_A4_0_0 and not WBF_ACK_M_S_0);
+N_35_I <= (not ODAT_8_I_1(11) and not ODAT_8_I_A3_0_1(0)) or 
+	(not ODAT_8_I_1(11) and ODAT_8_I_A3_0_M5_I_A4_0_0 and not WBF_ACK_M_S_0);
+N_39_I <= (not ODAT_8_I_1(13) and not ODAT_8_I_A3_0_1(0)) or 
+	(not ODAT_8_I_1(13) and ODAT_8_I_A3_0_M5_I_A4_0_0 and not WBF_ACK_M_S_0);
+WBM_CYCE_0 <= (WBM_CYC4) or 
+	(SPIWBM2_CYC_O_16);
+WBF_ACK_M_S_0 <= not cmemwin_wbs_en11 and not WBM_WE_FAST_11 and not wbf_ack_m_s_0_m1_e_1 and un1_full_NE_1;
+N_27_I_1 <= (not NSHIFT_15 and not ODAT(7)) or 
+	(NSHIFT_15 and not ODAT(6));
+N_27_I <= (not N_70 and not NSHIFT_15 and not un1_wb_ack_m3) or 
+	(not N_70 and not N_27_I_1);
+N_19_I_1 <= (not NSHIFT_15 and not ODAT(3)) or 
+	(NSHIFT_15 and not ODAT(2));
+N_19_I <= (not N_70 and not NSHIFT_15 and not un1_wb_ack_m3) or 
+	(not N_70 and not N_19_I_1);
+N_23_I_1 <= (not NSHIFT_15 and not ODAT(5)) or 
+	(NSHIFT_15 and not ODAT(4));
+N_23_I <= (not N_70 and not NSHIFT_15 and not un1_wb_ack_m3) or 
+	(not N_70 and not N_23_I_1);
+N_15_I_1 <= (not NSHIFT_15 and not ODAT(1)) or 
+	(NSHIFT_15 and not ODAT(0));
+N_15_I <= (not N_70 and not NSHIFT_15 and not un1_wb_ack_m3) or 
+	(not N_70 and not N_15_I_1);
+N_37_I_1 <= (not NSHIFT_15 and not ODAT(12)) or 
+	(NSHIFT_15 and not ODAT(11));
+N_37_I <= (not N_70 and not NSHIFT_15 and not un1_wb_ack_m3) or 
+	(not N_70 and not N_37_I_1);
+G0_0_1 <= NSTATE(4) and SBUS_DONE;
+N_79 <= (not PSTATE(1)) or 
+	(not PSTATE(0)) or 
+	(PSTATE(3));
+G0_0_2 <= NSTATE(0) and NSTATE(2) and SPIWBM2_WE_O_10;
+N_471 <= not N_79 and PSTATE(2) and PSTATE(4);
+NSTATE_RNIRKCK(2) <= not N_65 and NSTATE(0) and NSTATE(2) and NSTATE(4);
+G0_0 <= (not N_471) or 
+	(SBUS_DONE and not SBUS_ERR);
+N_49 <= (G0_0) or 
+	(not N_65 and G0_0_1 and G0_0_2);
+N_65 <= (not NSTATE(1)) or 
+	(NSTATE(3));
+G0_1_0 <= NSTATE(1) and not NSTATE(3);
+G0_5_0 <= not NSTATE(2) and not NSTATE(4);
+WBF_ACK_M_9 <= (idat_0 and NSHIFT_15 and WBF_ACK_M_S_0) or 
+	(STB_14 and WBF_ACK_M_S_0);
+G0_1_3 <= G0_1_0 and NSTATE(0) and not NSTATE(2) and NSTATE(4);
+WBM_CYC4 <= not N_65 and G0_5_0 and NSTATE(0) and not SBUS_ERR;
+G0_0_0 <= (idat_0 and NSHIFT_15) or 
+	(WBM_CYC4);
+G0_1 <= (G0_0_0) or 
+	(G0_1_3 and not SBUS_ERR and SPIWBM2_WE_O_10);
+STB_2_SQMUXA_I <= (not cmemwin_wbs_en11 and not WB_ACK_0) or 
+	(N_28 and not WB_ACK_0) or 
+	(G0_1) or 
+	(N_28 and cmemwin_wbs_en11);
+N_66 <= (not NSTATE(2)) or 
+	(not NSTATE(1)) or 
+	(NSTATE(3));
+G2_0_1_0_0 <= (idat_0 and NSHIFT_15) or 
+	(STB_14);
+G0_2 <= not N_66 and not NSTATE(0) and not NSTATE(4) and not SPIWBM2_WE_O_10;
+G0_3_0 <= (G0_2 and G1_1_0) or 
+	(G0_2 and G2_0_1_0_0 and SPIWBM2_CYC_O_16);
+G0_14_SN <= (G0_3_0 and not G1_0_0 and not WBF_ACK_M_S_0) or 
+	(G0_3_0 and not G1_0_0 and not G2_0_1_0_0);
+STB_6_IV_0_0_I_RN_0 <= (not N_28 and not STB_6_IV_0_0_12_I_A4_0) or 
+	(not N_28 and idat_0 and NSHIFT_15);
+STB_6_IV_0_0_12_I_SN <= (not cmemwin_wbs_en11 and not STB_6_IV_0_0_12_I_A4_0) or 
+	(not cmemwin_wbs_en11 and idat_0 and NSHIFT_15);
+N_170_0 <= (STB_6_IV_0_0_12_I_SN and not WBF_ACK_M_9 and not wrreq_0_sqmuxa) or 
+	(STB_6_IV_0_0_I_RN_0 and not WBF_ACK_M_9 and not wrreq_0_sqmuxa) or 
+	(not STB_6_IV_0_0_12_I_SN and STB_6_IV_0_0_I_RN_0);
+N_470 <= G0_0_2 and not N_65 and SBUS_DONE and NSTATE(4);
+G0_14_RN_0 <= (SPIWBM2_CYC_O_16 and G2_0_1_0_0 and G0_2) or 
+	(G1_1_0 and G0_2);
+\PSTATE_CRY_0[3]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x060a",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => PSTATE(3),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => PSTATE(4),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => PSTATE_CRY(2),
+COUT => PSTATE_CRY_0_COUT(3),
+S0 => PSTATE_S(3),
+S1 => PSTATE_S(4));
+\PSTATE_CRY_0[1]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => PSTATE(1),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => PSTATE(2),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => PSTATE_CRY(0),
+COUT => PSTATE_CRY(2),
+S0 => PSTATE_S(1),
+S1 => PSTATE_S(2));
+\PSTATE_CRY_0[0]\: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => GND,
+B0 => VCC,
+C0 => GND,
+D0 => VCC,
+A1 => PSTATE(0),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => GND,
+COUT => PSTATE_CRY(0),
+S0 => PSTATE_CRY_0_S0(0),
+S1 => PSTATE_S(0));
+GND_0 <= '0';
+VCC_0 <= '1';
+wbf_ack_m <= WBF_ACK_M_9;
+spiwbm2_we_o <= SPIWBM2_WE_O_10;
+wbm_we_fast <= WBM_WE_FAST_11;
+N_450_i <= N_450_I_12;
+wbm_stb_o_0_s <= WBM_STB_O_0_S_13;
+stb <= STB_14;
+nshift <= NSHIFT_15;
+spiwbm2_cyc_o <= SPIWBM2_CYC_O_16;
+end beh;
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library xp2;
+use xp2.components.all;
+
+entity spi_module is
+port(
+led_val : in std_logic_vector(1 downto 0);
+value_reg : in std_logic_vector(15 downto 0);
+dio : in std_logic_vector(34 downto 34);
+dio_pad_c_0 :  out std_logic;
+dio_pad_c_2 :  out std_logic;
+state_1 :  out std_logic;
+state_i : out std_logic_vector(1 downto 0);
+spi_dat_4 :  out std_logic;
+rstn :  in std_logic;
+sr_load :  in std_logic;
+load_reg :  in std_logic;
+VCC :  in std_logic;
+rstn_i :  in std_logic;
+CN :  out std_logic;
+GND :  in std_logic);
+end spi_module;
+
+architecture beh of spi_module is
+signal STATE : std_logic_vector(0 to 0);
+signal STATE_QN : std_logic_vector(1 downto 0);
+signal STATE_NSS : std_logic_vector(1 to 1);
+signal DATA_6 : std_logic_vector(15 downto 0);
+signal DATA : std_logic_vector(21 downto 0);
+signal DATA_QN : std_logic_vector(16 downto 0);
+signal DATA_6_0_I : std_logic_vector(7 downto 1);
+signal BITINDEX_LM : std_logic_vector(4 downto 0);
+signal BITINDEX : std_logic_vector(4 downto 0);
+signal BITINDEX_QN : std_logic_vector(4 downto 0);
+signal STATE_NS_0_A2_0 : std_logic_vector(1 to 1);
+signal BITINDEX_S : std_logic_vector(4 downto 0);
+signal BITINDEX_5 : std_logic_vector(3 to 3);
+signal BITINDEX_CRY : std_logic_vector(2 downto 0);
+signal BITINDEX_CRY_0_COUT : std_logic_vector(3 to 3);
+signal BITINDEX_CRY_0_S0 : std_logic_vector(0 to 0);
+signal \STATE_\ : std_logic ;
+signal FB_0 : std_logic ;
+signal CHIP_SELECT : std_logic ;
+signal FB : std_logic ;
+signal STATEC : std_logic ;
+signal CN_35 : std_logic ;
+signal \DIO_PAD_C_\ : std_logic ;
+signal SHIFTREG_CLR_QN : std_logic ;
+signal UN1_STATE_2_0_A3 : std_logic ;
+signal BITINDEX10 : std_logic ;
+signal CMD : std_logic ;
+signal CMD_QN : std_logic ;
+signal CHIP_SELECT_QN : std_logic ;
+signal BITINDEXE_0_I : std_logic ;
+signal STATE_105_D : std_logic ;
+signal N_260 : std_logic ;
+signal N_262 : std_logic ;
+signal N_267 : std_logic ;
+signal N_271 : std_logic ;
+signal N_273 : std_logic ;
+signal N_253_4 : std_logic ;
+signal STATEC_0 : std_logic ;
+signal SPI_DAT_2_21_AM : std_logic ;
+signal SPI_DAT_2_21_BM : std_logic ;
+signal N_280 : std_logic ;
+signal SPI_DAT_2_5_AM : std_logic ;
+signal SPI_DAT_2_5_BM : std_logic ;
+signal N_264 : std_logic ;
+signal SPI_DAT_2_10_AM : std_logic ;
+signal SPI_DAT_2_10_BM : std_logic ;
+signal N_269 : std_logic ;
+signal SPI_DAT_2_16_AM : std_logic ;
+signal SPI_DAT_2_16_BM : std_logic ;
+signal N_275 : std_logic ;
+signal N_270 : std_logic ;
+signal N_281 : std_logic ;
+signal N_285 : std_logic ;
+signal N_284 : std_logic ;
+signal N_283 : std_logic ;
+signal N_104 : std_logic ;
+signal N_103 : std_logic ;
+signal N_102 : std_logic ;
+signal GND_0 : std_logic ;
+signal VCC_0 : std_logic ;
+begin
+\STATE_RNI942F[0]\: INV port map (
+A => STATE(0),
+Z => state_i(0));
+\STATE_RNIA82F[1]\: INV port map (
+A => \STATE_\,
+Z => state_i(1));
+FB_0 <= (not \STATE_\ and not STATE(0)) or 
+	(\DIO_PAD_C_\);
+FB <= (not \STATE_\ and not STATE(0)) or 
+	(CHIP_SELECT and not STATE(0)) or 
+	(\STATE_\ and CHIP_SELECT);
+\STATE_1_.CN\: INV port map (
+A => dio(34),
+Z => CN_35);
+\STATE[0]_REG_Z182\: FD1S3IX port map (
+D => STATEC,
+CK => CN_35,
+CD => rstn_i,
+Q => STATE(0));
+\STATE[1]_REG_Z184\: FD1S3AX port map (
+D => STATE_NSS(1),
+CK => CN_35,
+Q => \STATE_\);
+SHIFTREG_CLR_REG_Z186: FD1S3IX port map (
+D => FB_0,
+CK => CN_35,
+CD => rstn_i,
+Q => \DIO_PAD_C_\);
+\DATA[0]_REG_Z188\: FD1P3IX port map (
+D => DATA_6(0),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(0));
+\DATA[1]_REG_Z190\: FD1P3IX port map (
+D => DATA_6_0_I(1),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(1));
+\DATA[2]_REG_Z192\: FD1P3IX port map (
+D => DATA_6(2),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(2));
+\DATA[3]_REG_Z194\: FD1P3IX port map (
+D => DATA_6_0_I(3),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(3));
+\DATA[4]_REG_Z196\: FD1P3IX port map (
+D => DATA_6_0_I(4),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(4));
+\DATA[5]_REG_Z198\: FD1P3IX port map (
+D => DATA_6_0_I(5),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(5));
+\DATA[6]_REG_Z200\: FD1P3IX port map (
+D => DATA_6_0_I(6),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(6));
+\DATA[7]_REG_Z202\: FD1P3IX port map (
+D => DATA_6_0_I(7),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(7));
+\DATA[8]_REG_Z204\: FD1P3IX port map (
+D => DATA_6(8),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(8));
+\DATA[9]_REG_Z206\: FD1P3IX port map (
+D => DATA_6(9),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(9));
+\DATA[10]_REG_Z208\: FD1P3IX port map (
+D => DATA_6(10),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(10));
+\DATA[11]_REG_Z210\: FD1P3IX port map (
+D => DATA_6(11),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(11));
+\DATA[12]_REG_Z212\: FD1P3IX port map (
+D => DATA_6(12),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(12));
+\DATA[13]_REG_Z214\: FD1P3IX port map (
+D => DATA_6(13),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(13));
+\DATA[14]_REG_Z216\: FD1P3IX port map (
+D => DATA_6(14),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(14));
+\DATA[15]_REG_Z218\: FD1P3IX port map (
+D => DATA_6(15),
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(15));
+\DATA[16]_REG_Z220\: FD1P3IX port map (
+D => load_reg,
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => DATA(21));
+CMD_REG_Z222: FD1P3IX port map (
+D => BITINDEX10,
+SP => UN1_STATE_2_0_A3,
+CK => CN_35,
+CD => rstn_i,
+Q => CMD);
+CHIP_SELECT_REG_Z224: FD1S3JX port map (
+D => rstn_i,
+CK => CN_35,
+PD => FB,
+Q => CHIP_SELECT);
+\BITINDEX[0]_REG_Z226\: FD1P3AX port map (
+D => BITINDEX_LM(0),
+SP => BITINDEXE_0_I,
+CK => CN_35,
+Q => BITINDEX(0));
+\BITINDEX[1]_REG_Z228\: FD1P3AX port map (
+D => BITINDEX_LM(1),
+SP => BITINDEXE_0_I,
+CK => CN_35,
+Q => BITINDEX(1));
+\BITINDEX[2]_REG_Z230\: FD1P3AX port map (
+D => BITINDEX_LM(2),
+SP => BITINDEXE_0_I,
+CK => CN_35,
+Q => BITINDEX(2));
+\BITINDEX[3]_REG_Z232\: FD1P3AX port map (
+D => BITINDEX_LM(3),
+SP => BITINDEXE_0_I,
+CK => CN_35,
+Q => BITINDEX(3));
+\BITINDEX[4]_REG_Z234\: FD1P3AX port map (
+D => BITINDEX_LM(4),
+SP => BITINDEXE_0_I,
+CK => CN_35,
+Q => BITINDEX(4));
+STATE_105_D <= not STATE(0) and not \STATE_\;
+BITINDEX10 <= not load_reg and sr_load;
+DATA_6(0) <= load_reg and value_reg(0);
+DATA_6(2) <= load_reg and value_reg(2);
+DATA_6(12) <= load_reg and value_reg(12);
+DATA_6(13) <= load_reg and value_reg(13);
+DATA_6(14) <= load_reg and value_reg(14);
+DATA_6(15) <= load_reg and value_reg(15);
+STATE_NS_0_A2_0(1) <= CMD and STATE(0);
+DATA_6(8) <= (led_val(0) and not load_reg) or 
+	(led_val(0) and value_reg(8)) or 
+	(load_reg and value_reg(8));
+DATA_6(9) <= (not led_val(0) and not load_reg) or 
+	(not led_val(0) and value_reg(9)) or 
+	(load_reg and value_reg(9));
+DATA_6(10) <= (led_val(1) and not load_reg) or 
+	(led_val(1) and value_reg(10)) or 
+	(load_reg and value_reg(10));
+DATA_6(11) <= (not led_val(1) and not load_reg) or 
+	(not led_val(1) and value_reg(11)) or 
+	(load_reg and value_reg(11));
+N_260 <= (not BITINDEX(4) and DATA(0)) or 
+	(BITINDEX(4) and DATA(21));
+N_262 <= (not BITINDEX(4) and DATA(1)) or 
+	(BITINDEX(4) and DATA(21));
+N_267 <= (not BITINDEX(4) and DATA(5)) or 
+	(BITINDEX(4) and DATA(21));
+N_271 <= (not BITINDEX(4) and DATA(2)) or 
+	(BITINDEX(4) and DATA(21));
+N_273 <= (not BITINDEX(4) and DATA(3)) or 
+	(BITINDEX(4) and DATA(21));
+DATA_6_0_I(1) <= (not load_reg) or 
+	(value_reg(1));
+DATA_6_0_I(3) <= (not load_reg) or 
+	(value_reg(3));
+DATA_6_0_I(4) <= (not load_reg) or 
+	(value_reg(4));
+DATA_6_0_I(5) <= (not load_reg) or 
+	(value_reg(5));
+DATA_6_0_I(6) <= (not load_reg) or 
+	(value_reg(6));
+DATA_6_0_I(7) <= (not load_reg) or 
+	(value_reg(7));
+UN1_STATE_2_0_A3 <= (load_reg and not STATE(0) and not \STATE_\) or 
+	(not STATE(0) and not \STATE_\ and sr_load);
+dio_pad_c_0 <= (CHIP_SELECT) or 
+	(CMD);
+BITINDEX_LM(0) <= (not STATE(0)) or 
+	(not rstn) or 
+	(BITINDEX_S(0));
+BITINDEX_LM(1) <= (not STATE(0)) or 
+	(not rstn) or 
+	(BITINDEX_S(1));
+BITINDEX_LM(2) <= (not STATE(0)) or 
+	(not rstn) or 
+	(BITINDEX_S(2));
+N_253_4 <= not BITINDEX(0) and not BITINDEX(1) and not BITINDEX(2) and not BITINDEX(3);
+BITINDEX_5(3) <= rstn and BITINDEX10 and not STATE(0) and not \STATE_\;
+STATEC_0 <= (load_reg and not \STATE_\) or 
+	(STATE(0) and not \STATE_\) or 
+	(not \STATE_\ and sr_load);
+STATE_NSS(1) <= rstn and N_253_4 and not BITINDEX(4) and STATE_NS_0_A2_0(1);
+BITINDEXE_0_I <= (not rstn) or 
+	(UN1_STATE_2_0_A3) or 
+	(STATE(0));
+SPI_DAT_2_21_AM <= (not BITINDEX(3) and not BITINDEX(4) and DATA(6)) or 
+	(BITINDEX(3) and DATA(14));
+SPI_DAT_2_21_BM <= (not BITINDEX(3) and not BITINDEX(4) and DATA(7)) or 
+	(BITINDEX(3) and DATA(15));
+SPI_DAT_2_21: PFUMX port map (
+ALUT => SPI_DAT_2_21_BM,
+BLUT => SPI_DAT_2_21_AM,
+C0 => BITINDEX(0),
+Z => N_280);
+STATEC <= (not STATE(0) and STATEC_0) or 
+	(not N_253_4 and STATEC_0) or 
+	(BITINDEX(4) and STATEC_0);
+SPI_DAT_2_5_AM <= (N_260 and not BITINDEX(3)) or 
+	(N_260 and DATA(8)) or 
+	(BITINDEX(3) and DATA(8));
+SPI_DAT_2_5_BM <= (N_262 and not BITINDEX(3)) or 
+	(N_262 and DATA(9)) or 
+	(BITINDEX(3) and DATA(9));
+SPI_DAT_2_5: PFUMX port map (
+ALUT => SPI_DAT_2_5_BM,
+BLUT => SPI_DAT_2_5_AM,
+C0 => BITINDEX(0),
+Z => N_264);
+SPI_DAT_2_10_AM <= (not BITINDEX(3) and not BITINDEX(4) and DATA(4)) or 
+	(BITINDEX(3) and DATA(12));
+SPI_DAT_2_10_BM <= (N_267 and not BITINDEX(3)) or 
+	(N_267 and DATA(13)) or 
+	(BITINDEX(3) and DATA(13));
+SPI_DAT_2_10: PFUMX port map (
+ALUT => SPI_DAT_2_10_BM,
+BLUT => SPI_DAT_2_10_AM,
+C0 => BITINDEX(0),
+Z => N_269);
+SPI_DAT_2_16_AM <= (N_271 and not BITINDEX(3)) or 
+	(N_271 and DATA(10)) or 
+	(BITINDEX(3) and DATA(10));
+SPI_DAT_2_16_BM <= (N_273 and not BITINDEX(3)) or 
+	(N_273 and DATA(11)) or 
+	(BITINDEX(3) and DATA(11));
+SPI_DAT_2_16: PFUMX port map (
+ALUT => SPI_DAT_2_16_BM,
+BLUT => SPI_DAT_2_16_AM,
+C0 => BITINDEX(0),
+Z => N_275);
+BITINDEX_LM(3) <= (BITINDEX_5(3) and not STATE(0)) or 
+	(not rstn and BITINDEX_5(3)) or 
+	(rstn and BITINDEX_S(3) and STATE(0));
+BITINDEX_LM(4) <= (not BITINDEX_5(3) and not STATE(0)) or 
+	(not rstn and not BITINDEX_5(3)) or 
+	(not BITINDEX_5(3) and BITINDEX_S(4)) or 
+	(rstn and BITINDEX_S(4) and STATE(0));
+SPI_DAT_2_11: L6MUX21 port map (
+D1 => N_269,
+D0 => N_264,
+SD => BITINDEX(2),
+Z => N_270);
+SPI_DAT_2_22: L6MUX21 port map (
+D1 => N_280,
+D0 => N_275,
+SD => BITINDEX(2),
+Z => N_281);
+spi_dat_4 <= (N_270 and not BITINDEX(1) and not STATE_105_D) or 
+	(N_281 and BITINDEX(1) and not STATE_105_D);
+\BITINDEX_CRY_0[3]\: CCU2B 
+generic map(
+  INIT0 => "0x060f",
+  INIT1 => "0x060a",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => BITINDEX(3),
+B0 => VCC,
+C0 => GND,
+D0 => VCC,
+A1 => BITINDEX(4),
+B1 => VCC,
+C1 => GND,
+D1 => VCC,
+CIN => BITINDEX_CRY(2),
+COUT => BITINDEX_CRY_0_COUT(3),
+S0 => BITINDEX_S(3),
+S1 => BITINDEX_S(4));
+\BITINDEX_CRY_0[1]\: CCU2B 
+generic map(
+  INIT0 => "0x060f",
+  INIT1 => "0x060f",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => BITINDEX(1),
+B0 => VCC,
+C0 => GND,
+D0 => VCC,
+A1 => BITINDEX(2),
+B1 => VCC,
+C1 => GND,
+D1 => VCC,
+CIN => BITINDEX_CRY(0),
+COUT => BITINDEX_CRY(2),
+S0 => BITINDEX_S(1),
+S1 => BITINDEX_S(2));
+\BITINDEX_CRY_0[0]\: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x060f",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => GND,
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => BITINDEX(0),
+B1 => VCC,
+C1 => GND,
+D1 => VCC,
+CIN => GND,
+COUT => BITINDEX_CRY(0),
+S0 => BITINDEX_CRY_0_S0(0),
+S1 => BITINDEX_S(0));
+GND_0 <= '0';
+VCC_0 <= '1';
+dio_pad_c_2 <= \DIO_PAD_C_\;
+state_1 <= \STATE_\;
+CN <= CN_35;
+end beh;
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library xp2;
+use xp2.components.all;
+
+entity pga_control is
+port(
+dio : in std_logic_vector(34 downto 34);
+VCC :  in std_logic;
+rstn_i :  in std_logic;
+pga_clk :  out std_logic);
+end pga_control;
+
+architecture beh of pga_control is
+signal CLK_ACCUMULATOR : std_logic_vector(3 downto 0);
+signal CLK_ACCUMULATOR_QN : std_logic_vector(3 downto 0);
+signal FB : std_logic ;
+signal PGA_CLK_31 : std_logic ;
+signal PGA_CLK_O_QN : std_logic ;
+signal CLK_ACCUMULATORC : std_logic ;
+signal CLK_ACCUMULATORC_0 : std_logic ;
+signal CLK_ACCUMULATORC_1 : std_logic ;
+signal N_101_M : std_logic ;
+signal GND : std_logic ;
+signal VCC_0 : std_logic ;
+begin
+FB <= (PGA_CLK_31 and not CLK_ACCUMULATOR(2)) or 
+	(not PGA_CLK_31 and not CLK_ACCUMULATOR(3) and CLK_ACCUMULATOR(2) and not CLK_ACCUMULATOR(1)) or 
+	(PGA_CLK_31 and CLK_ACCUMULATOR(3)) or 
+	(PGA_CLK_31 and CLK_ACCUMULATOR(1));
+PGA_CLK_O_REG_Z26: FD1S3IX port map (
+D => FB,
+CK => dio(34),
+CD => rstn_i,
+Q => PGA_CLK_31);
+\CLK_ACCUMULATOR[0]_REG_Z28\: FD1S3IX port map (
+D => CLK_ACCUMULATORC,
+CK => dio(34),
+CD => rstn_i,
+Q => CLK_ACCUMULATOR(0));
+\CLK_ACCUMULATOR[1]_REG_Z30\: FD1S3IX port map (
+D => CLK_ACCUMULATORC_0,
+CK => dio(34),
+CD => rstn_i,
+Q => CLK_ACCUMULATOR(1));
+\CLK_ACCUMULATOR[2]_REG_Z32\: FD1S3IX port map (
+D => CLK_ACCUMULATORC_1,
+CK => dio(34),
+CD => rstn_i,
+Q => CLK_ACCUMULATOR(2));
+\CLK_ACCUMULATOR[3]_REG_Z34\: FD1S3IX port map (
+D => N_101_M,
+CK => dio(34),
+CD => rstn_i,
+Q => CLK_ACCUMULATOR(3));
+N_101_M <= (CLK_ACCUMULATOR(0) and CLK_ACCUMULATOR(1) and CLK_ACCUMULATOR(2) and not CLK_ACCUMULATOR(3)) or 
+	(not CLK_ACCUMULATOR(2) and CLK_ACCUMULATOR(3)) or 
+	(not CLK_ACCUMULATOR(1) and CLK_ACCUMULATOR(3)) or 
+	(not CLK_ACCUMULATOR(0) and CLK_ACCUMULATOR(3));
+CLK_ACCUMULATORC <= (not CLK_ACCUMULATOR(0) and not CLK_ACCUMULATOR(2)) or 
+	(not CLK_ACCUMULATOR(0) and CLK_ACCUMULATOR(1)) or 
+	(not CLK_ACCUMULATOR(0) and CLK_ACCUMULATOR(3));
+CLK_ACCUMULATORC_0 <= (CLK_ACCUMULATOR(0) and not CLK_ACCUMULATOR(1) and not CLK_ACCUMULATOR(2)) or 
+	(not CLK_ACCUMULATOR(0) and CLK_ACCUMULATOR(1)) or 
+	(CLK_ACCUMULATOR(0) and not CLK_ACCUMULATOR(1) and CLK_ACCUMULATOR(3));
+CLK_ACCUMULATORC_1 <= (CLK_ACCUMULATOR(0) and CLK_ACCUMULATOR(1) and not CLK_ACCUMULATOR(2)) or 
+	(not CLK_ACCUMULATOR(0) and CLK_ACCUMULATOR(1) and CLK_ACCUMULATOR(2)) or 
+	(not CLK_ACCUMULATOR(1) and CLK_ACCUMULATOR(2) and CLK_ACCUMULATOR(3));
+GND <= '0';
+VCC_0 <= '1';
+pga_clk <= PGA_CLK_31;
+end beh;
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library xp2;
+use xp2.components.all;
+
+entity syscon_3s_29952_0_5_Z1 is
+port(
+internal_osc_c :  out std_logic);
+end syscon_3s_29952_0_5_Z1;
+
+architecture beh of syscon_3s_29952_0_5_Z1 is
+signal N_4612 : std_logic ;
+signal N_4611 : std_logic ;
+signal N_4610 : std_logic ;
+signal N_4609 : std_logic ;
+signal N_4608 : std_logic ;
+signal N_4607 : std_logic ;
+signal N_4606 : std_logic ;
+signal N_4605 : std_logic ;
+signal N_4604 : std_logic ;
+signal N_4603 : std_logic ;
+signal N_4602 : std_logic ;
+signal N_4601 : std_logic ;
+signal N_4600 : std_logic ;
+signal N_4599 : std_logic ;
+signal N_4598 : std_logic ;
+signal N_4597 : std_logic ;
+signal N_4596 : std_logic ;
+signal N_4595 : std_logic ;
+signal N_4594 : std_logic ;
+signal N_4593 : std_logic ;
+signal N_4592 : std_logic ;
+signal N_1587 : std_logic ;
+signal N_1586 : std_logic ;
+signal N_1585 : std_logic ;
+signal N_1584 : std_logic ;
+signal N_1583 : std_logic ;
+signal INTERNAL_OSC_O_I : std_logic ;
+signal GND : std_logic ;
+signal VCC : std_logic ;
+component OSCE
+port(
+OSC :  out std_logic  );
+end component;
+begin
+internal_osc_c <= INTERNAL_OSC_O_I;
+RNDOSC: OSCE 
+generic map( 
+  NOM_FREQ => "3.1"
+) 
+port map (
+OSC => INTERNAL_OSC_O_I);
+GND <= '0';
+VCC <= '1';
+end beh;
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library xp2;
+use xp2.components.all;
+
+entity spi_sbus_resync is
+port(
+idat : in std_logic_vector(0 downto 0);
+pll_100mhz :  in std_logic;
+gpio_a16_pad_c :  in std_logic;
+gpio_a15_pad_c :  in std_logic;
+spi_mosi_pad_c :  in std_logic;
+spi_clk_pad_c :  in std_logic;
+N_450_i :  out std_logic;
+gpio_a28_pad_c :  in std_logic;
+so_i_0_N_10 :  out std_logic;
+cmemwin_wbs_en11 :  in std_logic;
+GND :  in std_logic;
+VCC :  in std_logic;
+rstn_i :  in std_logic;
+spi_clk_pad_c_i :  in std_logic);
+end spi_sbus_resync;
+
+architecture beh of spi_sbus_resync is
+signal SPIWBM2_ADR_O : std_logic_vector(4 downto 1);
+signal WBF_ADR : std_logic_vector(4 to 4);
+signal SPIWBM2_CYC_O_I : std_logic ;
+signal UN1_FIRST_CYC5_0_I : std_logic ;
+signal FIRST_CYC : std_logic ;
+signal FIRST_CYC_QN : std_logic ;
+signal GOINGFULL : std_logic ;
+signal SPIWBM2_CYC_O : std_logic ;
+signal FIRST_CYC_RNIBECN : std_logic ;
+signal UN1_FULL_NE_0_0 : std_logic ;
+signal UN1_FULL_NE_1 : std_logic ;
+signal UN1_FLUSHACK_D : std_logic ;
+signal WRREQ8_S : std_logic ;
+signal N_28 : std_logic ;
+signal WBF_ACK_M : std_logic ;
+signal WRREQ_0_SQMUXA : std_logic ;
+signal UN1_WB_ACK_M3 : std_logic ;
+signal UN1_WB_ACK_N_4_I : std_logic ;
+signal WRREQ_0_SQMUXA_0_X : std_logic ;
+signal WBM_STB_O_0_S : std_logic ;
+signal WBM_WE_FAST : std_logic ;
+signal WBF_ACK_M_S_0_M1_E_1 : std_logic ;
+signal FLUSHACK : std_logic ;
+signal WBM_STB_O_0 : std_logic ;
+signal TAIL : std_logic ;
+signal TAIL_W : std_logic ;
+signal SPIWBM2_WE_O : std_logic ;
+signal STB : std_logic ;
+signal NSHIFT : std_logic ;
+signal WRREQ_0_SQMUXA_0 : std_logic ;
+signal WBF_STB_0 : std_logic ;
+signal GND_0 : std_logic ;
+signal VCC_0 : std_logic ;
+component spi_sbus
+port(
+idat_0 :  in std_logic;
+spiwbm2_adr_o : out std_logic_vector(4 downto 1);
+wbf_ack_m :  out std_logic;
+un1_wb_ack_m3 :  in std_logic;
+un1_full_NE_1 :  in std_logic;
+wbf_ack_m_s_0_m1_e_1 :  in std_logic;
+so_i_0_N_10 :  out std_logic;
+first_cyc :  in std_logic;
+flushack :  in std_logic;
+un1_flushack_d :  in std_logic;
+first_cyc_RNIBECN :  in std_logic;
+N_28 :  in std_logic;
+wbm_stb_o_0 :  in std_logic;
+cmemwin_wbs_en11 :  in std_logic;
+gpio_a28_pad_c :  in std_logic;
+tail :  in std_logic;
+tail_w :  in std_logic;
+spi_clk_pad_c_i :  in std_logic;
+spiwbm2_we_o :  out std_logic;
+VCC :  in std_logic;
+wbm_we_fast :  out std_logic;
+N_450_i :  out std_logic;
+spi_clk_pad_c :  in std_logic;
+spi_mosi_pad_c :  in std_logic;
+un1_wb_ack_N_4_i :  in std_logic;
+wbm_stb_o_0_s :  out std_logic;
+wrreq8_s :  in std_logic;
+wrreq_0_sqmuxa :  in std_logic;
+stb :  out std_logic;
+nshift :  out std_logic;
+wrreq_0_sqmuxa_0 :  in std_logic;
+GND :  in std_logic;
+gpio_a15_pad_c :  in std_logic;
+gpio_a16_pad_c :  in std_logic;
+spiwbm2_cyc_o_i :  out std_logic;
+spiwbm2_cyc_o :  out std_logic  );
+end component;
+component wb_writebuffer
+port(
+idat : in std_logic_vector(0 downto 0);
+wbf_adr : out std_logic_vector(4 downto 4);
+spiwbm2_adr_o : in std_logic_vector(4 downto 1);
+spi_clk_pad_c_i :  in std_logic;
+rstn_i :  in std_logic;
+VCC :  in std_logic;
+wrreq_0_sqmuxa :  in std_logic;
+first_cyc_RNIBECN :  in std_logic;
+wbf_ack_m_s_0_m1_e_1 :  out std_logic;
+wrreq_0_sqmuxa_0_x :  out std_logic;
+N_28 :  out std_logic;
+spiwbm2_cyc_o :  in std_logic;
+stb :  in std_logic;
+nshift :  in std_logic;
+wbf_stb_0 :  out std_logic;
+spiwbm2_we_o :  in std_logic;
+wrreq8_s :  in std_logic;
+wbm_stb_o_0 :  out std_logic;
+wrreq_0_sqmuxa_0 :  out std_logic;
+un1_full_NE_1 :  out std_logic;
+un1_full_NE_0_0 :  out std_logic;
+goingfull :  out std_logic;
+wbm_we_fast :  in std_logic;
+GND :  in std_logic;
+tail :  in std_logic;
+tail_w :  in std_logic;
+flushack :  out std_logic  );
+end component;
+component wb_resync
+port(
+wbf_adr : in std_logic_vector(4 downto 4);
+spi_clk_pad_c_i :  in std_logic;
+rstn_i :  in std_logic;
+VCC :  in std_logic;
+pll_100mhz :  in std_logic;
+gpio_a15_pad_c :  in std_logic;
+GND :  in std_logic;
+gpio_a16_pad_c :  in std_logic;
+wbf_stb_0 :  in std_logic;
+tail :  out std_logic;
+tail_w :  out std_logic  );
+end component;
+begin
+FIRST_CYC_REG_Z54: FD1P3BX port map (
+D => SPIWBM2_CYC_O_I,
+SP => UN1_FIRST_CYC5_0_I,
+CK => spi_clk_pad_c_i,
+PD => rstn_i,
+Q => FIRST_CYC);
+FIRST_CYC_RNIBECN <= (not GOINGFULL and SPIWBM2_CYC_O) or 
+	(not FIRST_CYC and SPIWBM2_CYC_O);
+UN1_FLUSHACK_D <= (not FIRST_CYC) or 
+	(UN1_FULL_NE_0_0 and UN1_FULL_NE_1);
+WRREQ8_S <= not cmemwin_wbs_en11 and FIRST_CYC_RNIBECN and UN1_FLUSHACK_D;
+UN1_WB_ACK_M3 <= (not cmemwin_wbs_en11 and not WBF_ACK_M and not WRREQ_0_SQMUXA) or 
+	(not N_28 and not WBF_ACK_M and not WRREQ_0_SQMUXA) or 
+	(not N_28 and cmemwin_wbs_en11);
+UN1_FIRST_CYC5_0_I <= (not SPIWBM2_CYC_O) or 
+	(WBF_ACK_M) or 
+	(WRREQ_0_SQMUXA);
+UN1_WB_ACK_N_4_I <= (N_28 and cmemwin_wbs_en11) or 
+	(not cmemwin_wbs_en11 and WBF_ACK_M) or 
+	(not cmemwin_wbs_en11 and WRREQ_0_SQMUXA);
+WRREQ_0_SQMUXA <= WRREQ_0_SQMUXA_0_X and WBM_STB_O_0_S and WBM_WE_FAST and WRREQ8_S;
+SBUSCORE: spi_sbus port map (
+idat_0 => idat(0),
+spiwbm2_adr_o(1) => SPIWBM2_ADR_O(1),
+spiwbm2_adr_o(2) => SPIWBM2_ADR_O(2),
+spiwbm2_adr_o(3) => SPIWBM2_ADR_O(3),
+spiwbm2_adr_o(4) => SPIWBM2_ADR_O(4),
+wbf_ack_m => WBF_ACK_M,
+un1_wb_ack_m3 => UN1_WB_ACK_M3,
+un1_full_NE_1 => UN1_FULL_NE_1,
+wbf_ack_m_s_0_m1_e_1 => WBF_ACK_M_S_0_M1_E_1,
+so_i_0_N_10 => so_i_0_N_10,
+first_cyc => FIRST_CYC,
+flushack => FLUSHACK,
+un1_flushack_d => UN1_FLUSHACK_D,
+first_cyc_RNIBECN => FIRST_CYC_RNIBECN,
+N_28 => N_28,
+wbm_stb_o_0 => WBM_STB_O_0,
+cmemwin_wbs_en11 => cmemwin_wbs_en11,
+gpio_a28_pad_c => gpio_a28_pad_c,
+tail => TAIL,
+tail_w => TAIL_W,
+spi_clk_pad_c_i => spi_clk_pad_c_i,
+spiwbm2_we_o => SPIWBM2_WE_O,
+VCC => VCC,
+wbm_we_fast => WBM_WE_FAST,
+N_450_i => N_450_i,
+spi_clk_pad_c => spi_clk_pad_c,
+spi_mosi_pad_c => spi_mosi_pad_c,
+un1_wb_ack_N_4_i => UN1_WB_ACK_N_4_I,
+wbm_stb_o_0_s => WBM_STB_O_0_S,
+wrreq8_s => WRREQ8_S,
+wrreq_0_sqmuxa => WRREQ_0_SQMUXA,
+stb => STB,
+nshift => NSHIFT,
+wrreq_0_sqmuxa_0 => WRREQ_0_SQMUXA_0,
+GND => GND,
+gpio_a15_pad_c => gpio_a15_pad_c,
+gpio_a16_pad_c => gpio_a16_pad_c,
+spiwbm2_cyc_o_i => SPIWBM2_CYC_O_I,
+spiwbm2_cyc_o => SPIWBM2_CYC_O);
+WBUFCORE: wb_writebuffer port map (
+idat(0) => idat(0),
+wbf_adr(4) => WBF_ADR(4),
+spiwbm2_adr_o(1) => SPIWBM2_ADR_O(1),
+spiwbm2_adr_o(2) => SPIWBM2_ADR_O(2),
+spiwbm2_adr_o(3) => SPIWBM2_ADR_O(3),
+spiwbm2_adr_o(4) => SPIWBM2_ADR_O(4),
+spi_clk_pad_c_i => spi_clk_pad_c_i,
+rstn_i => rstn_i,
+VCC => VCC,
+wrreq_0_sqmuxa => WRREQ_0_SQMUXA,
+first_cyc_RNIBECN => FIRST_CYC_RNIBECN,
+wbf_ack_m_s_0_m1_e_1 => WBF_ACK_M_S_0_M1_E_1,
+wrreq_0_sqmuxa_0_x => WRREQ_0_SQMUXA_0_X,
+N_28 => N_28,
+spiwbm2_cyc_o => SPIWBM2_CYC_O,
+stb => STB,
+nshift => NSHIFT,
+wbf_stb_0 => WBF_STB_0,
+spiwbm2_we_o => SPIWBM2_WE_O,
+wrreq8_s => WRREQ8_S,
+wbm_stb_o_0 => WBM_STB_O_0,
+wrreq_0_sqmuxa_0 => WRREQ_0_SQMUXA_0,
+un1_full_NE_1 => UN1_FULL_NE_1,
+un1_full_NE_0_0 => UN1_FULL_NE_0_0,
+goingfull => GOINGFULL,
+wbm_we_fast => WBM_WE_FAST,
+GND => GND,
+tail => TAIL,
+tail_w => TAIL_W,
+flushack => FLUSHACK);
+RESYNCCORE: wb_resync port map (
+wbf_adr(4) => WBF_ADR(4),
+spi_clk_pad_c_i => spi_clk_pad_c_i,
+rstn_i => rstn_i,
+VCC => VCC,
+pll_100mhz => pll_100mhz,
+gpio_a15_pad_c => gpio_a15_pad_c,
+GND => GND,
+gpio_a16_pad_c => gpio_a16_pad_c,
+wbf_stb_0 => WBF_STB_0,
+tail => TAIL,
+tail_w => TAIL_W);
+GND_0 <= '0';
+VCC_0 <= '1';
+end beh;
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library xp2;
+use xp2.components.all;
+
+entity pll2 is
+port(
+dio : out std_logic_vector(34 downto 34);
+lock2 :  out std_logic;
+GND :  in std_logic;
+fpga_25mhz_pad_c :  in std_logic;
+pll_100mhz :  inout std_logic);
+end pll2;
+
+architecture beh of pll2 is
+signal CLKOP_I : std_logic ;
+signal CLKOS : std_logic ;
+signal CLKINTFB : std_logic ;
+signal GND_0 : std_logic ;
+signal VCC : std_logic ;
+component EPLLD1
+port(
+CLKI :  in std_logic;
+CLKFB :  in std_logic;
+RST :  in std_logic;
+RSTK :  in std_logic;
+DPAMODE :  in std_logic;
+DRPAI3 :  in std_logic;
+DRPAI2 :  in std_logic;
+DRPAI1 :  in std_logic;
+DRPAI0 :  in std_logic;
+DFPAI3 :  in std_logic;
+DFPAI2 :  in std_logic;
+DFPAI1 :  in std_logic;
+DFPAI0 :  in std_logic;
+PWD :  in std_logic;
+CLKOP :  out std_logic;
+CLKOS :  out std_logic;
+CLKOK :  out std_logic;
+LOCK :  out std_logic;
+CLKINTFB :  out std_logic  );
+end component;
+begin
+pll_100mhz <= CLKOP_I;
+PLLINST_0: EPLLD1 
+generic map( 
+  FIN => "25.000000", 
+  CLKI_DIV => "1", 
+  CLKFB_DIV => "4", 
+  CLKOP_DIV => "8", 
+  CLKOK_DIV => "2", 
+  PHASEADJ => "0.0", 
+  DUTY => "8", 
+  PHASE_CNTL => "STATIC", 
+  CLKOP_BYPASS => "DISABLED", 
+  CLKOS_BYPASS => "DISABLED", 
+  CLKOK_BYPASS => "DISABLED"
+) 
+port map (
+CLKI => fpga_25mhz_pad_c,
+CLKFB => pll_100mhz,
+RST => GND,
+RSTK => GND,
+DPAMODE => GND,
+DRPAI3 => GND,
+DRPAI2 => GND,
+DRPAI1 => GND,
+DRPAI0 => GND,
+DFPAI3 => GND,
+DFPAI2 => GND,
+DFPAI1 => GND,
+DFPAI0 => GND,
+PWD => GND,
+CLKOP => CLKOP_I,
+CLKOS => CLKOS,
+CLKOK => dio(34),
+LOCK => lock2,
+CLKINTFB => CLKINTFB);
+GND_0 <= '0';
+VCC <= '1';
+end beh;
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library xp2;
+use xp2.components.all;
+
+entity pll is
+port(
+lock :  out std_logic;
+GND :  in std_logic;
+fpga_25mhz_pad_c :  in std_logic;
+VCC :  in std_logic;
+pll_75mhz :  out std_logic);
+end pll;
+
+architecture beh of pll is
+signal CLKOP_I : std_logic ;
+signal DPHASE3_INV : std_logic ;
+signal CLKFB_T : std_logic ;
+signal PLL_75MHZ_SHIFTED : std_logic ;
+signal CLKOK : std_logic ;
+signal CLKOK2 : std_logic ;
+signal GND_0 : std_logic ;
+signal VCC_0 : std_logic ;
+component EHXPLLE1
+port(
+CLKI :  in std_logic;
+CLKFB :  in std_logic;
+RST :  in std_logic;
+RSTK :  in std_logic;
+WRDEL :  in std_logic;
+DRPAI3 :  in std_logic;
+DRPAI2 :  in std_logic;
+DRPAI1 :  in std_logic;
+DRPAI0 :  in std_logic;
+DFPAI3 :  in std_logic;
+DFPAI2 :  in std_logic;
+DFPAI1 :  in std_logic;
+DFPAI0 :  in std_logic;
+PWD :  in std_logic;
+CLKOP :  out std_logic;
+CLKOS :  out std_logic;
+CLKOK :  out std_logic;
+CLKOK2 :  out std_logic;
+LOCK :  out std_logic;
+CLKINTFB :  out std_logic  );
+end component;
+begin
+pll_75mhz <= CLKOP_I;
+INV_0: INV port map (
+A => VCC,
+Z => DPHASE3_INV);
+PLLINST_0: EHXPLLE1 
+generic map( 
+  FIN => "25.000000", 
+  CLKI_DIV => "1", 
+  CLKFB_DIV => "3", 
+  CLKOP_DIV => "8", 
+  CLKOK_DIV => "2", 
+  PHASEADJ => "0.0", 
+  DUTY => "8", 
+  PHASE_CNTL => "DYNAMIC", 
+  CLKOP_BYPASS => "DISABLED", 
+  CLKOS_BYPASS => "DISABLED", 
+  CLKOK_BYPASS => "DISABLED", 
+  CLKOP_TRIM_POL => "FALLING", 
+  CLKOP_TRIM_DELAY => "0", 
+  CLKOS_TRIM_POL => "RISING", 
+  CLKOS_TRIM_DELAY => "0"
+) 
+port map (
+CLKI => fpga_25mhz_pad_c,
+CLKFB => CLKFB_T,
+RST => GND,
+RSTK => GND,
+WRDEL => VCC,
+DRPAI3 => VCC,
+DRPAI2 => GND,
+DRPAI1 => GND,
+DRPAI0 => VCC,
+DFPAI3 => DPHASE3_INV,
+DFPAI2 => GND,
+DFPAI1 => GND,
+DFPAI0 => VCC,
+PWD => GND,
+CLKOP => CLKOP_I,
+CLKOS => PLL_75MHZ_SHIFTED,
+CLKOK => CLKOK,
+CLKOK2 => CLKOK2,
+LOCK => lock,
+CLKINTFB => CLKFB_T);
+GND_0 <= '0';
+VCC_0 <= '1';
+end beh;
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library xp2;
+use xp2.components.all;
+
+entity ts7500_top is
+port(
+cpu_clkout_pad :  in std_logic;
+fpga_25mhz_pad :  in std_logic;
+clk_32khz_pad :  out std_logic;
+dio_pad : inout std_logic_vector(40 downto 0) := (others => 'Z');
+cpu_uart_txd_pad :  in std_logic;
+cpu_uart_rxd_pad :  out std_logic;
+spi_clk_pad :  in std_logic;
+spi_mosi_pad :  in std_logic;
+spi_miso_pad :  out std_logic;
+gpio_a0_pad :  out std_logic;
+gpio_a1_pad :  out std_logic;
+gpio_a13_pad :  in std_logic;
+gpio_a14_pad :  in std_logic;
+gpio_a3_pad :  in std_logic;
+gpio_a15_pad :  in std_logic;
+gpio_a16_pad :  in std_logic;
+gpio_a17_pad :  in std_logic;
+gpio_a28_pad :  in std_logic;
+gpio_a29_pad :  in std_logic;
+int28_pad :  in std_logic;
+gpio_a22_pad :  in std_logic;
+gpio_a23_pad :  in std_logic;
+un_reset_pad :  out std_logic;
+wd_resetn_pad :  out std_logic;
+en_sd_power_pad :  out std_logic;
+sd_d0_pad :  in std_logic;
+sd_d1_pad :  in std_logic;
+sd_d2_pad :  in std_logic;
+sd_d3_pad :  in std_logic;
+sd_cmd_pad :  in std_logic;
+sd_clk_pad :  out std_logic;
+red_led_pad :  out std_logic;
+green_led_pad :  out std_logic;
+eth_left_ledn_pad :  out std_logic;
+eth_right_ledn_pad :  out std_logic;
+rtc_sda_pad :  out std_logic;
+rtc_scl_pad :  out std_logic;
+rtc_int1_pad :  in std_logic;
+ser_flash_wp_padn :  out std_logic;
+ser_flash_cs_padn :  out std_logic;
+flash_clk_pad :  out std_logic;
+flash_mosi_pad :  out std_logic;
+flash_miso_pad :  in std_logic);
+end ts7500_top;
+
+architecture beh of ts7500_top is
+signal LED_VAL : std_logic_vector(1 downto 0);
+signal VALUE_REG : std_logic_vector(15 downto 0);
+signal RAMP_CTR : std_logic_vector(26 downto 0);
+signal LED_VAL_5 : std_logic_vector(1 to 1);
+signal RAMP_CTR_3 : std_logic_vector(26 downto 0);
+signal TIMER : std_logic_vector(31 downto 0);
+signal RST_COUNTER : std_logic_vector(15 downto 0);
+signal \SPI.STATE\ : std_logic_vector(1 to 1);
+signal \SBUSCORE.SBUSCORE.IDAT\ : std_logic_vector(0 to 0);
+signal DIO : std_logic_vector(34 to 34);
+signal RAMP_CTR_2 : std_logic_vector(26 downto 1);
+signal LED_VAL_5_0_I : std_logic_vector(0 to 0);
+signal VALUE_REG_CRY : std_logic_vector(14 downto 0);
+signal VALUE_REG_S : std_logic_vector(15 downto 0);
+signal TIMER_CRY : std_logic_vector(30 downto 0);
+signal TIMER_S : std_logic_vector(31 downto 0);
+signal RST_COUNTER_CRY : std_logic_vector(14 downto 0);
+signal RST_COUNTER_S : std_logic_vector(15 downto 0);
+signal RST_COUNTER_CRY_0_S0 : std_logic_vector(0 to 0);
+signal RST_COUNTER_S_0_S1 : std_logic_vector(15 to 15);
+signal RST_COUNTER_S_0_COUT : std_logic_vector(15 to 15);
+signal TIMER_CRY_0_S0 : std_logic_vector(0 to 0);
+signal TIMER_S_0_S1 : std_logic_vector(31 to 31);
+signal TIMER_S_0_COUT : std_logic_vector(31 to 31);
+signal VALUE_REG_CRY_0_S0 : std_logic_vector(0 to 0);
+signal VALUE_REG_S_0_S1 : std_logic_vector(15 to 15);
+signal VALUE_REG_S_0_COUT : std_logic_vector(15 to 15);
+signal DIO_PAD_C : std_logic_vector(38 downto 35);
+signal LED_VAL_QN : std_logic_vector(1 downto 0);
+signal RAMP_CTR_QN : std_logic_vector(26 downto 0);
+signal RST_COUNTER_QN : std_logic_vector(15 downto 0);
+signal TIMER_QN : std_logic_vector(31 downto 0);
+signal VALUE_REG_QN : std_logic_vector(15 downto 0);
+signal \SPI.STATE_I\ : std_logic_vector(1 downto 0);
+signal PLL_75MHZ : std_logic ;
+signal LOCK : std_logic ;
+signal PLL_100MHZ : std_logic ;
+signal LOCK2 : std_logic ;
+signal SBUS_SO : std_logic ;
+signal SR_LOAD : std_logic ;
+signal LOAD_REG : std_logic ;
+signal SPI_DAT : std_logic ;
+signal PGA_CLK : std_logic ;
+signal RSTN : std_logic ;
+signal UNRESET : std_logic ;
+signal SR_LOAD5 : std_logic ;
+signal SR_LOAD4 : std_logic ;
+signal N_29 : std_logic ;
+signal N_30 : std_logic ;
+signal N_31 : std_logic ;
+signal SR_LOAD4_0 : std_logic ;
+signal SR_LOAD4_2 : std_logic ;
+signal SR_LOAD4_4 : std_logic ;
+signal \SPI.SPI_DAT_4\ : std_logic ;
+signal \RST_COUNTER_\ : std_logic ;
+signal INTERNAL_OSC_C : std_logic ;
+signal CMEMWIN_WBS_EN11 : std_logic ;
+signal RAMP_CTR_2_CRY_0 : std_logic ;
+signal RAMP_CTR_2_CRY_2 : std_logic ;
+signal RAMP_CTR_2_CRY_4 : std_logic ;
+signal RAMP_CTR_2_CRY_6 : std_logic ;
+signal RAMP_CTR_2_CRY_8 : std_logic ;
+signal RAMP_CTR_2_CRY_10 : std_logic ;
+signal RAMP_CTR_2_CRY_12 : std_logic ;
+signal RAMP_CTR_2_CRY_14 : std_logic ;
+signal RAMP_CTR_2_CRY_16 : std_logic ;
+signal RAMP_CTR_2_CRY_18 : std_logic ;
+signal RAMP_CTR_2_CRY_20 : std_logic ;
+signal RAMP_CTR_2_CRY_22 : std_logic ;
+signal RAMP_CTR_2_CRY_24 : std_logic ;
+signal \SBUSCORE.SBUSCORE.SO_I_0_N_10\ : std_logic ;
+signal SPI_CLK_PAD_C_I : std_logic ;
+signal LED_VAL_1_SQMUXA_I : std_logic ;
+signal N_548_I : std_logic ;
+signal N_450_I : std_logic ;
+signal SR_LOAD5_1 : std_logic ;
+signal UN1_TIMERLTO31_12 : std_logic ;
+signal UN1_TIMERLTO31_13 : std_logic ;
+signal UN1_TIMERLTO31_14 : std_logic ;
+signal UN1_TIMERLTO31_15 : std_logic ;
+signal UN1_TIMERLTO31_16 : std_logic ;
+signal UN1_TIMERLTO31_17 : std_logic ;
+signal UN1_TIMERLTO31_18 : std_logic ;
+signal UN1_TIMERLTO31_23 : std_logic ;
+signal RAMP_CTR_2_CRY_0_0_S0 : std_logic ;
+signal RAMP_CTR_2_CRY_0_0_S1 : std_logic ;
+signal RAMP_CTR_2_CRY_25_0_COUT : std_logic ;
+signal SR_LOAD4_0_0_S0 : std_logic ;
+signal SR_LOAD4_0_0_S1 : std_logic ;
+signal SR_LOAD4_1_0_S0 : std_logic ;
+signal SR_LOAD4_1_0_S1 : std_logic ;
+signal SR_LOAD4_3_0_S0 : std_logic ;
+signal SR_LOAD4_3_0_S1 : std_logic ;
+signal SR_LOAD4_5_0_S0 : std_logic ;
+signal SR_LOAD4_5_0_S1 : std_logic ;
+signal SR_LOAD4_6_CRY : std_logic ;
+signal SR_LOAD4_6_0_COUT : std_logic ;
+signal SR_LOAD4_6_0_S1 : std_logic ;
+signal \SPI.CMD.CN\ : std_logic ;
+signal VCC : std_logic ;
+signal GND : std_logic ;
+signal \RSTN.FB\ : std_logic ;
+signal FPGA_25MHZ_PAD_C : std_logic ;
+signal SPI_CLK_PAD_C : std_logic ;
+signal SPI_MOSI_PAD_C : std_logic ;
+signal GPIO_A15_PAD_C : std_logic ;
+signal GPIO_A16_PAD_C : std_logic ;
+signal GPIO_A28_PAD_C : std_logic ;
+signal GPIO_A22_PAD_C : std_logic ;
+signal GPIO_A23_PAD_C : std_logic ;
+signal LOAD_REG_QN : std_logic ;
+signal RSTN_QN : std_logic ;
+signal SR_LOAD_QN : std_logic ;
+signal UNRESET_QN : std_logic ;
+signal \UNRESET.FB_0\ : std_logic ;
+signal RSTN_I : std_logic ;
+signal GND_0 : std_logic ;
+signal VCC_0 : std_logic ;
+component pll
+port(
+lock :  out std_logic;
+GND :  in std_logic;
+fpga_25mhz_pad_c :  in std_logic;
+VCC :  in std_logic;
+pll_75mhz :  out std_logic  );
+end component;
+component pll2
+port(
+dio : out std_logic_vector(34 downto 34);
+lock2 :  out std_logic;
+GND :  in std_logic;
+fpga_25mhz_pad_c :  in std_logic;
+pll_100mhz :  inout std_logic  );
+end component;
+component spi_sbus_resync
+port(
+idat : in std_logic_vector(0 downto 0);
+pll_100mhz :  in std_logic;
+gpio_a16_pad_c :  in std_logic;
+gpio_a15_pad_c :  in std_logic;
+spi_mosi_pad_c :  in std_logic;
+spi_clk_pad_c :  in std_logic;
+N_450_i :  out std_logic;
+gpio_a28_pad_c :  in std_logic;
+so_i_0_N_10 :  out std_logic;
+cmemwin_wbs_en11 :  in std_logic;
+GND :  in std_logic;
+VCC :  in std_logic;
+rstn_i :  in std_logic;
+spi_clk_pad_c_i :  in std_logic  );
+end component;
+component syscon_3s_29952_0_5_Z1
+port(
+internal_osc_c :  out std_logic  );
+end component;
+component pga_control
+port(
+dio : in std_logic_vector(34 downto 34);
+VCC :  in std_logic;
+rstn_i :  in std_logic;
+pga_clk :  out std_logic  );
+end component;
+component spi_module
+port(
+led_val : in std_logic_vector(1 downto 0);
+value_reg : in std_logic_vector(15 downto 0);
+dio : in std_logic_vector(34 downto 34);
+dio_pad_c_0 :  out std_logic;
+dio_pad_c_2 :  out std_logic;
+state_1 :  out std_logic;
+state_i : out std_logic_vector(1 downto 0);
+spi_dat_4 :  out std_logic;
+rstn :  in std_logic;
+sr_load :  in std_logic;
+load_reg :  in std_logic;
+VCC :  in std_logic;
+rstn_i :  in std_logic;
+CN :  out std_logic;
+GND :  in std_logic  );
+end component;
+begin
+PUR_INST: PUR port map (
+PUR => VCC);
+GSR_INST: GSR port map (
+GSR => VCC);
+II_GND: VLO port map (
+Z => GND);
+II_VCC: VHI port map (
+Z => VCC);
+RSTN_RNIB582: INV port map (
+A => RSTN,
+Z => RSTN_I);
+\RSTN.FB\ <= RSTN and LOCK2 and LOCK;
+\UNRESET.FB_0\ <= (N_548_I) or 
+	(UNRESET);
+SPI_CLK_PAD_PAD_RNI90L2: INV port map (
+A => SPI_CLK_PAD_C,
+Z => SPI_CLK_PAD_C_I);
+\SBUSCORE_SBUSCORE_IDATIO[0]_REG_Z540\: IFS1P3DX port map (
+D => SPI_MOSI_PAD_C,
+SP => VCC,
+SCLK => SPI_CLK_PAD_C,
+CD => N_450_I,
+Q => \SBUSCORE.SBUSCORE.IDAT\(0));
+SPI_SPI_DATIO_REG_Z542: OFS1P3IX port map (
+D => \SPI.SPI_DAT_4\,
+SP => \SPI.STATE_I\(1),
+SCLK => \SPI.CMD.CN\,
+CD => RSTN_I,
+Q => SPI_DAT);
+SPI_SHIFTREG_OUTPUTREG_CLKIO_REG_Z544: OFS1P3IX port map (
+D => \SPI.STATE\(1),
+SP => \SPI.STATE_I\(0),
+SCLK => \SPI.CMD.CN\,
+CD => RSTN_I,
+Q => DIO_PAD_C(38));
+SBUSCORE_SBUSCORE_SO_QIO_REG_Z546: OFS1P3DX port map (
+D => \SBUSCORE.SBUSCORE.SO_I_0_N_10\,
+SP => VCC,
+SCLK => SPI_CLK_PAD_C,
+CD => GND,
+Q => SBUS_SO);
+\VALUE_REG[0]_REG_Z548\: FD1P3AX port map (
+D => VALUE_REG_S(0),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(0));
+\VALUE_REG[1]_REG_Z550\: FD1P3AX port map (
+D => VALUE_REG_S(1),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(1));
+\VALUE_REG[2]_REG_Z552\: FD1P3AX port map (
+D => VALUE_REG_S(2),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(2));
+\VALUE_REG[3]_REG_Z554\: FD1P3AX port map (
+D => VALUE_REG_S(3),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(3));
+\VALUE_REG[4]_REG_Z556\: FD1P3AX port map (
+D => VALUE_REG_S(4),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(4));
+\VALUE_REG[5]_REG_Z558\: FD1P3AX port map (
+D => VALUE_REG_S(5),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(5));
+\VALUE_REG[6]_REG_Z560\: FD1P3AX port map (
+D => VALUE_REG_S(6),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(6));
+\VALUE_REG[7]_REG_Z562\: FD1P3AX port map (
+D => VALUE_REG_S(7),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(7));
+\VALUE_REG[8]_REG_Z564\: FD1P3AX port map (
+D => VALUE_REG_S(8),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(8));
+\VALUE_REG[9]_REG_Z566\: FD1P3AX port map (
+D => VALUE_REG_S(9),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(9));
+\VALUE_REG[10]_REG_Z568\: FD1P3AX port map (
+D => VALUE_REG_S(10),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(10));
+\VALUE_REG[11]_REG_Z570\: FD1P3AX port map (
+D => VALUE_REG_S(11),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(11));
+\VALUE_REG[12]_REG_Z572\: FD1P3AX port map (
+D => VALUE_REG_S(12),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(12));
+\VALUE_REG[13]_REG_Z574\: FD1P3AX port map (
+D => VALUE_REG_S(13),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(13));
+\VALUE_REG[14]_REG_Z576\: FD1P3AX port map (
+D => VALUE_REG_S(14),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(14));
+\VALUE_REG[15]_REG_Z578\: FD1P3AX port map (
+D => VALUE_REG_S(15),
+SP => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => VALUE_REG(15));
+UNRESET_REG_Z580: FD1S3DX port map (
+D => \UNRESET.FB_0\,
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => UNRESET);
+\TIMER[0]_REG_Z582\: FD1S3DX port map (
+D => TIMER_S(0),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(0));
+\TIMER[1]_REG_Z584\: FD1S3DX port map (
+D => TIMER_S(1),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(1));
+\TIMER[2]_REG_Z586\: FD1S3DX port map (
+D => TIMER_S(2),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(2));
+\TIMER[3]_REG_Z588\: FD1S3DX port map (
+D => TIMER_S(3),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(3));
+\TIMER[4]_REG_Z590\: FD1S3DX port map (
+D => TIMER_S(4),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(4));
+\TIMER[5]_REG_Z592\: FD1S3DX port map (
+D => TIMER_S(5),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(5));
+\TIMER[6]_REG_Z594\: FD1S3DX port map (
+D => TIMER_S(6),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(6));
+\TIMER[7]_REG_Z596\: FD1S3DX port map (
+D => TIMER_S(7),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(7));
+\TIMER[8]_REG_Z598\: FD1S3DX port map (
+D => TIMER_S(8),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(8));
+\TIMER[9]_REG_Z600\: FD1S3DX port map (
+D => TIMER_S(9),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(9));
+\TIMER[10]_REG_Z602\: FD1S3DX port map (
+D => TIMER_S(10),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(10));
+\TIMER[11]_REG_Z604\: FD1S3DX port map (
+D => TIMER_S(11),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(11));
+\TIMER[12]_REG_Z606\: FD1S3DX port map (
+D => TIMER_S(12),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(12));
+\TIMER[13]_REG_Z608\: FD1S3DX port map (
+D => TIMER_S(13),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(13));
+\TIMER[14]_REG_Z610\: FD1S3DX port map (
+D => TIMER_S(14),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(14));
+\TIMER[15]_REG_Z612\: FD1S3DX port map (
+D => TIMER_S(15),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(15));
+\TIMER[16]_REG_Z614\: FD1S3DX port map (
+D => TIMER_S(16),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(16));
+\TIMER[17]_REG_Z616\: FD1S3DX port map (
+D => TIMER_S(17),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(17));
+\TIMER[18]_REG_Z618\: FD1S3DX port map (
+D => TIMER_S(18),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(18));
+\TIMER[19]_REG_Z620\: FD1S3DX port map (
+D => TIMER_S(19),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(19));
+\TIMER[20]_REG_Z622\: FD1S3DX port map (
+D => TIMER_S(20),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(20));
+\TIMER[21]_REG_Z624\: FD1S3DX port map (
+D => TIMER_S(21),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(21));
+\TIMER[22]_REG_Z626\: FD1S3DX port map (
+D => TIMER_S(22),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(22));
+\TIMER[23]_REG_Z628\: FD1S3DX port map (
+D => TIMER_S(23),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(23));
+\TIMER[24]_REG_Z630\: FD1S3DX port map (
+D => TIMER_S(24),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(24));
+\TIMER[25]_REG_Z632\: FD1S3DX port map (
+D => TIMER_S(25),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(25));
+\TIMER[26]_REG_Z634\: FD1S3DX port map (
+D => TIMER_S(26),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(26));
+\TIMER[27]_REG_Z636\: FD1S3DX port map (
+D => TIMER_S(27),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(27));
+\TIMER[28]_REG_Z638\: FD1S3DX port map (
+D => TIMER_S(28),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(28));
+\TIMER[29]_REG_Z640\: FD1S3DX port map (
+D => TIMER_S(29),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(29));
+\TIMER[30]_REG_Z642\: FD1S3DX port map (
+D => TIMER_S(30),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(30));
+\TIMER[31]_REG_Z644\: FD1S3DX port map (
+D => TIMER_S(31),
+CK => PLL_75MHZ,
+CD => RSTN_I,
+Q => TIMER(31));
+SR_LOAD_REG_Z646: FD1S3AX port map (
+D => SR_LOAD4,
+CK => FPGA_25MHZ_PAD_C,
+Q => SR_LOAD);
+RSTN_REG_Z648: FD1S3JX port map (
+D => RST_COUNTER(15),
+CK => INTERNAL_OSC_C,
+PD => \RSTN.FB\,
+Q => RSTN);
+\RST_COUNTER[0]_REG_Z650\: FD1S3AX port map (
+D => RST_COUNTER_S(0),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(0));
+\RST_COUNTER[1]_REG_Z652\: FD1S3AX port map (
+D => RST_COUNTER_S(1),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(1));
+\RST_COUNTER[2]_REG_Z654\: FD1S3AX port map (
+D => RST_COUNTER_S(2),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(2));
+\RST_COUNTER[3]_REG_Z656\: FD1S3AX port map (
+D => RST_COUNTER_S(3),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(3));
+\RST_COUNTER[4]_REG_Z658\: FD1S3AX port map (
+D => RST_COUNTER_S(4),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(4));
+\RST_COUNTER[5]_REG_Z660\: FD1S3AX port map (
+D => RST_COUNTER_S(5),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(5));
+\RST_COUNTER[6]_REG_Z662\: FD1S3AX port map (
+D => RST_COUNTER_S(6),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(6));
+\RST_COUNTER[7]_REG_Z664\: FD1S3AX port map (
+D => RST_COUNTER_S(7),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(7));
+\RST_COUNTER[8]_REG_Z666\: FD1S3AX port map (
+D => RST_COUNTER_S(8),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(8));
+\RST_COUNTER[9]_REG_Z668\: FD1S3AX port map (
+D => RST_COUNTER_S(9),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(9));
+\RST_COUNTER[10]_REG_Z670\: FD1S3AX port map (
+D => RST_COUNTER_S(10),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(10));
+\RST_COUNTER[11]_REG_Z672\: FD1S3AX port map (
+D => RST_COUNTER_S(11),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(11));
+\RST_COUNTER[12]_REG_Z674\: FD1S3AX port map (
+D => RST_COUNTER_S(12),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(12));
+\RST_COUNTER[13]_REG_Z676\: FD1S3AX port map (
+D => RST_COUNTER_S(13),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(13));
+\RST_COUNTER[14]_REG_Z678\: FD1S3AX port map (
+D => RST_COUNTER_S(14),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(14));
+\RST_COUNTER[15]_REG_Z680\: FD1S3AX port map (
+D => RST_COUNTER_S(15),
+CK => INTERNAL_OSC_C,
+Q => RST_COUNTER(15));
+\RAMP_CTR[0]_REG_Z682\: FD1S3AX port map (
+D => RAMP_CTR_3(0),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(0));
+\RAMP_CTR[1]_REG_Z684\: FD1S3AX port map (
+D => RAMP_CTR_2(1),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(1));
+\RAMP_CTR[2]_REG_Z686\: FD1S3AX port map (
+D => RAMP_CTR_2(2),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(2));
+\RAMP_CTR[3]_REG_Z688\: FD1S3AX port map (
+D => RAMP_CTR_2(3),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(3));
+\RAMP_CTR[4]_REG_Z690\: FD1S3AX port map (
+D => RAMP_CTR_2(4),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(4));
+\RAMP_CTR[5]_REG_Z692\: FD1S3AX port map (
+D => RAMP_CTR_2(5),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(5));
+\RAMP_CTR[6]_REG_Z694\: FD1S3AX port map (
+D => RAMP_CTR_2(6),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(6));
+\RAMP_CTR[7]_REG_Z696\: FD1S3AX port map (
+D => RAMP_CTR_2(7),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(7));
+\RAMP_CTR[8]_REG_Z698\: FD1S3AX port map (
+D => RAMP_CTR_2(8),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(8));
+\RAMP_CTR[9]_REG_Z700\: FD1S3AX port map (
+D => RAMP_CTR_2(9),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(9));
+\RAMP_CTR[10]_REG_Z702\: FD1S3AX port map (
+D => RAMP_CTR_2(10),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(10));
+\RAMP_CTR[11]_REG_Z704\: FD1S3AX port map (
+D => RAMP_CTR_2(11),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(11));
+\RAMP_CTR[12]_REG_Z706\: FD1S3AX port map (
+D => RAMP_CTR_2(12),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(12));
+\RAMP_CTR[13]_REG_Z708\: FD1S3AX port map (
+D => RAMP_CTR_2(13),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(13));
+\RAMP_CTR[14]_REG_Z710\: FD1S3AX port map (
+D => RAMP_CTR_2(14),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(14));
+\RAMP_CTR[15]_REG_Z712\: FD1S3AX port map (
+D => RAMP_CTR_2(15),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(15));
+\RAMP_CTR[16]_REG_Z714\: FD1S3AX port map (
+D => RAMP_CTR_2(16),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(16));
+\RAMP_CTR[17]_REG_Z716\: FD1S3AX port map (
+D => RAMP_CTR_2(17),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(17));
+\RAMP_CTR[18]_REG_Z718\: FD1S3AX port map (
+D => RAMP_CTR_2(18),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(18));
+\RAMP_CTR[19]_REG_Z720\: FD1S3AX port map (
+D => RAMP_CTR_2(19),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(19));
+\RAMP_CTR[20]_REG_Z722\: FD1S3AX port map (
+D => RAMP_CTR_2(20),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(20));
+\RAMP_CTR[21]_REG_Z724\: FD1S3AX port map (
+D => RAMP_CTR_2(21),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(21));
+\RAMP_CTR[22]_REG_Z726\: FD1S3AX port map (
+D => RAMP_CTR_2(22),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(22));
+\RAMP_CTR[23]_REG_Z728\: FD1S3AX port map (
+D => RAMP_CTR_2(23),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(23));
+\RAMP_CTR[24]_REG_Z730\: FD1S3AX port map (
+D => RAMP_CTR_2(24),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(24));
+\RAMP_CTR[25]_REG_Z732\: FD1S3AX port map (
+D => RAMP_CTR_2(25),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(25));
+\RAMP_CTR[26]_REG_Z734\: FD1S3AX port map (
+D => RAMP_CTR_3(26),
+CK => FPGA_25MHZ_PAD_C,
+Q => RAMP_CTR(26));
+LOAD_REG_REG_Z736: FD1S3AX port map (
+D => SR_LOAD5,
+CK => FPGA_25MHZ_PAD_C,
+Q => LOAD_REG);
+\LED_VAL[0]_REG_Z738\: FD1P3AX port map (
+D => LED_VAL_5_0_I(0),
+SP => LED_VAL_1_SQMUXA_I,
+CK => FPGA_25MHZ_PAD_C,
+Q => LED_VAL(0));
+\LED_VAL[1]_REG_Z740\: FD1P3AX port map (
+D => LED_VAL_5(1),
+SP => LED_VAL_1_SQMUXA_I,
+CK => FPGA_25MHZ_PAD_C,
+Q => LED_VAL(1));
+FLASH_MOSI_PAD_PAD: OB port map (
+I => GND,
+O => flash_mosi_pad);
+FLASH_CLK_PAD_PAD: OB port map (
+I => VCC,
+O => flash_clk_pad);
+SER_FLASH_CS_PADN_PAD: OB port map (
+I => VCC,
+O => ser_flash_cs_padn);
+SER_FLASH_WP_PADN_PAD: OB port map (
+I => UNRESET,
+O => ser_flash_wp_padn);
+RTC_SCL_PAD_PAD: OBZ port map (
+I => GND,
+T => VCC,
+O => rtc_scl_pad);
+RTC_SDA_PAD_PAD: OBZ port map (
+I => GND,
+T => VCC,
+O => rtc_sda_pad);
+ETH_RIGHT_LEDN_PAD_PAD: OB port map (
+I => GPIO_A23_PAD_C,
+O => eth_right_ledn_pad);
+ETH_LEFT_LEDN_PAD_PAD: OB port map (
+I => GPIO_A22_PAD_C,
+O => eth_left_ledn_pad);
+GREEN_LED_PAD_PAD: OB port map (
+I => GND,
+O => green_led_pad);
+RED_LED_PAD_PAD: OB port map (
+I => GND,
+O => red_led_pad);
+SD_CLK_PAD_PAD: OBZ port map (
+I => GND,
+T => VCC,
+O => sd_clk_pad);
+EN_SD_POWER_PAD_PAD: OBZ port map (
+I => GND,
+T => VCC,
+O => en_sd_power_pad);
+WD_RESETN_PAD_PAD: OB port map (
+I => VCC,
+O => wd_resetn_pad);
+UN_RESET_PAD_PAD: OB port map (
+I => UNRESET,
+O => un_reset_pad);
+GPIO_A23_PAD_PAD: IB port map (
+I => gpio_a23_pad,
+O => GPIO_A23_PAD_C);
+GPIO_A22_PAD_PAD: IB port map (
+I => gpio_a22_pad,
+O => GPIO_A22_PAD_C);
+GPIO_A28_PAD_PAD: IB port map (
+I => gpio_a28_pad,
+O => GPIO_A28_PAD_C);
+GPIO_A16_PAD_PAD: IB port map (
+I => gpio_a16_pad,
+O => GPIO_A16_PAD_C);
+GPIO_A15_PAD_PAD: IB port map (
+I => gpio_a15_pad,
+O => GPIO_A15_PAD_C);
+GPIO_A1_PAD_PAD: OB port map (
+I => GND,
+O => gpio_a1_pad);
+GPIO_A0_PAD_PAD: OB port map (
+I => GND,
+O => gpio_a0_pad);
+SPI_MISO_PAD_PAD: OB port map (
+I => SBUS_SO,
+O => spi_miso_pad);
+SPI_MOSI_PAD_PAD: IB port map (
+I => spi_mosi_pad,
+O => SPI_MOSI_PAD_C);
+SPI_CLK_PAD_PAD: IB port map (
+I => spi_clk_pad,
+O => SPI_CLK_PAD_C);
+CPU_UART_RXD_PAD_PAD: OBZ port map (
+I => GND,
+T => VCC,
+O => cpu_uart_rxd_pad);
+\DIO_PAD_PAD[40]\: OB port map (
+I => PGA_CLK,
+O => dio_pad(40));
+\DIO_PAD_PAD[39]\: OB port map (
+I => GND,
+O => dio_pad(39));
+\DIO_PAD_PAD[38]\: OB port map (
+I => DIO_PAD_C(38),
+O => dio_pad(38));
+\DIO_PAD_PAD[37]\: OB port map (
+I => DIO_PAD_C(37),
+O => dio_pad(37));
+\DIO_PAD_PAD[36]\: OB port map (
+I => SPI_DAT,
+O => dio_pad(36));
+\DIO_PAD_PAD[35]\: OB port map (
+I => DIO_PAD_C(35),
+O => dio_pad(35));
+\DIO_PAD_PAD[34]\: OB port map (
+I => DIO(34),
+O => dio_pad(34));
+\DIO_PAD_PAD[18]\: OB port map (
+I => GND,
+O => dio_pad(18));
+\DIO_PAD_PAD[17]\: OB port map (
+I => GND,
+O => dio_pad(17));
+\DIO_PAD_PAD[10]\: OB port map (
+I => GND,
+O => dio_pad(10));
+\DIO_PAD_PAD[9]\: OB port map (
+I => GND,
+O => dio_pad(9));
+\DIO_PAD_PAD[7]\: OBZ port map (
+I => GND,
+T => VCC,
+O => dio_pad(7));
+\DIO_PAD_PAD[5]\: OB port map (
+I => GND,
+O => dio_pad(5));
+\DIO_PAD_PAD[4]\: OB port map (
+I => GND,
+O => dio_pad(4));
+\DIO_PAD_PAD[3]\: OB port map (
+I => GND,
+O => dio_pad(3));
+\DIO_PAD_PAD[2]\: OB port map (
+I => GND,
+O => dio_pad(2));
+\DIO_PAD_PAD[1]\: OB port map (
+I => GND,
+O => dio_pad(1));
+\DIO_PAD_PAD[0]\: OB port map (
+I => GND,
+O => dio_pad(0));
+CLK_32KHZ_PAD_PAD: OB port map (
+I => GND,
+O => clk_32khz_pad);
+FPGA_25MHZ_PAD_PAD: IB port map (
+I => fpga_25mhz_pad,
+O => FPGA_25MHZ_PAD_C);
+\RST_COUNTER_\ <= LOCK and LOCK2;
+RAMP_CTR_3(0) <= not RAMP_CTR(0) and not SR_LOAD4;
+RAMP_CTR_3(26) <= RAMP_CTR_2(26) and not SR_LOAD4;
+LED_VAL_5(1) <= not LED_VAL(1) and SR_LOAD4;
+CMEMWIN_WBS_EN11 <= GPIO_A15_PAD_C and GPIO_A16_PAD_C;
+UN1_TIMERLTO31_12 <= not TIMER(10) and not TIMER(11);
+LED_VAL_5_0_I(0) <= (not SR_LOAD4) or 
+	(not LED_VAL(0));
+LED_VAL_1_SQMUXA_I <= (not RSTN) or 
+	(SR_LOAD4);
+SR_LOAD5_1 <= not RAMP_CTR(0) and not RAMP_CTR(1) and not RAMP_CTR(2) and RAMP_CTR(5);
+UN1_TIMERLTO31_13 <= not TIMER(6) and not TIMER(7) and not TIMER(8) and not TIMER(9);
+UN1_TIMERLTO31_14 <= not TIMER(26) and not TIMER(27) and not TIMER(28) and not TIMER(29);
+UN1_TIMERLTO31_15 <= not TIMER(22) and not TIMER(23) and not TIMER(24) and not TIMER(25);
+UN1_TIMERLTO31_16 <= not TIMER(20) and not TIMER(21) and not TIMER(30) and not TIMER(31);
+UN1_TIMERLTO31_17 <= not TIMER(16) and not TIMER(17) and not TIMER(18) and not TIMER(19);
+UN1_TIMERLTO31_18 <= not TIMER(12) and not TIMER(13) and not TIMER(14) and not TIMER(15);
+SR_LOAD5 <= not RAMP_CTR(3) and not RAMP_CTR(4) and SR_LOAD5_1;
+UN1_TIMERLTO31_23 <= UN1_TIMERLTO31_14 and UN1_TIMERLTO31_15 and UN1_TIMERLTO31_16 and UN1_TIMERLTO31_17;
+N_548_I <= (not UN1_TIMERLTO31_23) or 
+	(not UN1_TIMERLTO31_18) or 
+	(not UN1_TIMERLTO31_13) or 
+	(not UN1_TIMERLTO31_12);
+SR_LOAD4_6_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0000",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => GND,
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => GND,
+B1 => GND,
+C1 => GND,
+D1 => GND,
+CIN => SR_LOAD4_6_CRY,
+COUT => SR_LOAD4_6_0_COUT,
+S0 => SR_LOAD4,
+S1 => SR_LOAD4_6_0_S1);
+SR_LOAD4_5_0: CCU2B 
+generic map(
+  INIT0 => "0x0001",
+  INIT1 => "0x010a",
+  INJECT1_0 => "YES",
+  INJECT1_1 => "YES"
+)
+port map (
+A0 => RAMP_CTR(19),
+B0 => RAMP_CTR(20),
+C0 => RAMP_CTR(21),
+D0 => RAMP_CTR(22),
+A1 => RAMP_CTR(23),
+B1 => RAMP_CTR(24),
+C1 => RAMP_CTR(25),
+D1 => VCC,
+CIN => SR_LOAD4_4,
+COUT => SR_LOAD4_6_CRY,
+S0 => SR_LOAD4_5_0_S0,
+S1 => SR_LOAD4_5_0_S1);
+SR_LOAD4_3_0: CCU2B 
+generic map(
+  INIT0 => "0x0001",
+  INIT1 => "0x0001",
+  INJECT1_0 => "YES",
+  INJECT1_1 => "YES"
+)
+port map (
+A0 => RAMP_CTR(11),
+B0 => RAMP_CTR(12),
+C0 => RAMP_CTR(13),
+D0 => RAMP_CTR(14),
+A1 => RAMP_CTR(15),
+B1 => RAMP_CTR(16),
+C1 => RAMP_CTR(17),
+D1 => RAMP_CTR(18),
+CIN => SR_LOAD4_2,
+COUT => SR_LOAD4_4,
+S0 => SR_LOAD4_3_0_S0,
+S1 => SR_LOAD4_3_0_S1);
+SR_LOAD4_1_0: CCU2B 
+generic map(
+  INIT0 => "0x0001",
+  INIT1 => "0x0001",
+  INJECT1_0 => "YES",
+  INJECT1_1 => "YES"
+)
+port map (
+A0 => RAMP_CTR(3),
+B0 => RAMP_CTR(4),
+C0 => RAMP_CTR(5),
+D0 => RAMP_CTR(6),
+A1 => RAMP_CTR(10),
+B1 => RAMP_CTR(7),
+C1 => RAMP_CTR(8),
+D1 => RAMP_CTR(9),
+CIN => SR_LOAD4_0,
+COUT => SR_LOAD4_2,
+S0 => SR_LOAD4_1_0_S0,
+S1 => SR_LOAD4_1_0_S1);
+SR_LOAD4_0_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0010",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "YES"
+)
+port map (
+A0 => GND,
+B0 => VCC,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(0),
+B1 => RAMP_CTR(1),
+C1 => RAMP_CTR(26),
+D1 => RAMP_CTR(2),
+CIN => GND,
+COUT => SR_LOAD4_0,
+S0 => SR_LOAD4_0_0_S0,
+S1 => SR_LOAD4_0_0_S1);
+RAMP_CTR_2_CRY_25_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => RAMP_CTR(25),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(26),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RAMP_CTR_2_CRY_24,
+COUT => RAMP_CTR_2_CRY_25_0_COUT,
+S0 => RAMP_CTR_2(25),
+S1 => RAMP_CTR_2(26));
+RAMP_CTR_2_CRY_23_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => RAMP_CTR(23),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(24),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RAMP_CTR_2_CRY_22,
+COUT => RAMP_CTR_2_CRY_24,
+S0 => RAMP_CTR_2(23),
+S1 => RAMP_CTR_2(24));
+RAMP_CTR_2_CRY_21_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => RAMP_CTR(21),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(22),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RAMP_CTR_2_CRY_20,
+COUT => RAMP_CTR_2_CRY_22,
+S0 => RAMP_CTR_2(21),
+S1 => RAMP_CTR_2(22));
+RAMP_CTR_2_CRY_19_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => RAMP_CTR(19),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(20),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RAMP_CTR_2_CRY_18,
+COUT => RAMP_CTR_2_CRY_20,
+S0 => RAMP_CTR_2(19),
+S1 => RAMP_CTR_2(20));
+RAMP_CTR_2_CRY_17_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => RAMP_CTR(17),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(18),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RAMP_CTR_2_CRY_16,
+COUT => RAMP_CTR_2_CRY_18,
+S0 => RAMP_CTR_2(17),
+S1 => RAMP_CTR_2(18));
+RAMP_CTR_2_CRY_15_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => RAMP_CTR(15),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(16),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RAMP_CTR_2_CRY_14,
+COUT => RAMP_CTR_2_CRY_16,
+S0 => RAMP_CTR_2(15),
+S1 => RAMP_CTR_2(16));
+RAMP_CTR_2_CRY_13_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => RAMP_CTR(13),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(14),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RAMP_CTR_2_CRY_12,
+COUT => RAMP_CTR_2_CRY_14,
+S0 => RAMP_CTR_2(13),
+S1 => RAMP_CTR_2(14));
+RAMP_CTR_2_CRY_11_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => RAMP_CTR(11),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(12),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RAMP_CTR_2_CRY_10,
+COUT => RAMP_CTR_2_CRY_12,
+S0 => RAMP_CTR_2(11),
+S1 => RAMP_CTR_2(12));
+RAMP_CTR_2_CRY_9_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => RAMP_CTR(9),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(10),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RAMP_CTR_2_CRY_8,
+COUT => RAMP_CTR_2_CRY_10,
+S0 => RAMP_CTR_2(9),
+S1 => RAMP_CTR_2(10));
+RAMP_CTR_2_CRY_7_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => RAMP_CTR(7),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(8),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RAMP_CTR_2_CRY_6,
+COUT => RAMP_CTR_2_CRY_8,
+S0 => RAMP_CTR_2(7),
+S1 => RAMP_CTR_2(8));
+RAMP_CTR_2_CRY_5_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => RAMP_CTR(5),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(6),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RAMP_CTR_2_CRY_4,
+COUT => RAMP_CTR_2_CRY_6,
+S0 => RAMP_CTR_2(5),
+S1 => RAMP_CTR_2(6));
+RAMP_CTR_2_CRY_3_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => RAMP_CTR(3),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(4),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RAMP_CTR_2_CRY_2,
+COUT => RAMP_CTR_2_CRY_4,
+S0 => RAMP_CTR_2(3),
+S1 => RAMP_CTR_2(4));
+RAMP_CTR_2_CRY_1_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => RAMP_CTR(1),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(2),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RAMP_CTR_2_CRY_0,
+COUT => RAMP_CTR_2_CRY_2,
+S0 => RAMP_CTR_2(1),
+S1 => RAMP_CTR_2(2));
+RAMP_CTR_2_CRY_0_0: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "YES"
+)
+port map (
+A0 => GND,
+B0 => VCC,
+C0 => GND,
+D0 => VCC,
+A1 => RAMP_CTR(0),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => GND,
+COUT => RAMP_CTR_2_CRY_0,
+S0 => RAMP_CTR_2_CRY_0_0_S0,
+S1 => RAMP_CTR_2_CRY_0_0_S1);
+\VALUE_REG_S_0[15]\: CCU2B 
+generic map(
+  INIT0 => "0x060a",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => VALUE_REG(15),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => GND,
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => VALUE_REG_CRY(14),
+COUT => VALUE_REG_S_0_COUT(15),
+S0 => VALUE_REG_S(15),
+S1 => VALUE_REG_S_0_S1(15));
+\VALUE_REG_CRY_0[13]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => VALUE_REG(13),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => VALUE_REG(14),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => VALUE_REG_CRY(12),
+COUT => VALUE_REG_CRY(14),
+S0 => VALUE_REG_S(13),
+S1 => VALUE_REG_S(14));
+\VALUE_REG_CRY_0[11]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => VALUE_REG(11),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => VALUE_REG(12),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => VALUE_REG_CRY(10),
+COUT => VALUE_REG_CRY(12),
+S0 => VALUE_REG_S(11),
+S1 => VALUE_REG_S(12));
+\VALUE_REG_CRY_0[9]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => VALUE_REG(9),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => VALUE_REG(10),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => VALUE_REG_CRY(8),
+COUT => VALUE_REG_CRY(10),
+S0 => VALUE_REG_S(9),
+S1 => VALUE_REG_S(10));
+\VALUE_REG_CRY_0[7]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => VALUE_REG(7),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => VALUE_REG(8),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => VALUE_REG_CRY(6),
+COUT => VALUE_REG_CRY(8),
+S0 => VALUE_REG_S(7),
+S1 => VALUE_REG_S(8));
+\VALUE_REG_CRY_0[5]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => VALUE_REG(5),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => VALUE_REG(6),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => VALUE_REG_CRY(4),
+COUT => VALUE_REG_CRY(6),
+S0 => VALUE_REG_S(5),
+S1 => VALUE_REG_S(6));
+\VALUE_REG_CRY_0[3]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => VALUE_REG(3),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => VALUE_REG(4),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => VALUE_REG_CRY(2),
+COUT => VALUE_REG_CRY(4),
+S0 => VALUE_REG_S(3),
+S1 => VALUE_REG_S(4));
+\VALUE_REG_CRY_0[1]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => VALUE_REG(1),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => VALUE_REG(2),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => VALUE_REG_CRY(0),
+COUT => VALUE_REG_CRY(2),
+S0 => VALUE_REG_S(1),
+S1 => VALUE_REG_S(2));
+\VALUE_REG_CRY_0[0]\: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => GND,
+B0 => VCC,
+C0 => GND,
+D0 => VCC,
+A1 => VALUE_REG(0),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => GND,
+COUT => VALUE_REG_CRY(0),
+S0 => VALUE_REG_CRY_0_S0(0),
+S1 => VALUE_REG_S(0));
+\TIMER_S_0[31]\: CCU2B 
+generic map(
+  INIT0 => "0x060a",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(31),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => GND,
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(30),
+COUT => TIMER_S_0_COUT(31),
+S0 => TIMER_S(31),
+S1 => TIMER_S_0_S1(31));
+\TIMER_CRY_0[29]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(29),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(30),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(28),
+COUT => TIMER_CRY(30),
+S0 => TIMER_S(29),
+S1 => TIMER_S(30));
+\TIMER_CRY_0[27]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(27),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(28),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(26),
+COUT => TIMER_CRY(28),
+S0 => TIMER_S(27),
+S1 => TIMER_S(28));
+\TIMER_CRY_0[25]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(25),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(26),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(24),
+COUT => TIMER_CRY(26),
+S0 => TIMER_S(25),
+S1 => TIMER_S(26));
+\TIMER_CRY_0[23]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(23),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(24),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(22),
+COUT => TIMER_CRY(24),
+S0 => TIMER_S(23),
+S1 => TIMER_S(24));
+\TIMER_CRY_0[21]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(21),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(22),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(20),
+COUT => TIMER_CRY(22),
+S0 => TIMER_S(21),
+S1 => TIMER_S(22));
+\TIMER_CRY_0[19]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(19),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(20),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(18),
+COUT => TIMER_CRY(20),
+S0 => TIMER_S(19),
+S1 => TIMER_S(20));
+\TIMER_CRY_0[17]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(17),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(18),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(16),
+COUT => TIMER_CRY(18),
+S0 => TIMER_S(17),
+S1 => TIMER_S(18));
+\TIMER_CRY_0[15]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(15),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(16),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(14),
+COUT => TIMER_CRY(16),
+S0 => TIMER_S(15),
+S1 => TIMER_S(16));
+\TIMER_CRY_0[13]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(13),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(14),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(12),
+COUT => TIMER_CRY(14),
+S0 => TIMER_S(13),
+S1 => TIMER_S(14));
+\TIMER_CRY_0[11]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(11),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(12),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(10),
+COUT => TIMER_CRY(12),
+S0 => TIMER_S(11),
+S1 => TIMER_S(12));
+\TIMER_CRY_0[9]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(9),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(10),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(8),
+COUT => TIMER_CRY(10),
+S0 => TIMER_S(9),
+S1 => TIMER_S(10));
+\TIMER_CRY_0[7]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(7),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(8),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(6),
+COUT => TIMER_CRY(8),
+S0 => TIMER_S(7),
+S1 => TIMER_S(8));
+\TIMER_CRY_0[5]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(5),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(6),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(4),
+COUT => TIMER_CRY(6),
+S0 => TIMER_S(5),
+S1 => TIMER_S(6));
+\TIMER_CRY_0[3]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(3),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(4),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(2),
+COUT => TIMER_CRY(4),
+S0 => TIMER_S(3),
+S1 => TIMER_S(4));
+\TIMER_CRY_0[1]\: CCU2B 
+generic map(
+  INIT0 => "0x0600",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => TIMER(1),
+B0 => GND,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(2),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => TIMER_CRY(0),
+COUT => TIMER_CRY(2),
+S0 => TIMER_S(1),
+S1 => TIMER_S(2));
+\TIMER_CRY_0[0]\: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0x0600",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => GND,
+B0 => VCC,
+C0 => GND,
+D0 => VCC,
+A1 => TIMER(0),
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => GND,
+COUT => TIMER_CRY(0),
+S0 => TIMER_CRY_0_S0(0),
+S1 => TIMER_S(0));
+\RST_COUNTER_S_0[15]\: CCU2B 
+generic map(
+  INIT0 => "0xe40a",
+  INIT1 => "0x0a0c",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => \RST_COUNTER_\,
+B0 => GND,
+C0 => RST_COUNTER(15),
+D0 => VCC,
+A1 => GND,
+B1 => GND,
+C1 => GND,
+D1 => VCC,
+CIN => RST_COUNTER_CRY(14),
+COUT => RST_COUNTER_S_0_COUT(15),
+S0 => RST_COUNTER_S(15),
+S1 => RST_COUNTER_S_0_S1(15));
+\RST_COUNTER_CRY_0[13]\: CCU2B 
+generic map(
+  INIT0 => "0xe400",
+  INIT1 => "0xe400",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => \RST_COUNTER_\,
+B0 => GND,
+C0 => RST_COUNTER(13),
+D0 => VCC,
+A1 => \RST_COUNTER_\,
+B1 => GND,
+C1 => RST_COUNTER(14),
+D1 => VCC,
+CIN => RST_COUNTER_CRY(12),
+COUT => RST_COUNTER_CRY(14),
+S0 => RST_COUNTER_S(13),
+S1 => RST_COUNTER_S(14));
+\RST_COUNTER_CRY_0[11]\: CCU2B 
+generic map(
+  INIT0 => "0xe400",
+  INIT1 => "0xe400",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => \RST_COUNTER_\,
+B0 => GND,
+C0 => RST_COUNTER(11),
+D0 => VCC,
+A1 => \RST_COUNTER_\,
+B1 => GND,
+C1 => RST_COUNTER(12),
+D1 => VCC,
+CIN => RST_COUNTER_CRY(10),
+COUT => RST_COUNTER_CRY(12),
+S0 => RST_COUNTER_S(11),
+S1 => RST_COUNTER_S(12));
+\RST_COUNTER_CRY_0[9]\: CCU2B 
+generic map(
+  INIT0 => "0xe400",
+  INIT1 => "0xe400",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => \RST_COUNTER_\,
+B0 => GND,
+C0 => RST_COUNTER(9),
+D0 => VCC,
+A1 => \RST_COUNTER_\,
+B1 => GND,
+C1 => RST_COUNTER(10),
+D1 => VCC,
+CIN => RST_COUNTER_CRY(8),
+COUT => RST_COUNTER_CRY(10),
+S0 => RST_COUNTER_S(9),
+S1 => RST_COUNTER_S(10));
+\RST_COUNTER_CRY_0[7]\: CCU2B 
+generic map(
+  INIT0 => "0xe400",
+  INIT1 => "0xe400",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => \RST_COUNTER_\,
+B0 => GND,
+C0 => RST_COUNTER(7),
+D0 => VCC,
+A1 => \RST_COUNTER_\,
+B1 => GND,
+C1 => RST_COUNTER(8),
+D1 => VCC,
+CIN => RST_COUNTER_CRY(6),
+COUT => RST_COUNTER_CRY(8),
+S0 => RST_COUNTER_S(7),
+S1 => RST_COUNTER_S(8));
+\RST_COUNTER_CRY_0[5]\: CCU2B 
+generic map(
+  INIT0 => "0xe400",
+  INIT1 => "0xe400",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => \RST_COUNTER_\,
+B0 => GND,
+C0 => RST_COUNTER(5),
+D0 => VCC,
+A1 => \RST_COUNTER_\,
+B1 => GND,
+C1 => RST_COUNTER(6),
+D1 => VCC,
+CIN => RST_COUNTER_CRY(4),
+COUT => RST_COUNTER_CRY(6),
+S0 => RST_COUNTER_S(5),
+S1 => RST_COUNTER_S(6));
+\RST_COUNTER_CRY_0[3]\: CCU2B 
+generic map(
+  INIT0 => "0xe400",
+  INIT1 => "0xe400",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => \RST_COUNTER_\,
+B0 => GND,
+C0 => RST_COUNTER(3),
+D0 => VCC,
+A1 => \RST_COUNTER_\,
+B1 => GND,
+C1 => RST_COUNTER(4),
+D1 => VCC,
+CIN => RST_COUNTER_CRY(2),
+COUT => RST_COUNTER_CRY(4),
+S0 => RST_COUNTER_S(3),
+S1 => RST_COUNTER_S(4));
+\RST_COUNTER_CRY_0[1]\: CCU2B 
+generic map(
+  INIT0 => "0xe400",
+  INIT1 => "0xe400",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => \RST_COUNTER_\,
+B0 => GND,
+C0 => RST_COUNTER(1),
+D0 => VCC,
+A1 => \RST_COUNTER_\,
+B1 => GND,
+C1 => RST_COUNTER(2),
+D1 => VCC,
+CIN => RST_COUNTER_CRY(0),
+COUT => RST_COUNTER_CRY(2),
+S0 => RST_COUNTER_S(1),
+S1 => RST_COUNTER_S(2));
+\RST_COUNTER_CRY_0[0]\: CCU2B 
+generic map(
+  INIT0 => "0x0a0c",
+  INIT1 => "0xe400",
+  INJECT1_0 => "NO",
+  INJECT1_1 => "NO"
+)
+port map (
+A0 => GND,
+B0 => \RST_COUNTER_\,
+C0 => GND,
+D0 => VCC,
+A1 => \RST_COUNTER_\,
+B1 => GND,
+C1 => RST_COUNTER(0),
+D1 => VCC,
+CIN => GND,
+COUT => RST_COUNTER_CRY(0),
+S0 => RST_COUNTER_CRY_0_S0(0),
+S1 => RST_COUNTER_S(0));
+CLKGEN: pll port map (
+lock => LOCK,
+GND => GND,
+fpga_25mhz_pad_c => FPGA_25MHZ_PAD_C,
+VCC => VCC,
+pll_75mhz => PLL_75MHZ);
+CLKGEN2: pll2 port map (
+dio(34) => DIO(34),
+lock2 => LOCK2,
+GND => GND,
+fpga_25mhz_pad_c => FPGA_25MHZ_PAD_C,
+pll_100mhz => PLL_100MHZ);
+SBUSCORE: spi_sbus_resync port map (
+idat(0) => \SBUSCORE.SBUSCORE.IDAT\(0),
+pll_100mhz => PLL_100MHZ,
+gpio_a16_pad_c => GPIO_A16_PAD_C,
+gpio_a15_pad_c => GPIO_A15_PAD_C,
+spi_mosi_pad_c => SPI_MOSI_PAD_C,
+spi_clk_pad_c => SPI_CLK_PAD_C,
+N_450_i => N_450_I,
+gpio_a28_pad_c => GPIO_A28_PAD_C,
+so_i_0_N_10 => \SBUSCORE.SBUSCORE.SO_I_0_N_10\,
+cmemwin_wbs_en11 => CMEMWIN_WBS_EN11,
+GND => GND,
+VCC => VCC,
+rstn_i => RSTN_I,
+spi_clk_pad_c_i => SPI_CLK_PAD_C_I);
+SYSCONCORE: syscon_3s_29952_0_5_Z1 port map (
+internal_osc_c => INTERNAL_OSC_C);
+PGA: pga_control port map (
+dio(34) => DIO(34),
+VCC => VCC,
+rstn_i => RSTN_I,
+pga_clk => PGA_CLK);
+SPI: spi_module port map (
+led_val(0) => LED_VAL(0),
+led_val(1) => LED_VAL(1),
+value_reg(0) => VALUE_REG(0),
+value_reg(1) => VALUE_REG(1),
+value_reg(2) => VALUE_REG(2),
+value_reg(3) => VALUE_REG(3),
+value_reg(4) => VALUE_REG(4),
+value_reg(5) => VALUE_REG(5),
+value_reg(6) => VALUE_REG(6),
+value_reg(7) => VALUE_REG(7),
+value_reg(8) => VALUE_REG(8),
+value_reg(9) => VALUE_REG(9),
+value_reg(10) => VALUE_REG(10),
+value_reg(11) => VALUE_REG(11),
+value_reg(12) => VALUE_REG(12),
+value_reg(13) => VALUE_REG(13),
+value_reg(14) => VALUE_REG(14),
+value_reg(15) => VALUE_REG(15),
+dio(34) => DIO(34),
+dio_pad_c_0 => DIO_PAD_C(35),
+dio_pad_c_2 => DIO_PAD_C(37),
+state_1 => \SPI.STATE\(1),
+state_i(0) => \SPI.STATE_I\(0),
+state_i(1) => \SPI.STATE_I\(1),
+spi_dat_4 => \SPI.SPI_DAT_4\,
+rstn => RSTN,
+sr_load => SR_LOAD,
+load_reg => LOAD_REG,
+VCC => VCC,
+rstn_i => RSTN_I,
+CN => \SPI.CMD.CN\,
+GND => GND);
+GND_0 <= '0';
+VCC_0 <= '1';
+end beh;
+

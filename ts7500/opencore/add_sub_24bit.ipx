@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="add_sub_24bit" module="add_sub_24bit" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2012 05 08 12:58:29.874" version="3.1" type="Module" synthesis="synplify" source_format="Verilog HDL">
+  <Package>
+		<File name="add_sub_24bit.lpc" type="lpc" modified="2012 05 08 12:58:28.000"/>
+		<File name="add_sub_24bit.v" type="top_level_verilog" modified="2012 05 08 12:58:28.000"/>
+		<File name="add_sub_24bit_tmpl.v" type="template_verilog" modified="2012 05 08 12:58:28.000"/>
+		<File name="tb_add_sub_24bit_tmpl.v" type="testbench_verilog" modified="2012 05 08 12:58:28.000"/>
+  </Package>
+</DiamondModule>

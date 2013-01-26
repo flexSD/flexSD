@@ -1,0 +1,10 @@
+/usr/local/diamond/1.2/synpbase/bin/m_gen_lattice  -prodtype synplify_pro -encrypt  -pro  -part LFXP2_5E  -package TN144C  -grade -5   -maxfan 100     -forcenogsr -fixgatedclocks 0 -fixgeneratedclocks 0  -auto_constrain_io -overilog "ts7500_opencore.vm" -ovhdl "ts7500_opencore.vhm" -resolveMultipleDriver -top_level_module  ts7500_top  -ta_num_paths 3  -ta_num_points 0  -oedif  /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_opencore.edn  -autoconstraint  -freq 1.000  /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_opencore.srs  -flow prepass  -gcc_prepass  -osrd  /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_opencore_prepass.srd  -devicelib  /usr/local/diamond/1.2/synpbase/lib/lucent/xp2.v  -ologparam  /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syntmp/ts7500_opencore.plg  -noforwanno -osyn  /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_opencore_prepass.srd  -prjdir /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/  -log  /usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/synlog/ts7500_opencore_prepass_property_extractor.srr 
+rc:1 success:1
+/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_opencore.edn|o|0
+/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_opencore.srs|i|1334788173
+/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_opencore_prepass.srd|o|1334788174
+/usr/local/diamond/1.2/synpbase/lib/lucent/xp2.v|i|1299292498
+/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/syntmp/ts7500_opencore.plg|o|1334788174
+/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/ts7500_opencore_prepass.srd|o|1334788174
+/usr7/research/dkouba/project_development/verilog/controlsystem/ts7500/opencore/synlog/ts7500_opencore_prepass_property_extractor.srr|o|1334788175
+/usr/local/diamond/1.2/synpbase/bin/m_gen_lattice|i|1297917027

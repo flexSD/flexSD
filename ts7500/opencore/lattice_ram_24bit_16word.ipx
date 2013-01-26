@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="lattice_ram_24bit_16word" module="Distributed_DPRAM" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2012 05 08 11:45:32.331" version="3.5" type="Module" synthesis="synplify" source_format="Verilog">
+  <Package>
+		<File name="" type="mem" modified="2012 05 08 11:45:32.000"/>
+		<File name="lattice_ram_24bit_16word.lpc" type="lpc" modified="2012 05 08 11:45:30.000"/>
+		<File name="lattice_ram_24bit_16word.v" type="top_level_verilog" modified="2012 05 08 11:45:30.000"/>
+		<File name="lattice_ram_24bit_16word_tmpl.v" type="template_verilog" modified="2012 05 08 11:45:30.000"/>
+		<File name="tb_lattice_ram_24bit_16word_tmpl.v" type="testbench_verilog" modified="2012 05 08 11:45:30.000"/>
+  </Package>
+</DiamondModule>

@@ -1,0 +1,28 @@
+<BaliSimProject path="." stage="0" language="-1" name="testsim" simType="ModelSim">
+    <Source worklib="&quot;&quot;" path="wb_resync.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="syscon.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="wb_spi.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="wb_arbiter.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="wb_writebuffer.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="spi_sbus.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="ts7500_top.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="tagmem.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="pll2.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="pll.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="coefficient_blockram.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="coefficient_memwindow.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="logging_bram.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="logging_memwindow.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="adc_buffer.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="biquad_filter_32bit.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="wb_biquad_interface_128.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="sigma_delta_buffer_filter.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="spi_module.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="pga_control.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="lattice_ram_32bit_512byte.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="lattice_ram_16bit_1kbyte.v" type="VERILOG" include="none"/>
+    <Source worklib="&quot;&quot;" path="add_sub_16bit.v" type="VERILOG" include="none"/>
+    <SimLib value="pmi_work ovi_xp2"/>
+    <GlbInc value=""/>
+    <Macro value=""/>
+</BaliSimProject>

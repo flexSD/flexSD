@@ -1,0 +1,276 @@
+<HTML>
+<HEAD><TITLE>Place & Route Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Par"></A>PAR: Place And Route Diamond_1.2_Production (92).
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2011 Lattice Semiconductor Corporation,  All rights reserved.
+Wed Apr 18 15:30:01 2012
+
+/usr/local/diamond/1.2/ispfpga/bin/lin/par -f ts7500_opencore.p2t
+ts7500_opencore_map.ncd ts7500_opencore.dir ts7500_opencore.prf
+
+Preference file: ts7500_opencore.prf.
+
+<A name="par_cts"></A><B><U><big>Cost Table Summary</big></U></B>
+Level/      Number      Timing      Run         NCD
+Cost [ncd]  Unrouted    Score       Time        Status
+----------  --------    --------    -----       ------------
+5_1   *     0           0           24          Complete        
+
+
+* : Design saved.
+
+par done!
+
+Lattice Place and Route Report for Design "ts7500_opencore_map.ncd"
+Wed Apr 18 15:30:01 2012
+
+
+<A name="par_best"></A><B><U><big>Best Par Run</big></U></B>
+PAR: Place And Route Diamond_1.2_Production (92).
+Command line: /usr/local/diamond/1.2/ispfpga/bin/lin/par -f ts7500_opencore.p2t
+ts7500_opencore_map.ncd ts7500_opencore.dir ts7500_opencore.prf
+Preference file: ts7500_opencore.prf.
+Placement level-cost: 5-1.
+Routing Iterations: 6
+
+Loading design for application par from file ts7500_opencore_map.ncd.
+Design name: ts7500_top
+NCD version: 3.2
+Vendor:      LATTICE
+Device:      LFXP2-5E
+Package:     TQFP144
+Speed:       5
+Loading device for application par from file 'mg5a26x29.nph' in environment: /usr/local/diamond/1.2/ispfpga.
+Package Status:               Final          Version 1.42
+Speed Hardware Data Status:   Final          Version 10.5
+License checked out.
+
+
+Ignore Preference Error(s):  True
+
+<A name="par_dus"></A><B><U><big>Device utilization summary:</big></U></B>
+
+   GSR                1/1           100% used
+   IOLOGIC            4/196           2% used
+   OSC                1/1           100% used
+   PIO (prelim)      45/174          25% used
+                     45/100          45% bonded
+   SLICE            194/2376          8% used
+
+
+
+Number of Signals: 576
+Number of Connections: 1446
+
+Pin Constraint Summary:
+   37 out of 45 pins locked (82% locked).
+
+WARNING - par: According to the connectivity, it is better to place PLL comp "clkgen/PLLInst_0" on site "ULPLL", however it cannot be done because this site has been occupied or prohibited.
+WARNING - par: According to the connectivity, it is better to place PLL comp "clkgen/PLLInst_0" on site "ULPLL", however it cannot be done because this site has been occupied or prohibited.
+The following 6 signals are selected to use the primary clock routing resources:
+    pll_100mhz (driver: clkgen2/PLLInst_0, clk load #: 3)
+    dio_34 (driver: clkgen2/PLLInst_0, clk load #: 22)
+    pll_75mhz (driver: clkgen/PLLInst_0, clk load #: 18)
+    spi_clk_pad_c (driver: spi_clk_pad, clk load #: 38)
+    fpga_25mhz_pad_c (driver: fpga_25mhz_pad, clk load #: 28)
+    internal_osc_c (driver: sysconcore/rndosc, clk load #: 10)
+
+No signal is selected as DCS clock.
+
+The following 1 signal is selected to use the secondary clock routing resources:
+    N_450_i (driver: sbuscore/sbuscore/SLICE_170, clk load #: 0, sr load #: 26, ce load #: 0)
+
+Signal rstn is selected as Global Set/Reset.
+.
+Starting Placer Phase 0.
+...............
+Finished Placer Phase 0.  REAL time: 7 secs 
+
+CDP(congestion driven placement) auto mode does not turn on CDP.
+	To force CDP on, set -exp parCDP=1
+Starting Placer Phase 1.
+....................
+Placer score = 62666.
+Finished Placer Phase 1.  REAL time: 15 secs 
+
+Starting Placer Phase 2.
+.
+Placer score =  61712
+Finished Placer Phase 2.  REAL time: 15 secs 
+
+
+
+<A name="par_clk"></A><B><U><big>Clock Report</big></U></B>
+
+Global Clock Resources:
+  CLK_PIN    : 1 out of 8 (12%)
+  General PIO: 1 out of 196 (0%)
+  PLL        : 2 out of 2 (100%)
+  DCS        : 0 out of 8 (0%)
+
+Quadrants All (TL, TR, BL, BR) - Global Clocks:
+  PRIMARY "pll_100mhz" from CLKOP on comp "clkgen2/PLLInst_0" on PLL site "ULPLL", clk load = 3
+  PRIMARY "dio_34" from CLKOK on comp "clkgen2/PLLInst_0" on PLL site "ULPLL", clk load = 22
+  PRIMARY "pll_75mhz" from CLKOP on comp "clkgen/PLLInst_0" on PLL site "LRPLL", clk load = 18
+  PRIMARY "spi_clk_pad_c" from comp "spi_clk_pad" on CLK_PIN site "28 (PL14A)", clk load = 38
+  PRIMARY "fpga_25mhz_pad_c" from comp "fpga_25mhz_pad" on PIO site "144 (PT8A)", clk load = 28
+  PRIMARY "internal_osc_c" from comp "sysconcore/rndosc" on site "OSC", clk load = 10
+  SECONDARY "N_450_i" from F1 on comp "sbuscore/sbuscore/SLICE_170" on site "R11C2A", clk load = 0, ce load = 0, sr load = 26
+
+  PRIMARY  : 6 out of 8 (75%)
+     DCS   : 0 out of 2 (0%)
+  SECONDARY: 1 out of 4 (25%)
+
+Edge Clocks:
+  No edge clock selected
+
+
+
+
+I/O Usage Summary (final):
+   45 out of 174 (25.9%) PIO sites used.
+   45 out of 100 (45.0%) bonded PIO sites used.
+   Number of PIO comps: 45; differential: 0
+   Number of Vref pins used: 0
+
+I/O Bank Usage Summary:
++----------+----------------+------------+------------+------------+
+| I/O Bank | Usage          | Bank Vccio | Bank Vref1 | Bank Vref2 |
++----------+----------------+------------+------------+------------+
+| 0        | 11 / 20 ( 55%) | 3.3V       | -          | -          |
+| 1        | 0 / 6 (  0%)   | -          | -          | -          |
+| 2        | 7 / 18 ( 38%)  | 3.3V       | -          | -          |
+| 3        | 3 / 4 ( 75%)   | 3.3V       | -          | -          |
+| 4        | 3 / 8 ( 37%)   | 3.3V       | -          | -          |
+| 5        | 9 / 18 ( 50%)  | 3.3V       | -          | -          |
+| 6        | 5 / 8 ( 62%)   | 3.3V       | -          | -          |
+| 7        | 7 / 18 ( 38%)  | 3.3V       | -          | -          |
++----------+----------------+------------+------------+------------+
+
+
+DSP Utilization Summary:
+-------------------------------------
+DSP Block #:              1 2 3
+# of MULT36X36B                
+# of MULT18X18B                
+# of MULT18X18MACB             
+# of MULT18X18ADDSUBB          
+# of MULT18X18ADDSUBSUMB       
+# of MULT9X9B                  
+# of MULT9X9ADDSUBB            
+# of MULT9X9ADDSUBSUMB         
+
+Total placer CPU time: 14 secs 
+
+Dumping design to file ts7500_opencore.dir/5_1.ncd.
+
+0 connections routed; 1446 unrouted.
+Starting router resource preassignment
+WARNING - par: The driver of primary clock net fpga_25mhz_pad_c is not placed on one of the PIO sites dedicated for primary clocks.  This primary clock will be routed to a H-spine through general routing resource or will be routed as a secondary clock and may suffer from excessive delay or skew.
+
+Completed router resource preassignment. Real time: 17 secs 
+
+Congestion Driven Router (CDR) is turned on.
+CDR effort level is set at 0.
+To turn CDR off, please set "-exp parCDR=0" on command line.
+
+Starting iterative routing.
+
+For each routing iteration the number inside the parenthesis is the
+total time (in picoseconds) the design is failing the timing constraints.
+For each routing iteration the router will attempt to reduce this number
+until the number of routing iterations is completed or the value is 0
+meaning the design setup analysis has met timing constraints.
+
+End of iteration 1
+1446 successful; 0 unrouted; (0) real time: 18 secs 
+Dumping design to file ts7500_opencore.dir/5_1.ncd.
+Total CPU time 17 secs 
+Total REAL time: 18 secs 
+Completely routed.
+End of route.  1446 routed (100.00%); 0 unrouted.
+Checking DRC ... 
+No errors found.
+
+Timing score: 0 
+
+Total REAL time to completion: 24 secs 
+
+Dumping design to file ts7500_opencore.dir/5_1.ncd.
+
+
+All signals are completely routed.
+
+
+par done!
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2011 Lattice Semiconductor Corporation,  All rights reserved.
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

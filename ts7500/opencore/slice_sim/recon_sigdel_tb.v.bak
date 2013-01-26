@@ -1,0 +1,71 @@
+`timescale 10ns/100ps
+
+module recon_sigdel_tb;
+
+parameter           input_bitwidth = 24;
+parameter           full_neg = {1'b1, {(input_bitwidth-1){1'b0}}};
+parameter           full_pos = {1'b0, {(input_bitwidth-1){1'b1}}};
+parameter ramp_bits_add = 10;
+
+reg clock, reset;
+wire signed [23:0] input_sig;
+wire signed [47:0] output_sig;
+wire bitstream;
+
+reg [9:0] theta;
+wire signed [23:0] sine_out;
+
+assign input_sig = sine_out;
+
+// The GSR and PUR are needed for the flip flop primitives from Lattice
+GSR GSR_INST(~reset);   // Global Set/Reset signal (active low)
+PUR PUR_INST(~reset);   // Power up reset signal (active low)
+
+lattice_sine_table sinegen(
+
+.Clock(clock),
+.ClkEn(~reset),
+.Reset(reset),
+.Theta(theta),
+.Sine(sine_out)
+
+);
+
+reconstruction_filter filter(
+  .clock(clock),
+  .reset(reset),
+  .bitstream_in(bitstream),
+  .out(output_sig)
+  
+);
+
+// Feed forward modulator stream generator
+second_order_sigdel_virtualized sigdel1(
+
+  .clock(clock),
+  .reset(reset),
+  
+  .input_data(input_sig),
+  .output_bitstream(bitstream)
+
+);
+
+initial begin
+  
+  clock = 0;
+  reset = 1;
+  theta = 0;
+  //input_sig = full_neg;
+  
+  #4 reset = 0;
+  
+end
+
+always #1 clock = ~clock;
+
+always begin
+#97 if(~reset) theta = theta + 1;
+end
+//always #1 input_sig = input_sig + {(ramp_bits_add){1'b1}};
+
+endmodule

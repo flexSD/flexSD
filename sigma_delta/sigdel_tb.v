@@ -1,0 +1,65 @@
+`timescale 1ns/1ps
+
+module sigdel_tb;
+  
+parameter signal_bitwidth = 24;
+parameter ramp_bits_add = 16;
+  
+reg signed [signal_bitwidth - 1:0]  input_signal;
+reg                                 modulator_clock;
+wire                                sigdel_out_25, sigdel_out_26, sigdel_out_27, sigdel_out_28;
+wire                                sigdel_match;
+
+//assign sigdel_match = (sigdel_out_25 == sigdel_out_26 == sigdel_out_27 == sigdel_out_28);
+
+always #1 modulator_clock = ~modulator_clock;
+always #1 input_signal = input_signal + {(ramp_bits_add){1'b1}};
+
+initial begin
+  
+  input_signal = 0;
+  modulator_clock = 1'b0;
+  
+end
+
+/*
+first_order_sigdel sigdel_24b(
+
+  .input_sig(input_signal),
+  .mod_clock(modulator_clock),
+  .output_sig(sigdel_out)
+  
+);
+*/
+
+first_order_sigdel_virtualized #(24,25) sigdel_25b(
+
+  .input_data(input_signal),
+  .clock_200(modulator_clock),
+  .output_bitstream(sigdel_out_25)
+  
+);first_order_sigdel_virtualized #(24,26) sigdel_26b(
+
+  .input_data(input_signal),
+  .clock_200(modulator_clock),
+  .output_bitstream(sigdel_out_26)
+  
+);
+
+first_order_sigdel_virtualized #(24,27) sigdel_27b(
+
+  .input_data(input_signal),
+  .clock_200(modulator_clock),
+  .output_bitstream(sigdel_out_27)
+  
+);
+
+first_order_sigdel_virtualized #(24,28) sigdel_28b(
+
+  .input_data(input_signal),
+  .clock_200(modulator_clock),
+  .output_bitstream(sigdel_out_28)
+  
+);
+
+endmodule
