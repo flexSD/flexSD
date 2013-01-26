@@ -1,4 +1,11 @@
-{G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SPR16X4A.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SPR16X4A.v}
+{G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL3_UDP_X.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL3_UDP_X.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling UDP UDFDL3_UDP_X
+
+Top level modules:
+	--none--
+
+} {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SPR16X4A.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SPR16X4A.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module SPR16X4A
 
@@ -12,12 +19,40 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	ROM64X1
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/lut_mux4.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/lut_mux4.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling UDP lut_mux4
+
+Top level modules:
+	--none--
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/BBW.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/BBW.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module BBW
 
 Top level modules:
 	BBW
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/slice_vliw_tb.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/slice_vliw_tb.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module slice_vliw_tb
+
+Top level modules:
+	slice_vliw_tb
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3AZ_FUNC.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3AZ_FUNC.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1P3AZ_FUNC
+
+Top level modules:
+	FL1P3AZ_FUNC
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DQSDLL.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DQSDLL.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module DQSDLL
+
+Top level modules:
+	DQSDLL
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/BB.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/BB.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -26,6 +61,41 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	BB
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/add_sub_24bit_with_outreg.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/add_sub_24bit_with_outreg.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module add_sub_24bit_with_outreg
+
+Top level modules:
+	add_sub_24bit_with_outreg
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/VLIW_tb.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/VLIW_tb.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module VLIW_tb
+
+Top level modules:
+	VLIW_tb
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL7_UDP_X.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL7_UDP_X.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling UDP UDFDL7_UDP_X
+
+Top level modules:
+	--none--
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ORCALUT4.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ORCALUT4.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ORCALUT4
+
+Top level modules:
+	ORCALUT4
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LD2P3AX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LD2P3AX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LD2P3AX
+
+Top level modules:
+	LD2P3AX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LD2P3IX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LD2P3IX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module LD2P3IX
@@ -33,12 +103,47 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	LD2P3IX
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/VHI.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/VHI.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module VHI
+
+Top level modules:
+	VHI
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/CLKDIVB.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/CLKDIVB.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module CLKDIVB
 
 Top level modules:
 	CLKDIVB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFE1P3JX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFE1P3JX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OFE1P3JX
+
+Top level modules:
+	OFE1P3JX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IDDRMFX1A.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IDDRMFX1A.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IDDRMFX1A
+
+Top level modules:
+	IDDRMFX1A
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/BUFBA.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/BUFBA.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module BUFBA
+
+Top level modules:
+	BUFBA
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/AND5.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/AND5.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module AND5
+
+Top level modules:
+	AND5
 
 } {} {}} G:/Dropbox/Dropbox/Research/sigma_delta/first_order_sigdel_virtualized.v {0 {vlog -work work -vopt -nocovercells G:/Dropbox/Dropbox/Research/sigma_delta/first_order_sigdel_virtualized.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -73,6 +178,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	BBPD
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SPR16X4A.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SPR16X4A.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SPR16X4A
+
+Top level modules:
+	SPR16X4A
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OB.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OB.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module OB
@@ -86,6 +198,20 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	CU2
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/second_order_sigdel_virtualized_tb.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/second_order_sigdel_virtualized_tb.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module second_order_sigdel_virtualized_tb
+
+Top level modules:
+	second_order_sigdel_virtualized_tb
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1S1D.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1S1D.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IFS1S1D
+
+Top level modules:
+	IFS1S1D
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/DPR16X4B.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/DPR16X4B.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -115,12 +241,26 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	XOR3
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/INV.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/INV.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module INV
+
+Top level modules:
+	INV
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/AND2.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/AND2.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module AND2
 
 Top level modules:
 	AND2
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LU2P3AX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LU2P3AX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LU2P3AX
+
+Top level modules:
+	LU2P3AX
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/IFS1P3IX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/IFS1P3IX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -143,12 +283,54 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	PDPW16KB
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MUX321.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MUX321.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MUX321
+
+Top level modules:
+	MUX321
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IBPU.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IBPU.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IBPU
+
+Top level modules:
+	IBPU
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/BBPD.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/BBPD.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module BBPD
+
+Top level modules:
+	BBPD
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/PFUMX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/PFUMX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module PFUMX
 
 Top level modules:
 	PFUMX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DELAYB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DELAYB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module DELAYB
+
+Top level modules:
+	DELAYB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL7E_UDP_X.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL7E_UDP_X.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling UDP UDFDL7E_UDP_X
+
+Top level modules:
+	--none--
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DPR16X4B.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DPR16X4B.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module DPR16X4B
+
+Top level modules:
+	DPR16X4B
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1S3AY.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1S3AY.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -164,12 +346,47 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	OBCO
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XOR3.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XOR3.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module XOR3
+
+Top level modules:
+	XOR3
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LB2P3AX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LB2P3AX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LB2P3AX
+
+Top level modules:
+	LB2P3AX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LB2P3IX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LB2P3IX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module LB2P3IX
 
 Top level modules:
 	LB2P3IX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MUX21.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MUX21.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MUX21
+
+Top level modules:
+	MUX21
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1S3DX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1S3DX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FD1S3DX
+
+Top level modules:
+	FD1S3DX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/AND2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/AND2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module AND2
+
+Top level modules:
+	AND2
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MULT9X9ADDSUBSUMB.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MULT9X9ADDSUBSUMB.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -178,6 +395,20 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	MULT9X9ADDSUBSUMB
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/PDPW16KB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/PDPW16KB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module PDPW16KB
+
+Top level modules:
+	PDPW16KB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1P3IX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1P3IX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IFS1P3IX
+
+Top level modules:
+	IFS1P3IX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LD2P3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LD2P3BX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module LD2P3BX
@@ -185,12 +416,33 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	LD2P3BX
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/PFMUX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/PFMUX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module PFMUX
+
+Top level modules:
+	PFMUX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ANEB2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ANEB2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ANEB2
+
+Top level modules:
+	ANEB2
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3AY.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3AY.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module FD1P3AY
 
 Top level modules:
 	FD1P3AY
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1P3DX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1P3DX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FD1P3DX
+
+Top level modules:
+	FD1P3DX
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/EPLLD1.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/EPLLD1.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -205,6 +457,48 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	FL1P3DX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OBCO.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OBCO.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OBCO
+
+Top level modules:
+	OBCO
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module slice_sim
+
+Top level modules:
+	slice_sim
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SBRAMB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SBRAMB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SBRAMB
+
+Top level modules:
+	SBRAMB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/PUR.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/PUR.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module PUR
+
+Top level modules:
+	PUR
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OBZPD.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OBZPD.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OBZPD
+
+Top level modules:
+	OBZPD
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IDDRX2B.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IDDRX2B.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IDDRX2B
+
+Top level modules:
+	IDDRX2B
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/IFS1P3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/IFS1P3BX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -227,6 +521,20 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	MULT9X9ADDSUBB
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ILVDS.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ILVDS.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ILVDS
+
+Top level modules:
+	ILVDS
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/state_ram_tb.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/state_ram_tb.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module state_ram_tb
+
+Top level modules:
+	state_ram_tb
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OBZ.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OBZ.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module OBZ
@@ -240,6 +548,20 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	SRAMWA
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OR3.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OR3.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OR3
+
+Top level modules:
+	OR3
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/NR5.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/NR5.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module NR5
+
+Top level modules:
+	NR5
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LB2P3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LB2P3BX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -269,6 +591,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	OFE1P3IX
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1P3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1P3BX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IFS1P3BX
+
+Top level modules:
+	IFS1P3BX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/DQSBUFC.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/DQSBUFC.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module DQSBUFC
@@ -297,12 +626,33 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	EHXPLLE
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MUX81.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MUX81.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MUX81
+
+Top level modules:
+	MUX81
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1S3JX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1S3JX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FD1S3JX
+
+Top level modules:
+	FD1S3JX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FSUB2B.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FSUB2B.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module FSUB2B
 
 Top level modules:
 	FSUB2B
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/STFA.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/STFA.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module STFA
+
+Top level modules:
+	STFA
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ND4.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ND4.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -311,12 +661,40 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	ND4
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFE1P3IX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFE1P3IX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OFE1P3IX
+
+Top level modules:
+	OFE1P3IX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3BX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1P3BX
+
+Top level modules:
+	FL1P3BX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1P3JX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1P3JX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FD1P3JX
+
+Top level modules:
+	FD1P3JX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OBW.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OBW.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module OBW
 
 Top level modules:
 	OBW
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT18X18ADDSUBB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT18X18ADDSUBB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MULT18X18ADDSUBB
+
+Top level modules:
+	MULT18X18ADDSUBB
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/AGEB2.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/AGEB2.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -332,6 +710,27 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	FL1P3AZ
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/lattice_ram_36bit_512.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/lattice_ram_36bit_512.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module lattice_ram_36bit_512
+
+Top level modules:
+	lattice_ram_36bit_512
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/NR2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/NR2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module NR2
+
+Top level modules:
+	NR2
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MUX161.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MUX161.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MUX161
+
+Top level modules:
+	MUX161
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/IDDRMX1A.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/IDDRMX1A.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module IDDRMX1A
@@ -339,12 +738,26 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	IDDRMX1A
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ODDRXC.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ODDRXC.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ODDRXC
+
+Top level modules:
+	ODDRXC
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MULT9X9B.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MULT9X9B.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module MULT9X9B
 
 Top level modules:
 	MULT9X9B
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SEDBA.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SEDBA.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SEDBA
+
+Top level modules:
+	SEDBA
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/UDFDL5E_UDP_X.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/UDFDL5E_UDP_X.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -367,12 +780,40 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	OBZPU
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/sigma_delta/sigdel_tb.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/sigma_delta/sigdel_tb.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module sigdel_tb
+
+Top level modules:
+	sigdel_tb
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IDDRMX1A.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IDDRMX1A.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IDDRMX1A
+
+Top level modules:
+	IDDRMX1A
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XNOR4.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XNOR4.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module XNOR4
+
+Top level modules:
+	XNOR4
+
 } {} {}} G:/Dropbox/Dropbox/Research/opencore/add_sub_24bit_with_outreg.v {1 {vlog -work work -vopt -nocovercells G:/Dropbox/Dropbox/Research/opencore/add_sub_24bit_with_outreg.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module add_sub_24bit_with_outreg
 
 Top level modules:
 	add_sub_24bit_with_outreg
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT9X9B.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT9X9B.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MULT9X9B
+
+Top level modules:
+	MULT9X9B
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LD2P3AX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LD2P3AX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -388,6 +829,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	VHI
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFE1P3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFE1P3BX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OFE1P3BX
+
+Top level modules:
+	OFE1P3BX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SEDBB.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SEDBB.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module SEDBB
@@ -401,6 +849,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	ORCALUT8
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/JTAGE.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/JTAGE.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module JTAGE
+
+Top level modules:
+	JTAGE
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/IFS1S1D.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/IFS1S1D.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -430,6 +885,27 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	INV
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT18X18B.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT18X18B.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MULT18X18B
+
+Top level modules:
+	MULT18X18B
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ND5.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ND5.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ND5
+
+Top level modules:
+	ND5
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/CCU2B.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/CCU2B.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module CCU2B
+
+Top level modules:
+	CCU2B
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LU2P3AX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LU2P3AX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module LU2P3AX
@@ -443,6 +919,27 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	DP16KB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3JY.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3JY.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1P3JY
+
+Top level modules:
+	FL1P3JY
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ORCALUT8.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ORCALUT8.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ORCALUT8
+
+Top level modules:
+	ORCALUT8
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/adder_tb.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/adder_tb.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module adder_tb
+
+Top level modules:
+	adder_tb
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1P3BX_FUNC.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1P3BX_FUNC.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -479,12 +976,54 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	ORCALUT5
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/VLIW_sim.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/VLIW_sim.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module VLIW_sim
+
+Top level modules:
+	VLIW_sim
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL7SP_UDP_X.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL7SP_UDP_X.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling UDP UDFDL7SP_UDP_X
+
+Top level modules:
+	--none--
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/VLO.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/VLO.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module VLO
+
+Top level modules:
+	VLO
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/XNOR2.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/XNOR2.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module XNOR2
 
 Top level modules:
 	XNOR2
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/lattice_ram_72bit_512.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/lattice_ram_72bit_512.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module lattice_ram_72bit_512
+
+Top level modules:
+	lattice_ram_72bit_512
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1S3AX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1S3AX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1S3AX
+
+Top level modules:
+	FL1S3AX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1S3IX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1S3IX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FD1S3IX
+
+Top level modules:
+	FD1S3IX
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SPR16X4B.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SPR16X4B.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -507,6 +1046,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	FD1P3DX
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3BX_FUNC.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3BX_FUNC.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1P3BX_FUNC
+
+Top level modules:
+	FL1P3BX_FUNC
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/EHXPLLE1.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/EHXPLLE1.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module EHXPLLE1
@@ -514,12 +1060,54 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	EHXPLLE1
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ND2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ND2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ND2
+
+Top level modules:
+	ND2
+
 } {} {}} G:/Dropbox/Dropbox/Research/opencore/slice_sim.v {0 {vlog -work work -vopt -nocovercells G:/Dropbox/Dropbox/Research/opencore/slice_sim.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module slice_sim
 ** Error: G:/Dropbox/Dropbox/Research/opencore/slice_sim.v(124): near "[": syntax error, unexpected '[', expecting ')'
 
-} {4.0 5.0} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/PUR.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/PUR.v}
+} {4.0 5.0} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/sigma_delta/first_order_sigdel.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/sigma_delta/first_order_sigdel.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module first_order_sigdel
+
+Top level modules:
+	first_order_sigdel
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ORCALUT5.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ORCALUT5.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ORCALUT5
+
+Top level modules:
+	ORCALUT5
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LD2P3AY.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LD2P3AY.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LD2P3AY
+
+Top level modules:
+	LD2P3AY
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/L6MUX21.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/L6MUX21.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module L6MUX21
+
+Top level modules:
+	L6MUX21
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1P3IX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1P3IX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FD1P3IX
+
+Top level modules:
+	FD1P3IX
+
+} {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/PUR.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/PUR.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module PUR
 
@@ -533,6 +1121,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	IDDRX2B
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/PFUMX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/PFUMX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module PFUMX
+
+Top level modules:
+	PFUMX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/lut_mux2.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/lut_mux2.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling UDP lut_mux2
@@ -540,12 +1135,40 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	--none--
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/lattice_sin_cos_table.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/lattice_sin_cos_table.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module lattice_sine_table
+
+Top level modules:
+	lattice_sine_table
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/UDFDL5SC_UDP_X.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/UDFDL5SC_UDP_X.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling UDP UDFDL5SC_UDP_X
 
 Top level modules:
 	--none--
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SPR16X4B.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SPR16X4B.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SPR16X4B
+
+Top level modules:
+	SPR16X4B
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/slice_tb.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/slice_tb.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module slice_tb
+
+Top level modules:
+	slice_tb
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/EHXPLLE1.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/EHXPLLE1.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module EHXPLLE1
+
+Top level modules:
+	EHXPLLE1
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OR3.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OR3.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -567,6 +1190,27 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	NR5
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/second_order_sigdel_virtualized.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/second_order_sigdel_virtualized.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module second_order_sigdel_virtualized
+
+Top level modules:
+	second_order_sigdel_virtualized
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT9X9ADDSUBSUMB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT9X9ADDSUBSUMB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MULT9X9ADDSUBSUMB
+
+Top level modules:
+	MULT9X9ADDSUBSUMB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IDDRXC.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IDDRXC.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IDDRXC
+
+Top level modules:
+	IDDRXC
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MULT36X36B.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MULT36X36B.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -596,6 +1240,34 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	SGSR
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/lut_mux2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/lut_mux2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling UDP lut_mux2
+
+Top level modules:
+	--none--
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LU2P3AY.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LU2P3AY.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LU2P3AY
+
+Top level modules:
+	LU2P3AY
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SDPRAMB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SDPRAMB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SDPRAMB
+
+Top level modules:
+	SDPRAMB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1S3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1S3BX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FD1S3BX
+
+Top level modules:
+	FD1S3BX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1S3JX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1S3JX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module FD1S3JX
@@ -610,6 +1282,41 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	MULT2
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XOR4.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XOR4.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module XOR4
+
+Top level modules:
+	XOR4
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LB2P3AY.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LB2P3AY.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LB2P3AY
+
+Top level modules:
+	LB2P3AY
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/AND3.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/AND3.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module AND3
+
+Top level modules:
+	AND3
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SGSR.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SGSR.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SGSR
+
+Top level modules:
+	SGSR
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1P3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1P3BX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FD1P3BX
+
+Top level modules:
+	FD1P3BX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1P3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1P3BX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module FL1P3BX
@@ -623,6 +1330,20 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	FD1P3JX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1S1B.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1S1B.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IFS1S1B
+
+Top level modules:
+	IFS1S1B
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/CD2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/CD2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module CD2
+
+Top level modules:
+	CD2
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/BBPU.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/BBPU.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -645,12 +1366,47 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	XOR21
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT18X18MACB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT18X18MACB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MULT18X18MACB
+
+Top level modules:
+	MULT18X18MACB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3IY.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3IY.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1P3IY
+
+Top level modules:
+	FL1P3IY
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/BBPU.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/BBPU.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module BBPU
+
+Top level modules:
+	BBPU
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/lattice_ram_24bit_16word.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/lattice_ram_24bit_16word.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module lattice_ram_24bit_16word
+
+Top level modules:
+	lattice_ram_24bit_16word
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ROM256X1.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ROM256X1.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module ROM256X1
 
 Top level modules:
 	ROM256X1
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OR4.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OR4.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OR4
+
+Top level modules:
+	OR4
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/UDFDL1_UDP_X.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/UDFDL1_UDP_X.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -666,6 +1422,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	lattice_ram_24bit_16word
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/AGEB2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/AGEB2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module AGEB2
+
+Top level modules:
+	AGEB2
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/EPLLD.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/EPLLD.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module EPLLD
@@ -673,12 +1436,26 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	EPLLD
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IB
+
+Top level modules:
+	IB
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/UDFDL5_UDP_X.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/UDFDL5_UDP_X.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling UDP UDFDL5_UDP_X
 
 Top level modules:
 	--none--
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ROM256X1.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ROM256X1.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ROM256X1
+
+Top level modules:
+	ROM256X1
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/DQSDLL.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/DQSDLL.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -694,6 +1471,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	ALEB2
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL1_UDP_X.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL1_UDP_X.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling UDP UDFDL1_UDP_X
+
+Top level modules:
+	--none--
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ND5.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ND5.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module ND5
@@ -707,6 +1491,20 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	MUX41
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL5E_UDP_X.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL5E_UDP_X.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling UDP UDFDL5E_UDP_X
+
+Top level modules:
+	--none--
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OBZPU.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OBZPU.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OBZPU
+
+Top level modules:
+	OBZPU
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OLVDS.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OLVDS.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -729,6 +1527,27 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	FL1P3JY
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL5_UDP_X.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL5_UDP_X.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling UDP UDFDL5_UDP_X
+
+Top level modules:
+	--none--
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SLOGICB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SLOGICB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SLOGICB
+
+Top level modules:
+	SLOGICB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/NR3.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/NR3.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module NR3
+
+Top level modules:
+	NR3
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1P3AY_FUNC.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1P3AY_FUNC.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module FL1P3AY_FUNC
@@ -749,6 +1568,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	IOWAKEUPA
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SEDBB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SEDBB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SEDBB
+
+Top level modules:
+	SEDBB
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OFS1P3DX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OFS1P3DX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -778,6 +1604,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	DELAYB
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1S3AX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1S3AX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FD1S3AX
+
+Top level modules:
+	FD1S3AX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1S3AX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1S3AX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module FL1S3AX
@@ -792,12 +1625,47 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	FD1S3IX
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3AY_FUNC.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3AY_FUNC.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1P3AY_FUNC
+
+Top level modules:
+	FL1P3AY_FUNC
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1P3IY_FUNC.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1P3IY_FUNC.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module FL1P3IY_FUNC
 
 Top level modules:
 	FL1P3IY_FUNC
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/sinegen_tb.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/sinegen_tb.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module sinegen_tb
+
+Top level modules:
+	sinegen_tb
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XNOR5.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XNOR5.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module XNOR5
+
+Top level modules:
+	XNOR5
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ROM32X1.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ROM32X1.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ROM32X1
+
+Top level modules:
+	ROM32X1
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/BB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/BB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module BB
+
+Top level modules:
+	BB
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ND2.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ND2.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -812,6 +1680,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	first_order_sigdel
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1P3AX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1P3AX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FD1P3AX
+
+Top level modules:
+	FD1P3AX
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LD2P3AY.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LD2P3AY.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -834,12 +1709,47 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	FD1P3IX
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFS1P3DX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFS1P3DX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OFS1P3DX
+
+Top level modules:
+	OFS1P3DX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OB
+
+Top level modules:
+	OB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LD2P3DX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LD2P3DX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LD2P3DX
+
+Top level modules:
+	LD2P3DX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3IY_FUNC.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3IY_FUNC.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1P3IY_FUNC
+
+Top level modules:
+	FL1P3IY_FUNC
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/XOR11.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/XOR11.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module XOR11
 
 Top level modules:
 	XOR11
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/add_sub_24bit_no_outreg.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/add_sub_24bit_no_outreg.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module add_sub_24bit_no_outreg
+
+Top level modules:
+	add_sub_24bit_no_outreg
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SBRAMB.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SBRAMB.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -855,12 +1765,33 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	LU2P3AY
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/recon_sigdel_tb.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/recon_sigdel_tb.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module recon_sigdel_tb
+
+Top level modules:
+	recon_sigdel_tb
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XNOR2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XNOR2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module XNOR2
+
+Top level modules:
+	XNOR2
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SDPRAMB.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SDPRAMB.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module SDPRAMB
 
 Top level modules:
 	SDPRAMB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LU2P3DX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LU2P3DX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LU2P3DX
+
+Top level modules:
+	LU2P3DX
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OSCE.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OSCE.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -890,6 +1821,34 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	OFS1P3JX
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ODDRMXA.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ODDRMXA.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ODDRMXA
+
+Top level modules:
+	ODDRMXA
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LB2P3DX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LB2P3DX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LB2P3DX
+
+Top level modules:
+	LB2P3DX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/verilog_sigdel2_joseph.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/verilog_sigdel2_joseph.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module second_order_sig_del
+
+Top level modules:
+	second_order_sig_del
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1S1I.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1S1I.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IFS1S1I
+
+Top level modules:
+	IFS1S1I
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ORCALUT6.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ORCALUT6.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module ORCALUT6
@@ -918,6 +1877,27 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	CD2
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OSCE.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OSCE.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OSCE
+
+Top level modules:
+	OSCE
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/EPLLD1.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/EPLLD1.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module EPLLD1
+
+Top level modules:
+	EPLLD1
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DCS.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DCS.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module DCS
+
+Top level modules:
+	DCS
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/XNOR3.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/XNOR3.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module XNOR3
@@ -925,12 +1905,75 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	XNOR3
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1S3AY.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1S3AY.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1S3AY
+
+Top level modules:
+	FL1S3AY
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/second_order_sigdel.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/second_order_sigdel.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module second_order_sigdel
+
+Top level modules:
+	second_order_sigdel
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ODDRX2B.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ODDRX2B.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ODDRX2B
+
+Top level modules:
+	ODDRX2B
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ND3.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ND3.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ND3
+
+Top level modules:
+	ND3
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFS1P3JX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFS1P3JX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OFS1P3JX
+
+Top level modules:
+	OFS1P3JX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT18X18ADDSUBSUMB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT18X18ADDSUBSUMB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MULT18X18ADDSUBSUMB
+
+Top level modules:
+	MULT18X18ADDSUBSUMB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LD2P3JX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LD2P3JX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LD2P3JX
+
+Top level modules:
+	LD2P3JX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/IBPD.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/IBPD.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module IBPD
 
 Top level modules:
 	IBPD
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ORCALUT6.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ORCALUT6.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ORCALUT6
+
+Top level modules:
+	ORCALUT6
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3AY.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3AY.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1P3AY
+
+Top level modules:
+	FL1P3AY
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SSPIA.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SSPIA.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -953,12 +1996,33 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	lattice_ram_36bit_512
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT9X9ADDSUBB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT9X9ADDSUBB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MULT9X9ADDSUBB
+
+Top level modules:
+	MULT9X9ADDSUBB
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MUX161.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MUX161.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module MUX161
 
 Top level modules:
 	MUX161
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SRAMWA.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SRAMWA.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SRAMWA
+
+Top level modules:
+	SRAMWA
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MULT2
+
+Top level modules:
+	MULT2
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ODDRXC.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ODDRXC.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -981,12 +2045,26 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	XOR5
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IBPD.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IBPD.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IBPD
+
+Top level modules:
+	IBPD
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/AND4.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/AND4.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module AND4
 
 Top level modules:
 	AND4
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LU2P3JX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LU2P3JX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LU2P3JX
+
+Top level modules:
+	LU2P3JX
 
 } {} {}} G:/Dropbox/Dropbox/Research/opencore/slice_sim/adder_tb.v {1 {vlog -work work -vopt -nocovercells G:/Dropbox/Dropbox/Research/opencore/slice_sim/adder_tb.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -1002,13 +2080,69 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	sigdel_tb
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SDPRAMC.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SDPRAMC.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SDPRAMC
+
+Top level modules:
+	SDPRAMC
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IDDRFXA.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IDDRFXA.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IDDRFXA
+
+Top level modules:
+	IDDRFXA
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XOR21.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XOR21.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module XOR21
+
+Top level modules:
+	XOR21
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FSUB2B.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FSUB2B.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FSUB2B
+
+Top level modules:
+	FSUB2B
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LB2P3JX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LB2P3JX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LB2P3JX
+
+Top level modules:
+	LB2P3JX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XOR5.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XOR5.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module XOR5
+
+Top level modules:
+	XOR5
+
 } {} {}} G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_sim.v {0 {vlog -work work -vopt -nocovercells G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_sim.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module VLIW_sim
 ** Error: G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_sim.v(104): Undefined variable: next_instruction_address.
 ** Error: G:/Dropbox/Dropbox/Research/opencore/slice_sim/VLIW_sim.v(30): Identifier must be declared with a port mode: next_instruction_address.
 
-} {4.0 6.0} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/DPR16X4A.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/DPR16X4A.v}
+} {4.0 6.0} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/CB2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/CB2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module CB2
+
+Top level modules:
+	CB2
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/AND4.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/AND4.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module AND4
+
+Top level modules:
+	AND4
+
+} {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/DPR16X4A.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/DPR16X4A.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module DPR16X4A
 
@@ -1043,6 +2177,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	NR3
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ROM16X1.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ROM16X1.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ROM16X1
+
+Top level modules:
+	ROM16X1
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MULT18X18B.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MULT18X18B.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module MULT18X18B
@@ -1064,6 +2205,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	BUFBA
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/EPLLD.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/EPLLD.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module EPLLD
+
+Top level modules:
+	EPLLD
+
 } {} {}} G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v {1 {vlog -work work -vopt -nocovercells G:/Dropbox/Dropbox/Research/opencore/slice_sim/slice_tb.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module slice_tb
@@ -1071,12 +2219,33 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	slice_tb
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DPR16X4A.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DPR16X4A.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module DPR16X4A
+
+Top level modules:
+	DPR16X4A
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1S3AX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1S3AX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module FD1S3AX
 
 Top level modules:
 	FD1S3AX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XOR2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XOR2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module XOR2
+
+Top level modules:
+	XOR2
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/GSR.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/GSR.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module GSR
+
+Top level modules:
+	GSR
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ROM32X1.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ROM32X1.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -1092,12 +2261,40 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	OFS1P3IX
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OR5.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OR5.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OR5
+
+Top level modules:
+	OR5
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ALEB2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ALEB2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ALEB2
+
+Top level modules:
+	ALEB2
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MUX41.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MUX41.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MUX41
+
+Top level modules:
+	MUX41
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3AX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FD1P3AX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module FD1P3AX
 
 Top level modules:
 	FD1P3AX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OLVDS.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OLVDS.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OLVDS
+
+Top level modules:
+	OLVDS
 
 } {} {}} G:/Dropbox/Dropbox/Research/opencore/lattice_ram_72bit_512.v {1 {vlog -work work -vopt -nocovercells G:/Dropbox/Dropbox/Research/opencore/lattice_ram_72bit_512.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -1112,6 +2309,20 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	--none--
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SLUTA.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SLUTA.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SLUTA
+
+Top level modules:
+	SLUTA
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ROM64X1.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ROM64X1.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ROM64X1
+
+Top level modules:
+	ROM64X1
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SRIPPLEB.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SRIPPLEB.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -1141,12 +2352,33 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	ROM128X1
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FADD2B.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FADD2B.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FADD2B
+
+Top level modules:
+	FADD2B
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/BBW.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/BBW.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module BBW
+
+Top level modules:
+	BBW
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1P3JY_FUNC.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1P3JY_FUNC.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module FL1P3JY_FUNC
 
 Top level modules:
 	FL1P3JY_FUNC
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFS1P3IX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFS1P3IX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OFS1P3IX
+
+Top level modules:
+	OFS1P3IX
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MUX21.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MUX21.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -1162,6 +2394,48 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	FL1P3DX_FUNC
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/START.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/START.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module START
+
+Top level modules:
+	START
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LD2P3IX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LD2P3IX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LD2P3IX
+
+Top level modules:
+	LD2P3IX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IOWAKEUPA.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IOWAKEUPA.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IOWAKEUPA
+
+Top level modules:
+	IOWAKEUPA
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/CLKDIVB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/CLKDIVB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module CLKDIVB
+
+Top level modules:
+	CLKDIVB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/sigma_delta/first_order_sigdel_virtualized.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/sigma_delta/first_order_sigdel_virtualized.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module first_order_sigdel_virtualized
+
+Top level modules:
+	first_order_sigdel_virtualized
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DP16KB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DP16KB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module DP16KB
+
+Top level modules:
+	DP16KB
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/PFMUX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/PFMUX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module PFMUX
@@ -1175,6 +2449,27 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	ANEB2
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SRIPPLEB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SRIPPLEB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SRIPPLEB
+
+Top level modules:
+	SRIPPLEB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ROM128X1.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ROM128X1.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ROM128X1
+
+Top level modules:
+	ROM128X1
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/CU2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/CU2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module CU2
+
+Top level modules:
+	CU2
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LU2P3DX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LU2P3DX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -1190,6 +2485,41 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	IFS1P3DX
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OR2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OR2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OR2
+
+Top level modules:
+	OR2
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/NR4.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/NR4.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module NR4
+
+Top level modules:
+	NR4
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3JY_FUNC.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3JY_FUNC.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1P3JY_FUNC
+
+Top level modules:
+	FL1P3JY_FUNC
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3DX_FUNC.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3DX_FUNC.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1P3DX_FUNC
+
+Top level modules:
+	FL1P3DX_FUNC
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FADSU2.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FADSU2.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FADSU2
+
+Top level modules:
+	FADSU2
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OFS1P3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/OFS1P3BX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module OFS1P3BX
@@ -1203,6 +2533,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	IDDRXC
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LU2P3IX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LU2P3IX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LU2P3IX
+
+Top level modules:
+	LU2P3IX
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ODDRMXA.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ODDRMXA.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -1232,6 +2569,20 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	IFS1S1I
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SCCU2B.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SCCU2B.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SCCU2B
+
+Top level modules:
+	SCCU2B
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1P3DX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1P3DX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IFS1P3DX
+
+Top level modules:
+	IFS1P3DX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ILVDS.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ILVDS.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module ILVDS
@@ -1246,12 +2597,33 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	DCS
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XOR11.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XOR11.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module XOR11
+
+Top level modules:
+	XOR11
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1S3AY.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1S3AY.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FD1S3AY
+
+Top level modules:
+	FD1S3AY
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1S3AY.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1S3AY.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module FL1S3AY
 
 Top level modules:
 	FL1S3AY
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LB2P3IX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LB2P3IX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LB2P3IX
+
+Top level modules:
+	LB2P3IX
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ODDRX2B.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ODDRX2B.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -1267,12 +2639,26 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	ND3
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFS1P3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFS1P3BX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OFS1P3BX
+
+Top level modules:
+	OFS1P3BX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MULT18X18ADDSUBSUMB.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MULT18X18ADDSUBSUMB.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module MULT18X18ADDSUBSUMB
 
 Top level modules:
 	MULT18X18ADDSUBSUMB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LD2P3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LD2P3BX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LD2P3BX
+
+Top level modules:
+	LD2P3BX
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LD2P3JX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LD2P3JX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -1281,6 +2667,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	LD2P3JX
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1P3AY.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FD1P3AY.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FD1P3AY
+
+Top level modules:
+	FD1P3AY
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1P3AY.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/FL1P3AY.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module FL1P3AY
@@ -1288,12 +2681,47 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	FL1P3AY
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL5SC_UDP_X.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/UDFDL5SC_UDP_X.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling UDP UDFDL5SC_UDP_X
+
+Top level modules:
+	--none--
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3DX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3DX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1P3DX
+
+Top level modules:
+	FL1P3DX
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MUX81.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/MUX81.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module MUX81
 
 Top level modules:
 	MUX81
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT36X36B.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/MULT36X36B.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module MULT36X36B
+
+Top level modules:
+	MULT36X36B
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SP16KB.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SP16KB.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SP16KB
+
+Top level modules:
+	SP16KB
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LU2P3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LU2P3BX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LU2P3BX
+
+Top level modules:
+	LU2P3BX
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LU2P3JX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LU2P3JX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -1308,6 +2736,13 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 
 Top level modules:
 	IFS1P3JX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XNOR3.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/XNOR3.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module XNOR3
+
+Top level modules:
+	XNOR3
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SDPRAMC.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/SDPRAMC.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -1330,12 +2765,26 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	IDDRFXA
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OBZ.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OBZ.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OBZ
+
+Top level modules:
+	OBZ
+
 } {} {}} G:/Dropbox/Dropbox/Research/opencore/add_sub_24bit_no_outreg.v {1 {vlog -work work -vopt -nocovercells G:/Dropbox/Dropbox/Research/opencore/add_sub_24bit_no_outreg.v
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module add_sub_24bit_no_outreg
 
 Top level modules:
 	add_sub_24bit_no_outreg
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LB2P3BX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/LB2P3BX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module LB2P3BX
+
+Top level modules:
+	LB2P3BX
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LB2P3JX.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/LB2P3JX.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -1358,12 +2807,54 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	SEDBA
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SSPIA.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/SSPIA.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module SSPIA
+
+Top level modules:
+	SSPIA
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1P3JX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1P3JX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IFS1P3JX
+
+Top level modules:
+	IFS1P3JX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DQSBUFC.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/DQSBUFC.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module DQSBUFC
+
+Top level modules:
+	DQSBUFC
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1S1J.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/IFS1S1J.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module IFS1S1J
+
+Top level modules:
+	IFS1S1J
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ORCALUT7.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ORCALUT7.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module ORCALUT7
 
 Top level modules:
 	ORCALUT7
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFE1P3DX.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OFE1P3DX.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OFE1P3DX
+
+Top level modules:
+	OFE1P3DX
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/EHXPLLE.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/EHXPLLE.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module EHXPLLE
+
+Top level modules:
+	EHXPLLE
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/XNOR4.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/XNOR4.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
@@ -1379,12 +2870,61 @@ Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 Top level modules:
 	IB
 
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/reconstruction_filter.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/reconstruction_filter.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module reconstruction_filter
+
+Top level modules:
+	reconstruction_filter
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ND4.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ND4.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ND4
+
+Top level modules:
+	ND4
+
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ROM16X1.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/ROM16X1.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
 -- Compiling module ROM16X1
 
 Top level modules:
 	ROM16X1
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OBW.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/OBW.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module OBW
+
+Top level modules:
+	OBW
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/lattice_ram_36bit_16.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/lattice_ram_36bit_16.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module lattice_ram_36bit_16
+
+Top level modules:
+	lattice_ram_36bit_16
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/sigdel_vitrual_tb.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/sigdel_vitrual_tb.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module sigdel_virtual_tb
+
+Top level modules:
+	sigdel_virtual_tb
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ORCALUT7.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/ORCALUT7.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module ORCALUT7
+
+Top level modules:
+	ORCALUT7
+
+} {} {}} {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3AZ.v} {1 {vlog -work work -vopt -nocovercells {G:/Documents/Projects/Home Verilog Dev/flexSD/XP2 Verilog Primitives/FL1P3AZ.v}
+Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009
+-- Compiling module FL1P3AZ
+
+Top level modules:
+	FL1P3AZ
 
 } {} {}} {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/UDFDL3_UDP_X.v} {1 {vlog -work work -vopt -nocovercells {G:/Dropbox/Dropbox/Research/XP2 Verilog Primitives/UDFDL3_UDP_X.v}
 Model Technology ModelSim SE vlog 6.5 Compiler 2009.01 Jan 22 2009

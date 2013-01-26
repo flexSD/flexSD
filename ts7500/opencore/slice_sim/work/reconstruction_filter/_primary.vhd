@@ -13,9 +13,4 @@ entity reconstruction_filter is
         bitstream_in    : in     vl_logic;
         \out\           : out    vl_logic_vector
     );
-    attribute mti_svvh_generic_type : integer;
-    attribute mti_svvh_generic_type of in_bw : constant is 1;
-    attribute mti_svvh_generic_type of filter_bw : constant is 1;
-    attribute mti_svvh_generic_type of alpha : constant is 1;
-    attribute mti_svvh_generic_type of three_alpha : constant is 1;
 end reconstruction_filter;
