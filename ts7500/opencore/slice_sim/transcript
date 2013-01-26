@@ -232,3 +232,6 @@
 # Compile of XOR11.v was successful.
 # Compile of XOR21.v was successful.
 # 220 compiles, 0 failed with no errors. 
+# Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (G:/Documents/Projects/Home Verilog Dev/flexSD/ts7500/opencore/slice_sim/slice_sim.mpf).  File can not be renamed.
