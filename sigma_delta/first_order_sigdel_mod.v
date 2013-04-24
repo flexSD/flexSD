@@ -1,4 +1,9 @@
 `timescale 100ps/1ps
+
+/* First-Order Sigma Delta Modulator
+*  Dan Kouba, 2012
+*/
+
 module first_order_sigdel(
   
   mod_clock,
