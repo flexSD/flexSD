@@ -1,6 +1,0 @@
-###################################################
-## MATLAB & Simulink Settings                    ##
-###################################################
-# This is the custom SDFP library
-export PATH=$PATH:/usr9/research/kunal/workspace/controller_simulink/simulink/SDFPLib
-

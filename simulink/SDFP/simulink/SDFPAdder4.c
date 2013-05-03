@@ -18,15 +18,15 @@
   *
   *   DO NOT change NAME--Change the 'replacement text' only.
   *
-  *   For better compatibility with the Real-Time Workshop, the
+  *   For better compatibility with the Simulink Coder, the
   *   "wrapper" S-function technique is used.  This is discussed
-  *   in the Real-Time Workshop User's Manual in the Chapter titled,
+  *   in the Simulink Coder's Manual in the Chapter titled,
   *   "Wrapper S-functions".
   *
   *  -------------------------------------------------------------------------
   * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
   *  ------------------------------------------------------------------------- 
- * Created: Mon Feb  1 21:52:22 2010
+ * Created: Thu May  2 18:58:13 2013
  * 
  *
  */
@@ -221,14 +221,8 @@ extern void SDFPAdder4_Outputs_wrapper(const uint32_T *in0,
      */
     static void mdlCheckParameters(SimStruct *S)
     {
-     #define PrmNumPos 46
-     int paramIndex = 0;
+     int paramIndex  = 0;
      bool validParam = false;
-     char paramVector[] ={'1','2','3','4'};
-     static char parameterErrorMsg[] ="The data type and/or complexity of parameter    does not match the information "
-     "specified in the S-function Builder dialog. For non-double parameters you will need to cast them using int8, int16,"
-     "int32, uint8, uint16, uint32 or boolean."; 
-
      /* All parameters must match the S-function Builder Dialog */
      
 
@@ -270,7 +264,11 @@ extern void SDFPAdder4_Outputs_wrapper(const uint32_T *in0,
       
      EXIT_POINT:
       if (validParam) {
-	  parameterErrorMsg[PrmNumPos] = paramVector[paramIndex];
+          char parameterErrorMsg[1024];
+          sprintf(parameterErrorMsg, "The data type and or complexity of parameter  %d does not match the "
+                  "information specified in the S-function Builder dialog. "
+                  "For non-double parameters you will need to cast them using int8, int16, "
+                  "int32, uint8, uint16, uint32 or boolean.", paramIndex + 1);
 	  ssSetErrorStatus(S,parameterErrorMsg);
       }
 	return;
@@ -407,10 +405,10 @@ static void mdlOutputs(SimStruct *S, int_T tid)
     const int_T   p_width1  = mxGetNumberOfElements(PARAM_DEF1(S));
     const int_T   p_width2  = mxGetNumberOfElements(PARAM_DEF2(S));
     const int_T   p_width3  = mxGetNumberOfElements(PARAM_DEF3(S));
-    const uint32_T  *in_bitwidth  = mxGetData(PARAM_DEF0(S));
-    const uint32_T  *in_fp_position  = mxGetData(PARAM_DEF1(S));
-    const uint32_T  *out_bitwidth  = mxGetData(PARAM_DEF2(S));
-    const uint32_T  *out_fp_position  = mxGetData(PARAM_DEF3(S));
+    const uint32_T  *in_bitwidth  = (const uint32_T *)mxGetData(PARAM_DEF0(S));
+    const uint32_T  *in_fp_position  = (const uint32_T *)mxGetData(PARAM_DEF1(S));
+    const uint32_T  *out_bitwidth  = (const uint32_T *)mxGetData(PARAM_DEF2(S));
+    const uint32_T  *out_fp_position  = (const uint32_T *)mxGetData(PARAM_DEF3(S));
 
     SDFPAdder4_Outputs_wrapper(in0, in1, in2, in3, adder_out, DBG_in01, DBG_in012, in_bitwidth, p_width0, in_fp_position, p_width1, out_bitwidth, p_width2, out_fp_position, p_width3);
 }

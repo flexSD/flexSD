@@ -13,12 +13,12 @@
   *            Your Changes go here
   *        %%%-SFUNWIZ_wrapper_XXXXXX_Changes_END
   *
-  *   For better compatibility with the Real-Time Workshop, the
+  *   For better compatibility with the Simulink Coder, the
   *   "wrapper" S-function technique is used.  This is discussed
-  *   in the Real-Time Workshop User's Manual in the Chapter titled,
+  *   in the Simulink Coder User's Manual in the Chapter titled,
   *   "Wrapper S-functions".
   *
-  *   Created: Sun Jan 31 15:39:02 2010
+  *   Created: Thu May  2 19:04:22 2013
   */
 
 

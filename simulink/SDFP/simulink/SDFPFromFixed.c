@@ -18,15 +18,15 @@
   *
   *   DO NOT change NAME--Change the 'replacement text' only.
   *
-  *   For better compatibility with the Real-Time Workshop, the
+  *   For better compatibility with the Simulink Coder, the
   *   "wrapper" S-function technique is used.  This is discussed
-  *   in the Real-Time Workshop User's Manual in the Chapter titled,
+  *   in the Simulink Coder's Manual in the Chapter titled,
   *   "Wrapper S-functions".
   *
   *  -------------------------------------------------------------------------
   * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
   *  ------------------------------------------------------------------------- 
- * Created: Sun Jan 31 15:39:02 2010
+ * Created: Thu May  2 19:04:22 2013
  * 
  *
  */
@@ -121,14 +121,8 @@ extern void SDFPFromFixed_Outputs_wrapper(const uint32_T *fixed_in,
      */
     static void mdlCheckParameters(SimStruct *S)
     {
-     #define PrmNumPos 46
-     int paramIndex = 0;
+     int paramIndex  = 0;
      bool validParam = false;
-     char paramVector[] ={'1','2'};
-     static char parameterErrorMsg[] ="The data type and/or complexity of parameter    does not match the information "
-     "specified in the S-function Builder dialog. For non-double parameters you will need to cast them using int8, int16,"
-     "int32, uint8, uint16, uint32 or boolean."; 
-
      /* All parameters must match the S-function Builder Dialog */
      
 
@@ -152,7 +146,11 @@ extern void SDFPFromFixed_Outputs_wrapper(const uint32_T *fixed_in,
       
      EXIT_POINT:
       if (validParam) {
-	  parameterErrorMsg[PrmNumPos] = paramVector[paramIndex];
+          char parameterErrorMsg[1024];
+          sprintf(parameterErrorMsg, "The data type and or complexity of parameter  %d does not match the "
+                  "information specified in the S-function Builder dialog. "
+                  "For non-double parameters you will need to cast them using int8, int16, "
+                  "int32, uint8, uint16, uint32 or boolean.", paramIndex + 1);
 	  ssSetErrorStatus(S,parameterErrorMsg);
       }
 	return;
@@ -249,8 +247,8 @@ static void mdlOutputs(SimStruct *S, int_T tid)
     real32_T        *float_out  = (real32_T *)ssGetOutputPortRealSignal(S,0);
     const int_T   p_width0  = mxGetNumberOfElements(PARAM_DEF0(S));
     const int_T   p_width1  = mxGetNumberOfElements(PARAM_DEF1(S));
-    const uint32_T  *bitwidth  = mxGetData(PARAM_DEF0(S));
-    const uint32_T  *fp_position  = mxGetData(PARAM_DEF1(S));
+    const uint32_T  *bitwidth  = (const uint32_T *)mxGetData(PARAM_DEF0(S));
+    const uint32_T  *fp_position  = (const uint32_T *)mxGetData(PARAM_DEF1(S));
 
     SDFPFromFixed_Outputs_wrapper(fixed_in, float_out, bitwidth, p_width0, fp_position, p_width1);
 }
