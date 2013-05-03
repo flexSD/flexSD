@@ -1,0 +1,93 @@
+m255
+13
+cModel Technology
+d/usr1/research/kunal/Desktop/JosephController/controller
+vcontroller
+IbIKmPc3JUgkWW?KT<V^GC3
+V_LA^7K[Mf;Y]WFijPl?812
+d/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B
+w1265185750
+F/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/controller.v
+L0 1
+V_LA^7K[Mf;Y]WFijPl?812
+OE;L;6.1b;31
+r1
+31
+o-work work
+vSDFPAdder2
+I@DM0J69:;<CliAEhd9jIY3
+VjLOhJooFMf:::dUS?ijY>0
+d/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B
+w1265185750
+F/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/controller.v
+L0 205
+VjLOhJooFMf:::dUS?ijY>0
+OE;L;6.1b;31
+r1
+31
+o-work work
+n@s@d@f@p@adder2
+vSDFPAdder3
+IbdD<;DZN3:k=kkAS<MFYW0
+V^_h396RE3<TP[Pck[P5dI3
+d/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B
+w1265185750
+F/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/controller.v
+L0 193
+V^_h396RE3<TP[Pck[P5dI3
+OE;L;6.1b;31
+r1
+31
+o-work work
+n@s@d@f@p@adder3
+vSDFPAdder4
+IG5I1@dIHR<mZ?zUE>kB@=0
+V79[bA8YU5DNjDZb^_k1P52
+d/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B
+w1265185750
+F/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/controller.v
+L0 180
+V79[bA8YU5DNjDZb^_k1P52
+OE;L;6.1b;31
+r1
+31
+o-work work
+n@s@d@f@p@adder4
+vSDFPFlipFlop
+IRN?AX9SBd:[LP75=;;g3e0
+VO_RlUIdH?>;Z3oh`Bj1zJ0
+d/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B
+w1265185750
+F/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/controller.v
+L0 160
+VO_RlUIdH?>;Z3oh`Bj1zJ0
+OE;L;6.1b;31
+r1
+31
+o-work work
+n@s@d@f@p@flip@flop
+vSDFPMux
+IIWQC:nfoGgKU79YMmCjc@2
+VYcX`2Z_Y]GFMiIP?RSmlA1
+d/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B
+w1265185750
+F/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/controller.v
+L0 147
+VYcX`2Z_Y]GFMiIP?RSmlA1
+OE;L;6.1b;31
+r1
+31
+o-work work
+n@s@d@f@p@mux
+vtestbench
+IWhOX`Jb:PClfWA>ddI3bQ1
+VhGfW:390DM[oDMzegDH9`2
+d/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B
+w1265186180
+F/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v
+L0 1
+VhGfW:390DM[oDMzegDH9`2
+OE;L;6.1b;31
+r1
+31
+o-work work

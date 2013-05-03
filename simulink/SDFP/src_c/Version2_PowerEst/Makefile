@@ -1,0 +1,33 @@
+CC=gcc
+CFLAGS=-c -Wall
+
+all: SDFPAdder SDFPGainSwitch
+
+############[ Adder ]##############
+
+SDFPAdder: SDFPAdder4_wrapper.o QA_SDFPAdder4_wrapper.o
+	$(CC) SDFPAdder4_wrapper.o QA_SDFPAdder4_wrapper.o -oqa_sdfp_adder
+
+SDFPAdder4_wrapper.o: SDFPAdder4_wrapper.c
+	$(CC) $(CFLAGS) SDFPAdder4_wrapper.c
+
+QA_SDFPAdder4_wrapper.o: QA_SDFPAdder4_wrapper.c
+	$(CC) $(CFLAGS) QA_SDFPAdder4_wrapper.c
+
+############[ Gain Switch ]##############
+
+SDFPGainSwitch: SDFPGainSwitch_wrapper.o QA_SDFPGainSwitch_wrapper.o fpconv.o
+	$(CC) SDFPGainSwitch_wrapper.o QA_SDFPGainSwitch_wrapper.o fpconv.o -oqa_sdfp_gainswitch
+
+SDFPGainSwitch_wrapper.o: SDFPGainSwitch_wrapper.c 
+	$(CC) $(CFLAGS) SDFPGainSwitch_wrapper.c
+
+
+QA_SDFPGainSwitch_wrapper.o: QA_SDFPGainSwitch_wrapper.c
+	$(CC) $(CFLAGS) QA_SDFPGainSwitch_wrapper.c
+
+fpconv.o: fpconv.c
+	$(CC) $(CFLAGS) fpconv.c
+
+clean:
+	rm -rf *.o qa_sdfp_adder qa_sdfp_gainswitch

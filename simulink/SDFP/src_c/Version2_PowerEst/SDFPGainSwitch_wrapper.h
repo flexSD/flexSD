@@ -1,0 +1,32 @@
+#ifndef SDFPGainSwitch_Wrapper_H
+#define SDFPGainSwitch_Wrapper_H
+
+#include "rtwtypes.h"
+
+void SDFPGainSwitch_Outputs_wrapper(const real32_T *sd_in,
+                          uint32_T *gain_out,
+                          uint32_T *fixpt_out,
+                          real32_T *p_gain_out,
+                          real_T *pwr_switching_inst,
+                          real_T *pwr_leakage_inst,
+                          real_T *pwr_total_inst ,
+			      const real_T  *xD,
+                          const real32_T  *gain, const int_T  p_width0, 
+                          const uint32_T  *bitwidth, const int_T  p_width1, 
+                          const uint32_T  *fp_position, const int_T  p_width2, 
+                          const real_T  *frequency, const int_T p_width3);
+
+void SDFPGainSwitch_Update_wrapper(const real32_T *sd_in,
+                          const uint32_T *gain_out,
+                          const uint32_T *fixpt_out,
+                          const real32_T *p_gain_out,
+                          const real_T *pwr_switching_inst,
+                          const real_T *pwr_leakage_inst,
+                          const real_T *pwr_total_inst ,
+                          real_T *xD, 
+                          const real32_T  *gain,  const int_T  p_width0,
+                          const uint32_T  *bitwidth,  const int_T  p_width1,
+                          const uint32_T  *fp_position,  const int_T  p_width2,
+                           const real_T *frequency, const int_T  p_width3);
+
+#endif /* SDFPGainSwitch_Wrapper_H */

@@ -1,0 +1,37 @@
+module testbench;
+
+   reg clk=0, rst=1;
+   reg in, fbin; 
+   wire [23:0] out;
+   controller dut(clk, rst, in, fbin, out);
+
+   integer INPUT_FILE = -1, FB_FILE = -1, RESULTS_FILE = -1;
+   integer running = 0;
+   integer temp1 = 0, temp2 = 0;
+   integer foo = 0;
+
+   always #5 clk = ~clk;
+
+   initial begin
+      #10; rst=0;
+
+      INPUT_FILE = $fopen("input_data.txt", "r");
+      FB_FILE = $fopen("output_data.txt", "r");
+      RESULTS_FILE = $fopen("sim_results.txt", "w");
+
+      while(!$feof(INPUT_FILE) && !$feof(FB_FILE)) begin
+         /* Read in the stream of input bits */
+         $fscanf(INPUT_FILE, "%f\n", temp1);
+         $fscanf(FB_FILE, "%f\n", temp2);
+         in = (temp1 == -1);
+         fbin = (temp2 == -1);
+         #10
+         $fwrite(RESULTS_FILE, "%d\n", out);
+      end
+
+      $fclose(RESULTS_FILE);
+      $fclose(FB_FILE);
+      $fclose(INPUT_FILE);
+   end
+
+endmodule

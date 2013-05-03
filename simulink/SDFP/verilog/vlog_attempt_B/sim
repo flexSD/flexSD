@@ -1,0 +1,3 @@
+vsim work.testbench
+add wave sim:/testbench/dut/*
+run -all

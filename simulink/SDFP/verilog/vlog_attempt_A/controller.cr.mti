@@ -1,0 +1,16 @@
+/usr1/research/kunal/Desktop/JosephController/controller/tb.v {1 {vlog -work work /usr1/research/kunal/Desktop/JosephController/controller/tb.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}} /usr1/research/kunal/Desktop/JosephController/controller/controller.v {1 {vlog -work work /usr1/research/kunal/Desktop/JosephController/controller/controller.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module controller_top
+-- Compiling module BiQuad
+
+Top level modules:
+	controller_top
+
+} {} {}}

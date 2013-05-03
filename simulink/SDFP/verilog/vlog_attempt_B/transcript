@@ -1,0 +1,163 @@
+# //  ModelSim SE 6.1b Sep  8 2005 Linux 2.6.24-26-generic
+# //
+# //  Copyright Mentor Graphics Corporation 2005
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading project controller
+# Compile of controller.v failed with 1 errors.
+# Compile of tb.v was successful.
+# 2 compiles, 1 failed with 1 error. 
+# reading /usr7/local/modeltech/linux/../modelsim.ini
+# Loading project projcontroller
+# Compile of controller.v failed with 1 errors.
+# Compile of tb.v was successful.
+# 2 compiles, 1 failed with 1 error. 
+# Compile of controller.v failed with 2 errors.
+# Compile of controller.v failed with 1 errors.
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+vsim work.tb
+# vsim work.tb 
+# ** Error: (vsim-3170) Could not find 'work.tb'.
+# Error loading design
+vsim work.testbench
+# vsim work.testbench 
+# Loading work.testbench
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(14): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+run 1us
+# Read line:           1
+# Read line:          -1
+# Read line:          -1
+# Read line:           1
+# Read line:          -1
+# Read line:           1
+# Read line:           1
+# Read line:          -1
+# Read line:           1
+# Read line:          -1
+# Break at /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v line 21
+# Compile of controller.v was successful.
+# Compile of tb.v failed with 1 errors.
+# 2 compiles, 1 failed with 1 error. 
+run 1us
+# Break key hit 
+# Simulation stop requested.
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+vsim work.testbench
+# vsim work.testbench 
+# Loading work.testbench
+# Loading work.controller
+# Loading work.SDFPMux
+# Loading work.SDFPAdder3
+# Loading work.SDFPFlipFlop
+# Loading work.SDFPAdder4
+# Loading work.SDFPAdder2
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(24): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(25): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+# ** Warning: (vsim-PLI-3003) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(29): [TOFD] - System task or function '$fprintf' is not defined.
+#         Region: /testbench
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+vsim work.testbench
+# vsim work.testbench 
+# Loading work.testbench
+# Loading work.controller
+# Loading work.SDFPMux
+# Loading work.SDFPAdder3
+# Loading work.SDFPFlipFlop
+# Loading work.SDFPAdder4
+# Loading work.SDFPAdder2
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(24): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(25): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+add wave sim:/testbench/dut/*
+run 1us
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+vsim work.testbench
+# vsim work.testbench 
+# Loading work.testbench
+# Loading work.controller
+# Loading work.SDFPMux
+# Loading work.SDFPAdder3
+# Loading work.SDFPFlipFlop
+# Loading work.SDFPAdder4
+# Loading work.SDFPAdder2
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(24): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(25): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+add wave sim:/testbench/dut/*
+do sim
+# vsim work.testbench 
+# Loading work.testbench
+# Loading work.controller
+# Loading work.SDFPMux
+# Loading work.SDFPAdder3
+# Loading work.SDFPFlipFlop
+# Loading work.SDFPAdder4
+# Loading work.SDFPAdder2
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(24): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(25): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+do sim
+# vsim work.testbench 
+# Loading work.testbench
+# Loading work.controller
+# Loading work.SDFPMux
+# Loading work.SDFPAdder3
+# Loading work.SDFPFlipFlop
+# Loading work.SDFPAdder4
+# Loading work.SDFPAdder2
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(24): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(25): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+restart
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(24): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(25): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+run
+run -all
+# Break key hit 
+# Simulation stop requested.
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors. 
+do sim
+# vsim work.testbench 
+# Loading work.testbench
+# Loading work.controller
+# Loading work.SDFPMux
+# Loading work.SDFPAdder3
+# Loading work.SDFPFlipFlop
+# Loading work.SDFPAdder4
+# Loading work.SDFPAdder2
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(24): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+# ** Warning: (vsim-PLI-3691) /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v(25): Expected a system task, not a system function '$fscanf'.
+#         Region: /testbench
+# Break at /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v line 36
+# Simulation Breakpoint: Break at /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v line 36
+# MACRO ./sim PAUSED at line 3
+ext
+# wrong # args: should be "extractModule signame"
+exit

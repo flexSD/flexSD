@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+#include "SDFPGainSwitch_wrapper.h"
+
+#include "rtwtypes.h"
+#include "fpconv.h"
+
+#define dprintf(format, args...) printf(format, ##args)
+
+int main() {
+
+   real32_T sd_in[1];
+   uint32_T gain_out[1];
+   uint32_T fixpt_out[1];
+   real32_T p_gain_out[1];
+   real_T pwr_switching_inst[1];
+   real_T pwr_leakage_inst[1];
+   real_T pwr_total_inst[1];
+
+   real_T  xD[3];
+
+   real32_T  gain[1];  int_T  p_width0=1; 
+   uint32_T  bitwidth[1];  int_T  p_width1=1; 
+   uint32_T  fp_position[1];  int_T  p_width2=1; 
+   real_T  frequency[1];  int_T p_width3=1;
+
+   xD[0] = 0;
+   xD[1] = 0;
+
+   sd_in[0] = -1.0f;
+
+   SDFPGainSwitch_Update_wrapper(
+         sd_in,
+         gain_out,
+         fixpt_out,
+         p_gain_out,
+         pwr_switching_inst,
+         pwr_leakage_inst,
+         pwr_total_inst ,
+         xD, 
+         gain,  1,
+         bitwidth, 1,
+         fp_position, 1,
+         frequency,1);
+
+   xD[2] = 1.0f;
+
+   SDFPGainSwitch_Outputs_wrapper(
+         sd_in,
+         gain_out,
+         fixpt_out,
+         p_gain_out,
+         pwr_switching_inst,
+         pwr_leakage_inst,
+         pwr_total_inst ,
+         xD,
+         gain, p_width0, 
+         bitwidth,  p_width1, 
+         fp_position, p_width2, 
+         frequency, p_width3);
+   return 0;
+
+}

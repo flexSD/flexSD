@@ -1,0 +1,8 @@
+/usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v {1 {vlog -work work /usr1/research/kunal/workspace/controller_simulink/verilog/vlog_attempt_B/tb.v
+Model Technology ModelSim SE vlog 6.1b Compiler 2005.09 Sep  8 2005
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}}
